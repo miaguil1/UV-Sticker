@@ -1,0 +1,9 @@
+Removed Member From Class: ClassName=UVS-SCH-1 Member=*
+Added Component: Designator=J1(Header 8x1 8.5mm)
+Added Component: Designator=J2(Header 10x1 8.5mm)
+Added Component: Designator=J3(Header 8x1 8.5mm)
+Added Component: Designator=J4(Header 6x1 8.5mm)
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component J1 IOL
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component J2 IOH
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component J3 POWER_UNO
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component J4 AD
