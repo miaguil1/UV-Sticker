@@ -1,0 +1,94 @@
+
+**** 07/17/17 19:43:16 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-test13"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test13.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test13.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Intern\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source EX1
+V_V1         N14434 0 3.3Vdc
+R_R1         V1 N14434  14k TC=0,0 
+R_R2         0 V1  14k TC=0,0 
+R_R3         0 V2  14k TC=0,0 
+R_R4         V2 N14434  14.3k TC=0,0 
+R_R7         N15777 0  3.3MEG TC=0,0 
+R_R5         V1 N15777  14k TC=0,0 
+E_U1         V3 0 VALUE {LIMIT(V(N15777,N15859)*1E6,0V,+3.3V)}
+R_R6         V2 N15859  14k TC=0,0 
+R_R8         N15859 V3  3.3MEG TC=0,0 
+
+**** RESUMING test13.cir ****
+.END
+
+**** 07/17/17 19:43:16 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-test13"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test13.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V1)    1.6465  (   V2)    1.6349  (   V3)    2.7443  (N14434)    3.3000     
+
+(N15777)    1.6396 (N15859)    1.6396 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.345E-04
+
+    TOTAL POWER DISSIPATION   7.74E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/17/17 19:43:16 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-test13"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test13.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .02
+

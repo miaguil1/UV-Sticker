@@ -1,0 +1,20 @@
+Added Component: Designator=C5(CAP-0805(2012)-R)
+Add component. Clean all parameters for all variants
+Added Component: Designator=D5(SMD 3528)
+Add component. Clean all parameters for all variants
+Added Component: Designator=R12(R-0805(2012)-R)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=D5-A
+Added Pin To Net: NetName=GND Pin=J1-4
+Added Pin To Net: NetName=OP-AMP_- Pin=C5-1
+Added Pin To Net: NetName=OP-AMP_- Pin=D5-K
+Added Pin To Net: NetName=OP-AMP_- Pin=J1-2
+Added Pin To Net: NetName=OP-AMP_- Pin=R12-1
+Added Net: Name=OP-AMP_-
+Added Pin To Net: NetName=OP-AMP_GAIN Pin=C5-2
+Added Pin To Net: NetName=OP-AMP_GAIN Pin=J1-3
+Added Pin To Net: NetName=OP-AMP_GAIN Pin=R12-2
+Added Net: Name=OP-AMP_GAIN
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component C5 Capacitance
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component D5 GUVA-S12SD
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component R12 Resistance
