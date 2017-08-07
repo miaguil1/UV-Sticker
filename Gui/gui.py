@@ -116,10 +116,14 @@ def update_single_Fig():
     global resp_subplot
     resp_subplot.clear()
     resp_subplot.set_title("Individual Sensor Readout")
-    resp_subplot.set_ylabel("Capacitance")  # Set ylabels
+    resp_subplot.set_ylabel("UV")  # Set ylabels
     resp_subplot.set_xlabel("Time (s)")
-    resp_subplot.set_xlim([0, 50])
-    resp_subplot.set_ylim([0, 3])
+    if seconds[-1] < 20:
+        resp_subplot.set_xlim([0, 20])
+    else:
+        time_low = seconds[-1] - 20
+        resp_subplot.set_xlim([time_low,seconds[-1]])
+    resp_subplot.set_ylim([0, 5])
     resp_subplot.ticklabel_format(useOffset=False)
 
 def update_total_Fig():
