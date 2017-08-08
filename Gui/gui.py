@@ -8,7 +8,6 @@ from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
 
-#from drawnow import *
 
 import serial_2 as sp1
 
@@ -25,10 +24,10 @@ SMALL_FONT = ("Helvetica", 8)
 style.use("ggplot")
 
 
-rawdata_resp = []  #Raw Data from Arduino.
+rawdata_resp = []  #Raw Data for Respiration
 rawdata_uv = [] #Capacitance value from the Sensor
-respiration = []  #Transforming the Data from the Arduino into something Useful
-UV_value = []  #Transforming the Data from the Arduino into something Useful
+respiration = []  #Transforming the Data from the Psoc into something Useful
+UV_value = []  #Transforming the Data from the Psoc into something Useful
 seconds = [] #Time Since Data has been Captured
 
 resp_graph = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
@@ -40,13 +39,12 @@ uv_subplot = uv_graph.add_subplot(1,1,1)
 start_time = 0
 stop_time = 0
 record = 0
-sensors = [0]*24
 
 
 def init_gui():
     app = psoc_Sensors()
-    ani_resp = animation.FuncAnimation(resp_graph,recordData,interval=100)
-    ani_uv = animation.FuncAnimation(uv_graph, recordData, interval=100)
+    #ani_resp = animation.FuncAnimation(resp_graph,recordData,interval=100)
+    ani_uv = animation.FuncAnimation(uv_graph, recordData, interval=10)
     app.geometry("1280x720")
     app.mainloop()
 
@@ -112,11 +110,11 @@ def save_data():
         ws.cell(row=i+1, column=5, value=UV_value[i-1])
     wb.save(filename = dest_filename)
 
-def update_single_Fig():
+def update_resp_Fig():
     global resp_subplot
     resp_subplot.clear()
-    resp_subplot.set_title("Individual Sensor Readout")
-    resp_subplot.set_ylabel("UV")  # Set ylabels
+    resp_subplot.set_title("Respiration Breathing")
+    resp_subplot.set_ylabel("Amplitude")  # Set ylabels
     resp_subplot.set_xlabel("Time (s)")
     if seconds[-1] < 20:
         resp_subplot.set_xlim([0, 20])
@@ -126,6 +124,20 @@ def update_single_Fig():
     resp_subplot.set_ylim([0, 5])
     resp_subplot.ticklabel_format(useOffset=False)
 
+def update_uv_Fig():
+    global uv_subplot
+    uv_subplot.clear()
+    uv_subplot.set_title("UV-B Power Reading")
+    uv_subplot.set_ylabel("UV")  # Set ylabels
+    uv_subplot.set_xlabel("Time (s)")
+    if seconds[-1] < 20:
+        uv_subplot.set_xlim([0, 20])
+    else:
+        time_low = seconds[-1] - 20
+        uv_subplot.set_xlim([time_low,seconds[-1]])
+    uv_subplot.set_ylim([0, 5])
+    uv_subplot.ticklabel_format(useOffset=False)
+
 def update_total_Fig():
     print('Hello')
 
@@ -133,46 +145,29 @@ def update_total_Fig():
 def recordData(i):
     # start data collection
     global record
-    global rawdata_resp
     global rawdata_uv
     global respiration
     global UV_value
     global seconds
-    data = 0
-    resp1 = 0
-    uv1 = 0
+
+    data_resp = 0
+    data_uv = 0
     if (record == 1):
         while (sp1.wait() == 0):
             pass
         indicator = sp1.read_8()
-        data_resp = 0
-        data_uv = 0
         if indicator == b's':
-            #data_resp = sp1.read_dec()
             data_uv = sp1.read_dec()
-
-        resp1 = float(data_resp)
         uv1 = float(data_uv)
-        resp2 = ((resp1 - 2048)/2048) * 3.3
         uv2 = ((uv1 - 2048)/2048) * 3.3
         count = time.time() - start_time
-        rawdata_resp.append(resp1)
         rawdata_uv.append(uv1)
-        respiration.append(resp2)
         UV_value.append(uv2)
         seconds.append(count)
-        update_single_Fig()
-        resp_subplot.plot(seconds, UV_value)
-        # print(data_resp)
-        # print(resp2)
-        print(data_uv)
+        update_uv_Fig()
+        print(uv1)
         print(uv2)
-        #uv_subplot.plot(seconds, UV_value)
-        #resp_subplot.pause(.000001)
-        # count = count + 1
-        # if (count > 50):
-        #     rawdata.pop(0)
-        #     pressure.pop(0)
+        uv_subplot.plot(seconds, UV_value)
 
 class psoc_Sensors(tk.Tk):
     def __init__(self, *args, **kwargs):
