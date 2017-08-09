@@ -1,0 +1,134 @@
+
+**** 07/17/17 19:34:12 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-test12"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test12.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test12.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Intern\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source EX1
+V_V1         N14449 0 3.3Vdc
+R_R1         V1 N14434  14k TC=0,0 
+R_R2         0 V1  14k TC=0,0 
+R_R3         0 V2  14k TC=0,0 
+R_R4         V2 N14434  14.3k TC=0,0 
+R_R7         N15777 0  3.3MEG TC=0,0 
+R_R5         V1 N15777  14k TC=0,0 
+E_U1         V3 0 VALUE {LIMIT(V(N15777,N15859)*1E6,0V,+3.3V)}
+R_R6         V2 N15859  14k TC=0,0 
+R_R8         N15859 V3  3.3MEG TC=0,0 
+R_R9         N14449 N18903  1k TC=0,0 
+Q_Q1         N14434 N18903 N14449 QbreakP 
+
+**** RESUMING test12.cir ****
+.END
+
+**** 07/17/17 19:34:12 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-test12"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test12.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               QbreakP         
+               PNP             
+       LEVEL    1            
+          IS  100.000000E-18 
+          BF  100            
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.2          
+           D     .52         
+
+
+**** 07/17/17 19:34:12 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-test12"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test12.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V1) 46.33E-09  (   V2) 46.01E-09  (   V3) 77.22E-09  (N14434) 92.86E-09     
+
+(N14449)    3.3000 (N15777) 46.14E-09 (N15859) 46.14E-09 (N18903)    3.3000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.600E-12
+
+    TOTAL POWER DISSIPATION   2.18E-11  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/17/17 19:34:12 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-test12"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test12.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

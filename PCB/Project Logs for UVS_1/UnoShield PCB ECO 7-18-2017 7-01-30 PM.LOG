@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=OP-AMP_- Pin=J1-4
+Removed Pin From Net: NetName=UVD_4A Pin=J1-5
+Removed Pin From Net: NetName=SG1_A Pin=J2-4
+Removed Pin From Net: NetName=SG2_A Pin=J2-5
+Removed Pin From Net: NetName=GAIN Pin=J2-6
+Added Component: Designator=J10(Header 6x1 8.5mm)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=OP-AMP_- Pin=J1-1
+Added Pin To Net: NetName=UVD_4A Pin=J1-4
+Added Pin To Net: NetName=SG1_A Pin=J10-1
+Added Pin To Net: NetName=SG2_A Pin=J10-2
+Added Pin To Net: NetName=GAIN Pin=J10-3
+Change Net Name : Old Net Name=OP-AMP_- New Net Name=UV5_NEG
+Added Pin To Net: NetName=UV5_GAIN Pin=C5-2
+Added Pin To Net: NetName=UV5_GAIN Pin=J1-5
+Added Pin To Net: NetName=UV5_GAIN Pin=R12-2
+Added Net: Name=UV5_GAIN
+Added Member To Class: ClassName=UVS-SCH-1 Member=Component J10 P2.X

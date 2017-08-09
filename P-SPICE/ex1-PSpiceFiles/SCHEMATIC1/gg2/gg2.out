@@ -1,0 +1,94 @@
+
+**** 07/26/17 14:59:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gg2"  [ c:\users\intern\documents\github\uv-sticker\p-spice\ex1-PSpiceFiles\SCHEMATIC1\gg2.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "gg2.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Intern\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source EX1
+V_V1         N14434 0 3.3Vdc
+R_R1         V1 N14434  280 TC=0,0 
+R_R2         0 V1  280 TC=0,0 
+R_R3         0 V2  280 TC=0,0 
+R_R4         V2 N14434  290 TC=0,0 
+R_R7         N15777 0  255k TC=0,0 
+R_R5         V1 N15777  1k TC=0,0 
+E_U1         V3 0 VALUE {LIMIT(V(N15777,N15859)*1E6,0V,+3.3V)}
+R_R6         V2 N15859  1k TC=0,0 
+R_R8         N15859 V3  255k TC=0,0 
+
+**** RESUMING gg2.cir ****
+.END
+
+**** 07/26/17 14:59:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gg2"  [ c:\users\intern\documents\github\uv-sticker\p-spice\ex1-PSpiceFiles\SCHEMATIC1\gg2.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   V1)    1.6491  (   V2)    1.6220  (   V3)    3.3000  (N14434)    3.3000     
+
+(N15777)    1.6427 (N15859)    1.6285 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.168E-02
+
+    TOTAL POWER DISSIPATION   3.86E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/26/17 14:59:36 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-gg2"  [ c:\users\intern\documents\github\uv-sticker\p-spice\ex1-PSpiceFiles\SCHEMATIC1\gg2.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .09
+
