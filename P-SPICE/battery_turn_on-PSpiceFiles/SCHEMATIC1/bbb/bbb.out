@@ -1,0 +1,158 @@
+
+**** 08/16/17 17:51:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bbb"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\battery_turn_on-PSpiceFiles\SCHEMATIC1\bbb.sim ]
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bbb.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Intern\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source BATTERY_TURN_ON
+R_R1         0 N14650  10k TC=0,0 
+D_D1         N14650 N14700 Dbreak 
+D_D2         N14696 N14700 Dbreak 
+M_M1         N14643 N14650 N14696 N14696 MbreakP           
+R_R2         0 N14700  1k TC=0,0 
+V_Battery         N14643 0 3.3Vdc
+V_USB         N14650 0 0Vdc
+
+**** RESUMING bbb.cir ****
+.END
+
+**** 08/16/17 17:51:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bbb"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\battery_turn_on-PSpiceFiles\SCHEMATIC1\bbb.sim ]
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 08/16/17 17:51:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bbb"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\battery_turn_on-PSpiceFiles\SCHEMATIC1\bbb.sim ]
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MbreakP         
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    0            
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+          CJ    0            
+        CJSW    0            
+        CGSO    0            
+        CGDO    0            
+        CGBO    0            
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 08/16/17 17:51:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bbb"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\battery_turn_on-PSpiceFiles\SCHEMATIC1\bbb.sim ]
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14643)    3.3000 (N14650)    0.0000 (N14696)    2.6281 (N14700)    1.9554 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Battery   -1.955E-03
+    V_USB        1.965E-12
+
+    TOTAL POWER DISSIPATION   6.45E-03  WATTS
+
+
+**** Interrupt ****
+**** Param: RUNFOR = 1000ns
+
+**** Interrupt ****
+
+          JOB ABORTED
+
+**** 08/16/17 17:51:02 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-bbb"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\battery_turn_on-PSpiceFiles\SCHEMATIC1\bbb.sim ]
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        8.97
+

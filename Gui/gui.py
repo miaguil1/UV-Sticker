@@ -8,7 +8,6 @@ from matplotlib.figure import Figure
 import matplotlib.animation as animation
 from matplotlib import style
 
-
 import serial_2 as sp1
 
 from openpyxl import Workbook
@@ -24,11 +23,18 @@ SMALL_FONT = ("Helvetica", 8)
 style.use("ggplot")
 
 
-rawdata_resp = []  #Raw Data for Respiration
-rawdata_uv = [] #Capacitance value from the Sensor
-respiration = []  #Transforming the Data from the Psoc into something Useful
-UV_value = []  #Transforming the Data from the Psoc into something Useful
-seconds = [] #Time Since Data has been Captured
+UV1_Data = []   # mW/cm^2 Data from UV Sensor #1
+UV2_Data = []   # mW/cm^2 Data from UV Sensor #2
+UV3_Data = []   # mW/cm^2 Data from UV Sensor #3
+UV4_Data = []   # mW/cm^2 Data from UV Sensor #4
+UV5_Data = []   # mw/cm^2 Data from UV Sensor #5
+
+TMP116_Data = []    # Temperature Data in Celcius from TMP116
+LMT70_Data = []     # Temperature Data in Celcius from LMT70
+
+Resp_Data = []      # Percent Change Data in percent from Strain Guage
+
+seconds = [] # Time Since Data has been Captured
 
 resp_graph = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
 resp_subplot = resp_graph.add_subplot(1,1,1)
@@ -36,138 +42,305 @@ resp_subplot = resp_graph.add_subplot(1,1,1)
 uv_graph = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
 uv_subplot = uv_graph.add_subplot(1,1,1)
 
+temp_graph = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
+temp_subplot = temp_graph.add_subplot(1,1,1)
+
 start_time = 0
 stop_time = 0
-record = 0
 
+UV_Record = 0
+Resp_Record = 0
+Temp_Record = 0
 
 def init_gui():
     app = psoc_Sensors()
-    #ani_resp = animation.FuncAnimation(resp_graph,recordData,interval=100)
-    ani_uv = animation.FuncAnimation(uv_graph, recordData, interval=10)
-    app.geometry("1280x720")
+    # ani_resp = animation.FuncAnimation(resp_graph, recordResp, interval=100)
+    ani_uv = animation.FuncAnimation(uv_graph, recordUV, interval=100)
+    # ani_temp = animation.FuncAnimation(temp_graph, recordTemp, interval=100)
+    app.geometry("1500x1000")
     app.mainloop()
+
 
 def popupmsg(msg):
     popup = tk.Tk()
     popup.wm_title("Pop-Up Message!")
     label = ttk.Label(popup, text=msg, font=NORM_FONT)
-    label.grid(row=0,column=0)
-    B1 = ttk.Button(popup, text="Okay", command = popup.destroy)
-    B1.grid(row=0,column=1)
+    label.grid(row=0, column=0)
+    b1 = ttk.Button(popup, text="Okay", command = popup.destroy)
+    b1.grid(row=0, column=1)
     popup.mainloop()
 
-def record_start(value):
-    global record
+
+def record_start_uv(value):
+    global UV_Record
     global start_time
     if value == 0:
-        record = 1
+        UV_Record = 1
         start_time = time.time()
 
-def record_stop(value):
-    global record
+
+def record_stop_uv(value):
+    global UV_Record
     global start_time
-    global rawdata_resp
-    global rawdata_uv
+    global UV1_Data
+    global UV2_Data
+    global UV3_Data
+    global UV4_Data
+    global UV5_Data
     global seconds
-    global respiration
-    global UV_value
+
     if value == 1:
-        record = 0
+        UV_Record = 0
         start_time = 0
-    #Saving the Data to an Excel Spread Sheet
-    save_data()
-    rawdata_resp = []
-    rawdata_uv = []
+    # Saving the Data to an Excel Spread Sheet
+    save_uv_data()
+    UV1_Data = []
+    UV2_Data = []
+    UV3_Data = []
+    UV4_Data = []
+    UV5_Data = []
     seconds = []
-    respiration = []
-    UV_value = []
+
+def record_start_resp(value):
+    global Resp_Record
+    global start_time
+    if value == 0:
+        Resp_Record = 1
+        start_time = time.time()
+
+
+def record_stop_resp(value):
+    global Resp_Record
+    global start_time
+    global Resp_Data
+    global seconds
+
+    if value == 1:
+        Resp_Record = 0
+        start_time = 0
+    # Saving the Data to an Excel Spread Sheet
+    save_resp_data()
+    Resp_Data = []
+    seconds = []
+
+
+def record_start_temp(value):
+    global Temp_Record
+    global start_time
+    if value == 0:
+        Temp_Record = 1
+        start_time = time.time()
+
+
+
+def record_stop_temp(value):
+    global Temp_Record
+    global start_time
+    global TMP116_Data
+    global LMT70_Data
+    global seconds
+
+
+    if value == 1:
+        Temp_Record = 0
+        start_time = 0
+    # Saving the Data to an Excel Spread Sheet
+    save_temp_data()
+    LMT70_Data = []
+    TMP116_Data = []
+    seconds = []
 
 def print_Name1():
         print("Carl!")
 
-def save_data():
+def save_temp_data():
     global seconds
-    global rawdata_resp
-    global rawdata_uv
-    global respiration
-    global UV_value
-    dest_filename = 'C:/Users/Intern/Documents/Data/test3.xlsx'
+    global TMP116_Data
+    global LMT70_Data
+    dest_filename = 'C:/Users/Intern/Documents/Data/test-temp.xlsx'
     wb = Workbook()
     ws = wb.active
     ws.title = "Sample #1"
     ws.cell(row=1, column=1, value="Time (s)")
-    ws.cell(row=1, column=2, value="Raw Data Respiration")
-    ws.cell(row=1, column=3, value="Raw Data UV")
-    ws.cell(row=1, column=4, value="Respiration (Ohm)")
-    ws.cell(row=1, column=5, value="UV (index)")
+    ws.cell(row=1, column=2, value="LMT70 (C)")
+    ws.cell(row=1, column=3, value="TMP116 (C)")
+    wb.save(filename = dest_filename)
+    for i in range(1, len(seconds)):
+        ws.cell(row=i+1, column=1, value=seconds[i-1])
+        ws.cell(row=i+1, column=2, value=LMT70_Data[i-1])
+        ws.cell(row=i+1, column=3, value=TMP116_Data[i-1])
+
+    wb.save(filename = dest_filename)
+
+def save_uv_data():
+    global seconds
+    global UV1_Data
+    global UV2_Data
+    global UV3_Data
+    global UV4_Data
+    global UV5_Data
+
+    dest_filename = 'C:/Users/Intern/Documents/Data/test-uv.xlsx'
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sample #1"
+    ws.cell(row=1, column=1, value="Time (s)")
+    ws.cell(row=1, column=2, value="UV1")
+    ws.cell(row=1, column=3, value="UV2")
+    ws.cell(row=1, column=4, value="UV3")
+    ws.cell(row=1, column=5, value="UV4")
+    ws.cell(row=1, column=6, value="UV5")
+
+    for i in range(1, len(seconds)):
+        ws.cell(row=i+1, column=1, value=seconds[i-1])
+        ws.cell(row=i+1, column=2, value=UV1_Data[i-1])
+        ws.cell(row=i+1, column=3, value=UV2_Data[i-1])
+        ws.cell(row=i+1, column=4, value=UV3_Data[i-1])
+        ws.cell(row=i+1, column=5, value=UV4_Data[i-1])
+        ws.cell(row=i+1, column=6, value=UV5_Data[i-1])
+
+    wb.save(filename = dest_filename)
+
+
+def save_resp_data():
+    global seconds
+    global Resp_Data
+    dest_filename = 'C:/Users/Intern/Documents/Data/test-resp.xlsx'
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sample #1"
+    ws.cell(row=1, column=1, value="Time (s)")
+    ws.cell(row=1, column=2, value="SG % Change")
 
     for i in range(1,len(seconds)):
         ws.cell(row=i+1, column=1, value=seconds[i-1])
-        ws.cell(row=i+1, column=2, value=rawdata_resp[i-1])
-        ws.cell(row=i+1, column=3, value=rawdata_uv[i-1])
-        ws.cell(row=i+1, column=4, value=respiration[i-1])
-        ws.cell(row=i+1, column=5, value=UV_value[i-1])
+        ws.cell(row=i+1, column=4, value=Resp_Data[i-1])
     wb.save(filename = dest_filename)
 
-def update_resp_Fig():
+
+def update_Resp_Fig():
     global resp_subplot
     resp_subplot.clear()
     resp_subplot.set_title("Respiration Breathing")
-    resp_subplot.set_ylabel("Amplitude")  # Set ylabels
+    resp_subplot.set_ylabel("Percent Strain Change (%)")  # Set ylabels
     resp_subplot.set_xlabel("Time (s)")
     if seconds[-1] < 20:
         resp_subplot.set_xlim([0, 20])
     else:
         time_low = seconds[-1] - 20
         resp_subplot.set_xlim([time_low,seconds[-1]])
-    resp_subplot.set_ylim([0, 5])
+    resp_subplot.set_ylim([0, 100])
     resp_subplot.ticklabel_format(useOffset=False)
 
-def update_uv_Fig():
+def update_UV_Fig():
     global uv_subplot
     uv_subplot.clear()
-    uv_subplot.set_title("UV-B Power Reading")
-    uv_subplot.set_ylabel("UV")  # Set ylabels
+    uv_subplot.set_title("UV Power Reading")
+    uv_subplot.set_ylabel("Power Density mW/cm^2")  # Set ylabels
     uv_subplot.set_xlabel("Time (s)")
     if seconds[-1] < 20:
         uv_subplot.set_xlim([0, 20])
     else:
         time_low = seconds[-1] - 20
         uv_subplot.set_xlim([time_low,seconds[-1]])
-    uv_subplot.set_ylim([0, 5])
+    uv_subplot.set_ylim([0, 10])
     uv_subplot.ticklabel_format(useOffset=False)
+
+def update_Temp_Fig():
+    global temp_subplot
+    temp_subplot.clear()
+    temp_subplot.set_title("Temperature Reading")
+    temp_subplot.set_ylabel("Celsius (C)")  # Set ylabels
+    temp_subplot.set_xlabel("Time (s)")
+    if seconds[-1] < 20:
+        temp_subplot.set_xlim([0, 20])
+    else:
+        time_low = seconds[-1] - 20
+        temp_subplot.set_xlim([time_low,seconds[-1]])
+    temp_subplot.set_ylim([20, 25])
+    temp_subplot.ticklabel_format(useOffset=False)
+
+
 
 def update_total_Fig():
     print('Hello')
 
 
-def recordData(i):
+def recordUV(i):
+    # i variable is basically a self
     # start data collection
-    global record
-    global rawdata_uv
-    global respiration
-    global UV_value
+    global UV_Record
+    global UV1_Data
+    global UV2_Data
+    global UV3_Data
+    global UV4_Data
+    global UV5_Data
     global seconds
 
-    data_resp = 0
-    data_uv = 0
-    if (record == 1):
+    if (UV_Record == 1):
         while (sp1.wait() == 0):
             pass
-        indicator = sp1.read_8()
-        if indicator == b's':
-            data_uv = sp1.read_dec()
-        uv1 = float(data_uv)
-        uv2 = ((uv1 - 2048)/2048) * 3.3
+        UV1_value = sp1.text_to_decimal()
+        UV2_value = sp1.text_to_decimal()
+        UV3_value = sp1.text_to_decimal()
+        UV4_value = sp1.text_to_decimal()
+        UV5_value = sp1.text_to_decimal()
+
         count = time.time() - start_time
-        rawdata_uv.append(uv1)
-        UV_value.append(uv2)
+
+        UV1_Data.append(UV1_value)
+        UV2_Data.append(UV2_value)
+        UV3_Data.append(UV3_value)
+        UV4_Data.append(UV4_value)
+        UV5_Data.append(UV5_value)
         seconds.append(count)
-        update_uv_Fig()
-        print(uv1)
-        print(uv2)
-        uv_subplot.plot(seconds, UV_value)
+
+        update_UV_Fig()
+        uv_subplot.plot(seconds, UV1_Data, seconds, UV2_Data, seconds, UV3_Data, seconds, UV4_Data, seconds, UV5_Data)
+
+def recordTemp(i):
+    # i variable is basically a self
+    # start data collection
+    global Temp_Record
+    global TMP116_Data
+    global LMT70_Data
+    global seconds
+
+    if (Temp_Record == 1):
+        while (sp1.wait() == 0):
+            pass
+        lmt70_value = sp1.text_to_decimal()
+        tmp116_value = sp1.text_to_decimal()
+
+        count = time.time() - start_time
+
+        LMT70_Data.append(lmt70_value)
+        TMP116_Data.append(tmp116_value)
+        seconds.append(count)
+
+        update_Temp_Fig()
+        temp_subplot.plot(seconds, LMT70_Data, seconds, TMP116_Data)
+
+
+def recordResp(i):
+    # i variable is basically a self
+    # start data collection
+    global Resp_Record
+    global Resp_Data
+    global seconds
+
+    if (Resp_Record == 1):
+        while (sp1.wait() == 0):
+            pass
+        Resp_value = sp1.read_dec()
+
+        count = time.time() - start_time
+
+        Resp_Data.append(Resp_value)
+        seconds.append(count)
+
+        update_Resp_Fig()
+        resp_subplot.plot(seconds, Resp_Data)
 
 class psoc_Sensors(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -257,38 +430,63 @@ class Main_Page(tk.Frame):
         self.parent = parent
         self.create_Button()
 
-        canvas_frame_resp = tk.Frame(self)
-        canvas_resp = FigureCanvasTkAgg(resp_graph, canvas_frame_resp)
-        canvas_resp.show()
-        canvas_resp.get_tk_widget().pack()
-        canvas_frame_resp.grid(row=6, column=0, columnspan=5)
-
+        # canvas_frame_resp = tk.Frame(self)
+        # canvas_resp = FigureCanvasTkAgg(resp_graph, canvas_frame_resp)
+        # canvas_resp.show()
+        # canvas_resp.get_tk_widget().pack()
+        # canvas_frame_resp.grid(row=6, column=0, columnspan=5)
+        #
         canvas_frame_uv = tk.Frame(self)
         canvas_uv = FigureCanvasTkAgg(uv_graph, canvas_frame_uv)
         canvas_uv.show()
         canvas_uv.get_tk_widget().pack()
         canvas_frame_uv.grid(row=6, column=10, columnspan=5)
 
-        toolbar_frame_resp = tk.Frame(self)
-        toolbar_resp = NavigationToolbar2TkAgg(canvas_resp, toolbar_frame_resp)
-        toolbar_resp.update()
-        canvas_resp._tkcanvas.pack(side=tk.TOP)
-        toolbar_frame_resp.grid(row=7, column=0, columnspan=2)
+        # canvas_frame_temp = tk.Frame(self)
+        # canvas_temp = FigureCanvasTkAgg(temp_graph, canvas_frame_temp)
+        # canvas_temp.show()
+        # canvas_temp.get_tk_widget().pack()
+        # canvas_frame_temp.grid(row=10, column=10, columnspan=5)
 
+        # toolbar_frame_resp = tk.Frame(self)
+        # toolbar_resp = NavigationToolbar2TkAgg(canvas_resp, toolbar_frame_resp)
+        # toolbar_resp.update()
+        # canvas_resp._tkcanvas.pack(side=tk.TOP)
+        # toolbar_frame_resp.grid(row=7, column=0, columnspan=2)
+        #
         toolbar_frame_uv = tk.Frame(self)
         toolbar_uv = NavigationToolbar2TkAgg(canvas_uv, toolbar_frame_uv)
         toolbar_uv.update()
         canvas_uv._tkcanvas.pack(side=tk.TOP)
         toolbar_frame_uv.grid(row=7, column=10, columnspan=2)
 
+        # toolbar_frame_temp = tk.Frame(self)
+        # toolbar_temp = NavigationToolbar2TkAgg(canvas_temp, toolbar_frame_temp)
+        # toolbar_temp.update()
+        # canvas_temp._tkcanvas.pack(side=tk.TOP)
+        # toolbar_frame_temp.grid(row=7, column=10, columnspan=2)
 
     def create_Button(self):
-        button_frame = tk.Frame(self)
-        button2 = ttk.Button(button_frame, text="Start", command=lambda: record_start(record))
-        button2.grid(row=0,column=0)
-        button3 = ttk.Button(button_frame, text="Stop", command=lambda: record_stop(record))
-        button3.grid(row=0,column=1)
-        button_frame.grid(row=4,column=0)
+        button_frame_uv = tk.Frame(self)
+        button1 = ttk.Button(button_frame_uv, text="Start", command=lambda: record_start_uv(UV_Record))
+        button1.grid(row=0,column=0)
+        button2 = ttk.Button(button_frame_uv, text="Stop", command=lambda: record_stop_uv(UV_Record))
+        button2.grid(row=0,column=1)
+        button_frame_uv.grid(row=4,column=0)
+
+        button_frame_resp = tk.Frame(self)
+        button3 = ttk.Button(button_frame_resp, text="Start", command=lambda: record_start_resp(Resp_Record))
+        button3.grid(row=0,column=0)
+        button4 = ttk.Button(button_frame_resp, text="Stop", command=lambda: record_stop_resp(Resp_Record))
+        button4.grid(row=0,column=1)
+        button_frame_resp.grid(row=5,column=0)
+
+        button_frame_temp = tk.Frame(self)
+        button5 = ttk.Button(button_frame_temp, text="Start", command=lambda: record_start_temp(Temp_Record))
+        button5.grid(row=0,column=0)
+        button6 = ttk.Button(button_frame_temp, text="Stop", command=lambda: record_stop_temp(Temp_Record))
+        button6.grid(row=0,column=1)
+        button_frame_temp.grid(row=6,column=0)
 
 def main():
     init_gui()

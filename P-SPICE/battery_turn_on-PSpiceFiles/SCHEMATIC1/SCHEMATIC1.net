@@ -1,0 +1,7 @@
+* source BATTERY_TURN_ON
+D_D1         N14659 N14696 Dbreak 
+R_R2         0 N14696  1k TC=0,0 
+V_Battery         N14643 0 3.3Vdc
+V_USB         N14659 0 5Vdc
+M_M1         N14643 N14659 N14696 N14696 MbreakP           
+R_R4         N14659 0  1k TC=0,0 

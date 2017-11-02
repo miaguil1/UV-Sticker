@@ -1,11 +1,12 @@
 * source EX1
-V_V1         N14434 0 3.3Vdc
-R_R1         V1 N14434  280 TC=0,0 
-R_R2         0 V1  280 TC=0,0 
-R_R3         0 V2  280 TC=0,0 
-R_R4         V2 N14434  281 TC=0,0 
-R_R7         N15777 0  1.2MEG TC=0,0 
+V_V1         N14443 0 3.3Vdc
+R_R1         V1 N21730  787 TC=0,0 
+R_R2         0 V1  1k TC=0,0 
+R_R3         0 V2  1k TC=0,0 
+R_R4         V2 N14443  800 TC=0,0 
+R_R7         N15777 0  300K TC=0,0 
 R_R5         V1 N15777  1k TC=0,0 
 E_U1         V3 0 VALUE {LIMIT(V(N15777,N15859)*1E6,0V,+3.3V)}
 R_R6         V2 N15859  1k TC=0,0 
-R_R8         N15859 V3  1.2MEG TC=0,0 
+R_R8         N15859 V3  300K TC=0,0 
+R_R9         N21730 N14443  10.3 TC=0,0 

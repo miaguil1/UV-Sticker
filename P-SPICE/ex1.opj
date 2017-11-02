@@ -134,13 +134,30 @@
          ".\ex1-pspicefiles\schematic1\gg6.sim"
         (DisplayName "SCHEMATIC1-gg6")
         (Type "PSpice Profile"))
-      (ActiveProfile ".\ex1-pspicefiles\schematic1\gg7.sim")
       (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
          ".\ex1-pspicefiles\schematic1\gg7.sim"
         (DisplayName "SCHEMATIC1-gg7")
-        (Type "PSpice Profile"))))
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\ex1-pspicefiles\schematic1\111.sim"
+        (DisplayName "SCHEMATIC1-111")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\ex1-pspicefiles\schematic1\112.sim"
+        (DisplayName "SCHEMATIC1-112")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\ex1-pspicefiles\schematic1\113.sim"
+        (DisplayName "SCHEMATIC1-113")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\ex1-pspicefiles\schematic1\test1.sim")))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
     (MbreakN3
       (FullPartName "MbreakN3.Normal")
       (LibraryName
@@ -155,11 +172,6 @@
       (FullPartName "QbreakP.Normal")
       (LibraryName
          "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
-      (DeviceIndex "0"))
-    (R
-      (FullPartName "R.Normal")
-      (LibraryName
-         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
       (DeviceIndex "0"))
     (0
       (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
@@ -202,7 +214,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 2 3 -1 -1 -8 -30 50 1429 50 503")
-        (Scroll "300 278")
+        (Scroll "119 198")
         (Zoom "200")
         (Occurrence "/"))
       (Path "C:\USERS\INTERN\DOCUMENTS\GITHUB\UV-STICKER\P-SPICE\EX1.DSN")

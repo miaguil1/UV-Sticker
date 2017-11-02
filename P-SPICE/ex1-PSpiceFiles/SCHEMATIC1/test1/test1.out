@@ -1,7 +1,7 @@
 
-**** 07/17/17 17:48:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 10/20/17 12:10:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-test1"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test1.sim ] 
+ ** Profile: "SCHEMATIC1-test1"  [ c:\users\intern\documents\github\uv-sticker\p-spice\ex1-pspicefiles\schematic1\test1.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -31,23 +31,24 @@
 
 **** INCLUDING SCHEMATIC1.net ****
 * source EX1
-V_V1         N14434 0 3.3Vdc
-R_R1         V1 N14434  14k TC=0,0 
-R_R2         0 V1  14k TC=0,0 
-R_R3         0 V2  14.35k TC=0,0 
-R_R4         V2 N14434  14k TC=0,0 
-R_R7         N15777 0  100k TC=0,0 
-R_R5         V2 N15777  1k TC=0,0 
-E_U1         N15827 0 VALUE {LIMIT(V(N15777,N15859)*1,-5V,+5V)}
-R_R6         V1 N15859  1k TC=0,0 
-R_R8         N15859 N15827  100k TC=0,0 
+V_V1         N14443 0 3.3Vdc
+R_R1         V1 N21730  787 TC=0,0 
+R_R2         0 V1  1k TC=0,0 
+R_R3         0 V2  1k TC=0,0 
+R_R4         V2 N14443  800 TC=0,0 
+R_R7         N15777 0  300K TC=0,0 
+R_R5         V1 N15777  1k TC=0,0 
+E_U1         V3 0 VALUE {LIMIT(V(N15777,N15859)*1E6,0V,+3.3V)}
+R_R6         V2 N15859  1k TC=0,0 
+R_R8         N15859 V3  300K TC=0,0 
+R_R9         N21730 N14443  10.3 TC=0,0 
 
 **** RESUMING test1.cir ****
 .END
 
-**** 07/17/17 17:48:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 10/20/17 12:10:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-test1"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test1.sim ] 
+ ** Profile: "SCHEMATIC1-test1"  [ c:\users\intern\documents\github\uv-sticker\p-spice\ex1-pspicefiles\schematic1\test1.sim ] 
 
 
  ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
@@ -60,9 +61,9 @@ R_R8         N15859 N15827  100k TC=0,0
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(   V1)    1.5441  (   V2)    1.5609  (N14434)    3.3000 (N15777)    1.5454     
+(   V1)    1.8334  (   V2)    1.8315  (   V3)     .5729  (N14443)    3.3000     
 
-(N15827)     .0164 (N15859)    1.5290 
+(N15777)    1.8273 (N15859)    1.8273 (N21730)    3.2811 
 
 
 
@@ -70,17 +71,17 @@ R_R8         N15859 N15827  100k TC=0,0
     VOLTAGE SOURCE CURRENTS
     NAME         CURRENT
 
-    V_V1        -2.496E-04
+    V_V1        -3.675E-03
 
-    TOTAL POWER DISSIPATION   8.24E-04  WATTS
+    TOTAL POWER DISSIPATION   1.21E-02  WATTS
 
 
 
           JOB CONCLUDED
 
-**** 07/17/17 17:48:50 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+**** 10/20/17 12:10:24 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
 
- ** Profile: "SCHEMATIC1-test1"  [ C:\Users\Intern\Documents\GitHub\UV-Sticker\P-SPICE\ex1-PSpiceFiles\SCHEMATIC1\test1.sim ] 
+ ** Profile: "SCHEMATIC1-test1"  [ c:\users\intern\documents\github\uv-sticker\p-spice\ex1-pspicefiles\schematic1\test1.sim ] 
 
 
  ****     JOB STATISTICS SUMMARY

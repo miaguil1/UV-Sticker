@@ -1,0 +1,1287 @@
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"tmp116.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_ui2f
+  20              		.global	__aeabi_fmul
+  21              		.global	__aeabi_fdiv
+  22              		.section	.text.tmp116_get_celsius,"ax",%progbits
+  23              		.align	2
+  24              		.global	tmp116_get_celsius
+  25              		.code	16
+  26              		.thumb_func
+  27              		.type	tmp116_get_celsius, %function
+  28              	tmp116_get_celsius:
+  29              	.LFB36:
+  30              		.file 1 "tmp116.c"
+   1:tmp116.c      **** #include "tmp116.h"
+   2:tmp116.c      **** #include "system.h"
+   3:tmp116.c      **** 
+   4:tmp116.c      **** float tmp116_get_celsius(void)
+   5:tmp116.c      **** {
+  31              		.loc 1 5 0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 8
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35 0000 00B5     		push	{lr}
+  36              		.cfi_def_cfa_offset 4
+  37              		.cfi_offset 14, -4
+  38 0002 83B0     		sub	sp, sp, #12
+  39              		.cfi_def_cfa_offset 16
+  40              	.L2:
+   6:tmp116.c      ****     float reg_cels_conv = 7812.5; //1 Register unit = 0.0078125 Celcius
+   7:tmp116.c      ****     uint32 tmp116_gnd_add = 0x48; //Slave Address for TMP116, ADD0 = GND
+   8:tmp116.c      ****     uint8 i2c_reg_counts[2];
+   9:tmp116.c      ****     uint32 i2c_byte_count = 2; //Number of bytes of buffer to read
+  10:tmp116.c      ****     uint32 i2c_mode = I2C_TMP116_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
+  11:tmp116.c      ****     uint32 i2c_error;
+  12:tmp116.c      ****     
+  13:tmp116.c      ****     do
+  14:tmp116.c      ****     {
+  15:tmp116.c      ****         i2c_error = I2C_TMP116_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c
+  41              		.loc 1 15 0 discriminator 1
+  42 0004 0023     		movs	r3, #0
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 2
+
+
+  43 0006 0222     		movs	r2, #2
+  44 0008 01A9     		add	r1, sp, #4
+  45 000a 4820     		movs	r0, #72
+  46 000c FFF7FEFF 		bl	I2C_TMP116_I2CMasterReadBuf
+  47              	.LVL0:
+  16:tmp116.c      ****     }
+  17:tmp116.c      ****     while(i2c_error != I2C_TMP116_I2C_MSTR_NO_ERROR);
+  48              		.loc 1 17 0 discriminator 1
+  49 0010 0028     		cmp	r0, #0
+  50 0012 F7D1     		bne	.L2
+  51              	.LVL1:
+  52              	.L3:
+  18:tmp116.c      ****     
+  19:tmp116.c      ****     /* Wait for the data transfer to complete */
+  20:tmp116.c      ****     while(I2C_TMP116_I2CMasterStatus() & I2C_TMP116_I2C_MSTAT_XFER_INP);    
+  53              		.loc 1 20 0 discriminator 1
+  54 0014 FFF7FEFF 		bl	I2C_TMP116_I2CMasterStatus
+  55              	.LVL2:
+  56 0018 4307     		lsls	r3, r0, #29
+  57 001a FBD4     		bmi	.L3
+  21:tmp116.c      ****         
+  22:tmp116.c      ****        
+  23:tmp116.c      ****     /* Clear Read Complete Status bit */
+  24:tmp116.c      ****     I2C_TMP116_I2CMasterClearStatus();
+  58              		.loc 1 24 0
+  59 001c FFF7FEFF 		bl	I2C_TMP116_I2CMasterClearStatus
+  60              	.LVL3:
+  25:tmp116.c      ****     I2C_TMP116_I2CMasterClearReadBuf();
+  61              		.loc 1 25 0
+  62 0020 FFF7FEFF 		bl	I2C_TMP116_I2CMasterClearReadBuf
+  63              	.LVL4:
+  26:tmp116.c      ****     
+  27:tmp116.c      ****     uint16 i2c_counts =  (i2c_reg_counts[0] << 8) | i2c_reg_counts[1];
+  64              		.loc 1 27 0
+  65 0024 01AB     		add	r3, sp, #4
+  66 0026 1878     		ldrb	r0, [r3]
+  67 0028 0002     		lsls	r0, r0, #8
+  68 002a 5B78     		ldrb	r3, [r3, #1]
+  69 002c 1843     		orrs	r0, r3
+  70              	.LVL5:
+  28:tmp116.c      ****     float celsius_counts = (float) i2c_counts;
+  71              		.loc 1 28 0
+  72 002e FFF7FEFF 		bl	__aeabi_ui2f
+  73              	.LVL6:
+  29:tmp116.c      ****     float tmp116_celsius = reg_cels_conv*celsius_counts/1000000;
+  74              		.loc 1 29 0
+  75 0032 0449     		ldr	r1, .L4
+  76 0034 FFF7FEFF 		bl	__aeabi_fmul
+  77              	.LVL7:
+  78 0038 0349     		ldr	r1, .L4+4
+  79 003a FFF7FEFF 		bl	__aeabi_fdiv
+  80              	.LVL8:
+  30:tmp116.c      ****     return tmp116_celsius;
+  31:tmp116.c      **** }
+  81              		.loc 1 31 0
+  82 003e 03B0     		add	sp, sp, #12
+  83              		@ sp needed
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 3
+
+
+  84 0040 00BD     		pop	{pc}
+  85              	.L5:
+  86 0042 C046     		.align	2
+  87              	.L4:
+  88 0044 0024F445 		.word	1173627904
+  89 0048 00247449 		.word	1232348160
+  90              		.cfi_endproc
+  91              	.LFE36:
+  92              		.size	tmp116_get_celsius, .-tmp116_get_celsius
+  93              		.global	__aeabi_f2d
+  94              		.section	.text.tmp116_string_celsius,"ax",%progbits
+  95              		.align	2
+  96              		.global	tmp116_string_celsius
+  97              		.code	16
+  98              		.thumb_func
+  99              		.type	tmp116_string_celsius, %function
+ 100              	tmp116_string_celsius:
+ 101              	.LFB37:
+  32:tmp116.c      **** 
+  33:tmp116.c      **** unsigned int tmp116_string_celsius(char *tmp116_temperature)
+  34:tmp116.c      **** {
+ 102              		.loc 1 34 0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              	.LVL9:
+ 107 0000 10B5     		push	{r4, lr}
+ 108              		.cfi_def_cfa_offset 8
+ 109              		.cfi_offset 4, -8
+ 110              		.cfi_offset 14, -4
+ 111 0002 0400     		movs	r4, r0
+  35:tmp116.c      ****     float int_temp = tmp116_get_celsius();
+ 112              		.loc 1 35 0
+ 113 0004 FFF7FEFF 		bl	tmp116_get_celsius
+ 114              	.LVL10:
+  36:tmp116.c      ****     sprintf(tmp116_temperature, "%.3f", int_temp);
+ 115              		.loc 1 36 0
+ 116 0008 FFF7FEFF 		bl	__aeabi_f2d
+ 117              	.LVL11:
+ 118 000c 0200     		movs	r2, r0
+ 119 000e 0B00     		movs	r3, r1
+ 120 0010 0449     		ldr	r1, .L7
+ 121 0012 2000     		movs	r0, r4
+ 122 0014 FFF7FEFF 		bl	sprintf
+ 123              	.LVL12:
+  37:tmp116.c      ****     
+  38:tmp116.c      ****     tmp116_temperature[5] = '\n';
+ 124              		.loc 1 38 0
+ 125 0018 0A23     		movs	r3, #10
+ 126 001a 6371     		strb	r3, [r4, #5]
+  39:tmp116.c      ****     
+  40:tmp116.c      ****     unsigned int temp_l = strlen(tmp116_temperature);
+ 127              		.loc 1 40 0
+ 128 001c 2000     		movs	r0, r4
+ 129 001e FFF7FEFF 		bl	strlen
+ 130              	.LVL13:
+  41:tmp116.c      ****     return temp_l;
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 4
+
+
+  42:tmp116.c      **** }
+ 131              		.loc 1 42 0
+ 132              		@ sp needed
+ 133              	.LVL14:
+ 134 0022 10BD     		pop	{r4, pc}
+ 135              	.L8:
+ 136              		.align	2
+ 137              	.L7:
+ 138 0024 00000000 		.word	.LC0
+ 139              		.cfi_endproc
+ 140              	.LFE37:
+ 141              		.size	tmp116_string_celsius, .-tmp116_string_celsius
+ 142              		.section	.text.tmp116_uart,"ax",%progbits
+ 143              		.align	2
+ 144              		.global	tmp116_uart
+ 145              		.code	16
+ 146              		.thumb_func
+ 147              		.type	tmp116_uart, %function
+ 148              	tmp116_uart:
+ 149              	.LFB38:
+  43:tmp116.c      **** 
+  44:tmp116.c      **** void tmp116_uart(void)
+  45:tmp116.c      **** {
+ 150              		.loc 1 45 0
+ 151              		.cfi_startproc
+ 152              		@ args = 0, pretend = 0, frame = 8
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154 0000 30B5     		push	{r4, r5, lr}
+ 155              		.cfi_def_cfa_offset 12
+ 156              		.cfi_offset 4, -12
+ 157              		.cfi_offset 5, -8
+ 158              		.cfi_offset 14, -4
+ 159 0002 83B0     		sub	sp, sp, #12
+ 160              		.cfi_def_cfa_offset 24
+  46:tmp116.c      ****     char tmp116_temperature[6];
+  47:tmp116.c      ****     unsigned int temp_tmp116_l = tmp116_string_celsius(tmp116_temperature);
+ 161              		.loc 1 47 0
+ 162 0004 6846     		mov	r0, sp
+ 163 0006 FFF7FEFF 		bl	tmp116_string_celsius
+ 164              	.LVL15:
+ 165 000a 0500     		movs	r5, r0
+ 166              	.LVL16:
+ 167              	.LBB2:
+  48:tmp116.c      ****     for(unsigned int i = 0; i<temp_tmp116_l; i++)
+ 168              		.loc 1 48 0
+ 169 000c 0024     		movs	r4, #0
+ 170 000e 04E0     		b	.L10
+ 171              	.LVL17:
+ 172              	.L11:
+  49:tmp116.c      ****     {
+  50:tmp116.c      ****         UART_UartPutChar(tmp116_temperature[i]);           
+ 173              		.loc 1 50 0 discriminator 3
+ 174 0010 6B46     		mov	r3, sp
+ 175 0012 185D     		ldrb	r0, [r3, r4]
+ 176 0014 FFF7FEFF 		bl	UART_SpiUartWriteTxData
+ 177              	.LVL18:
+  48:tmp116.c      ****     for(unsigned int i = 0; i<temp_tmp116_l; i++)
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 5
+
+
+ 178              		.loc 1 48 0 discriminator 3
+ 179 0018 0134     		adds	r4, r4, #1
+ 180              	.LVL19:
+ 181              	.L10:
+  48:tmp116.c      ****     for(unsigned int i = 0; i<temp_tmp116_l; i++)
+ 182              		.loc 1 48 0 is_stmt 0 discriminator 1
+ 183 001a AC42     		cmp	r4, r5
+ 184 001c F8D3     		bcc	.L11
+ 185              	.LBE2:
+  51:tmp116.c      ****     }
+  52:tmp116.c      **** }...
+ 186              		.loc 1 52 0 is_stmt 1
+ 187 001e 03B0     		add	sp, sp, #12
+ 188              		@ sp needed
+ 189              	.LVL20:
+ 190              	.LVL21:
+ 191 0020 30BD     		pop	{r4, r5, pc}
+ 192              		.cfi_endproc
+ 193              	.LFE38:
+ 194              		.size	tmp116_uart, .-tmp116_uart
+ 195 0022 C046     		.section	.rodata.str1.4,"aMS",%progbits,1
+ 196              		.align	2
+ 197              	.LC0:
+ 198 0000 252E3366 		.ascii	"%.3f\000"
+ 198      00
+ 199              		.text
+ 200              	.Letext0:
+ 201              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 202              		.file 3 "Generated_Source\\PSoC4/I2C_TMP116_I2C.h"
+ 203              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 204              		.file 5 "c:\\program files (x86)\\cypress\\psoc creator\\4.1\\psoc creator\\import\\gnu\\arm\\5.4.
+ 205              		.file 6 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+ 206              		.section	.debug_info,"",%progbits
+ 207              	.Ldebug_info0:
+ 208 0000 D6020000 		.4byte	0x2d6
+ 209 0004 0400     		.2byte	0x4
+ 210 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 211 000a 04       		.byte	0x4
+ 212 000b 01       		.uleb128 0x1
+ 213 000c A3010000 		.4byte	.LASF39
+ 214 0010 0C       		.byte	0xc
+ 215 0011 95020000 		.4byte	.LASF40
+ 216 0015 31020000 		.4byte	.LASF41
+ 217 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 218 001d 00000000 		.4byte	0
+ 219 0021 00000000 		.4byte	.Ldebug_line0
+ 220 0025 02       		.uleb128 0x2
+ 221 0026 04       		.byte	0x4
+ 222 0027 05       		.byte	0x5
+ 223 0028 696E7400 		.ascii	"int\000"
+ 224 002c 03       		.uleb128 0x3
+ 225 002d 04       		.byte	0x4
+ 226 002e 07       		.byte	0x7
+ 227 002f 80010000 		.4byte	.LASF0
+ 228 0033 03       		.uleb128 0x3
+ 229 0034 08       		.byte	0x8
+ 230 0035 05       		.byte	0x5
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 6
+
+
+ 231 0036 82020000 		.4byte	.LASF1
+ 232 003a 03       		.uleb128 0x3
+ 233 003b 08       		.byte	0x8
+ 234 003c 04       		.byte	0x4
+ 235 003d E0020000 		.4byte	.LASF2
+ 236 0041 03       		.uleb128 0x3
+ 237 0042 01       		.byte	0x1
+ 238 0043 06       		.byte	0x6
+ 239 0044 EC020000 		.4byte	.LASF3
+ 240 0048 03       		.uleb128 0x3
+ 241 0049 01       		.byte	0x1
+ 242 004a 08       		.byte	0x8
+ 243 004b D4000000 		.4byte	.LASF4
+ 244 004f 03       		.uleb128 0x3
+ 245 0050 02       		.byte	0x2
+ 246 0051 05       		.byte	0x5
+ 247 0052 68010000 		.4byte	.LASF5
+ 248 0056 03       		.uleb128 0x3
+ 249 0057 02       		.byte	0x2
+ 250 0058 07       		.byte	0x7
+ 251 0059 F8020000 		.4byte	.LASF6
+ 252 005d 03       		.uleb128 0x3
+ 253 005e 04       		.byte	0x4
+ 254 005f 05       		.byte	0x5
+ 255 0060 D7020000 		.4byte	.LASF7
+ 256 0064 03       		.uleb128 0x3
+ 257 0065 04       		.byte	0x4
+ 258 0066 07       		.byte	0x7
+ 259 0067 12010000 		.4byte	.LASF8
+ 260 006b 03       		.uleb128 0x3
+ 261 006c 08       		.byte	0x8
+ 262 006d 07       		.byte	0x7
+ 263 006e 9D000000 		.4byte	.LASF9
+ 264 0072 03       		.uleb128 0x3
+ 265 0073 04       		.byte	0x4
+ 266 0074 07       		.byte	0x7
+ 267 0075 79020000 		.4byte	.LASF10
+ 268 0079 04       		.uleb128 0x4
+ 269 007a 04       		.byte	0x4
+ 270 007b 7F000000 		.4byte	0x7f
+ 271 007f 03       		.uleb128 0x3
+ 272 0080 01       		.byte	0x1
+ 273 0081 08       		.byte	0x8
+ 274 0082 90020000 		.4byte	.LASF11
+ 275 0086 05       		.uleb128 0x5
+ 276 0087 33010000 		.4byte	.LASF12
+ 277 008b 02       		.byte	0x2
+ 278 008c D201     		.2byte	0x1d2
+ 279 008e 48000000 		.4byte	0x48
+ 280 0092 05       		.uleb128 0x5
+ 281 0093 72010000 		.4byte	.LASF13
+ 282 0097 02       		.byte	0x2
+ 283 0098 D301     		.2byte	0x1d3
+ 284 009a 56000000 		.4byte	0x56
+ 285 009e 05       		.uleb128 0x5
+ 286 009f 79010000 		.4byte	.LASF14
+ 287 00a3 02       		.byte	0x2
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 7
+
+
+ 288 00a4 D401     		.2byte	0x1d4
+ 289 00a6 64000000 		.4byte	0x64
+ 290 00aa 03       		.uleb128 0x3
+ 291 00ab 04       		.byte	0x4
+ 292 00ac 04       		.byte	0x4
+ 293 00ad 97000000 		.4byte	.LASF15
+ 294 00b1 03       		.uleb128 0x3
+ 295 00b2 08       		.byte	0x8
+ 296 00b3 04       		.byte	0x4
+ 297 00b4 61010000 		.4byte	.LASF16
+ 298 00b8 06       		.uleb128 0x6
+ 299 00b9 39010000 		.4byte	.LASF26
+ 300 00bd 01       		.byte	0x1
+ 301 00be 04       		.byte	0x4
+ 302 00bf AA000000 		.4byte	0xaa
+ 303 00c3 00000000 		.4byte	.LFB36
+ 304 00c7 4C000000 		.4byte	.LFE36-.LFB36
+ 305 00cb 01       		.uleb128 0x1
+ 306 00cc 9C       		.byte	0x9c
+ 307 00cd 85010000 		.4byte	0x185
+ 308 00d1 07       		.uleb128 0x7
+ 309 00d2 4C010000 		.4byte	.LASF17
+ 310 00d6 01       		.byte	0x1
+ 311 00d7 06       		.byte	0x6
+ 312 00d8 AA000000 		.4byte	0xaa
+ 313 00dc 07       		.uleb128 0x7
+ 314 00dd E2000000 		.4byte	.LASF18
+ 315 00e1 01       		.byte	0x1
+ 316 00e2 07       		.byte	0x7
+ 317 00e3 9E000000 		.4byte	0x9e
+ 318 00e7 08       		.uleb128 0x8
+ 319 00e8 24010000 		.4byte	.LASF21
+ 320 00ec 01       		.byte	0x1
+ 321 00ed 08       		.byte	0x8
+ 322 00ee 85010000 		.4byte	0x185
+ 323 00f2 02       		.uleb128 0x2
+ 324 00f3 91       		.byte	0x91
+ 325 00f4 74       		.sleb128 -12
+ 326 00f5 07       		.uleb128 0x7
+ 327 00f6 74000000 		.4byte	.LASF19
+ 328 00fa 01       		.byte	0x1
+ 329 00fb 09       		.byte	0x9
+ 330 00fc 9E000000 		.4byte	0x9e
+ 331 0100 07       		.uleb128 0x7
+ 332 0101 C0020000 		.4byte	.LASF20
+ 333 0105 01       		.byte	0x1
+ 334 0106 0A       		.byte	0xa
+ 335 0107 9E000000 		.4byte	0x9e
+ 336 010b 09       		.uleb128 0x9
+ 337 010c 8D010000 		.4byte	.LASF22
+ 338 0110 01       		.byte	0x1
+ 339 0111 0B       		.byte	0xb
+ 340 0112 9E000000 		.4byte	0x9e
+ 341 0116 00000000 		.4byte	.LLST0
+ 342 011a 09       		.uleb128 0x9
+ 343 011b 83000000 		.4byte	.LASF23
+ 344 011f 01       		.byte	0x1
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 8
+
+
+ 345 0120 1B       		.byte	0x1b
+ 346 0121 92000000 		.4byte	0x92
+ 347 0125 13000000 		.4byte	.LLST1
+ 348 0129 09       		.uleb128 0x9
+ 349 012a B1020000 		.4byte	.LASF24
+ 350 012e 01       		.byte	0x1
+ 351 012f 1C       		.byte	0x1c
+ 352 0130 AA000000 		.4byte	0xaa
+ 353 0134 26000000 		.4byte	.LLST2
+ 354 0138 08       		.uleb128 0x8
+ 355 0139 65000000 		.4byte	.LASF25
+ 356 013d 01       		.byte	0x1
+ 357 013e 1D       		.byte	0x1d
+ 358 013f AA000000 		.4byte	0xaa
+ 359 0143 01       		.uleb128 0x1
+ 360 0144 50       		.byte	0x50
+ 361 0145 0A       		.uleb128 0xa
+ 362 0146 10000000 		.4byte	.LVL0
+ 363 014a 87020000 		.4byte	0x287
+ 364 014e 69010000 		.4byte	0x169
+ 365 0152 0B       		.uleb128 0xb
+ 366 0153 01       		.uleb128 0x1
+ 367 0154 50       		.byte	0x50
+ 368 0155 02       		.uleb128 0x2
+ 369 0156 08       		.byte	0x8
+ 370 0157 48       		.byte	0x48
+ 371 0158 0B       		.uleb128 0xb
+ 372 0159 01       		.uleb128 0x1
+ 373 015a 51       		.byte	0x51
+ 374 015b 02       		.uleb128 0x2
+ 375 015c 91       		.byte	0x91
+ 376 015d 74       		.sleb128 -12
+ 377 015e 0B       		.uleb128 0xb
+ 378 015f 01       		.uleb128 0x1
+ 379 0160 52       		.byte	0x52
+ 380 0161 01       		.uleb128 0x1
+ 381 0162 32       		.byte	0x32
+ 382 0163 0B       		.uleb128 0xb
+ 383 0164 01       		.uleb128 0x1
+ 384 0165 53       		.byte	0x53
+ 385 0166 01       		.uleb128 0x1
+ 386 0167 30       		.byte	0x30
+ 387 0168 00       		.byte	0
+ 388 0169 0C       		.uleb128 0xc
+ 389 016a 18000000 		.4byte	.LVL2
+ 390 016e 93020000 		.4byte	0x293
+ 391 0172 0C       		.uleb128 0xc
+ 392 0173 20000000 		.4byte	.LVL3
+ 393 0177 9F020000 		.4byte	0x29f
+ 394 017b 0C       		.uleb128 0xc
+ 395 017c 24000000 		.4byte	.LVL4
+ 396 0180 AB020000 		.4byte	0x2ab
+ 397 0184 00       		.byte	0
+ 398 0185 0D       		.uleb128 0xd
+ 399 0186 86000000 		.4byte	0x86
+ 400 018a 95010000 		.4byte	0x195
+ 401 018e 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 9
+
+
+ 402 018f 72000000 		.4byte	0x72
+ 403 0193 01       		.byte	0x1
+ 404 0194 00       		.byte	0
+ 405 0195 06       		.uleb128 0x6
+ 406 0196 1C000000 		.4byte	.LASF27
+ 407 019a 01       		.byte	0x1
+ 408 019b 21       		.byte	0x21
+ 409 019c 2C000000 		.4byte	0x2c
+ 410 01a0 00000000 		.4byte	.LFB37
+ 411 01a4 28000000 		.4byte	.LFE37-.LFB37
+ 412 01a8 01       		.uleb128 0x1
+ 413 01a9 9C       		.byte	0x9c
+ 414 01aa 10020000 		.4byte	0x210
+ 415 01ae 0F       		.uleb128 0xf
+ 416 01af 9E020000 		.4byte	.LASF30
+ 417 01b3 01       		.byte	0x1
+ 418 01b4 21       		.byte	0x21
+ 419 01b5 79000000 		.4byte	0x79
+ 420 01b9 39000000 		.4byte	.LLST3
+ 421 01bd 09       		.uleb128 0x9
+ 422 01be 8E000000 		.4byte	.LASF28
+ 423 01c2 01       		.byte	0x1
+ 424 01c3 23       		.byte	0x23
+ 425 01c4 AA000000 		.4byte	0xaa
+ 426 01c8 65000000 		.4byte	.LLST4
+ 427 01cc 08       		.uleb128 0x8
+ 428 01cd 5A010000 		.4byte	.LASF29
+ 429 01d1 01       		.byte	0x1
+ 430 01d2 28       		.byte	0x28
+ 431 01d3 2C000000 		.4byte	0x2c
+ 432 01d7 01       		.uleb128 0x1
+ 433 01d8 50       		.byte	0x50
+ 434 01d9 0C       		.uleb128 0xc
+ 435 01da 08000000 		.4byte	.LVL10
+ 436 01de B8000000 		.4byte	0xb8
+ 437 01e2 0A       		.uleb128 0xa
+ 438 01e3 18000000 		.4byte	.LVL12
+ 439 01e7 B7020000 		.4byte	0x2b7
+ 440 01eb FF010000 		.4byte	0x1ff
+ 441 01ef 0B       		.uleb128 0xb
+ 442 01f0 01       		.uleb128 0x1
+ 443 01f1 50       		.byte	0x50
+ 444 01f2 02       		.uleb128 0x2
+ 445 01f3 74       		.byte	0x74
+ 446 01f4 00       		.sleb128 0
+ 447 01f5 0B       		.uleb128 0xb
+ 448 01f6 01       		.uleb128 0x1
+ 449 01f7 51       		.byte	0x51
+ 450 01f8 05       		.uleb128 0x5
+ 451 01f9 03       		.byte	0x3
+ 452 01fa 00000000 		.4byte	.LC0
+ 453 01fe 00       		.byte	0
+ 454 01ff 10       		.uleb128 0x10
+ 455 0200 22000000 		.4byte	.LVL13
+ 456 0204 C2020000 		.4byte	0x2c2
+ 457 0208 0B       		.uleb128 0xb
+ 458 0209 01       		.uleb128 0x1
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 10
+
+
+ 459 020a 50       		.byte	0x50
+ 460 020b 02       		.uleb128 0x2
+ 461 020c 74       		.byte	0x74
+ 462 020d 00       		.sleb128 0
+ 463 020e 00       		.byte	0
+ 464 020f 00       		.byte	0
+ 465 0210 11       		.uleb128 0x11
+ 466 0211 97010000 		.4byte	.LASF42
+ 467 0215 01       		.byte	0x1
+ 468 0216 2C       		.byte	0x2c
+ 469 0217 00000000 		.4byte	.LFB38
+ 470 021b 22000000 		.4byte	.LFE38-.LFB38
+ 471 021f 01       		.uleb128 0x1
+ 472 0220 9C       		.byte	0x9c
+ 473 0221 77020000 		.4byte	0x277
+ 474 0225 08       		.uleb128 0x8
+ 475 0226 9E020000 		.4byte	.LASF30
+ 476 022a 01       		.byte	0x1
+ 477 022b 2E       		.byte	0x2e
+ 478 022c 77020000 		.4byte	0x277
+ 479 0230 02       		.uleb128 0x2
+ 480 0231 91       		.byte	0x91
+ 481 0232 68       		.sleb128 -24
+ 482 0233 09       		.uleb128 0x9
+ 483 0234 C9020000 		.4byte	.LASF31
+ 484 0238 01       		.byte	0x1
+ 485 0239 2F       		.byte	0x2f
+ 486 023a 2C000000 		.4byte	0x2c
+ 487 023e 78000000 		.4byte	.LLST5
+ 488 0242 12       		.uleb128 0x12
+ 489 0243 0C000000 		.4byte	.LBB2
+ 490 0247 12000000 		.4byte	.LBE2-.LBB2
+ 491 024b 66020000 		.4byte	0x266
+ 492 024f 13       		.uleb128 0x13
+ 493 0250 6900     		.ascii	"i\000"
+ 494 0252 01       		.byte	0x1
+ 495 0253 30       		.byte	0x30
+ 496 0254 2C000000 		.4byte	0x2c
+ 497 0258 96000000 		.4byte	.LLST6
+ 498 025c 0C       		.uleb128 0xc
+ 499 025d 18000000 		.4byte	.LVL18
+ 500 0261 CD020000 		.4byte	0x2cd
+ 501 0265 00       		.byte	0
+ 502 0266 10       		.uleb128 0x10
+ 503 0267 0A000000 		.4byte	.LVL15
+ 504 026b 95010000 		.4byte	0x195
+ 505 026f 0B       		.uleb128 0xb
+ 506 0270 01       		.uleb128 0x1
+ 507 0271 50       		.byte	0x50
+ 508 0272 02       		.uleb128 0x2
+ 509 0273 7D       		.byte	0x7d
+ 510 0274 00       		.sleb128 0
+ 511 0275 00       		.byte	0
+ 512 0276 00       		.byte	0
+ 513 0277 0D       		.uleb128 0xd
+ 514 0278 7F000000 		.4byte	0x7f
+ 515 027c 87020000 		.4byte	0x287
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 11
+
+
+ 516 0280 0E       		.uleb128 0xe
+ 517 0281 72000000 		.4byte	0x72
+ 518 0285 05       		.byte	0x5
+ 519 0286 00       		.byte	0
+ 520 0287 14       		.uleb128 0x14
+ 521 0288 00000000 		.4byte	.LASF32
+ 522 028c 00000000 		.4byte	.LASF32
+ 523 0290 03       		.byte	0x3
+ 524 0291 1401     		.2byte	0x114
+ 525 0293 14       		.uleb128 0x14
+ 526 0294 32000000 		.4byte	.LASF33
+ 527 0298 32000000 		.4byte	.LASF33
+ 528 029c 03       		.byte	0x3
+ 529 029d 0F01     		.2byte	0x10f
+ 530 029f 14       		.uleb128 0x14
+ 531 02a0 B4000000 		.4byte	.LASF34
+ 532 02a4 B4000000 		.4byte	.LASF34
+ 533 02a8 03       		.byte	0x3
+ 534 02a9 1001     		.2byte	0x110
+ 535 02ab 14       		.uleb128 0x14
+ 536 02ac F1000000 		.4byte	.LASF35
+ 537 02b0 F1000000 		.4byte	.LASF35
+ 538 02b4 03       		.byte	0x3
+ 539 02b5 1701     		.2byte	0x117
+ 540 02b7 15       		.uleb128 0x15
+ 541 02b8 0B030000 		.4byte	.LASF36
+ 542 02bc 0B030000 		.4byte	.LASF36
+ 543 02c0 04       		.byte	0x4
+ 544 02c1 E7       		.byte	0xe7
+ 545 02c2 15       		.uleb128 0x15
+ 546 02c3 13030000 		.4byte	.LASF37
+ 547 02c7 13030000 		.4byte	.LASF37
+ 548 02cb 05       		.byte	0x5
+ 549 02cc 21       		.byte	0x21
+ 550 02cd 14       		.uleb128 0x14
+ 551 02ce 4D000000 		.4byte	.LASF38
+ 552 02d2 4D000000 		.4byte	.LASF38
+ 553 02d6 06       		.byte	0x6
+ 554 02d7 3A03     		.2byte	0x33a
+ 555 02d9 00       		.byte	0
+ 556              		.section	.debug_abbrev,"",%progbits
+ 557              	.Ldebug_abbrev0:
+ 558 0000 01       		.uleb128 0x1
+ 559 0001 11       		.uleb128 0x11
+ 560 0002 01       		.byte	0x1
+ 561 0003 25       		.uleb128 0x25
+ 562 0004 0E       		.uleb128 0xe
+ 563 0005 13       		.uleb128 0x13
+ 564 0006 0B       		.uleb128 0xb
+ 565 0007 03       		.uleb128 0x3
+ 566 0008 0E       		.uleb128 0xe
+ 567 0009 1B       		.uleb128 0x1b
+ 568 000a 0E       		.uleb128 0xe
+ 569 000b 55       		.uleb128 0x55
+ 570 000c 17       		.uleb128 0x17
+ 571 000d 11       		.uleb128 0x11
+ 572 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 12
+
+
+ 573 000f 10       		.uleb128 0x10
+ 574 0010 17       		.uleb128 0x17
+ 575 0011 00       		.byte	0
+ 576 0012 00       		.byte	0
+ 577 0013 02       		.uleb128 0x2
+ 578 0014 24       		.uleb128 0x24
+ 579 0015 00       		.byte	0
+ 580 0016 0B       		.uleb128 0xb
+ 581 0017 0B       		.uleb128 0xb
+ 582 0018 3E       		.uleb128 0x3e
+ 583 0019 0B       		.uleb128 0xb
+ 584 001a 03       		.uleb128 0x3
+ 585 001b 08       		.uleb128 0x8
+ 586 001c 00       		.byte	0
+ 587 001d 00       		.byte	0
+ 588 001e 03       		.uleb128 0x3
+ 589 001f 24       		.uleb128 0x24
+ 590 0020 00       		.byte	0
+ 591 0021 0B       		.uleb128 0xb
+ 592 0022 0B       		.uleb128 0xb
+ 593 0023 3E       		.uleb128 0x3e
+ 594 0024 0B       		.uleb128 0xb
+ 595 0025 03       		.uleb128 0x3
+ 596 0026 0E       		.uleb128 0xe
+ 597 0027 00       		.byte	0
+ 598 0028 00       		.byte	0
+ 599 0029 04       		.uleb128 0x4
+ 600 002a 0F       		.uleb128 0xf
+ 601 002b 00       		.byte	0
+ 602 002c 0B       		.uleb128 0xb
+ 603 002d 0B       		.uleb128 0xb
+ 604 002e 49       		.uleb128 0x49
+ 605 002f 13       		.uleb128 0x13
+ 606 0030 00       		.byte	0
+ 607 0031 00       		.byte	0
+ 608 0032 05       		.uleb128 0x5
+ 609 0033 16       		.uleb128 0x16
+ 610 0034 00       		.byte	0
+ 611 0035 03       		.uleb128 0x3
+ 612 0036 0E       		.uleb128 0xe
+ 613 0037 3A       		.uleb128 0x3a
+ 614 0038 0B       		.uleb128 0xb
+ 615 0039 3B       		.uleb128 0x3b
+ 616 003a 05       		.uleb128 0x5
+ 617 003b 49       		.uleb128 0x49
+ 618 003c 13       		.uleb128 0x13
+ 619 003d 00       		.byte	0
+ 620 003e 00       		.byte	0
+ 621 003f 06       		.uleb128 0x6
+ 622 0040 2E       		.uleb128 0x2e
+ 623 0041 01       		.byte	0x1
+ 624 0042 3F       		.uleb128 0x3f
+ 625 0043 19       		.uleb128 0x19
+ 626 0044 03       		.uleb128 0x3
+ 627 0045 0E       		.uleb128 0xe
+ 628 0046 3A       		.uleb128 0x3a
+ 629 0047 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 13
+
+
+ 630 0048 3B       		.uleb128 0x3b
+ 631 0049 0B       		.uleb128 0xb
+ 632 004a 27       		.uleb128 0x27
+ 633 004b 19       		.uleb128 0x19
+ 634 004c 49       		.uleb128 0x49
+ 635 004d 13       		.uleb128 0x13
+ 636 004e 11       		.uleb128 0x11
+ 637 004f 01       		.uleb128 0x1
+ 638 0050 12       		.uleb128 0x12
+ 639 0051 06       		.uleb128 0x6
+ 640 0052 40       		.uleb128 0x40
+ 641 0053 18       		.uleb128 0x18
+ 642 0054 9642     		.uleb128 0x2116
+ 643 0056 19       		.uleb128 0x19
+ 644 0057 01       		.uleb128 0x1
+ 645 0058 13       		.uleb128 0x13
+ 646 0059 00       		.byte	0
+ 647 005a 00       		.byte	0
+ 648 005b 07       		.uleb128 0x7
+ 649 005c 34       		.uleb128 0x34
+ 650 005d 00       		.byte	0
+ 651 005e 03       		.uleb128 0x3
+ 652 005f 0E       		.uleb128 0xe
+ 653 0060 3A       		.uleb128 0x3a
+ 654 0061 0B       		.uleb128 0xb
+ 655 0062 3B       		.uleb128 0x3b
+ 656 0063 0B       		.uleb128 0xb
+ 657 0064 49       		.uleb128 0x49
+ 658 0065 13       		.uleb128 0x13
+ 659 0066 00       		.byte	0
+ 660 0067 00       		.byte	0
+ 661 0068 08       		.uleb128 0x8
+ 662 0069 34       		.uleb128 0x34
+ 663 006a 00       		.byte	0
+ 664 006b 03       		.uleb128 0x3
+ 665 006c 0E       		.uleb128 0xe
+ 666 006d 3A       		.uleb128 0x3a
+ 667 006e 0B       		.uleb128 0xb
+ 668 006f 3B       		.uleb128 0x3b
+ 669 0070 0B       		.uleb128 0xb
+ 670 0071 49       		.uleb128 0x49
+ 671 0072 13       		.uleb128 0x13
+ 672 0073 02       		.uleb128 0x2
+ 673 0074 18       		.uleb128 0x18
+ 674 0075 00       		.byte	0
+ 675 0076 00       		.byte	0
+ 676 0077 09       		.uleb128 0x9
+ 677 0078 34       		.uleb128 0x34
+ 678 0079 00       		.byte	0
+ 679 007a 03       		.uleb128 0x3
+ 680 007b 0E       		.uleb128 0xe
+ 681 007c 3A       		.uleb128 0x3a
+ 682 007d 0B       		.uleb128 0xb
+ 683 007e 3B       		.uleb128 0x3b
+ 684 007f 0B       		.uleb128 0xb
+ 685 0080 49       		.uleb128 0x49
+ 686 0081 13       		.uleb128 0x13
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 14
+
+
+ 687 0082 02       		.uleb128 0x2
+ 688 0083 17       		.uleb128 0x17
+ 689 0084 00       		.byte	0
+ 690 0085 00       		.byte	0
+ 691 0086 0A       		.uleb128 0xa
+ 692 0087 898201   		.uleb128 0x4109
+ 693 008a 01       		.byte	0x1
+ 694 008b 11       		.uleb128 0x11
+ 695 008c 01       		.uleb128 0x1
+ 696 008d 31       		.uleb128 0x31
+ 697 008e 13       		.uleb128 0x13
+ 698 008f 01       		.uleb128 0x1
+ 699 0090 13       		.uleb128 0x13
+ 700 0091 00       		.byte	0
+ 701 0092 00       		.byte	0
+ 702 0093 0B       		.uleb128 0xb
+ 703 0094 8A8201   		.uleb128 0x410a
+ 704 0097 00       		.byte	0
+ 705 0098 02       		.uleb128 0x2
+ 706 0099 18       		.uleb128 0x18
+ 707 009a 9142     		.uleb128 0x2111
+ 708 009c 18       		.uleb128 0x18
+ 709 009d 00       		.byte	0
+ 710 009e 00       		.byte	0
+ 711 009f 0C       		.uleb128 0xc
+ 712 00a0 898201   		.uleb128 0x4109
+ 713 00a3 00       		.byte	0
+ 714 00a4 11       		.uleb128 0x11
+ 715 00a5 01       		.uleb128 0x1
+ 716 00a6 31       		.uleb128 0x31
+ 717 00a7 13       		.uleb128 0x13
+ 718 00a8 00       		.byte	0
+ 719 00a9 00       		.byte	0
+ 720 00aa 0D       		.uleb128 0xd
+ 721 00ab 01       		.uleb128 0x1
+ 722 00ac 01       		.byte	0x1
+ 723 00ad 49       		.uleb128 0x49
+ 724 00ae 13       		.uleb128 0x13
+ 725 00af 01       		.uleb128 0x1
+ 726 00b0 13       		.uleb128 0x13
+ 727 00b1 00       		.byte	0
+ 728 00b2 00       		.byte	0
+ 729 00b3 0E       		.uleb128 0xe
+ 730 00b4 21       		.uleb128 0x21
+ 731 00b5 00       		.byte	0
+ 732 00b6 49       		.uleb128 0x49
+ 733 00b7 13       		.uleb128 0x13
+ 734 00b8 2F       		.uleb128 0x2f
+ 735 00b9 0B       		.uleb128 0xb
+ 736 00ba 00       		.byte	0
+ 737 00bb 00       		.byte	0
+ 738 00bc 0F       		.uleb128 0xf
+ 739 00bd 05       		.uleb128 0x5
+ 740 00be 00       		.byte	0
+ 741 00bf 03       		.uleb128 0x3
+ 742 00c0 0E       		.uleb128 0xe
+ 743 00c1 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 15
+
+
+ 744 00c2 0B       		.uleb128 0xb
+ 745 00c3 3B       		.uleb128 0x3b
+ 746 00c4 0B       		.uleb128 0xb
+ 747 00c5 49       		.uleb128 0x49
+ 748 00c6 13       		.uleb128 0x13
+ 749 00c7 02       		.uleb128 0x2
+ 750 00c8 17       		.uleb128 0x17
+ 751 00c9 00       		.byte	0
+ 752 00ca 00       		.byte	0
+ 753 00cb 10       		.uleb128 0x10
+ 754 00cc 898201   		.uleb128 0x4109
+ 755 00cf 01       		.byte	0x1
+ 756 00d0 11       		.uleb128 0x11
+ 757 00d1 01       		.uleb128 0x1
+ 758 00d2 31       		.uleb128 0x31
+ 759 00d3 13       		.uleb128 0x13
+ 760 00d4 00       		.byte	0
+ 761 00d5 00       		.byte	0
+ 762 00d6 11       		.uleb128 0x11
+ 763 00d7 2E       		.uleb128 0x2e
+ 764 00d8 01       		.byte	0x1
+ 765 00d9 3F       		.uleb128 0x3f
+ 766 00da 19       		.uleb128 0x19
+ 767 00db 03       		.uleb128 0x3
+ 768 00dc 0E       		.uleb128 0xe
+ 769 00dd 3A       		.uleb128 0x3a
+ 770 00de 0B       		.uleb128 0xb
+ 771 00df 3B       		.uleb128 0x3b
+ 772 00e0 0B       		.uleb128 0xb
+ 773 00e1 27       		.uleb128 0x27
+ 774 00e2 19       		.uleb128 0x19
+ 775 00e3 11       		.uleb128 0x11
+ 776 00e4 01       		.uleb128 0x1
+ 777 00e5 12       		.uleb128 0x12
+ 778 00e6 06       		.uleb128 0x6
+ 779 00e7 40       		.uleb128 0x40
+ 780 00e8 18       		.uleb128 0x18
+ 781 00e9 9742     		.uleb128 0x2117
+ 782 00eb 19       		.uleb128 0x19
+ 783 00ec 01       		.uleb128 0x1
+ 784 00ed 13       		.uleb128 0x13
+ 785 00ee 00       		.byte	0
+ 786 00ef 00       		.byte	0
+ 787 00f0 12       		.uleb128 0x12
+ 788 00f1 0B       		.uleb128 0xb
+ 789 00f2 01       		.byte	0x1
+ 790 00f3 11       		.uleb128 0x11
+ 791 00f4 01       		.uleb128 0x1
+ 792 00f5 12       		.uleb128 0x12
+ 793 00f6 06       		.uleb128 0x6
+ 794 00f7 01       		.uleb128 0x1
+ 795 00f8 13       		.uleb128 0x13
+ 796 00f9 00       		.byte	0
+ 797 00fa 00       		.byte	0
+ 798 00fb 13       		.uleb128 0x13
+ 799 00fc 34       		.uleb128 0x34
+ 800 00fd 00       		.byte	0
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 16
+
+
+ 801 00fe 03       		.uleb128 0x3
+ 802 00ff 08       		.uleb128 0x8
+ 803 0100 3A       		.uleb128 0x3a
+ 804 0101 0B       		.uleb128 0xb
+ 805 0102 3B       		.uleb128 0x3b
+ 806 0103 0B       		.uleb128 0xb
+ 807 0104 49       		.uleb128 0x49
+ 808 0105 13       		.uleb128 0x13
+ 809 0106 02       		.uleb128 0x2
+ 810 0107 17       		.uleb128 0x17
+ 811 0108 00       		.byte	0
+ 812 0109 00       		.byte	0
+ 813 010a 14       		.uleb128 0x14
+ 814 010b 2E       		.uleb128 0x2e
+ 815 010c 00       		.byte	0
+ 816 010d 3F       		.uleb128 0x3f
+ 817 010e 19       		.uleb128 0x19
+ 818 010f 3C       		.uleb128 0x3c
+ 819 0110 19       		.uleb128 0x19
+ 820 0111 6E       		.uleb128 0x6e
+ 821 0112 0E       		.uleb128 0xe
+ 822 0113 03       		.uleb128 0x3
+ 823 0114 0E       		.uleb128 0xe
+ 824 0115 3A       		.uleb128 0x3a
+ 825 0116 0B       		.uleb128 0xb
+ 826 0117 3B       		.uleb128 0x3b
+ 827 0118 05       		.uleb128 0x5
+ 828 0119 00       		.byte	0
+ 829 011a 00       		.byte	0
+ 830 011b 15       		.uleb128 0x15
+ 831 011c 2E       		.uleb128 0x2e
+ 832 011d 00       		.byte	0
+ 833 011e 3F       		.uleb128 0x3f
+ 834 011f 19       		.uleb128 0x19
+ 835 0120 3C       		.uleb128 0x3c
+ 836 0121 19       		.uleb128 0x19
+ 837 0122 6E       		.uleb128 0x6e
+ 838 0123 0E       		.uleb128 0xe
+ 839 0124 03       		.uleb128 0x3
+ 840 0125 0E       		.uleb128 0xe
+ 841 0126 3A       		.uleb128 0x3a
+ 842 0127 0B       		.uleb128 0xb
+ 843 0128 3B       		.uleb128 0x3b
+ 844 0129 0B       		.uleb128 0xb
+ 845 012a 00       		.byte	0
+ 846 012b 00       		.byte	0
+ 847 012c 00       		.byte	0
+ 848              		.section	.debug_loc,"",%progbits
+ 849              	.Ldebug_loc0:
+ 850              	.LLST0:
+ 851 0000 10000000 		.4byte	.LVL0
+ 852 0004 14000000 		.4byte	.LVL1
+ 853 0008 0100     		.2byte	0x1
+ 854 000a 50       		.byte	0x50
+ 855 000b 00000000 		.4byte	0
+ 856 000f 00000000 		.4byte	0
+ 857              	.LLST1:
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 17
+
+
+ 858 0013 2E000000 		.4byte	.LVL5
+ 859 0017 31000000 		.4byte	.LVL6-1
+ 860 001b 0100     		.2byte	0x1
+ 861 001d 50       		.byte	0x50
+ 862 001e 00000000 		.4byte	0
+ 863 0022 00000000 		.4byte	0
+ 864              	.LLST2:
+ 865 0026 32000000 		.4byte	.LVL6
+ 866 002a 37000000 		.4byte	.LVL7-1
+ 867 002e 0100     		.2byte	0x1
+ 868 0030 50       		.byte	0x50
+ 869 0031 00000000 		.4byte	0
+ 870 0035 00000000 		.4byte	0
+ 871              	.LLST3:
+ 872 0039 00000000 		.4byte	.LVL9
+ 873 003d 07000000 		.4byte	.LVL10-1
+ 874 0041 0100     		.2byte	0x1
+ 875 0043 50       		.byte	0x50
+ 876 0044 07000000 		.4byte	.LVL10-1
+ 877 0048 22000000 		.4byte	.LVL14
+ 878 004c 0100     		.2byte	0x1
+ 879 004e 54       		.byte	0x54
+ 880 004f 22000000 		.4byte	.LVL14
+ 881 0053 28000000 		.4byte	.LFE37
+ 882 0057 0400     		.2byte	0x4
+ 883 0059 F3       		.byte	0xf3
+ 884 005a 01       		.uleb128 0x1
+ 885 005b 50       		.byte	0x50
+ 886 005c 9F       		.byte	0x9f
+ 887 005d 00000000 		.4byte	0
+ 888 0061 00000000 		.4byte	0
+ 889              	.LLST4:
+ 890 0065 08000000 		.4byte	.LVL10
+ 891 0069 0B000000 		.4byte	.LVL11-1
+ 892 006d 0100     		.2byte	0x1
+ 893 006f 50       		.byte	0x50
+ 894 0070 00000000 		.4byte	0
+ 895 0074 00000000 		.4byte	0
+ 896              	.LLST5:
+ 897 0078 0C000000 		.4byte	.LVL16
+ 898 007c 10000000 		.4byte	.LVL17
+ 899 0080 0100     		.2byte	0x1
+ 900 0082 50       		.byte	0x50
+ 901 0083 10000000 		.4byte	.LVL17
+ 902 0087 20000000 		.4byte	.LVL21
+ 903 008b 0100     		.2byte	0x1
+ 904 008d 55       		.byte	0x55
+ 905 008e 00000000 		.4byte	0
+ 906 0092 00000000 		.4byte	0
+ 907              	.LLST6:
+ 908 0096 0C000000 		.4byte	.LVL16
+ 909 009a 10000000 		.4byte	.LVL17
+ 910 009e 0200     		.2byte	0x2
+ 911 00a0 30       		.byte	0x30
+ 912 00a1 9F       		.byte	0x9f
+ 913 00a2 10000000 		.4byte	.LVL17
+ 914 00a6 20000000 		.4byte	.LVL20
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 18
+
+
+ 915 00aa 0100     		.2byte	0x1
+ 916 00ac 54       		.byte	0x54
+ 917 00ad 00000000 		.4byte	0
+ 918 00b1 00000000 		.4byte	0
+ 919              		.section	.debug_aranges,"",%progbits
+ 920 0000 2C000000 		.4byte	0x2c
+ 921 0004 0200     		.2byte	0x2
+ 922 0006 00000000 		.4byte	.Ldebug_info0
+ 923 000a 04       		.byte	0x4
+ 924 000b 00       		.byte	0
+ 925 000c 0000     		.2byte	0
+ 926 000e 0000     		.2byte	0
+ 927 0010 00000000 		.4byte	.LFB36
+ 928 0014 4C000000 		.4byte	.LFE36-.LFB36
+ 929 0018 00000000 		.4byte	.LFB37
+ 930 001c 28000000 		.4byte	.LFE37-.LFB37
+ 931 0020 00000000 		.4byte	.LFB38
+ 932 0024 22000000 		.4byte	.LFE38-.LFB38
+ 933 0028 00000000 		.4byte	0
+ 934 002c 00000000 		.4byte	0
+ 935              		.section	.debug_ranges,"",%progbits
+ 936              	.Ldebug_ranges0:
+ 937 0000 00000000 		.4byte	.LFB36
+ 938 0004 4C000000 		.4byte	.LFE36
+ 939 0008 00000000 		.4byte	.LFB37
+ 940 000c 28000000 		.4byte	.LFE37
+ 941 0010 00000000 		.4byte	.LFB38
+ 942 0014 22000000 		.4byte	.LFE38
+ 943 0018 00000000 		.4byte	0
+ 944 001c 00000000 		.4byte	0
+ 945              		.section	.debug_line,"",%progbits
+ 946              	.Ldebug_line0:
+ 947 0000 4A010000 		.section	.debug_str,"MS",%progbits,1
+ 947      0200E900 
+ 947      00000201 
+ 947      FB0E0D00 
+ 947      01010101 
+ 948              	.LASF32:
+ 949 0000 4932435F 		.ascii	"I2C_TMP116_I2CMasterReadBuf\000"
+ 949      544D5031 
+ 949      31365F49 
+ 949      32434D61 
+ 949      73746572 
+ 950              	.LASF27:
+ 951 001c 746D7031 		.ascii	"tmp116_string_celsius\000"
+ 951      31365F73 
+ 951      7472696E 
+ 951      675F6365 
+ 951      6C736975 
+ 952              	.LASF33:
+ 953 0032 4932435F 		.ascii	"I2C_TMP116_I2CMasterStatus\000"
+ 953      544D5031 
+ 953      31365F49 
+ 953      32434D61 
+ 953      73746572 
+ 954              	.LASF38:
+ 955 004d 55415254 		.ascii	"UART_SpiUartWriteTxData\000"
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 19
+
+
+ 955      5F537069 
+ 955      55617274 
+ 955      57726974 
+ 955      65547844 
+ 956              	.LASF25:
+ 957 0065 746D7031 		.ascii	"tmp116_celsius\000"
+ 957      31365F63 
+ 957      656C7369 
+ 957      757300
+ 958              	.LASF19:
+ 959 0074 6932635F 		.ascii	"i2c_byte_count\000"
+ 959      62797465 
+ 959      5F636F75 
+ 959      6E7400
+ 960              	.LASF23:
+ 961 0083 6932635F 		.ascii	"i2c_counts\000"
+ 961      636F756E 
+ 961      747300
+ 962              	.LASF28:
+ 963 008e 696E745F 		.ascii	"int_temp\000"
+ 963      74656D70 
+ 963      00
+ 964              	.LASF15:
+ 965 0097 666C6F61 		.ascii	"float\000"
+ 965      7400
+ 966              	.LASF9:
+ 967 009d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 967      206C6F6E 
+ 967      6720756E 
+ 967      7369676E 
+ 967      65642069 
+ 968              	.LASF34:
+ 969 00b4 4932435F 		.ascii	"I2C_TMP116_I2CMasterClearStatus\000"
+ 969      544D5031 
+ 969      31365F49 
+ 969      32434D61 
+ 969      73746572 
+ 970              	.LASF4:
+ 971 00d4 756E7369 		.ascii	"unsigned char\000"
+ 971      676E6564 
+ 971      20636861 
+ 971      7200
+ 972              	.LASF18:
+ 973 00e2 746D7031 		.ascii	"tmp116_gnd_add\000"
+ 973      31365F67 
+ 973      6E645F61 
+ 973      646400
+ 974              	.LASF35:
+ 975 00f1 4932435F 		.ascii	"I2C_TMP116_I2CMasterClearReadBuf\000"
+ 975      544D5031 
+ 975      31365F49 
+ 975      32434D61 
+ 975      73746572 
+ 976              	.LASF8:
+ 977 0112 6C6F6E67 		.ascii	"long unsigned int\000"
+ 977      20756E73 
+ 977      69676E65 
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 20
+
+
+ 977      6420696E 
+ 977      7400
+ 978              	.LASF21:
+ 979 0124 6932635F 		.ascii	"i2c_reg_counts\000"
+ 979      7265675F 
+ 979      636F756E 
+ 979      747300
+ 980              	.LASF12:
+ 981 0133 75696E74 		.ascii	"uint8\000"
+ 981      3800
+ 982              	.LASF26:
+ 983 0139 746D7031 		.ascii	"tmp116_get_celsius\000"
+ 983      31365F67 
+ 983      65745F63 
+ 983      656C7369 
+ 983      757300
+ 984              	.LASF17:
+ 985 014c 7265675F 		.ascii	"reg_cels_conv\000"
+ 985      63656C73 
+ 985      5F636F6E 
+ 985      7600
+ 986              	.LASF29:
+ 987 015a 74656D70 		.ascii	"temp_l\000"
+ 987      5F6C00
+ 988              	.LASF16:
+ 989 0161 646F7562 		.ascii	"double\000"
+ 989      6C6500
+ 990              	.LASF5:
+ 991 0168 73686F72 		.ascii	"short int\000"
+ 991      7420696E 
+ 991      7400
+ 992              	.LASF13:
+ 993 0172 75696E74 		.ascii	"uint16\000"
+ 993      313600
+ 994              	.LASF14:
+ 995 0179 75696E74 		.ascii	"uint32\000"
+ 995      333200
+ 996              	.LASF0:
+ 997 0180 756E7369 		.ascii	"unsigned int\000"
+ 997      676E6564 
+ 997      20696E74 
+ 997      00
+ 998              	.LASF22:
+ 999 018d 6932635F 		.ascii	"i2c_error\000"
+ 999      6572726F 
+ 999      7200
+ 1000              	.LASF42:
+ 1001 0197 746D7031 		.ascii	"tmp116_uart\000"
+ 1001      31365F75 
+ 1001      61727400 
+ 1002              	.LASF39:
+ 1003 01a3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1003      43313120 
+ 1003      352E342E 
+ 1003      31203230 
+ 1003      31363036 
+ 1004 01d6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 21
+
+
+ 1004      20726576 
+ 1004      6973696F 
+ 1004      6E203233 
+ 1004      37373135 
+ 1005 0209 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1005      66756E63 
+ 1005      74696F6E 
+ 1005      2D736563 
+ 1005      74696F6E 
+ 1006              	.LASF41:
+ 1007 0231 433A5C55 		.ascii	"C:\\Users\\Intern\\Documents\\GitHub\\UV-Sticker\\P"
+ 1007      73657273 
+ 1007      5C496E74 
+ 1007      65726E5C 
+ 1007      446F6375 
+ 1008 025e 736F635C 		.ascii	"soc\\UV-Project\\UV-BB.cydsn\000"
+ 1008      55562D50 
+ 1008      726F6A65 
+ 1008      63745C55 
+ 1008      562D4242 
+ 1009              	.LASF10:
+ 1010 0279 73697A65 		.ascii	"sizetype\000"
+ 1010      74797065 
+ 1010      00
+ 1011              	.LASF1:
+ 1012 0282 6C6F6E67 		.ascii	"long long int\000"
+ 1012      206C6F6E 
+ 1012      6720696E 
+ 1012      7400
+ 1013              	.LASF11:
+ 1014 0290 63686172 		.ascii	"char\000"
+ 1014      00
+ 1015              	.LASF40:
+ 1016 0295 746D7031 		.ascii	"tmp116.c\000"
+ 1016      31362E63 
+ 1016      00
+ 1017              	.LASF30:
+ 1018 029e 746D7031 		.ascii	"tmp116_temperature\000"
+ 1018      31365F74 
+ 1018      656D7065 
+ 1018      72617475 
+ 1018      726500
+ 1019              	.LASF24:
+ 1020 02b1 63656C73 		.ascii	"celsius_counts\000"
+ 1020      6975735F 
+ 1020      636F756E 
+ 1020      747300
+ 1021              	.LASF20:
+ 1022 02c0 6932635F 		.ascii	"i2c_mode\000"
+ 1022      6D6F6465 
+ 1022      00
+ 1023              	.LASF31:
+ 1024 02c9 74656D70 		.ascii	"temp_tmp116_l\000"
+ 1024      5F746D70 
+ 1024      3131365F 
+ 1024      6C00
+ 1025              	.LASF7:
+ARM GAS  C:\Users\Intern\AppData\Local\Temp\ccDosaP8.s 			page 22
+
+
+ 1026 02d7 6C6F6E67 		.ascii	"long int\000"
+ 1026      20696E74 
+ 1026      00
+ 1027              	.LASF2:
+ 1028 02e0 6C6F6E67 		.ascii	"long double\000"
+ 1028      20646F75 
+ 1028      626C6500 
+ 1029              	.LASF3:
+ 1030 02ec 7369676E 		.ascii	"signed char\000"
+ 1030      65642063 
+ 1030      68617200 
+ 1031              	.LASF6:
+ 1032 02f8 73686F72 		.ascii	"short unsigned int\000"
+ 1032      7420756E 
+ 1032      7369676E 
+ 1032      65642069 
+ 1032      6E7400
+ 1033              	.LASF36:
+ 1034 030b 73707269 		.ascii	"sprintf\000"
+ 1034      6E746600 
+ 1035              	.LASF37:
+ 1036 0313 7374726C 		.ascii	"strlen\000"
+ 1036      656E00
+ 1037              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

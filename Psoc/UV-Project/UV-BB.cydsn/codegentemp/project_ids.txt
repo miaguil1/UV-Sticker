@@ -1,0 +1,10 @@
+C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cyprj|283467be-c0e9-49ac-813d-ba66473b3ae9
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|51660b97-1ab7-4bf3-b771-b24b2517b9ca
+C:\Users\Intern\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|f3e938ec-df10-4936-955e-b9473f957f56
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|37fccee5-931b-496e-88d3-1aa8903b110a
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|526e400e-e772-41de-9231-32c51aad6d5c
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|25aabc0f-f63d-486f-877a-8babba014d55
+C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-BB.cydsn\UV-BB.cyprj|ed132811-e196-4625-b363-33bdc86106e7
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\dev\psoc4\PSoC4AnalogDevice\psoc4arch.cydsn\psoc4arch.cyprj|9fe52fee-f529-4d62-8ded-d03659b087a9
+C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\BLE_Temperature_Measurement02.cydsn\BLE_Temperature_Measurement02.cyprj|c239ce9e-bff6-4eb7-9073-3afdd961d872
+C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|ce834679-64b8-4cef-bb83-eeff19a01f84

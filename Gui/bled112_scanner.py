@@ -1,6 +1,35 @@
-import sys, optparse, serial, struct, time, datetime, re, signal
+#!/usr/bin/env python
 
-__version__ = "08-03-2017"
+""" Barebones BGAPI scanner script for Bluegiga BLE modules
+
+This script is designed to be used with a BGAPI-enabled Bluetooth Smart device
+from Bluegiga, probably a BLED112 but anything that is connected to a serial
+port (real or virtual) and can "speak" the BGAPI protocol. It is tuned for
+usable defaults when used on a Raspberry Pi, but can easily be used on other
+platforms, including Windows or OS X.
+
+Note that the command functions do *not* incorporate the extra preceding length
+byte required when using "packet" mode (only available on USART peripheral ports
+on the BLE112/BLE113 module, not applicable to the BLED112). It is built so you
+can simply plug in a BLED112 and go, but other kinds of usage may require small
+modifications.
+
+Changelog:
+    2013-04-07 - Fixed 128-bit UUID filters
+               - Added more verbose output on startup
+               - Added "friendly mode" output argument
+               - Added "quiet mode" output argument
+               - Improved comments in code
+    2013-03-30 - Initial release
+
+"""
+
+__author__ = "Jeff Rowberg"
+__license__ = "MIT"
+__version__ = "2013-04-07"
+__email__ = "jeff@rowberg.net"
+
+import sys, optparse, serial, struct, time, datetime, re, signal
 
 options = []
 filter_uuid = []
@@ -74,18 +103,29 @@ def main():
     # process script arguments
     p = MyParser(description='Bluetooth Smart Scanner script for Bluegiga BLED112 v2013-03-30', epilog=
 """Examples:
+
     bled112_scanner.py
+
 \tDefault options, passive scan, display all devices
+
     bled112_scanner.py -p /dev/ttyUSB0 -d sd
+
 \tUse ttyUSB0, display only sender MAC address and ad data payload
+
     bled112_scanner.py -u 1809 -u 180D
+
 \tDisplay only devices advertising Health Thermometer service (0x1809)
 \tor the Heart Rate service (0x180D)
+
     bled112_scanner.py -m 00:07:80 -m 08:57:82:bb:27:37
+
 \tDisplay only devices with a Bluetooth address (MAC) starting with the
 \tBluegiga OUI (00:07:80), or exactly matching 08:57:82:bb:27:37
+
 Sample Output Explanation:
+
     1364699494.574 -57 0 000780814494 0 255 02010603030918
+
     't' (Unix time):\t1364699464.574, 1364699591.128, etc.
     'r' (RSSI value):\t-57, -80, -92, etc.
     'p' (Packet type):\t0 (advertisement), 4 (scan response)
@@ -94,6 +134,7 @@ Sample Output Explanation:
     'b' (Bond status):\t255 (no bond), 0 to 15 if bonded
     'd' (Data payload):\t02010603030918, etc.
             See BT4.0 Core Spec for details about ad packet format
+
 """
     )
 
@@ -145,15 +186,15 @@ Sample Output Explanation:
         if re.search('[^a-fA-F0-9:]', arg):
             p.print_help()
             print("\n================================================================")
-            print("Invalid MAC filter argument '%s'\n-->must be in the form AA:BB:CC:DD:EE:FF" % arg)
+            print(("Invalid MAC filter argument '%s'\n-->must be in the form AA:BB:CC:DD:EE:FF" % arg))
             print("================================================================")
             exit(1)
         arg2 = arg.replace(":", "").upper()
         if (len(arg2) % 2) == 1:
             p.print_help()
-            print ("\n================================================================")
-            print ("Invalid MAC filter argument '%s'\n--> must be 1-6 full bytes in 0-padded hex form (00:01:02:03:04:05)" % arg)
-            print ("================================================================")
+            print("\n================================================================")
+            print(("Invalid MAC filter argument '%s'\n--> must be 1-6 full bytes in 0-padded hex form (00:01:02:03:04:05)" % arg))
+            print("================================================================")
             exit(1)
         mac = []
         for i in range(0, len(arg2), 2):
@@ -164,16 +205,16 @@ Sample Output Explanation:
     for arg in options.uuid:
         if re.search('[^a-fA-F0-9:]', arg):
             p.print_help()
-            print ("\n================================================================")
-            print ("Invalid UUID filter argument '%s'\n--> must be 2 or 16 full bytes in 0-padded hex form (180B or 0123456789abcdef0123456789abcdef)" % arg)
-            print ("================================================================")
+            print("\n================================================================")
+            print(("Invalid UUID filter argument '%s'\n--> must be 2 or 16 full bytes in 0-padded hex form (180B or 0123456789abcdef0123456789abcdef)" % arg))
+            print("================================================================")
             exit(1)
         arg2 = arg.replace(":", "").upper()
         if len(arg2) != 4 and len(arg2) != 32:
             p.print_help()
-            print ("\n================================================================")
-            print ("Invalid UUID filter argument '%s'\n--> must be 2 or 16 full bytes in 0-padded hex form (180B or 0123456789abcdef0123456789abcdef)" % arg)
-            print ("================================================================")
+            print("\n================================================================")
+            print(("Invalid UUID filter argument '%s'\n--> must be 2 or 16 full bytes in 0-padded hex form (180B or 0123456789abcdef0123456789abcdef)" % arg))
+            print("================================================================")
             exit(1)
         uuid = []
         for i in range(0, len(arg2), 2):
@@ -184,9 +225,9 @@ Sample Output Explanation:
     filter_rssi = abs(int(options.rssi))
     if filter_rssi > 0 and (filter_rssi < 20 or filter_rssi > 110):
         p.print_help()
-        print ("\n================================================================")
-        print ("Invalid RSSI filter argument '%s'\n--> must be between 20 and 110" % filter_rssi)
-        print ("================================================================")
+        print("\n================================================================")
+        print(("Invalid RSSI filter argument '%s'\n--> must be between 20 and 110" % filter_rssi))
+        print("================================================================")
         exit(1)
 
     # validate field output options
@@ -194,40 +235,40 @@ Sample Output Explanation:
     if re.search('[^trpsabd]', options.display):
         p.print_help()
         print("\n================================================================")
-        print("Invalid display options '%s'\n--> must be some combination of 't', 'r', 'p', 's', 'a', 'b', 'd'" % options.display)
+        print(("Invalid display options '%s'\n--> must be some combination of 't', 'r', 'p', 's', 'a', 'b', 'd'" % options.display))
         print("================================================================")
         exit(1)
 
     # display scan parameter summary, if not in quiet mode
     if not(options.quiet):
         print("================================================================")
-        print("BLED112 Scanner for Python v%s" % __version__)
+        print(("BLED112 Scanner for Python v%s" % __version__))
         print("================================================================")
         #p.set_defaults(port="/dev/ttyACM0", baud=115200, interval=0xC8, window=0xC8, display="trpsabd", uuid=[], mac=[], rssi=0, active=False, quiet=False, friendly=False)
-        print("Serial port:\t%s" % options.port)
-        print("Baud rate:\t%s" % options.baud)
-        print("Scan interval:\t%d (%.02f ms)" % (options.interval, options.interval * 1.25))
-        print("Scan window:\t%d (%.02f ms)" % (options.window, options.window * 1.25))
-        print("Scan type:\t%s" % ['Passive', 'Active'][options.active])
-        print("UUID filters:\t",)
+        print(("Serial port:\t%s" % options.port))
+        print(("Baud rate:\t%s" % options.baud))
+        print(("Scan interval:\t%d (%.02f ms)" % (options.interval, options.interval * 1.25)))
+        print(("Scan window:\t%d (%.02f ms)" % (options.window, options.window * 1.25)))
+        print(("Scan type:\t%s" % ['Passive', 'Active'][options.active]))
+        print(("UUID filters:\t",))
         if len(filter_uuid) > 0:
-            print("0x%s" % ", 0x".join([''.join(['%02X' % b for b in uuid]) for uuid in filter_uuid]))
+            print(("0x%s" % ", 0x".join([''.join(['%02X' % b for b in uuid]) for uuid in filter_uuid])))
         else:
             print("None")
-        print("MAC filter(s):\t",)
+        print(("MAC filter(s):\t",))
         if len(filter_mac) > 0:
-            print(", ".join([':'.join(['%02X' % b for b in mac]) for mac in filter_mac]))
+            print((", ".join([':'.join(['%02X' % b for b in mac]) for mac in filter_mac])))
         else:
             print("None")
-        print("RSSI filter:\t",)
+        print(("RSSI filter:\t",))
         if filter_rssi > 0:
-            print("-%d dBm minimum"% filter_rssi)
+            print(("-%d dBm minimum"% filter_rssi))
         else:
             print("None")
-        print("Display fields:\t-",)
-        field_dict = {'t':'Time', 'r':'RSSI', 'p':'Packet type', 's':'Sender MAC', 'a':'Address type', 'b':'Bond status', 'd':'Payload data'}
-        print("\n\t\t- ".join([field_dict[c] for c in options.display]))
-        print("Friendly mode:\t%s" % ['Disabled', 'Enabled'][options.friendly])
+        print(("Display fields:\t-",))
+        field_dict = { 't':'Time', 'r':'RSSI', 'p':'Packet type', 's':'Sender MAC', 'a':'Address type', 'b':'Bond status', 'd':'Payload data' }
+        print(("\n\t\t- ".join([field_dict[c] for c in options.display])))
+        print(("Friendly mode:\t%s" % ['Disabled', 'Enabled'][options.friendly]))
         print("----------------------------------------------------------------")
         print("Starting scan for BLE advertisements...")
 
@@ -236,7 +277,7 @@ Sample Output Explanation:
         ser = serial.Serial(port=options.port, baudrate=options.baud, timeout=1)
     except serial.SerialException as e:
         print("\n================================================================")
-        print("Port error (name='%s', baud='%ld'): %s" % (options.port, options.baud, e))
+        print(("Port error (name='%s', baud='%ld'): %s" % (options.port, options.baud, e)))
         print("================================================================")
         exit(2)
 
@@ -311,15 +352,15 @@ def bgapi_parse(b):
     if bgapi_rx_expected_length > 0 and len(bgapi_rx_buffer) == bgapi_rx_expected_length:
         #print '<=[ ' + ' '.join(['%02X' % b for b in bgapi_rx_buffer ]) + ' ]'
         packet_type, payload_length, packet_class, packet_command = bgapi_rx_buffer[:4]
-        bgapi_rx_payload = ''.join(chr(i) for i in bgapi_rx_buffer[4:])
+        bgapi_rx_payload = bytes(bgapi_rx_buffer[4:])
         if packet_type & 0x80 == 0x00: # response
             bgapi_filler = 0
         else: # event
             if packet_class == 0x06: # gap
                 if packet_command == 0x00: # scan_response
                     rssi, packet_type, sender, address_type, bond, data_len = struct.unpack('<bB6sBBB', bgapi_rx_payload[:11])
-                    sender = [ord(b) for b in sender]
-                    data_data = [ord(b) for b in bgapi_rx_payload[11:]]
+                    sender = [b for b in sender]
+                    data_data = [b for b in bgapi_rx_payload[11:]]
                     display = 1
 
                     # parse all ad fields from ad packet
@@ -344,13 +385,13 @@ def bgapi_parse(b):
                                 if this_field[0] == 0x01: # flags
                                     ad_flags = this_field[1]
                                 if this_field[0] == 0x02 or this_field[0] == 0x03: # partial or complete list of 16-bit UUIDs
-                                    for i in range((len(this_field) - 1) / 2):
+                                    for i in range(int((len(this_field) - 1) / 2)):
                                         ad_services.append(this_field[-1 - i*2 : -3 - i*2 : -1])
                                 if this_field[0] == 0x04 or this_field[0] == 0x05: # partial or complete list of 32-bit UUIDs
-                                    for i in range((len(this_field) - 1) / 4):
+                                    for i in range(int((len(this_field) - 1) / 4)):
                                         ad_services.append(this_field[-1 - i*4 : -5 - i*4 : -1])
                                 if this_field[0] == 0x06 or this_field[0] == 0x07: # partial or complete list of 128-bit UUIDs
-                                    for i in range((len(this_field) - 1) / 16):
+                                    for i in range(int((len(this_field) - 1) / 16)):
                                         ad_services.append(this_field[-1 - i*16 : -17 - i*16 : -1])
                                 if this_field[0] == 0x08 or this_field[0] == 0x09: # shortened or complete local name
                                     ad_local_name = this_field[1:]
@@ -399,7 +440,7 @@ def bgapi_parse(b):
                             elif c == 'd':
                                 disp_list.append("%s" % ''.join(['%02X' % b for b in data_data]))
 
-                        print(' '.join(disp_list))
+                        print((' '.join(disp_list)))
 
         bgapi_rx_buffer = []
 

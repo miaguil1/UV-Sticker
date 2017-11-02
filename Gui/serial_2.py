@@ -1,17 +1,51 @@
 import serial
 
 port1 = serial.Serial(port='COM4', baudrate=115200, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
+#port1 = serial.Serial(port='COM8', baudrate=115200, bytesize=serial.EIGHTBITS, stopbits=serial.STOPBITS_ONE, timeout=None)
 
 def __init__(self):
     self.data = []
 
-def read_8():
-    return port1.read()
+def flush_input():
+    port1.flushInput()
+
+def InputBuffer_Length():
+    byte_length = port1.inWaiting()
+    return byte_length
+
+def read_line():
+    return port1.readline()
+
+def read_text():
+    buffer = '!'
+    startbit = b's'
+    endbit = b'\n'
+    message = []
+    while True:
+        buffer = port1.read()
+        if(buffer == startbit):
+            while(buffer != endbit):
+                buffer = port1.read()
+                message.append(chr(buffer[0]))
+            break
+        else:
+            port1.flushInput()
+    message = message[:-1]
+    string_buffer = ''.join((message))
+    return string_buffer
+
+def text_to_decimal():
+    return float(read_text())
+
 def wait():
     port1.inWaiting()
+
 def write_8(data):
     message = data.encode('utf-8')
     port1.write(message)
+
+def read_8():
+    return port1.read()
 
 def read_num():
     temp_a = port1.read()
@@ -55,10 +89,6 @@ def print_32(self):
     print(temp_f)
 
 def print_ID(self, event):
-    deviceID = self.read_hex()
-    print('Device ID: ' + repr(deviceID))
-
-def print_ID(self):
     deviceID = self.read_hex()
     print('Device ID: ' + repr(deviceID))
 

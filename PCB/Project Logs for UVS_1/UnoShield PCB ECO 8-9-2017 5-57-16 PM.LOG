@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=SCL_3.3V Pin=Q2-2
+Removed Pin From Net: NetName=SCL_3.3V Pin=R16-2
+Added Pin To Net: NetName=SDA_3.3V Pin=Q2-2
+Added Pin To Net: NetName=SDA_3.3V Pin=R16-2
