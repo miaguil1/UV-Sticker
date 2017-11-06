@@ -23,35 +23,6 @@ SMALL_FONT = ("Helvetica", 8)
 style.use("ggplot")
 
 
-UV1_Data = []   # mW/cm^2 Data from UV Sensor #1
-UV2_Data = []   # mW/cm^2 Data from UV Sensor #2
-UV3_Data = []   # mW/cm^2 Data from UV Sensor #3
-UV4_Data = []   # mW/cm^2 Data from UV Sensor #4
-UV5_Data = []   # mw/cm^2 Data from UV Sensor #5
-
-TMP116_Data = []    # Temperature Data in Celcius from TMP116
-LMT70_Data = []     # Temperature Data in Celcius from LMT70
-
-Resp_Data = []      # Percent Change Data in percent from Strain Guage
-
-seconds = [] # Time Since Data has been Captured
-
-resp_graph = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
-resp_subplot = resp_graph.add_subplot(1,1,1)
-
-uv_graph = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
-uv_subplot = uv_graph.add_subplot(1,1,1)
-
-temp_graph = Figure(figsize=(5, 5), dpi=100, tight_layout=True)
-temp_subplot = temp_graph.add_subplot(1,1,1)
-
-start_time = 0
-stop_time = 0
-
-UV_Record = 0
-Resp_Record = 0
-Temp_Record = 0
-
 def init_gui():
     app = psoc_Sensors()
     # ani_resp = animation.FuncAnimation(resp_graph, recordResp, interval=100)

@@ -13,15 +13,16 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
+
 def init_gui():
     root = tk.Tk()
-    app = SG_GUI(root)
+    app = SgGui(root)
     root.mainloop()
 
 
-class SG_GUI(tk.Frame):
+class SgGui(tk.Frame):
 
-    def __init__(self, parent, *args, **kwargs):
+    def __init__(self, parent):
         tk.Frame.__init__(self, parent)
         self.parent = parent
 
@@ -36,13 +37,15 @@ class SG_GUI(tk.Frame):
         title_page = tk.Label(parent, text="Flexible Electronics GUI")
         title_page.grid(row=0, column=0)
 
-        calculate_button = tk.Button(self.parent, text="Calculate Proper Gain", command=lambda: [self.update_resistors(), self.calculate_strain()])
+        calculate_button = tk.Button(self.parent, text="Calculate Proper Gain", command=lambda:
+                                     [self.update_resistors(), self.calculate_strain()])
         calculate_button.grid(row=1, column=0)
 
         close_button = tk.Button(self.parent, text="Close", command=parent.quit)
         close_button.grid(row=1, column=1)
 
-        cypress_ble_button = tk.Button(self.parent, text="Upload Cypress BLE Log", command=lambda: self.cypress_ble_pop_up())
+        cypress_ble_button = tk.Button(self.parent, text="Upload Cypress BLE Log", command=lambda:
+                                       self.cypress_ble_pop_up())
         cypress_ble_button.grid(row=1, column=2)
 
         self.r1_label = tk.Label(self.parent, text="R1 value in ohm")
@@ -112,11 +115,10 @@ class SG_GUI(tk.Frame):
         self.bg_label = tk.Label(self.parent, image=self.bg_img)
         self.bg_label.grid(row=11, column=0, rowspan=2, columnspan=6)
 
-
         self.resistor_entries = [self.er1_entry, self.er2_entry, self.er3_entry, self.er4_entry, self.er5_entry,
                                  self.er6_entry, self.erx_entry, self.erx_tol_entry]
         self.resistor_var = [self.er1, self.er2, self.er3, self.er4, self.er5,
-                                 self.er6, self.erx, self.erx_tol, self.rg1, self.rg2]
+                             self.er6, self.erx, self.erx_tol, self.rg1, self.rg2]
 
     def update_resistors(self):
         for i in range(0, 8):
@@ -129,6 +131,33 @@ class SG_GUI(tk.Frame):
         rg2 = self.resistors[0] * 5
         self.resistor_var[8].set(rg1)
         self.resistor_var[9].set(rg2)
+        v_supply = 3.3
+        r1 = 977
+        r2 = 23
+        r3 = 1000
+        r4 = 1000
+        rx = 1002
+
+        r5 = 1000
+        r6 = 1000
+
+        rg1 = 3.3E6
+        rg2 = 3.3E6
+
+        v1 = v_supply * r3 / (r1 + r2 + r3)
+        v2 = v_supply * r4 / (r4 + rx)
+
+        vamp_minus = v1 * rg1 / (rg1 + r5)
+        vamp_plus = v2 * rg2 / (rg2 + r6)
+
+        v_diff = abs(vamp_plus - vamp_minus)
+
+        v_out = v_diff * (1 + (rg1 / r6))
+
+        print(v1)
+        print(v2)
+        print(v_diff)
+        print(v_out)
 
     def ask_user_file(self, file_show):
         self.cypress_parse_filename = askopenfilename()
@@ -151,18 +180,21 @@ class SG_GUI(tk.Frame):
         b3 = tk.Button(popup_cypress, text="Browse for DataLog File:", command=lambda: self.ask_user_file(file_show))
         b3.grid(row=1, column=0)
 
-        cypress_filename_string_var = tk.StringVar(popup_cypress, value = self.cypress_parse_filename)
-        file_show = tk.Entry(popup_cypress, textvariable = cypress_filename_string_var, width = 150)
+        cypress_filename_string_var = tk.StringVar(popup_cypress, value=self.cypress_parse_filename)
+        file_show = tk.Entry(popup_cypress, textvariable=cypress_filename_string_var, width=150)
         file_show.grid(row=1, column=1)
 
-        b4 = tk.Button(popup_cypress, text="Select Output Folder:", command=lambda: self.ask_user_output_folder(folder_show))
+        b4 = tk.Button(popup_cypress, text="Select Output Folder:", command=lambda:
+                       self.ask_user_output_folder(folder_show))
         b4.grid(row=2, column=0)
 
-        excel_destination_string_var = tk.StringVar(popup_cypress, value = self.excel_destination)
-        folder_show = tk.Entry(popup_cypress, textvariable = excel_destination_string_var, width = 150)
+        excel_destination_string_var = tk.StringVar(popup_cypress, value=self.excel_destination)
+        folder_show = tk.Entry(popup_cypress, textvariable=excel_destination_string_var, width=150)
         folder_show.grid(row=2, column=1)
 
-        b1 = tk.Button(popup_cypress, text="Select this DataLog File", command=lambda:self.parse_cypress_ble(popup_cypress, cypress_filename_string_var.get(), excel_destination_string_var.get()))
+        b1 = tk.Button(popup_cypress, text="Select this DataLog File", command=lambda:
+                       self.parse_cypress_ble(popup_cypress, cypress_filename_string_var.get(),
+                                              excel_destination_string_var.get()))
         b1.grid(row=3, column=0)
 
         b2 = tk.Button(popup_cypress, text="Cancel", command=popup_cypress.destroy)
@@ -178,10 +210,11 @@ class SG_GUI(tk.Frame):
         cypress_datalog_lines = cypress_datalog.readlines()
         cypress_datalog.close()
 
-        TMP116_Data = []  # Temperature Data in Celcius from TMP116
-        Time_Stamp = []  # Time Stamp
+        tmp116_data = []  # Temperature Data in Celcius from TMP116
+        time_stamp = []  # Time Stamp
         seconds = []  # Time Since Data has been Captured
         counter = 0
+        time_str_date = 0
         notification = "[Health Thermometer Service|Health Thermometer Measurement] Notification received with value"
         for i in range(len(cypress_datalog_lines)):
             str_temp = ''.join(cypress_datalog_lines.__getitem__(i))
@@ -195,8 +228,8 @@ class SG_GUI(tk.Frame):
                 temp_hex = ''.join(temp_str.split(" ").__getitem__(3)) + ''.join(temp_str.split(" ").__getitem__(2))
                 temp_dec = int(temp_hex, 16)
                 temp_celcius = temp_dec * 7812.5 / 1000000
-                TMP116_Data.append(temp_celcius)
-                Time_Stamp.append(time_str_temp)
+                tmp116_data.append(temp_celcius)
+                time_stamp.append(time_str_temp)
                 seconds.append(counter)
                 counter = counter + 1
 
@@ -210,21 +243,23 @@ class SG_GUI(tk.Frame):
         ws.cell(row=1, column=3, value="TMP116 (C)")
         wb.save(filename=dest_filename)
         for i in range(1, len(seconds)):
-            ws.cell(row=i + 1, column=1, value=Time_Stamp[i - 1])
+            ws.cell(row=i + 1, column=1, value=time_stamp[i - 1])
             ws.cell(row=i + 1, column=2, value=seconds[i - 1])
-            ws.cell(row=i + 1, column=3, value=TMP116_Data[i - 1])
+            ws.cell(row=i + 1, column=3, value=tmp116_data[i - 1])
 
         wb.save(filename=dest_filename)
 
-        plt.plot(seconds, TMP116_Data)
+        plt.plot(seconds, tmp116_data)
         plt.ylabel('Temperature (C)')
         plt.xlabel('Time (s)')
         plt.title('TMP116 Temperature')
         plt.savefig(png_filename)
         plt.show()
 
+
 def main():
     init_gui()
+
 
 if __name__ == "__main__":
     main()
