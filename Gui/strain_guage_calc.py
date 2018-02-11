@@ -503,8 +503,11 @@ class SgGui(tk.Frame):
         plt.show()
 
     def temp_compare(self):
-        # self.temp1[0].append(self.temp_time_data1)
-        # self.temp1[1].append(self.temp_data1)
+        # self.temp_time_data1
+        # self.temp_data1
+
+        # self.temp_time_data1
+        # self.temp_data1
         print("comparing data...")
 
 def main():
