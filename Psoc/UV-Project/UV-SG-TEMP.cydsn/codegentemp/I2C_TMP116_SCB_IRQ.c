@@ -19,7 +19,7 @@
 #include <cydevice_trm.h>
 #include <CyLib.h>
 #include <I2C_TMP116_SCB_IRQ.h>
-#include "cyapicallbacks.h"
+
 
 #if !defined(I2C_TMP116_SCB_IRQ__REMOVED) /* Check for removal by optimization */
 

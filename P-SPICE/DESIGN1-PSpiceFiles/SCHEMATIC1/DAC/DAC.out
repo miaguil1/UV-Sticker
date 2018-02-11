@@ -1,0 +1,168 @@
+
+**** 01/26/18 11:03:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DAC"  [ c:\users\intern\documents\github\uv-sticker\p-spice\design1-pspicefiles\schematic1\dac.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DAC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Intern\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DESIGN1
+R_R2         0 N00148  5.9k TC=0,0 
+R_R3         N00148 N00995  51.1k TC=0,0 
+R_R4         N00197 N00148  10k TC=0,0 
+V_V_DAC         N00197 0 0Vdc
+V_V1         N01044 0 12Vdc
+R_R6         0 N00995  1k TC=0,0 
+X_U2         N01044 N00148 N01643 0 N00995 LP2951 PARAMS:  CT=800P IB=20N
++  IMAX=160M IVD1=100U LDREG=.1/.5 LINREG=.001 M1ILIM=3.90625M M2ILIM=0 RSENSE=
++ {0.1} RT=.5K TC1IMAX=0 TC1VD=0 TC1VR=0 TC2IMAX=0 TC2VD=0 TC2VR=0 VD1=50M
++  VDMIN=40M VMAIP=9 VR=1.235
+R_R7         N01643 N00995  100k TC=0,0 
+
+**** RESUMING DAC.cir ****
+.END
+
+**** 01/26/18 11:03:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DAC"  [ c:\users\intern\documents\github\uv-sticker\p-spice\design1-pspicefiles\schematic1\dac.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.M1MIDX     
+          IS    1.000000E-12 
+          EG     .1          
+         XTI    0            
+
+
+**** 01/26/18 11:03:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DAC"  [ c:\users\intern\documents\github\uv-sticker\p-spice\design1-pspicefiles\schematic1\dac.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.SW_IN      X_U2.SW_UNREG   X_U2.SSH1_MODEL 
+         RON    1.000000E+06    1               1.000000E+06 
+        ROFF    1               1.000000E+06   10.000000E-09 
+         VON  100.000000E-06   25.000000E-06     .43         
+        VOFF    0               0                .4          
+
+
+**** 01/26/18 11:03:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DAC"  [ c:\users\intern\documents\github\uv-sticker\p-spice\design1-pspicefiles\schematic1\dac.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00148)     .8086 (N00197)    0.0000 (N00995)   11.9450 (N01044)   12.0000     
+
+(N01643)     .1559 (X_U2.1)   11.1290 (X_U2.2)   11.9590 (X_U2.3)  134.6300     
+
+(X_U2.4)   11.1290 (X_U2.5) 4196.7000 (X_U2.7)  472.9700 (X_U2.8)   12.1290     
+
+(X_U2.9) 10.01E+03 (X_U2.10)   11.9460                   (X_U2.11)   51.9460    
+
+(X_U2.12)-9988.9000                   (X_U2.13)   12.0000                       
+
+(X_U2.14)   27.7520                   (X_U2.15)   11.3990                       
+
+(X_U2.16)   11.3860                   (X_U2.17)   12.1290                       
+
+(X_U2.18)   27.1290                   (X_U2.19)   12.3640                       
+
+(X_U2.20)   12.6100                   (X_U2.22)   11.9450                       
+
+(X_U2.23)     .8686                   (X_U2.24)    1.2350                       
+
+(X_U2.25)     .1500                   (X_U2.26)     .1548                       
+
+(X_U2.27)    5.0000                   (X_U2.28)    1.3000                       
+
+(X_U2.29)     .0010                   (X_U2.30)    1.0500                       
+
+(X_U2.31)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V_DAC      8.086E-05
+    V_V1        -1.228E-02
+    X_U2.V_VV37  -1.419E-08
+    X_U2.V_VV38  -4.658E-11
+    X_U2.V_VV39  -5.815E-09
+    X_U2.V_VV40   3.664E-13
+    X_U2.V_VV41  -3.664E-13
+    X_U2.V_VV42  -4.845E-03
+    X_U2.V_VV43   4.845E-03
+    X_U2.V_VV44   1.070E-11
+    X_U2.V_VV45  -1.049E-03
+
+    TOTAL POWER DISSIPATION   1.72E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 01/26/18 11:03:35 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DAC"  [ c:\users\intern\documents\github\uv-sticker\p-spice\design1-pspicefiles\schematic1\dac.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        1.19
+  Total job time (using Solver 1)   =         .36
+

@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file I2C_TMP116_I2C_INT.c
-* \version 3.20
+* \version 4.0
 *
 * \brief
 *  This file provides the source code to the Interrupt Service Routine for
@@ -10,7 +10,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -18,7 +18,7 @@
 
 #include "I2C_TMP116_PVT.h"
 #include "I2C_TMP116_I2C_PVT.h"
-#include "cyapicallbacks.h"
+
 
 
 /*******************************************************************************
@@ -502,6 +502,11 @@ CY_ISR(I2C_TMP116_I2C_ISR)
                 I2C_TMP116_slStatus &= (uint8) ~I2C_TMP116_I2C_SSTAT_RD_BUSY;
                 I2C_TMP116_slStatus |= (uint8)  I2C_TMP116_I2C_SSTAT_RD_CMPLT;
                 I2C_TMP116_state     =  I2C_TMP116_I2C_FSM_IDLE;
+                
+            #ifdef I2C_TMP116_I2C_SLAVE_CMPLT_CALLBACK
+                /* Read complete */
+                I2C_TMP116_I2C_SlaveCompleteCallback();
+            #endif /* I2C_TMP116_I2C_SLAVE_CMPLT_CALLBACK */
             }
 
 
@@ -553,6 +558,11 @@ CY_ISR(I2C_TMP116_I2C_ISR)
                 I2C_TMP116_slStatus &= (uint8) ~I2C_TMP116_I2C_SSTAT_WR_BUSY;
                 I2C_TMP116_slStatus |= (uint8)  I2C_TMP116_I2C_SSTAT_WR_CMPLT;
                 I2C_TMP116_state     =  I2C_TMP116_I2C_FSM_IDLE;
+
+            #ifdef I2C_TMP116_I2C_SLAVE_CMPLT_CALLBACK
+                /* Write complete */
+                I2C_TMP116_I2C_SlaveCompleteCallback();
+            #endif /* I2C_TMP116_I2C_SLAVE_CMPLT_CALLBACK */
             }
 
 
@@ -815,25 +825,16 @@ CY_ISR(I2C_TMP116_I2C_ISR)
     */
     else
     {
-        I2C_TMP116_CTRL_REG &= (uint32) ~I2C_TMP116_CTRL_ENABLED; /* Disable scb IP */
-
-        I2C_TMP116_state = I2C_TMP116_I2C_FSM_IDLE;
-
-        I2C_TMP116_DISABLE_SLAVE_AUTO_DATA;
-        I2C_TMP116_DISABLE_MASTER_AUTO_DATA;
-
-    #if(I2C_TMP116_CY_SCBIP_V0)
-        I2C_TMP116_SetRxInterruptMode(I2C_TMP116_NO_INTR_SOURCES);
-        I2C_TMP116_SetTxInterruptMode(I2C_TMP116_NO_INTR_SOURCES);
-
-        /* Clear interrupt sources as they are not automatically cleared after SCB is disabled */
-        I2C_TMP116_ClearTxInterruptSource(I2C_TMP116_INTR_RX_ALL);
-        I2C_TMP116_ClearRxInterruptSource(I2C_TMP116_INTR_TX_ALL);
-        I2C_TMP116_ClearSlaveInterruptSource(I2C_TMP116_INTR_SLAVE_ALL);
-        I2C_TMP116_ClearMasterInterruptSource(I2C_TMP116_INTR_MASTER_ALL);
-    #endif /* (I2C_TMP116_CY_SCBIP_V0) */
-
-        I2C_TMP116_CTRL_REG |= (uint32) I2C_TMP116_CTRL_ENABLED;  /* Enable scb IP */
+        I2C_TMP116_I2CFwBlockReset();
+        
+    #ifdef I2C_TMP116_I2C_SLAVE_CMPLT_CALLBACK
+        #if(I2C_TMP116_I2C_SLAVE)
+        {
+            /* Error condition: read or write complete is set */
+            I2C_TMP116_I2C_SlaveCompleteCallback();
+        }
+        #endif
+    #endif /* I2C_TMP116_I2C_SLAVE_CMPLT_CALLBACK */
     }
 
 #ifdef I2C_TMP116_I2C_ISR_EXIT_CALLBACK

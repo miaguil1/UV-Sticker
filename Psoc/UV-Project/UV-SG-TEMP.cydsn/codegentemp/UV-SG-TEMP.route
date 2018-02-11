@@ -1,18 +1,40 @@
 net ClockBlock_HFClk
 	term   ":m0s8clockblockcell.hfclk"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_10.clock"
+	term   ":interrupt_10.clock"
 	switch ":m0s8clockblockcell.hfclk==>:interrupt_12.clock"
 	term   ":interrupt_12.clock"
 	switch ":m0s8clockblockcell.hfclk==>:interrupt_15.clock"
 	term   ":interrupt_15.clock"
-	switch ":m0s8clockblockcell.hfclk==>:interrupt_10.clock"
-	term   ":interrupt_10.clock"
+	switch ":m0s8clockblockcell.hfclk==>:interrupt_8.clock"
+	term   ":interrupt_8.clock"
 end ClockBlock_HFClk
-net Net_548
+net Net_838
 	term   ":m0s8scbcell_1.interrupt"
 	switch ":m0s8scbcell_1.interrupt==>:interrupt_idmux_10.in_0"
 	switch ":interrupt_idmux_10.interrupt_idmux_10__out==>:interrupt_10.interrupt"
 	term   ":interrupt_10.interrupt"
-end Net_548
+end Net_838
+net Net_855
+	term   ":ioport0:pin1.fb"
+	switch ":ioport0:pin1.fb==>:ioport0:hsiom_in1.hsiom1_in"
+	switch ":ioport0:hsiom_in1.fixed_DPSLP_2==>:m0s8scbcell_1__i2c_scl__hsiom_permute.ioport0__fixed_out_p1_DPSLP_2"
+	switch ":m0s8scbcell_1__i2c_scl__hsiom_permute.m0s8scbcell_1__i2c_scl==>:m0s8scbcell_1.i2c_scl"
+	term   ":m0s8scbcell_1.i2c_scl"
+end Net_855
+net Net_856
+	term   ":ioport0:pin0.fb"
+	switch ":ioport0:pin0.fb==>:ioport0:hsiom_in0.hsiom0_in"
+	switch ":ioport0:hsiom_in0.fixed_DPSLP_2==>:m0s8scbcell_1__i2c_sda__hsiom_permute.ioport0__fixed_out_p0_DPSLP_2"
+	switch ":m0s8scbcell_1__i2c_sda__hsiom_permute.m0s8scbcell_1__i2c_sda==>:m0s8scbcell_1.i2c_sda"
+	term   ":m0s8scbcell_1.i2c_sda"
+end Net_856
+net WDT_INT_OUT
+	term   ":m0s8srsscell.interrupt_wdt"
+	switch ":m0s8srsscell.interrupt_wdt==>:interrupt_idmux_8.in_0"
+	switch ":interrupt_idmux_8.interrupt_idmux_8__out==>:interrupt_8.interrupt"
+	term   ":interrupt_8.interrupt"
+end WDT_INT_OUT
 net \ADC:Net_3112\
 	term   ":p4sarcell.irq"
 	switch ":p4sarcell.irq==>:interrupt_idmux_15.in_0"
@@ -25,20 +47,6 @@ net \BLE:Net_15\
 	switch ":interrupt_idmux_12.interrupt_idmux_12__out==>:interrupt_12.interrupt"
 	term   ":interrupt_12.interrupt"
 end \BLE:Net_15\
-net \I2C_TMP116:scl_wire\
-	term   ":ioport0:pin1.fb"
-	switch ":ioport0:pin1.fb==>:ioport0:hsiom_in1.hsiom1_in"
-	switch ":ioport0:hsiom_in1.fixed_DPSLP_2==>:m0s8scbcell_1__i2c_scl__hsiom_permute.ioport0__fixed_out_p1_DPSLP_2"
-	switch ":m0s8scbcell_1__i2c_scl__hsiom_permute.m0s8scbcell_1__i2c_scl==>:m0s8scbcell_1.i2c_scl"
-	term   ":m0s8scbcell_1.i2c_scl"
-end \I2C_TMP116:scl_wire\
-net \I2C_TMP116:sda_wire\
-	term   ":ioport0:pin0.fb"
-	switch ":ioport0:pin0.fb==>:ioport0:hsiom_in0.hsiom0_in"
-	switch ":ioport0:hsiom_in0.fixed_DPSLP_2==>:m0s8scbcell_1__i2c_sda__hsiom_permute.ioport0__fixed_out_p0_DPSLP_2"
-	switch ":m0s8scbcell_1__i2c_sda__hsiom_permute.m0s8scbcell_1__i2c_sda==>:m0s8scbcell_1.i2c_sda"
-	term   ":m0s8scbcell_1.i2c_sda"
-end \I2C_TMP116:sda_wire\
 net \UART:rx_wire\
 	term   ":ioport1:pin4.fb"
 	switch ":ioport1:pin4.fb==>:ioport1:hsiom_in4.hsiom4_in"

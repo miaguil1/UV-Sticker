@@ -1,5 +1,4 @@
 #include "lmt70.h"
-#include "system.h"
 
 #define VOLTAGE_MINUS_55   (1375)
 #define VOLTAGE_MINUS_50   (1350)
@@ -24,8 +23,8 @@
 #define VOLTAGE_140        (358)
 #define VOLTAGE_150        (303)
 
-
-int int_slopes[21] = { 
+int int_slopes[21] = 
+{ 
 	-201792,
 	-200610,
 	-199223,
@@ -48,7 +47,8 @@ int int_slopes[21] = {
 	-183234,
 	-180574,
 };
-int int_intercepts[21] = { 
+int int_intercepts[21] = 
+{ 
 	222508064,
 	220911776,
 	219108080,
@@ -137,22 +137,49 @@ float lmt70_get_celsius(void)
     return celsius;
 }
 
-unsigned int lmt70_string_celsius(char *lmt70_temperature)
+void lmt70_string_celsius(char *lmt70_temperature)
 {
     float int_temp = lmt70_get_celsius();
-    sprintf(lmt70_temperature, "%.3f", int_temp);
-    lmt70_temperature[5] = '\n';
-    
-    unsigned int temp_l = strlen(lmt70_temperature);
-    return temp_l;
+    sprintf(lmt70_temperature, "%.4f", int_temp);
 }
 
 void lmt70_uart(void)
 {
-    char lmt70_temperature[6];
-    unsigned int temp_lmt70_l = lmt70_string_celsius(lmt70_temperature);
-    for(unsigned int i = 0; i<temp_lmt70_l; i++)
+    char lmt70_temperature[5];
+    lmt70_string_celsius(lmt70_temperature);
+
+    char lmt70_uart_string[7]; //Stores UV Photodiode Power Density in Message
+    lmt70_uart_string[0] = 'l'; //Places an l as the first element in the arrray
+    lmt70_uart_string[6] = '\n'; //Places a new line character in the last spot in the array
+    
+    //Placing Value in Packet between new message carrier and last message carrier
+    for(unsigned int j = 1; j<strlen(lmt70_temperature); j++)
     {
-        UART_UartPutChar(lmt70_temperature[i]);           
+        lmt70_uart_string[j] = lmt70_temperature[j-1];    
     }
+    
+    //Sends the Value over UART
+    for(unsigned int i = 0; i<strlen(lmt70_uart_string); i++)
+    {
+        UART_UartPutChar(lmt70_uart_string[i]);           
+    } 
+}
+
+//Reads the state of the LED and writes that value into the GATT Database
+void update_lmt70()
+{
+    CYBLE_GATTS_HANDLE_VALUE_NTF_T tempHandle; //Temporary BLE Handle
+    
+    //If not connected, no need to update GATT Database/Server
+    if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+    {
+        return; //Leaves the function update_lmt70()
+    }
+    uint16 temperature = (uint16)lmt70_get_celsius();
+    
+    tempHandle.attrHandle = CYBLE_BODY_TEMPERATURE_TEMPERATURE_CHAR_HANDLE;
+    tempHandle.value.val = (uint8 *)&temperature; //Casting the temperature pointer as an 8 bit pointer
+    tempHandle.value.len = 2; //Uint16 value is stored as 2 8 bit integer
+    CyBle_GattsWriteAttributeValue(&tempHandle, 0, &cyBle_connHandle, 0); //Writing new value to Gatt Server    
+    CyBle_GattsNotification(cyBle_connHandle, &tempHandle); //Sends out Notification to Gatt Central
 }

@@ -1,9 +1,12 @@
 #ifndef __UV_H
 #define __UV_H
-
-float uv_measure(unsigned int);
-float uv_get_pd(unsigned int);
-unsigned int uv_get_pd_string(char*, unsigned int);
-void uv_uart(unsigned int);
+#include "system.h"
+    
+float uv_measure(void);
+float uv_get_pd(void);
+float uv_get_index(void);
+void uv_get_pd_string(char*);
+void uv_uart(void);
+void update_UV(void);
 
 #endif // __UV_H

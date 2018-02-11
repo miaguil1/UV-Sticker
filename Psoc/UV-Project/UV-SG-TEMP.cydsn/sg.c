@@ -1,5 +1,4 @@
 #include "sg.h"
-#include "system.h"
 
 float sg_measure()
 {
@@ -20,25 +19,49 @@ float sg_get_strain()
     return sg_strain; //Returning Strain Guage Percent Change(%)
 }
 
-unsigned int sg_get_strain_string(char *sg_strain_string)
+void sg_get_strain_string(char *sg_strain_string)
 {
     float sg_strain = sg_get_strain(); //Returns the Strain Guage Percent Change
-    sprintf(sg_strain_string, "%.3f", sg_strain); //Places the Float Value of Strain Guage in String
-    sg_strain_string[5] = '\n'; //Places a new line character in the last spot in the array
-    
-    unsigned int sg_l = strlen(sg_strain_string); //Gets the length of the Character Vector
-    return sg_l; //Returns the Length of the Character Vector
-    
+    sprintf(sg_strain_string, "%.4f", sg_strain); //Places the Float Value of Strain Guage in String   
 }
 
 void sg_uart()
 {
-    char sg_strain_string[6]; //Initializes the Character Array
-    unsigned int sg_l = sg_get_strain_string(sg_strain_string); //Places the strain guage percent change in Character Vector
-    //Sends the Value over UART
-    for(unsigned int i = 0; i<sg_l; i++)
+    char sg_strain_string[5]; //Initializes the Character Array
+    sg_get_strain_string(sg_strain_string); //Places the strain guage percent change in Character Vector
+
+    char sg_uart_string[7]; //Stores UV Photodiode Power Density in Message
+    sg_uart_string[0] = 's'; //Places an s as the first element in the arrray
+    sg_uart_string[6] = '\n'; //Places a new line character in the last spot in the array
+    
+    //Placing Value in Packet between new message carrier and last message carrier
+    for(unsigned int j = 1; j<strlen(sg_strain_string); j++)
     {
-        UART_UartPutChar(sg_strain_string[i]);           
+        sg_uart_string[j] = sg_strain_string[j-1];    
     }
+    
+    //Sends the Value over UART
+    for(unsigned int i = 0; i<strlen(sg_strain_string); i++)
+    {
+        UART_UartPutChar(sg_uart_string[i]);           
+    } 
 }
 
+//Reads the state of the LED and writes that value into the GATT Database
+void update_sg()
+{
+    CYBLE_GATTS_HANDLE_VALUE_NTF_T tempHandle; //Temporary BLE Handle
+    
+    //If not connected, no need to update GATT Database/Server
+    if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+    {
+        return; //Leaves the function updateCapsense()
+    }
+    uint16 strain_guage = (uint16) sg_get_strain();
+    tempHandle.attrHandle = CYBLE_BATTERY_BATTERY_LEVEL_CHAR_HANDLE;
+    //Cast it into a 8 bit integer pointer
+    tempHandle.value.val = (uint8 *)&strain_guage; //Storing the Strain Guage Value
+    tempHandle.value.len = 2; //Uint16 value is stored as 2 8 bit integer
+    CyBle_GattsWriteAttributeValue(&tempHandle, 0, &cyBle_connHandle, 0); //Writing new value to Gatt Server    
+    CyBle_GattsNotification(cyBle_connHandle, &tempHandle); //Sends out Notification to Gatt Central
+}

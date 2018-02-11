@@ -1,5 +1,4 @@
 #include "adafruit_guva.h"
-#include "system.h"
 
 float adafruit_guva_measure()
 {
@@ -18,33 +17,49 @@ float adafruit_guva_get_pd()
     return uv_pd; //Returning UV Photodiode Power Density in mW/cm^2
 }
 
-unsigned int adafruit_guva_get_pd_string(char *adafruit_guva_pd_string)
+void adafruit_guva_get_pd_string(char *adafruit_guva_pd_string)
 {
     float adafruit_guva_pd = adafruit_guva_get_pd(); //Returns the Power Density of that Adafruit GUVA PhotoDiode
     sprintf(adafruit_guva_pd_string, "%.4f", adafruit_guva_pd); //Places the Float Value of Power Density in String
-    unsigned int adafruit_guva_l = strlen(adafruit_guva_pd_string); //Gets the length of the Character Vector
-    return adafruit_guva_l; //Returns the Length of the Character Vector
 }
 
 void adafruit_guva_uart()
 {
-    char uv_pd_string[5]; //Initializes the Character Array for where the value will be stored
-    unsigned int uv_l = adafruit_guva_get_pd_string(uv_pd_string); //Places the power density of diode in Character Vector
+    char a_guva_pd_string[5]; //Initializes the Character Array for where the value will be stored
+    adafruit_guva_get_pd_string(a_guva_pd_string); //Places the power density of diode in Character Vector
 
-    char uv_uart_string[7];
-    uv_uart_string[0] = 's'; //Places an s as the first element in the arrray
-    uv_uart_string[6] = '\n'; //Places a new line character in the last spot in the array
-    unsigned int uv_uart_l = strlen(uv_uart_string);
+    char a_guva_uart_string[7];
+    a_guva_uart_string[0] = 'a'; //Places an a as the first element in the arrray
+    a_guva_uart_string[6] = '\n'; //Places a new line character in the last spot in the array
     
     //Placing Value in Packet between new message carrier and last message carrier
-    for(unsigned int j = 1; j<uv_l; j++)
+    for(unsigned int j = 1; j<strlen(a_guva_pd_string); j++)
     {
-        uv_uart_string[j] = uv_pd_string[j-1];    
+        a_guva_uart_string[j] = a_guva_pd_string[j-1];    
     }
     
     //Sends the Value over UART
-    for(unsigned int i = 0; i<uv_uart_l; i++)
+    for(unsigned int i = 0; i<strlen(a_guva_uart_string); i++)
     {
-        UART_UartPutChar(uv_uart_string[i]);           
+        UART_UartPutChar(a_guva_uart_string[i]);           
     } 
+}
+
+//Reads the state of the LED and writes that value into the GATT Database
+void updateCapsense()
+{
+    CYBLE_GATTS_HANDLE_VALUE_NTF_T tempHandle; //Temporary BLE Handle
+    
+    //If not connected, no need to update GATT Database/Server
+    if(CyBle_GetState() != CYBLE_STATE_CONNECTED)
+    {
+        return; //Leaves the function updateCapsense()
+    }
+    uint16 fingerPos = 5;
+    tempHandle.attrHandle = CYBLE_UV_MEASUREMENT_POWER_DENSITY_CHAR_HANDLE;
+    //Cast it into a 8 bit integer pointer
+    tempHandle.value.val = (uint8 *)&fingerPos; //Storing the finger's Position
+    tempHandle.value.len = 2; //uint16 value is stored as 2 8 bit integer
+    CyBle_GattsWriteAttributeValue(&tempHandle, 0, &cyBle_connHandle, 0); //Writing new value to Gatt Server    
+    CyBle_GattsNotification(cyBle_connHandle, &tempHandle); //Sends out Notification to Gatt Central
 }

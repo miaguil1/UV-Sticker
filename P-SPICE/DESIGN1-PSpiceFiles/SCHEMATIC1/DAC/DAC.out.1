@@ -1,0 +1,46 @@
+
+**** 11/15/17 16:13:14 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-DAC"  [ c:\users\intern\documents\github\uv-sticker\p-spice\design1-PSpiceFiles\SCHEMATIC1\DAC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DAC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Intern\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.DC LIN V_V_DAC 1.235 3.3 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DESIGN1
+R_R2         0 N00148  13k TC=0,0 
+R_R3         N00148 N00995  40.2k TC=0,0 
+R_R4         N00197 N00148  1k TC=0,0 
+V_V_DAC         N00197 0 0Vdc
+V_V1         N01044 0 12Vdc
+R_R5         N01104 N00995  100k TC=0,0 
+R_R6         0 N00995  1k TC=0,0 
+
+**** RESUMING DAC.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N01104.
+

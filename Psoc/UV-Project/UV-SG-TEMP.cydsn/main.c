@@ -1,55 +1,41 @@
-
-#include "lmt70.h"
 #include "system.h"
-#include "tmp116.h"
+#include "bluetooth.h"
 #include "uv.h"
-#include "adafruit_guva.h"
+#include "battery.h"
+#include "tmp116.h"
+#include "led.h"
+#include "watchdog.h"
 
-/* Macro definitions */
-#define LOW                 (0u)
-#define HIGH                (1u)
-#define D1                  (1u)
-#define SG1                 (2u)
-#define NO_OF_CHANNELS      (4u)
-#define CLEAR_SCREEN        (0x0C)
-#define CONVERT_TO_ASCII    (0x30u)
+// If no watchdog Timer possible, then use Time set by Timer component itself
+//Timer_ISR_StartEx(Timer_ISR_Handler); //Starting the Timer ISR Handler Stack
+//CY_ISR(Timer_ISR_Handler)
+//{
+//    LED_GREEN_Write(~LED_GREEN_Read()); //Turn GREEN LED the opposite State
+//    
+//    //Insert update functions for different components & sensors
+//    update_tmp116();
+//    //update_LED();
+//    //update_battery();
+//    //update_uv_density(); 
+//    //update_uv_power(); 
+//    
+//    Timer_ClearInterrupt(Timer_INTR_MASK_TC); // Clear interrupt of Timer
+//}
 
-//char lmt70_temperature[6];
-
-
-int main(void)
-{    
-    system_enable_interrupts(); /* Enable global interrupts. */
-    
-    init_hardware(); //Initializing All Internal Hardware Components
-    
-    for(;;)
+int main()
+{
+    system_enable_interrupts(); // Enabling Global Interrupts
+    system_init_hardware(); // Starting all hardware modules: UART, I2C, SG-AMP, UV-AMP, ADC 
+    LED_BLUE_Write((uint8) 0); // Turn BLUE LED ON
+    bluetooth_start(); // Starting CyBLE, Generic Event Handler 
+    watchdog_start(); // Starting the Watchdog Timer
+    //system_sleep(); // Telling System and Components to go into Sleep Mode
+    // This function is only available with WCO not ILO
+//    CyBle_EnterLPM(CYBLE_BLESS_DEEPSLEEP); // Bluetooth Stack goes into Deep Sleep        
+	while(1) 
     {   
-//        UART_UartPutChar('s'); //Just Sending the Letter 's' to break up UART communication
-//        lmt70_uart(); //Sending the value of the LMT70 over UART
-//               
-//        UART_UartPutChar('s'); //Just Sending the Letter 's' to break up UART communication
-//        tmp116_uart();
-//        for(unsigned int i=1; i<=5;i++)
-//        {
-////            unsigned int bb1 = adc_acquire_channel(3+i);
-////            char part1 = bb1 & 0xFF;
-////            char part2 = (bb1 >> 8) & 0xFF;
-////            UART_UartPutChar(part1);
-////            UART_UartPutChar(part2);
-//            uv_uart(i);
-//        }
-
-        unsigned int bb1 = adc_acquire_channel(8);
-        char part1 = bb1 & 0xFF;
-        char part2 = (bb1 >> 8) & 0xFF;
-        UART_UartPutChar(part1);
-        UART_UartPutChar(part2);
-        uv_uart(5);
-        //adafruit_guva_uart();
-        CyDelay(500); //Delay by half a second 
-
-    }
+        bluetooth_process(); //Process BLE Stack Events
+        //system_deepsleep(); // Telling System to go into Deep Sleep
+	}   
 }
 
-/* [] END OF FILE */

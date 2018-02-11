@@ -19,7 +19,7 @@
 #include <cydevice_trm.h>
 #include <CyLib.h>
 #include <BLE_bless_isr.h>
-#include "cyapicallbacks.h"
+
 
 #if !defined(BLE_bless_isr__REMOVED) /* Check for removal by optimization */
 

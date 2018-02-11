@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file I2C_TMP116.h
-* \version 3.20
+* \version 4.0
 *
 * \brief
 *  This file provides constants and parameter values for the SCB Component.
@@ -9,7 +9,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -30,14 +30,18 @@
 /* SCB IP block v2 is available in all other devices */
 #define I2C_TMP116_CY_SCBIP_V2    (CYIPBLOCK_m0s8scb_VERSION >= 2u)
 
-#define I2C_TMP116_SCB_MODE                     (1u)
+/** Component version major.minor */
+#define I2C_TMP116_COMP_VERSION_MAJOR    (4)
+#define I2C_TMP116_COMP_VERSION_MINOR    (0)
+    
+#define I2C_TMP116_SCB_MODE           (1u)
 
 /* SCB modes enum */
-#define I2C_TMP116_SCB_MODE_I2C                 (0x01u)
-#define I2C_TMP116_SCB_MODE_SPI                 (0x02u)
-#define I2C_TMP116_SCB_MODE_UART                (0x04u)
-#define I2C_TMP116_SCB_MODE_EZI2C               (0x08u)
-#define I2C_TMP116_SCB_MODE_UNCONFIG            (0xFFu)
+#define I2C_TMP116_SCB_MODE_I2C       (0x01u)
+#define I2C_TMP116_SCB_MODE_SPI       (0x02u)
+#define I2C_TMP116_SCB_MODE_UART      (0x04u)
+#define I2C_TMP116_SCB_MODE_EZI2C     (0x08u)
+#define I2C_TMP116_SCB_MODE_UNCONFIG  (0xFFu)
 
 /* Condition compilation depends on operation mode: Unconfigured implies apply to all modes */
 #define I2C_TMP116_SCB_MODE_I2C_CONST_CFG       (I2C_TMP116_SCB_MODE_I2C       == I2C_TMP116_SCB_MODE)
@@ -1471,12 +1475,9 @@ extern uint8 I2C_TMP116_initVar;
 * on the scb IP depending on the version:
 *  CY_SCBIP_V0: resets state, status, TX and RX FIFOs.
 *  CY_SCBIP_V1 or later: resets state, status, TX and RX FIFOs and interrupt sources.
+* Clear I2C command registers are because they are not impacted by re-enable.
 */
-#define I2C_TMP116_SCB_SW_RESET \
-                        do{           \
-                            I2C_TMP116_CTRL_REG &= ((uint32) ~I2C_TMP116_CTRL_ENABLED); \
-                            I2C_TMP116_CTRL_REG |= ((uint32)  I2C_TMP116_CTRL_ENABLED); \
-                        }while(0)
+#define I2C_TMP116_SCB_SW_RESET   I2C_TMP116_I2CFwBlockReset()
 
 /* TX FIFO macro */
 #define I2C_TMP116_CLEAR_TX_FIFO \
@@ -1770,6 +1771,14 @@ extern uint8 I2C_TMP116_initVar;
                                                                   ~(I2C_TMP116_I2C_CTRL_M_READY_DATA_ACK |       \
                                                                     I2C_TMP116_I2C_CTRL_M_NOT_READY_DATA_NACK)); \
                             }while(0)
+/* Disables auto data ACK/NACK bits */
+#define I2C_TMP116_DISABLE_AUTO_DATA \
+                do{                        \
+                    I2C_TMP116_I2C_CTRL_REG &= ((uint32) ~(I2C_TMP116_I2C_CTRL_M_READY_DATA_ACK      |  \
+                                                                 I2C_TMP116_I2C_CTRL_M_NOT_READY_DATA_NACK |  \
+                                                                 I2C_TMP116_I2C_CTRL_S_READY_DATA_ACK      |  \
+                                                                 I2C_TMP116_I2C_CTRL_S_NOT_READY_DATA_NACK)); \
+                }while(0)
 
 /* Master commands */
 #define I2C_TMP116_I2C_MASTER_GENERATE_START \
@@ -1987,6 +1996,10 @@ extern uint8 I2C_TMP116_initVar;
 #define I2C_TMP116_GET_UART_RX_CTRL_MP_MODE(mpMode)   ((0u != (mpMode)) ? \
                                                         (I2C_TMP116_UART_RX_CTRL_MP_MODE) : (0u))
 
+#define I2C_TMP116_GET_UART_RX_CTRL_BREAK_WIDTH(width)    (((uint32) ((uint32) (width) - 1u) << \
+                                                                    I2C_TMP116_UART_RX_CTRL_BREAK_WIDTH_POS) & \
+                                                                    I2C_TMP116_UART_RX_CTRL_BREAK_WIDTH_MASK)
+
 /* I2C_TMP116_UART_TX_CTRL */
 #define I2C_TMP116_GET_UART_TX_CTRL_MODE(stopBits)    (((uint32) (stopBits) - 1u) & \
                                                                 I2C_TMP116_UART_RX_CTRL_STOP_BITS_MASK)
@@ -2034,7 +2047,7 @@ extern uint8 I2C_TMP116_initVar;
 
 /* I2C_TMP116_TX_CTRL */
 #define I2C_TMP116_GET_TX_CTRL_DATA_WIDTH(dataWidth)  (((uint32) (dataWidth) - 1u) & \
-                                                                I2C_TMP116_RX_CTRL_DATA_WIDTH_MASK)
+                                                                I2C_TMP116_TX_CTRL_DATA_WIDTH_MASK)
 
 #define I2C_TMP116_GET_TX_CTRL_BIT_ORDER(bitOrder)    ((0u != (bitOrder)) ? \
                                                                 (I2C_TMP116_TX_CTRL_MSB_FIRST) : (0u))

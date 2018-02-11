@@ -253,7 +253,7 @@
       </pad>
     </pin>
     <pin number="29" name="P2[5]">
-      <pad name="P2[5]" number="62" type="GPIO" portId="2" pinId="5" ioSupplyPin="VDDIO_2" capabilities="0x000000D000000217">
+      <pad name="P2[5]" number="62" type="GPIO" portId="2" pinId="5" ioSupplyPin="VDDIO_2" capabilities="0x000000D000000213">
         <ffbterm ffbtype="LCD" ffbid="0" term="com" wire="21" />
         <ffbterm ffbtype="LCD" ffbid="0" term="seg" wire="21" />
         <ffbterm ffbtype="OA" ffbid="1" term="vplus" />
@@ -358,7 +358,7 @@
       </pad>
     </pin>
     <pin number="38" name="P2[4]">
-      <pad name="P2[4]" number="61" type="GPIO" portId="2" pinId="4" ioSupplyPin="VDDIO_2" capabilities="0x000000D000000817">
+      <pad name="P2[4]" number="61" type="GPIO" portId="2" pinId="4" ioSupplyPin="VDDIO_2" capabilities="0x000000D000000813">
         <ffbterm ffbtype="LCD" ffbid="0" term="com" wire="20" />
         <ffbterm ffbtype="LCD" ffbid="0" term="seg" wire="20" />
         <ffbterm ffbtype="OA" ffbid="1" term="vminus" />

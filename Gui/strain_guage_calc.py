@@ -4,6 +4,7 @@ from openpyxl import Workbook
 from tkinter.filedialog import askopenfilename, askdirectory
 from PIL import ImageTk, Image
 import sys, os
+from datetime import date, datetime, time
 
 def resource_path(relative_path):
     try:
@@ -30,8 +31,23 @@ class SgGui(tk.Frame):
         self.cypress_parse_filename = '-'
         self.excel_destination = '-'
 
+        self.uv_data1 = []
+        self.uv_time_data1 = []
+        self.uv_data2 = []
+        self.uv_time_data2 = []
+
+        self.temp1 = [0]*2
+        self.temp_data1 = []
+        self.temp_time_data1 = []
+
+        self.temp2 = [0] * 2
+        self.temp_data2 = []
+        self.temp_time_data2 = []
+
+        self.day = datetime.now().day
+
         parent.minsize(width=750, height=750)
-        parent.maxsize(width=750, height=750)
+        parent.maxsize(width=1500, height=750)
         parent.title("Strain Gauge GUI")
 
         title_page = tk.Label(parent, text="Flexible Electronics GUI")
@@ -44,9 +60,29 @@ class SgGui(tk.Frame):
         close_button = tk.Button(self.parent, text="Close", command=parent.quit)
         close_button.grid(row=1, column=1)
 
-        cypress_ble_button = tk.Button(self.parent, text="Upload Cypress BLE Log", command=lambda:
+        cypress_ble_button = tk.Button(self.parent, text="Upload Cypress App BLE Log", command=lambda:
                                        self.cypress_ble_pop_up())
         cypress_ble_button.grid(row=1, column=2)
+
+        cypress_ble_uv1_button = tk.Button(self.parent, text="Upload CySmart BLE UV Log #1", command=lambda:
+                                       self.cysmart_ble_uv_pop_up(1))
+        cypress_ble_uv1_button.grid(row=1, column=3)
+
+        cypress_ble_uv2_button = tk.Button(self.parent, text="Upload CySmart BLE UV Log #2", command=lambda:
+                                       self.cysmart_ble_uv_pop_up(2))
+        cypress_ble_uv2_button.grid(row=1, column=3)
+
+        cypress_ble_temp1_button = tk.Button(self.parent, text="Upload CySmart BLE Temperature Log #1", command=lambda:
+                                       self.cysmart_ble_temp_pop_up(1))
+        cypress_ble_temp1_button.grid(row=1, column=5)
+
+        cypress_ble_temp2_button = tk.Button(self.parent, text="Upload CySmart BLE Temperature Log #2", command=lambda:
+                                       self.cysmart_ble_temp_pop_up(2))
+        cypress_ble_temp2_button.grid(row=1, column=6)
+
+        cypress_ble_temp_comp_button = tk.Button(self.parent, text="Compare Multiple Sensors", command=lambda:
+                                       self.temp_compare())
+        cypress_ble_temp_comp_button.grid(row=1, column=7)
 
         self.r1_label = tk.Label(self.parent, text="R1 value in ohm")
         self.r1_label.grid(row=2, column=0)
@@ -202,6 +238,71 @@ class SgGui(tk.Frame):
 
         popup_cypress.mainloop()
 
+    def cysmart_ble_uv_pop_up(self, num):
+        popup_cypress = tk.Toplevel()
+        popup_cypress.grab_set()
+        popup_cypress.geometry("1000x100")
+        popup_cypress.wm_title("Cypress BLE Data Upload")
+        label = tk.Label(popup_cypress, text="Upload Cypress BLE Data Log")
+        label.grid(row=0, column=0)
+
+        b3 = tk.Button(popup_cypress, text="Browse for DataLog File:", command=lambda: self.ask_user_file(file_show))
+        b3.grid(row=1, column=0)
+
+        cypress_filename_string_var = tk.StringVar(popup_cypress, value=self.cypress_parse_filename)
+        file_show = tk.Entry(popup_cypress, textvariable=cypress_filename_string_var, width=150)
+        file_show.grid(row=1, column=1)
+
+        b4 = tk.Button(popup_cypress, text="Select Output Folder:", command=lambda:
+                       self.ask_user_output_folder(folder_show))
+        b4.grid(row=2, column=0)
+
+        excel_destination_string_var = tk.StringVar(popup_cypress, value=self.excel_destination)
+        folder_show = tk.Entry(popup_cypress, textvariable=excel_destination_string_var, width=150)
+        folder_show.grid(row=2, column=1)
+
+        b1 = tk.Button(popup_cypress, text="Select this DataLog File", command=lambda:
+                       self.parse_cysmart_uv_ble(popup_cypress, cypress_filename_string_var.get(), excel_destination_string_var.get(), num))
+        b1.grid(row=3, column=0)
+
+        b2 = tk.Button(popup_cypress, text="Cancel", command=popup_cypress.destroy)
+        b2.grid(row=3, column=1)
+
+        popup_cypress.mainloop()
+
+    def cysmart_ble_temp_pop_up(self, num):
+        popup_cypress = tk.Toplevel()
+        popup_cypress.grab_set()
+        popup_cypress.geometry("1000x100")
+        popup_cypress.wm_title("Cypress BLE Data Upload")
+        label = tk.Label(popup_cypress, text="Upload Cypress BLE Data Log")
+        label.grid(row=0, column=0)
+
+        b3 = tk.Button(popup_cypress, text="Browse for DataLog File:", command=lambda: self.ask_user_file(file_show))
+        b3.grid(row=1, column=0)
+
+        cypress_filename_string_var = tk.StringVar(popup_cypress, value=self.cypress_parse_filename)
+        file_show = tk.Entry(popup_cypress, textvariable=cypress_filename_string_var, width=150)
+        file_show.grid(row=1, column=1)
+
+        b4 = tk.Button(popup_cypress, text="Select Output Folder:", command=lambda:
+        self.ask_user_output_folder(folder_show))
+        b4.grid(row=2, column=0)
+
+        excel_destination_string_var = tk.StringVar(popup_cypress, value=self.excel_destination)
+        folder_show = tk.Entry(popup_cypress, textvariable=excel_destination_string_var, width=150)
+        folder_show.grid(row=2, column=1)
+
+        b1 = tk.Button(popup_cypress, text="Select this Temperature DataLog File", command=lambda:
+        self.parse_cysmart_temp_ble(popup_cypress, cypress_filename_string_var.get(),
+                               excel_destination_string_var.get(), num))
+        b1.grid(row=3, column=0)
+
+        b2 = tk.Button(popup_cypress, text="Cancel", command=popup_cypress.destroy)
+        b2.grid(row=3, column=1)
+
+        popup_cypress.mainloop()
+
     def parse_cypress_ble(self, popup_window, source_file_name, destination_file_name):
         popup_window.destroy()
         cypress_datalog_file = str(source_file_name)
@@ -256,6 +357,155 @@ class SgGui(tk.Frame):
         plt.savefig(png_filename)
         plt.show()
 
+    def parse_cysmart_uv_ble(self, popup_window, source_file_name, destination_file_name, num):
+        popup_window.destroy()
+        cypress_datalog_file = str(source_file_name)
+        cypress_excel_file = str(destination_file_name)
+        cypress_datalog = open(cypress_datalog_file, 'r')
+        cypress_datalog_lines = cypress_datalog.readlines()
+        cypress_datalog.close()
+
+        uv_data = []  # UV Data in W / cm^2
+        time_stamp = []  # Time Stamp
+        seconds = []  # Time Since Data has been Captured
+        counter = 0
+        time_str_date = str(self.day)
+        notification = "2E:"
+        for i in range(len(cypress_datalog_lines)):
+            str_temp = ''.join(cypress_datalog_lines.__getitem__(i))
+            if notification in str_temp:
+                str1_parts = str_temp.split(":")
+                time_hour_temp_str = ''.join(str1_parts.__getitem__(0))
+                junk, time_hour_str = time_hour_temp_str.split("[")
+                time_min_str = ''.join(str1_parts.__getitem__(1))
+                time_sec_str = ''.join(str1_parts.__getitem__(2))
+                time_str_temp = time_hour_str + ":" + time_min_str + ":" + time_sec_str
+                junk, uv_hex1_str = ''.join(str1_parts.__getitem__(5)).split("[")
+                uv_hex2_str = ''.join(str1_parts.__getitem__(6))
+                uv_hex3_str = ''.join(str1_parts.__getitem__(7))
+                uv_hex4_str = ''.join(str1_parts.__getitem__(8))
+                uv_hex5_str, junk = ''.join(str1_parts.__getitem__(9)).split("]")
+                uv_str = bytearray.fromhex(uv_hex1_str).decode() + bytearray.fromhex(uv_hex2_str).decode() + bytearray.fromhex(uv_hex3_str).decode() + bytearray.fromhex(
+                    uv_hex4_str).decode() + bytearray.fromhex(uv_hex5_str).decode()
+                uv_float = float(uv_str)
+                uv_data.append(uv_float)
+                time_stamp.append(time_str_temp)
+                seconds.append(counter)
+                counter = counter + 2
+
+        dest_filename = cypress_excel_file + '/' + time_str_date + '.xlsx'
+        png_filename = cypress_excel_file + '/' + time_str_date + '.png'
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "Sample #1"
+        ws.cell(row=1, column=1, value="Time Stamp")
+        ws.cell(row=1, column=2, value="Seconds")
+        ws.cell(row=1, column=3, value="UV Power Density (mW/cm^2)")
+        wb.save(filename=dest_filename)
+        for i in range(1, len(seconds)):
+            ws.cell(row=i + 1, column=1, value=time_stamp[i - 1])
+            ws.cell(row=i + 1, column=2, value=seconds[i - 1])
+            ws.cell(row=i + 1, column=3, value=uv_data[i - 1])
+
+        wb.save(filename=dest_filename)
+
+        plt.plot(seconds, uv_data)
+        plt.ylabel('UV Power Density')
+        plt.xlabel('Time (s)')
+        plt.title('UV Power Density of BLE Sensor Patch')
+        plt.savefig(png_filename)
+        plt.show()
+
+        if num == 1:
+            self.uv_data1 = uv_data
+        if num == 2:
+            self.uv_data2 = uv_data
+
+
+    def parse_cysmart_temp_ble(self, popup_window, source_file_name, destination_file_name, num):
+        popup_window.destroy()
+        cypress_datalog_file = str(source_file_name)
+        cypress_excel_file = str(destination_file_name)
+        cypress_datalog = open(cypress_datalog_file, 'r')
+        cypress_datalog_lines = cypress_datalog.readlines()
+        cypress_datalog.close()
+
+        temp_data = []  # Temporary Temperature Data in C
+        time_stamp = []  # Time Stamp
+        seconds = []  # Time Since Data has been Captured
+        start_time = 0
+        time_str_date = str(self.day)
+        notification = "2E:"
+        for i in range(len(cypress_datalog_lines)):
+            str_temp = ''.join(cypress_datalog_lines.__getitem__(i))
+            if notification in str_temp:
+                # Parse Text/Log file to extract temperature values
+                str1_parts = str_temp.split(":")
+                time_hour_temp_str = ''.join(str1_parts.__getitem__(0))
+                junk, time_hour_str = time_hour_temp_str.split("[")
+                time_min_str = ''.join(str1_parts.__getitem__(1))
+                time_sec_str = ''.join(str1_parts.__getitem__(2))
+                time_str_temp = time_hour_str + ":" + time_min_str + ":" + time_sec_str
+                junk, temp_hex1_str = ''.join(str1_parts.__getitem__(5)).split("[")
+                temp_hex2_str = ''.join(str1_parts.__getitem__(6))
+                temp_hex3_str = ''.join(str1_parts.__getitem__(7))
+                temp_hex4_str = ''.join(str1_parts.__getitem__(8))
+                temp_hex5_str, junk = ''.join(str1_parts.__getitem__(9)).split("]")
+                temp_str = bytearray.fromhex(temp_hex1_str).decode() + bytearray.fromhex(temp_hex2_str).decode() + bytearray.fromhex(temp_hex3_str).decode() + \
+                           bytearray.fromhex(temp_hex4_str).decode() + bytearray.fromhex(temp_hex5_str).decode()
+                temp_float = float(temp_str)    # Convert string number to float number
+
+                if num == 1:
+                    self.temp_time_data1.append(time(int(time_hour_str), int(time_min_str), int(time_sec_str)))    # Storing Time Objects in an Array
+                    self.temp_data1.append(temp_float)  # Storing the float value in an array of temperature values
+                    if len(self.temp_time_data1) == 1:
+                        seconds.append(0)
+                        start_time = self.temp_time_data1[0]
+                    else:
+                        seconds.append(float((datetime.combine(date.min,self.temp_time_data1[-1]) - datetime.combine(date.min, start_time)).total_seconds()))
+                if num == 2:
+                    self.temp_time_data2.append(time(int(time_hour_str), int(time_min_str), int(time_sec_str)))    # Storing Time Objects in an Array
+                    self.temp_data2.append(temp_float)  # Storing the float value in an array of temperature values
+                    if len(self.temp_time_data2) == 1:
+                        seconds.append(0)
+                        start_time = self.temp_time_data2[0]
+                    else:
+                        seconds.append(float((datetime.combine(date.min, self.temp_time_data2[-1]) - datetime.combine(date.min, start_time)).total_seconds()))
+
+        if num == 1:
+            temp_data = self.temp_data1
+            time_stamp = self.temp_time_data1
+        if num == 2:
+            temp_data = self.temp_data2
+            time_stamp = self.temp_time_data2
+
+        dest_filename = cypress_excel_file + '/' + time_str_date + '.xlsx'
+        png_filename = cypress_excel_file + '/' + time_str_date + '.png'
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "Sample #1"
+        ws.cell(row=1, column=1, value="Time Stamp")
+        ws.cell(row=1, column=2, value="Seconds")
+        ws.cell(row=1, column=3, value="Temperature (Celcius)")
+        wb.save(filename=dest_filename)
+        for i in range(1, len(seconds)):
+            ws.cell(row=i + 1, column=1, value=time_stamp[i - 1])
+            ws.cell(row=i + 1, column=2, value=seconds[i - 1])
+            ws.cell(row=i + 1, column=3, value=temp_data[i - 1])
+
+        wb.save(filename=dest_filename)
+
+        plt.plot(seconds, temp_data)
+        plt.ylabel('Temperature')
+        plt.xlabel('Time (s)')
+        plt.title('Temperature of BLE TMP116')
+        plt.savefig(png_filename)
+        plt.show()
+
+    def temp_compare(self):
+        # self.temp1[0].append(self.temp_time_data1)
+        # self.temp1[1].append(self.temp_data1)
+        print("comparing data...")
 
 def main():
     init_gui()

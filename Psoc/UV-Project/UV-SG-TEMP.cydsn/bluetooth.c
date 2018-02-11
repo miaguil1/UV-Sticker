@@ -1,150 +1,144 @@
 #include "bluetooth.h"
-#include "watchdog.h"
-#include <stdlib.h>
-#include <stdarg.h>
-#include <stdio.h>
+#include "led.h"
+#include "tmp116.h"
+#include "battery.h"
+#include "uv.h"
 
-
-static CYBLE_CONN_HANDLE_T ble_connection_handle;
-static volatile int bluetooth_indications = 0;
-
-
-static void ble_stack_handler(uint32 event, void *event_parameter)
+//Stack Handler to react to GAP events and the GATT Database Access Events
+/* Start CYBLE component and register generic event handler */
+static void BLE_Stack_Handler(uint32 eventCode, void *eventParam)
 {
-    switch(event)
+    CYBLE_GATTS_WRITE_REQ_PARAM_T *wrReq;
+    switch(eventCode)
     {
-        case CYBLE_EVT_STACK_ON: 					
-        case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:		
-        case CYBLE_EVT_TIMEOUT:
+        /**********************************************************
+        *                       General Events
+        ***********************************************************/
+		case CYBLE_EVT_STACK_ON: /* This event received when component is Started */
+            CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+            LED_BLUE_Write((uint8) 0); //Turn BLUE LED ON
+            break;
+		case CYBLE_EVT_TIMEOUT: 
+			break;
+		case CYBLE_EVT_HARDWARE_ERROR:    
+            /* This event indicates that some internal HW error has occurred. */
+			break;
+        case CYBLE_EVT_HCI_STATUS:
+			break;
+        /**********************************************************
+        *                       GAP Events
+        ***********************************************************/
+        case CYBLE_EVT_GAP_AUTH_REQ:
+            break;
+        case CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST:
+            break;
+        case CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST:
+            break;
+        case CYBLE_EVT_GAP_AUTH_COMPLETE:
+            break;
+        case CYBLE_EVT_GAP_AUTH_FAILED:
+            break;
         case CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP:
-            bluetooth_indications = 0;
-            //CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);	    
+            if(CYBLE_STATE_DISCONNECTED == CyBle_GetState())
+            {   
+                /* Fast and slow advertising period complete, go to low power  
+                 * mode (Hibernate mode) and wait for an external
+                 * user event to wake up the device again */
+                //CySysPmHibernate();
+            }
             break;
+        case CYBLE_EVT_GAP_DEVICE_CONNECTED:
+            LED_BLUE_Write((uint8) 255); //Turn BLUE LED OFF
+            break;
+        case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
+            /* Put the device to discoverable mode so that remote can search it. */
+            CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
+            temperature_Notify = 0;
+            uv_Power_Notify = 0;
+            LED_BLUE_Write((uint8) 0); //Turn BLUE LED ON
+            break;
+        case CYBLE_EVT_GAP_ENCRYPT_CHANGE:
+            break;
+        case CYBLE_EVT_GAPC_CONNECTION_UPDATE_COMPLETE:
+            break;
+        case CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT:
+            break;
+
+        /**********************************************************
+        *                       GATT Events
+        ***********************************************************/
         case CYBLE_EVT_GATT_CONNECT_IND:
-            ble_connection_handle = *(CYBLE_CONN_HANDLE_T *)event_parameter;
+            BLE_Connection_Handle = *(CYBLE_CONN_HANDLE_T *)eventParam;
+            //update_UV(); //Update the GATT database the current value of the LED
+            //update_tmp116(); //Update the GATT database with the current Temperature
+            //update_battery(); //Update the GATT database with the current Battery Level
+            //LED_BLUE_Write((uint8) 0); //Turn BLUE LED OFF
+            break;
+        case CYBLE_EVT_GATT_DISCONNECT_IND:
+            break;
+        case CYBLE_EVT_GATTS_WRITE_REQ:
+            wrReq = (CYBLE_GATTS_WRITE_REQ_PARAM_T *)eventParam;
+            if(wrReq->handleValPair.attrHandle == CYBLE_UV_MEASUREMENT_POWER_DENSITY_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE)
+            {
+                CyBle_GattsWriteAttributeValue(&wrReq->handleValPair, 0, &BLE_Connection_Handle, CYBLE_GATT_DB_LOCALLY_INITIATED);
+                uv_Power_Notify = wrReq->handleValPair.value.val[0];
+            }
+            if(wrReq->handleValPair.attrHandle == CYBLE_UV_MEASUREMENT_UV_INDEX_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE)
+            {
+                CyBle_GattsWriteAttributeValue(&wrReq->handleValPair, 0, &BLE_Connection_Handle, CYBLE_GATT_DB_LOCALLY_INITIATED);
+                uv_Index_Notify = wrReq->handleValPair.value.val[0];
+            }
+            if(wrReq->handleValPair.attrHandle == CYBLE_BODY_TEMPERATURE_TEMPERATURE_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE)
+            {
+                CyBle_GattsWriteAttributeValue(&wrReq->handleValPair, 0, &BLE_Connection_Handle, CYBLE_GATT_DB_LOCALLY_INITIATED);
+                temperature_Notify = wrReq->handleValPair.value.val[0];
+            }
+            if(wrReq->handleValPair.attrHandle == CYBLE_BATTERY_BATTERY_LEVEL_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE)
+            {
+                CyBle_GattsWriteAttributeValue(&wrReq->handleValPair, 0, &BLE_Connection_Handle, CYBLE_GATT_DB_LOCALLY_INITIATED);
+                battery_Notify = wrReq->handleValPair.value.val[0];
+            }          
+
+            CyBle_GattsWriteRsp(BLE_Connection_Handle);
+            break;
+        case CYBLE_EVT_GATTS_INDICATION_ENABLED:
+            break;
+        case CYBLE_EVT_GATTS_INDICATION_DISABLED:
+            break;
+        case CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ:
+            /* Triggered on server side when client sends read request and when
+            * characteristic has CYBLE_GATT_DB_ATTR_CHAR_VAL_RD_EVENT property set.
+            * This event could be ignored by application unless it need to response
+            * by error response which needs to be set in gattErrorCode field of
+            * event parameter. */
             break;
 
-        default: break;
-    } 
-}
-
-
-void health_thermometer_handler(uint32 event, void* event_parameter)
-{
-    (void)event_parameter;
-    switch(event)
-    {
-        case CYBLE_EVT_HTSS_INDICATION_ENABLED: bluetooth_indications = 1; break;
-        case CYBLE_EVT_HTSS_INDICATION_DISABLED: bluetooth_indications = 0; break;
-        default: break;
+		/**********************************************************
+        *                       Other Events
+        ***********************************************************/
+        case CYBLE_EVT_PENDING_FLASH_WRITE:
+            /* Inform application that flash write is pending. Stack internal data 
+            * structures are modified and require to be stored in Flash using 
+            * CyBle_StoreBondingData() */
+            break;
+        default:
+			break;       
     }
 }
 
-
-static void bluetooth_start(void)
+void bluetooth_start(void)
 {
-    CyBle_Start(ble_stack_handler);
-    //CyBle_HtsRegisterAttrCallback(health_thermometer_handler);
+    CyBle_Start(BLE_Stack_Handler); //Declares the BLE stack handler and begins processing through
+    /* Register service specific callback functions */
 }
 
-
-static void bluetooth_process(void)
+void bluetooth_process(void)
 {
-    CyBle_ProcessEvents();
+    CyBle_ProcessEvents(); //Allows BLE stack to process pending 
 }
 
-
-static void bluetooth_stop(void)
+void bluetooth_stop(void)
 {
     CyBle_Stop();    
 }
-
-
-static void bluetooth_send(char *format, ...)
-{
-    va_list argptr;
-    va_start(argptr, format);
-    int length = vsnprintf(NULL, 0, format, argptr);
-    ++length;
-    char *out = (char *)malloc(length);
-    vsnprintf(out, length, format, argptr); 
-    va_end(argptr);
-    //CyBle_HtssSendIndication(ble_connection_handle, CYBLE_HTS_TEMP_MEASURE, length, (uint8 *)out);  
-    free(out);  
-}
-
-
-static int bluetooth_is_connected(void)
-{
-    return (CyBle_GetState() == CYBLE_STATE_CONNECTED);
-}
-
-
-static int bluetooth_is_advertising(void)
-{
-    //return (CyBle_GetState() == CYBLE_STATE_ADVERTISING);
-    return 1;
-}
-
-
-static int bluetooth_is_initializing(void)
-{
-    return (CyBle_GetState() == CYBLE_STATE_INITIALIZING);
-}
-
-
-static int bluetooth_bless_in_deepsleep(void)
-{
-    return ((bless_t)CyBle_GetBleSsState() == bless_deepsleep);
-}
-
-
-static int bluetooth_bless_in_eco_on(void)
-{
-    return ((bless_t)CyBle_GetBleSsState() == bless_eco_on);
-}
-
-
-static int bluetooth_bless_in_event_close(void)
-{
-    return ((bless_t)CyBle_GetBleSsState() == bless_event_close);
-}
-
-
-static blpm_t bluetooth_enter_deepsleep(void)
-{
-    return ((blpm_t)CyBle_EnterLPM((CYBLE_LP_MODE_T)blpm_deepsleep));
-}
-
-
-static CYBLE_CONN_HANDLE_T bluetooth_get_connection_handle(void)
-{
-    return ble_connection_handle;
-}
-
-
-static int bluetooth_indications_enabled(void)
-{
-    return (bluetooth_indications == 1);
-}
-
-
-bluetooth_t bluetooth_table = { 
-    &bluetooth_start,
-    &bluetooth_process,
-    &bluetooth_stop,
-    &bluetooth_send,
-    &bluetooth_is_connected,
-    &bluetooth_is_advertising,
-    &bluetooth_is_initializing,
-    &bluetooth_bless_in_deepsleep,
-    &bluetooth_bless_in_eco_on,
-    &bluetooth_bless_in_event_close,
-    &bluetooth_enter_deepsleep,
-    &bluetooth_get_connection_handle,
-    &bluetooth_indications_enabled
-};
-
-
-bluetooth_t * const bluetooth = &bluetooth_table;
 

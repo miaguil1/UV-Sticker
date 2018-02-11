@@ -1,0 +1,462 @@
+[13:51:06:617] : 'Characteristic Value Notification' event received
+[13:51:06:617] : 	Attribute Handle: 0x001D
+[13:51:06:617] : 	Value: [33:38:2E:34:37]
+[13:51:16:968] : 'Characteristic Value Notification' event received
+[13:51:16:968] : 	Attribute Handle: 0x001D
+[13:51:16:968] : 	Value: [33:38:2E:33:39]
+[13:51:27:311] : 'Characteristic Value Notification' event received
+[13:51:27:311] : 	Attribute Handle: 0x001D
+[13:51:27:311] : 	Value: [33:38:2E:33:38]
+[13:51:37:653] : 'Characteristic Value Notification' event received
+[13:51:37:653] : 	Attribute Handle: 0x001D
+[13:51:37:653] : 	Value: [33:38:2E:34:31]
+[13:51:47:995] : 'Characteristic Value Notification' event received
+[13:51:47:995] : 	Attribute Handle: 0x001D
+[13:51:47:995] : 	Value: [33:38:2E:34:35]
+[13:51:58:346] : 'Characteristic Value Notification' event received
+[13:51:58:346] : 	Attribute Handle: 0x001D
+[13:51:58:346] : 	Value: [33:38:2E:34:37]
+[13:52:08:698] : 'Characteristic Value Notification' event received
+[13:52:08:698] : 	Attribute Handle: 0x001D
+[13:52:08:698] : 	Value: [33:38:2E:34:36]
+[13:52:19:040] : 'Characteristic Value Notification' event received
+[13:52:19:040] : 	Attribute Handle: 0x001D
+[13:52:19:040] : 	Value: [33:38:2E:34:36]
+[13:52:29:383] : 'Characteristic Value Notification' event received
+[13:52:29:383] : 	Attribute Handle: 0x001D
+[13:52:29:383] : 	Value: [33:38:2E:34:30]
+[13:52:39:725] : 'Characteristic Value Notification' event received
+[13:52:39:725] : 	Attribute Handle: 0x001D
+[13:52:39:725] : 	Value: [33:38:2E:34:37]
+[13:52:50:075] : 'Characteristic Value Notification' event received
+[13:52:50:075] : 	Attribute Handle: 0x001D
+[13:52:50:075] : 	Value: [33:38:2E:34:37]
+[13:53:00:420] : 'Characteristic Value Notification' event received
+[13:53:00:420] : 	Attribute Handle: 0x001D
+[13:53:00:420] : 	Value: [33:38:2E:34:36]
+[13:53:10:761] : 'Characteristic Value Notification' event received
+[13:53:10:761] : 	Attribute Handle: 0x001D
+[13:53:10:761] : 	Value: [33:38:2E:34:34]
+[13:53:21:106] : 'Characteristic Value Notification' event received
+[13:53:21:106] : 	Attribute Handle: 0x001D
+[13:53:21:106] : 	Value: [33:38:2E:34:36]
+[13:53:31:447] : 'Characteristic Value Notification' event received
+[13:53:31:447] : 	Attribute Handle: 0x001D
+[13:53:31:447] : 	Value: [33:38:2E:34:35]
+[13:53:41:797] : 'Characteristic Value Notification' event received
+[13:53:41:797] : 	Attribute Handle: 0x001D
+[13:53:41:797] : 	Value: [33:38:2E:34:30]
+[13:53:52:140] : 'Characteristic Value Notification' event received
+[13:53:52:140] : 	Attribute Handle: 0x001D
+[13:53:52:140] : 	Value: [33:38:2E:33:32]
+[13:54:02:482] : 'Characteristic Value Notification' event received
+[13:54:02:482] : 	Attribute Handle: 0x001D
+[13:54:02:482] : 	Value: [33:38:2E:33:32]
+[13:54:12:833] : 'Characteristic Value Notification' event received
+[13:54:12:833] : 	Attribute Handle: 0x001D
+[13:54:12:833] : 	Value: [33:38:2E:32:36]
+[13:54:23:177] : 'Characteristic Value Notification' event received
+[13:54:23:177] : 	Attribute Handle: 0x001D
+[13:54:23:177] : 	Value: [33:38:2E:33:31]
+[13:54:33:519] : 'Characteristic Value Notification' event received
+[13:54:33:519] : 	Attribute Handle: 0x001D
+[13:54:33:519] : 	Value: [33:38:2E:32:36]
+[13:54:43:870] : 'Characteristic Value Notification' event received
+[13:54:43:870] : 	Attribute Handle: 0x001D
+[13:54:43:870] : 	Value: [33:38:2E:32:30]
+[13:54:54:213] : 'Characteristic Value Notification' event received
+[13:54:54:213] : 	Attribute Handle: 0x001D
+[13:54:54:213] : 	Value: [33:38:2E:31:37]
+[13:55:04:565] : 'Characteristic Value Notification' event received
+[13:55:04:565] : 	Attribute Handle: 0x001D
+[13:55:04:565] : 	Value: [33:38:2E:31:38]
+[13:55:14:913] : 'Characteristic Value Notification' event received
+[13:55:14:913] : 	Attribute Handle: 0x001D
+[13:55:14:913] : 	Value: [33:38:2E:30:37]
+[13:55:25:267] : 'Characteristic Value Notification' event received
+[13:55:25:267] : 	Attribute Handle: 0x001D
+[13:55:25:267] : 	Value: [33:38:2E:30:37]
+[13:55:35:607] : 'Characteristic Value Notification' event received
+[13:55:35:607] : 	Attribute Handle: 0x001D
+[13:55:35:607] : 	Value: [33:38:2E:30:32]
+[13:55:45:960] : 'Characteristic Value Notification' event received
+[13:55:45:960] : 	Attribute Handle: 0x001D
+[13:55:45:960] : 	Value: [33:37:2E:39:38]
+[13:55:56:311] : 'Characteristic Value Notification' event received
+[13:55:56:311] : 	Attribute Handle: 0x001D
+[13:55:56:311] : 	Value: [33:37:2E:39:36]
+[13:56:06:683] : 'Characteristic Value Notification' event received
+[13:56:06:683] : 	Attribute Handle: 0x001D
+[13:56:06:683] : 	Value: [33:37:2E:38:36]
+[13:56:17:014] : 'Characteristic Value Notification' event received
+[13:56:17:014] : 	Attribute Handle: 0x001D
+[13:56:17:014] : 	Value: [33:37:2E:38:35]
+[13:56:27:364] : 'Characteristic Value Notification' event received
+[13:56:27:364] : 	Attribute Handle: 0x001D
+[13:56:27:364] : 	Value: [33:37:2E:37:36]
+[13:56:37:716] : 'Characteristic Value Notification' event received
+[13:56:37:716] : 	Attribute Handle: 0x001D
+[13:56:37:716] : 	Value: [33:37:2E:37:37]
+[13:56:48:075] : 'Characteristic Value Notification' event received
+[13:56:48:075] : 	Attribute Handle: 0x001D
+[13:56:48:075] : 	Value: [33:37:2E:37:34]
+[13:56:58:426] : 'Characteristic Value Notification' event received
+[13:56:58:426] : 	Attribute Handle: 0x001D
+[13:56:58:426] : 	Value: [33:37:2E:37:31]
+[13:57:08:777] : 'Characteristic Value Notification' event received
+[13:57:08:777] : 	Attribute Handle: 0x001D
+[13:57:08:777] : 	Value: [33:37:2E:36:39]
+[13:57:19:139] : 'Characteristic Value Notification' event received
+[13:57:19:139] : 	Attribute Handle: 0x001D
+[13:57:19:139] : 	Value: [33:37:2E:36:30]
+[13:57:29:489] : 'Characteristic Value Notification' event received
+[13:57:29:489] : 	Attribute Handle: 0x001D
+[13:57:29:489] : 	Value: [33:37:2E:35:39]
+[13:57:39:848] : 'Characteristic Value Notification' event received
+[13:57:39:848] : 	Attribute Handle: 0x001D
+[13:57:39:848] : 	Value: [33:37:2E:35:33]
+[13:57:50:208] : 'Characteristic Value Notification' event received
+[13:57:50:208] : 	Attribute Handle: 0x001D
+[13:57:50:208] : 	Value: [33:37:2E:35:30]
+[13:58:00:572] : 'Characteristic Value Notification' event received
+[13:58:00:572] : 	Attribute Handle: 0x001D
+[13:58:00:572] : 	Value: [33:37:2E:34:36]
+[13:58:10:938] : 'Characteristic Value Notification' event received
+[13:58:10:938] : 	Attribute Handle: 0x001D
+[13:58:10:938] : 	Value: [33:37:2E:34:37]
+[13:58:21:289] : 'Characteristic Value Notification' event received
+[13:58:21:289] : 	Attribute Handle: 0x001D
+[13:58:21:289] : 	Value: [33:37:2E:33:34]
+[13:58:31:650] : 'Characteristic Value Notification' event received
+[13:58:31:650] : 	Attribute Handle: 0x001D
+[13:58:31:650] : 	Value: [33:37:2E:32:35]
+[13:58:42:018] : 'Characteristic Value Notification' event received
+[13:58:42:018] : 	Attribute Handle: 0x001D
+[13:58:42:018] : 	Value: [33:37:2E:31:36]
+[13:58:52:385] : 'Characteristic Value Notification' event received
+[13:58:52:385] : 	Attribute Handle: 0x001D
+[13:58:52:385] : 	Value: [33:37:2E:31:34]
+[13:59:02:755] : 'Characteristic Value Notification' event received
+[13:59:02:755] : 	Attribute Handle: 0x001D
+[13:59:02:755] : 	Value: [33:37:2E:30:39]
+[13:59:13:124] : 'Characteristic Value Notification' event received
+[13:59:13:124] : 	Attribute Handle: 0x001D
+[13:59:13:124] : 	Value: [33:36:2E:39:36]
+[13:59:23:493] : 'Characteristic Value Notification' event received
+[13:59:23:493] : 	Attribute Handle: 0x001D
+[13:59:23:493] : 	Value: [33:37:2E:30:30]
+[13:59:33:862] : 'Characteristic Value Notification' event received
+[13:59:33:862] : 	Attribute Handle: 0x001D
+[13:59:33:862] : 	Value: [33:36:2E:39:33]
+[13:59:44:229] : 'Characteristic Value Notification' event received
+[13:59:44:229] : 	Attribute Handle: 0x001D
+[13:59:44:229] : 	Value: [33:36:2E:38:38]
+[13:59:54:607] : 'Characteristic Value Notification' event received
+[13:59:54:607] : 	Attribute Handle: 0x001D
+[13:59:54:607] : 	Value: [33:36:2E:38:30]
+[14:00:04:977] : 'Characteristic Value Notification' event received
+[14:00:04:977] : 	Attribute Handle: 0x001D
+[14:00:04:977] : 	Value: [33:36:2E:37:31]
+[14:00:15:362] : 'Characteristic Value Notification' event received
+[14:00:15:362] : 	Attribute Handle: 0x001D
+[14:00:15:362] : 	Value: [33:36:2E:36:34]
+[14:00:25:722] : 'Characteristic Value Notification' event received
+[14:00:25:722] : 	Attribute Handle: 0x001D
+[14:00:25:722] : 	Value: [33:36:2E:35:39]
+[14:00:36:099] : 'Characteristic Value Notification' event received
+[14:00:36:099] : 	Attribute Handle: 0x001D
+[14:00:36:099] : 	Value: [33:36:2E:35:31]
+[14:00:46:477] : 'Characteristic Value Notification' event received
+[14:00:46:477] : 	Attribute Handle: 0x001D
+[14:00:46:477] : 	Value: [33:36:2E:35:30]
+[14:00:56:856] : 'Characteristic Value Notification' event received
+[14:00:56:856] : 	Attribute Handle: 0x001D
+[14:00:56:856] : 	Value: [33:36:2E:34:39]
+[14:01:07:222] : 'Characteristic Value Notification' event received
+[14:01:07:222] : 	Attribute Handle: 0x001D
+[14:01:07:222] : 	Value: [33:36:2E:34:39]
+[14:01:17:599] : 'Characteristic Value Notification' event received
+[14:01:17:599] : 	Attribute Handle: 0x001D
+[14:01:17:599] : 	Value: [33:36:2E:33:39]
+[14:01:27:986] : 'Characteristic Value Notification' event received
+[14:01:27:986] : 	Attribute Handle: 0x001D
+[14:01:27:986] : 	Value: [33:36:2E:33:39]
+[14:01:38:356] : 'Characteristic Value Notification' event received
+[14:01:38:356] : 	Attribute Handle: 0x001D
+[14:01:38:356] : 	Value: [33:36:2E:34:37]
+[14:01:48:733] : 'Characteristic Value Notification' event received
+[14:01:48:733] : 	Attribute Handle: 0x001D
+[14:01:48:733] : 	Value: [33:36:2E:33:32]
+[14:01:59:111] : 'Characteristic Value Notification' event received
+[14:01:59:111] : 	Attribute Handle: 0x001D
+[14:01:59:111] : 	Value: [33:36:2E:32:35]
+[14:02:09:487] : 'Characteristic Value Notification' event received
+[14:02:09:487] : 	Attribute Handle: 0x001D
+[14:02:09:487] : 	Value: [33:36:2E:31:37]
+[14:02:19:868] : 'Characteristic Value Notification' event received
+[14:02:19:868] : 	Attribute Handle: 0x001D
+[14:02:19:868] : 	Value: [33:36:2E:32:33]
+[14:02:30:243] : 'Characteristic Value Notification' event received
+[14:02:30:243] : 	Attribute Handle: 0x001D
+[14:02:30:243] : 	Value: [33:36:2E:31:36]
+[14:02:40:620] : 'Characteristic Value Notification' event received
+[14:02:40:620] : 	Attribute Handle: 0x001D
+[14:02:40:620] : 	Value: [33:36:2E:31:31]
+[14:02:50:998] : 'Characteristic Value Notification' event received
+[14:02:50:998] : 	Attribute Handle: 0x001D
+[14:02:50:998] : 	Value: [33:36:2E:30:38]
+[14:03:01:384] : 'Characteristic Value Notification' event received
+[14:03:01:384] : 	Attribute Handle: 0x001D
+[14:03:01:384] : 	Value: [33:36:2E:31:34]
+[14:03:11:761] : 'Characteristic Value Notification' event received
+[14:03:11:761] : 	Attribute Handle: 0x001D
+[14:03:11:761] : 	Value: [33:36:2E:30:39]
+[14:03:22:147] : 'Characteristic Value Notification' event received
+[14:03:22:147] : 	Attribute Handle: 0x001D
+[14:03:22:147] : 	Value: [33:36:2E:31:31]
+[14:03:32:524] : 'Characteristic Value Notification' event received
+[14:03:32:524] : 	Attribute Handle: 0x001D
+[14:03:32:524] : 	Value: [33:36:2E:31:34]
+[14:03:42:902] : 'Characteristic Value Notification' event received
+[14:03:42:902] : 	Attribute Handle: 0x001D
+[14:03:42:902] : 	Value: [33:36:2E:31:34]
+[14:03:53:282] : 'Characteristic Value Notification' event received
+[14:03:53:282] : 	Attribute Handle: 0x001D
+[14:03:53:282] : 	Value: [33:36:2E:31:38]
+[14:04:03:666] : 'Characteristic Value Notification' event received
+[14:04:03:666] : 	Attribute Handle: 0x001D
+[14:04:03:666] : 	Value: [33:36:2E:31:34]
+[14:04:14:043] : 'Characteristic Value Notification' event received
+[14:04:14:043] : 	Attribute Handle: 0x001D
+[14:04:14:043] : 	Value: [33:36:2E:31:32]
+[14:04:24:420] : 'Characteristic Value Notification' event received
+[14:04:24:420] : 	Attribute Handle: 0x001D
+[14:04:24:420] : 	Value: [33:36:2E:31:30]
+[14:04:34:807] : 'Characteristic Value Notification' event received
+[14:04:34:807] : 	Attribute Handle: 0x001D
+[14:04:34:807] : 	Value: [33:36:2E:31:33]
+[14:04:45:177] : 'Characteristic Value Notification' event received
+[14:04:45:177] : 	Attribute Handle: 0x001D
+[14:04:45:177] : 	Value: [33:36:2E:31:36]
+[14:04:55:554] : 'Characteristic Value Notification' event received
+[14:04:55:554] : 	Attribute Handle: 0x001D
+[14:04:55:554] : 	Value: [33:36:2E:32:35]
+[14:05:05:940] : 'Characteristic Value Notification' event received
+[14:05:05:940] : 	Attribute Handle: 0x001D
+[14:05:05:940] : 	Value: [33:36:2E:31:38]
+[14:05:16:318] : 'Characteristic Value Notification' event received
+[14:05:16:318] : 	Attribute Handle: 0x001D
+[14:05:16:318] : 	Value: [33:36:2E:31:37]
+[14:05:26:694] : 'Characteristic Value Notification' event received
+[14:05:26:694] : 	Attribute Handle: 0x001D
+[14:05:26:694] : 	Value: [33:36:2E:31:37]
+[14:05:37:071] : 'Characteristic Value Notification' event received
+[14:05:37:071] : 	Attribute Handle: 0x001D
+[14:05:37:071] : 	Value: [33:36:2E:32:33]
+[14:05:47:457] : 'Characteristic Value Notification' event received
+[14:05:47:457] : 	Attribute Handle: 0x001D
+[14:05:47:457] : 	Value: [33:36:2E:32:32]
+[14:05:57:835] : 'Characteristic Value Notification' event received
+[14:05:57:835] : 	Attribute Handle: 0x001D
+[14:05:57:835] : 	Value: [33:36:2E:32:33]
+[14:06:08:212] : 'Characteristic Value Notification' event received
+[14:06:08:212] : 	Attribute Handle: 0x001D
+[14:06:08:212] : 	Value: [33:36:2E:32:38]
+[14:06:18:589] : 'Characteristic Value Notification' event received
+[14:06:18:589] : 	Attribute Handle: 0x001D
+[14:06:18:589] : 	Value: [33:36:2E:33:32]
+[14:06:28:968] : 'Characteristic Value Notification' event received
+[14:06:28:968] : 	Attribute Handle: 0x001D
+[14:06:28:968] : 	Value: [33:36:2E:34:32]
+[14:06:39:352] : 'Characteristic Value Notification' event received
+[14:06:39:352] : 	Attribute Handle: 0x001D
+[14:06:39:352] : 	Value: [33:36:2E:34:32]
+[14:06:49:732] : 'Characteristic Value Notification' event received
+[14:06:49:732] : 	Attribute Handle: 0x001D
+[14:06:49:732] : 	Value: [33:36:2E:34:33]
+[14:07:00:099] : 'Characteristic Value Notification' event received
+[14:07:00:099] : 	Attribute Handle: 0x001D
+[14:07:00:099] : 	Value: [33:36:2E:34:36]
+[14:07:10:479] : 'Characteristic Value Notification' event received
+[14:07:10:479] : 	Attribute Handle: 0x001D
+[14:07:10:479] : 	Value: [33:36:2E:34:32]
+[14:07:20:855] : 'Characteristic Value Notification' event received
+[14:07:20:855] : 	Attribute Handle: 0x001D
+[14:07:20:855] : 	Value: [33:36:2E:34:36]
+[14:07:31:233] : 'Characteristic Value Notification' event received
+[14:07:31:233] : 	Attribute Handle: 0x001D
+[14:07:31:233] : 	Value: [33:36:2E:34:34]
+[14:07:41:602] : 'Characteristic Value Notification' event received
+[14:07:41:602] : 	Attribute Handle: 0x001D
+[14:07:41:602] : 	Value: [33:36:2E:35:30]
+[14:07:51:978] : 'Characteristic Value Notification' event received
+[14:07:51:978] : 	Attribute Handle: 0x001D
+[14:07:51:978] : 	Value: [33:36:2E:35:35]
+[14:08:02:357] : 'Characteristic Value Notification' event received
+[14:08:02:357] : 	Attribute Handle: 0x001D
+[14:08:02:357] : 	Value: [33:36:2E:35:39]
+[14:08:12:723] : 'Characteristic Value Notification' event received
+[14:08:12:723] : 	Attribute Handle: 0x001D
+[14:08:12:723] : 	Value: [33:36:2E:35:38]
+[14:08:23:094] : 'Characteristic Value Notification' event received
+[14:08:23:094] : 	Attribute Handle: 0x001D
+[14:08:23:094] : 	Value: [33:36:2E:36:32]
+[14:08:33:470] : 'Characteristic Value Notification' event received
+[14:08:33:470] : 	Attribute Handle: 0x001D
+[14:08:33:470] : 	Value: [33:36:2E:37:38]
+[14:08:43:839] : 'Characteristic Value Notification' event received
+[14:08:43:839] : 	Attribute Handle: 0x001D
+[14:08:43:839] : 	Value: [33:36:2E:37:38]
+[14:08:54:217] : 'Characteristic Value Notification' event received
+[14:08:54:217] : 	Attribute Handle: 0x001D
+[14:08:54:217] : 	Value: [33:36:2E:37:39]
+[14:09:04:585] : 'Characteristic Value Notification' event received
+[14:09:04:585] : 	Attribute Handle: 0x001D
+[14:09:04:585] : 	Value: [33:36:2E:37:39]
+[14:09:14:946] : 'Characteristic Value Notification' event received
+[14:09:14:946] : 	Attribute Handle: 0x001D
+[14:09:14:946] : 	Value: [33:36:2E:38:32]
+[14:09:25:313] : 'Characteristic Value Notification' event received
+[14:09:25:313] : 	Attribute Handle: 0x001D
+[14:09:25:313] : 	Value: [33:36:2E:37:38]
+[14:09:35:682] : 'Characteristic Value Notification' event received
+[14:09:35:682] : 	Attribute Handle: 0x001D
+[14:09:35:682] : 	Value: [33:36:2E:38:32]
+[14:09:46:052] : 'Characteristic Value Notification' event received
+[14:09:46:052] : 	Attribute Handle: 0x001D
+[14:09:46:052] : 	Value: [33:36:2E:38:35]
+[14:09:56:420] : 'Characteristic Value Notification' event received
+[14:09:56:420] : 	Attribute Handle: 0x001D
+[14:09:56:420] : 	Value: [33:36:2E:38:33]
+[14:10:06:789] : 'Characteristic Value Notification' event received
+[14:10:06:789] : 	Attribute Handle: 0x001D
+[14:10:06:789] : 	Value: [33:36:2E:38:36]
+[14:10:17:166] : 'Characteristic Value Notification' event received
+[14:10:17:166] : 	Attribute Handle: 0x001D
+[14:10:17:166] : 	Value: [33:36:2E:38:39]
+[14:10:27:536] : 'Characteristic Value Notification' event received
+[14:10:27:536] : 	Attribute Handle: 0x001D
+[14:10:27:536] : 	Value: [33:36:2E:38:37]
+[14:10:37:904] : 'Characteristic Value Notification' event received
+[14:10:37:904] : 	Attribute Handle: 0x001D
+[14:10:37:904] : 	Value: [33:36:2E:39:31]
+[14:10:48:282] : 'Characteristic Value Notification' event received
+[14:10:48:282] : 	Attribute Handle: 0x001D
+[14:10:48:282] : 	Value: [33:36:2E:39:31]
+[14:10:58:651] : 'Characteristic Value Notification' event received
+[14:10:58:651] : 	Attribute Handle: 0x001D
+[14:10:58:651] : 	Value: [33:36:2E:39:39]
+[14:11:09:028] : 'Characteristic Value Notification' event received
+[14:11:09:028] : 	Attribute Handle: 0x001D
+[14:11:09:028] : 	Value: [33:36:2E:39:37]
+[14:11:19:404] : 'Characteristic Value Notification' event received
+[14:11:19:404] : 	Attribute Handle: 0x001D
+[14:11:19:404] : 	Value: [33:37:2E:31:31]
+[14:11:29:764] : 'Characteristic Value Notification' event received
+[14:11:29:764] : 	Attribute Handle: 0x001D
+[14:11:29:764] : 	Value: [33:37:2E:31:33]
+[14:11:40:140] : 'Characteristic Value Notification' event received
+[14:11:40:140] : 	Attribute Handle: 0x001D
+[14:11:40:140] : 	Value: [33:37:2E:31:32]
+[14:11:50:512] : 'Characteristic Value Notification' event received
+[14:11:50:512] : 	Attribute Handle: 0x001D
+[14:11:50:512] : 	Value: [33:37:2E:31:35]
+[14:12:00:879] : 'Characteristic Value Notification' event received
+[14:12:00:879] : 	Attribute Handle: 0x001D
+[14:12:00:879] : 	Value: [33:37:2E:31:38]
+[14:12:11:257] : 'Characteristic Value Notification' event received
+[14:12:11:257] : 	Attribute Handle: 0x001D
+[14:12:11:257] : 	Value: [33:37:2E:32:34]
+[14:12:21:616] : 'Characteristic Value Notification' event received
+[14:12:21:616] : 	Attribute Handle: 0x001D
+[14:12:21:616] : 	Value: [33:37:2E:32:34]
+[14:12:31:985] : 'Characteristic Value Notification' event received
+[14:12:31:985] : 	Attribute Handle: 0x001D
+[14:12:31:985] : 	Value: [33:37:2E:32:32]
+[14:12:42:356] : 'Characteristic Value Notification' event received
+[14:12:42:356] : 	Attribute Handle: 0x001D
+[14:12:42:356] : 	Value: [33:37:2E:32:35]
+[14:12:52:726] : 'Characteristic Value Notification' event received
+[14:12:52:726] : 	Attribute Handle: 0x001D
+[14:12:52:726] : 	Value: [33:37:2E:33:34]
+[14:13:03:092] : 'Characteristic Value Notification' event received
+[14:13:03:092] : 	Attribute Handle: 0x001D
+[14:13:03:092] : 	Value: [33:37:2E:33:33]
+[14:13:13:452] : 'Characteristic Value Notification' event received
+[14:13:13:452] : 	Attribute Handle: 0x001D
+[14:13:13:452] : 	Value: [33:37:2E:33:35]
+[14:13:23:821] : 'Characteristic Value Notification' event received
+[14:13:23:821] : 	Attribute Handle: 0x001D
+[14:13:23:821] : 	Value: [33:37:2E:33:35]
+[14:13:34:190] : 'Characteristic Value Notification' event received
+[14:13:34:190] : 	Attribute Handle: 0x001D
+[14:13:34:190] : 	Value: [33:37:2E:33:34]
+[14:13:44:557] : 'Characteristic Value Notification' event received
+[14:13:44:557] : 	Attribute Handle: 0x001D
+[14:13:44:557] : 	Value: [33:37:2E:33:35]
+[14:13:54:927] : 'Characteristic Value Notification' event received
+[14:13:54:927] : 	Attribute Handle: 0x001D
+[14:13:54:927] : 	Value: [33:37:2E:34:32]
+[14:14:05:296] : 'Characteristic Value Notification' event received
+[14:14:05:296] : 	Attribute Handle: 0x001D
+[14:14:05:296] : 	Value: [33:37:2E:34:32]
+[14:14:15:656] : 'Characteristic Value Notification' event received
+[14:14:15:656] : 	Attribute Handle: 0x001D
+[14:14:15:656] : 	Value: [33:37:2E:35:30]
+[14:14:26:033] : 'Characteristic Value Notification' event received
+[14:14:26:033] : 	Attribute Handle: 0x001D
+[14:14:26:033] : 	Value: [33:37:2E:35:30]
+[14:14:36:396] : 'Characteristic Value Notification' event received
+[14:14:36:396] : 	Attribute Handle: 0x001D
+[14:14:36:396] : 	Value: [33:37:2E:34:36]
+[14:14:46:752] : 'Characteristic Value Notification' event received
+[14:14:46:752] : 	Attribute Handle: 0x001D
+[14:14:46:752] : 	Value: [33:37:2E:34:36]
+[14:14:57:111] : 'Characteristic Value Notification' event received
+[14:14:57:111] : 	Attribute Handle: 0x001D
+[14:14:57:111] : 	Value: [33:37:2E:34:39]
+[14:15:07:481] : 'Characteristic Value Notification' event received
+[14:15:07:481] : 	Attribute Handle: 0x001D
+[14:15:07:481] : 	Value: [33:37:2E:35:32]
+[14:15:17:841] : 'Characteristic Value Notification' event received
+[14:15:17:841] : 	Attribute Handle: 0x001D
+[14:15:17:841] : 	Value: [33:37:2E:35:37]
+[14:15:28:209] : 'Characteristic Value Notification' event received
+[14:15:28:209] : 	Attribute Handle: 0x001D
+[14:15:28:209] : 	Value: [33:37:2E:36:30]
+[14:15:38:571] : 'Characteristic Value Notification' event received
+[14:15:38:571] : 	Attribute Handle: 0x001D
+[14:15:38:571] : 	Value: [33:37:2E:36:32]
+[14:15:48:929] : 'Characteristic Value Notification' event received
+[14:15:48:929] : 	Attribute Handle: 0x001D
+[14:15:48:929] : 	Value: [33:37:2E:36:30]
+[14:15:59:289] : 'Characteristic Value Notification' event received
+[14:15:59:289] : 	Attribute Handle: 0x001D
+[14:15:59:289] : 	Value: [33:37:2E:36:34]
+[14:16:09:649] : 'Characteristic Value Notification' event received
+[14:16:09:649] : 	Attribute Handle: 0x001D
+[14:16:09:649] : 	Value: [33:37:2E:36:31]
+[14:16:20:010] : 'Characteristic Value Notification' event received
+[14:16:20:010] : 	Attribute Handle: 0x001D
+[14:16:20:010] : 	Value: [33:37:2E:37:33]
+[14:16:30:369] : 'Characteristic Value Notification' event received
+[14:16:30:369] : 	Attribute Handle: 0x001D
+[14:16:30:369] : 	Value: [33:37:2E:37:32]
+[14:16:40:731] : 'Characteristic Value Notification' event received
+[14:16:40:731] : 	Attribute Handle: 0x001D
+[14:16:40:731] : 	Value: [33:37:2E:36:37]
+[14:16:51:089] : 'Characteristic Value Notification' event received
+[14:16:51:089] : 	Attribute Handle: 0x001D
+[14:16:51:089] : 	Value: [33:37:2E:36:37]
+[14:17:01:460] : 'Characteristic Value Notification' event received
+[14:17:01:460] : 	Attribute Handle: 0x001D
+[14:17:01:460] : 	Value: [33:37:2E:36:38]
+[14:17:11:818] : 'Characteristic Value Notification' event received
+[14:17:11:818] : 	Attribute Handle: 0x001D
+[14:17:11:818] : 	Value: [33:37:2E:36:39]
+[14:17:22:195] : 'Characteristic Value Notification' event received
+[14:17:22:195] : 	Attribute Handle: 0x001D
+[14:17:22:195] : 	Value: [33:37:2E:37:34]
+[14:17:32:546] : 'Characteristic Value Notification' event received
+[14:17:32:546] : 	Attribute Handle: 0x001D
+[14:17:32:546] : 	Value: [33:37:2E:37:34]

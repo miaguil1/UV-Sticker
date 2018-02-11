@@ -2,3 +2,11 @@
 Version=1.0
 [Project1]
 ProjectPath=UVS_1.PrjPcb
+[Project2]
+ProjectPath=UV-Calibration\UV-Calibrator.PrjPcb
+[Project3]
+ProjectPath=UV-Calibration\UV-Calibration-Sensor.PrjPcb
+[Project4]
+ProjectPath=Coin_Cell_Boost\Coin_Cell_Boost.PrjPCB
+[Project5]
+ProjectPath=Digital_UV\GUVB-C31SM_BB.PrjPcb

@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file I2C_TMP116_I2C.h
-* \version 3.20
+* \version 4.0
 *
 * \brief
 *  This file provides constants and parameter values for the SCB Component in
@@ -10,7 +10,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -30,8 +30,8 @@
 #define I2C_TMP116_I2C_OVS_FACTOR_LOW         (8u)
 #define I2C_TMP116_I2C_OVS_FACTOR_HIGH        (8u)
 #define I2C_TMP116_I2C_MEDIAN_FILTER_ENABLE   (1u)
-#define I2C_TMP116_I2C_SLAVE_ADDRESS          (8u)
-#define I2C_TMP116_I2C_SLAVE_ADDRESS_MASK     (254u)
+#define I2C_TMP116_I2C_SLAVE_ADDRESS          (0x8u)
+#define I2C_TMP116_I2C_SLAVE_ADDRESS_MASK     (0xFEu)
 #define I2C_TMP116_I2C_ACCEPT_ADDRESS         (0u)
 #define I2C_TMP116_I2C_ACCEPT_GENERAL_CALL    (0u)
 #define I2C_TMP116_I2C_WAKE_ENABLE            (0u)
@@ -280,11 +280,11 @@ typedef struct
     void   I2C_TMP116_I2CMasterClearWriteBuf(void);
 
     /* Manual operation functions */
-    uint32 I2C_TMP116_I2CMasterSendStart(uint32 slaveAddress, uint32 bitRnW);
-    uint32 I2C_TMP116_I2CMasterSendRestart(uint32 slaveAddress, uint32 bitRnW);
-    uint32 I2C_TMP116_I2CMasterSendStop(void);
-    uint32 I2C_TMP116_I2CMasterWriteByte(uint32 theByte);
-    uint32 I2C_TMP116_I2CMasterReadByte(uint32 ackNack);
+    uint32 I2C_TMP116_I2CMasterSendStart(uint32 slaveAddress, uint32 bitRnW, uint32 timeoutMs);
+    uint32 I2C_TMP116_I2CMasterSendRestart(uint32 slaveAddress, uint32 bitRnW, uint32 timeoutMs);
+    uint32 I2C_TMP116_I2CMasterSendStop(uint32 timeoutMs);
+    uint32 I2C_TMP116_I2CMasterWriteByte(uint32 wrByte, uint32 timeoutMs);
+    uint32 I2C_TMP116_I2CMasterReadByte(uint32 ackNack, uint8* rdByte, uint32 timeoutMs);
 #endif /* (I2C_TMP116_I2C_MASTER_CONST) */
 
 /* I2C Slave functions prototypes */
@@ -359,6 +359,7 @@ CY_ISR_PROTO(I2C_TMP116_I2C_ISR);
 #define I2C_TMP116_I2C_MSTR_BUS_BUSY          (0x08u)  /* Bus is busy, process not started                      */
 #define I2C_TMP116_I2C_MSTR_ERR_ABORT_START   (0x10u)  /* Slave was addressed before master begin Start gen     */
 #define I2C_TMP116_I2C_MSTR_ERR_BUS_ERR       (0x100u) /* Bus error has: INTR_MASTER_I2C_BUS_ERROR              */
+#define I2C_TMP116_I2C_MSTR_ERR_TIMEOUT       (I2C_TMP116_I2C_MASTER_TIMEOUT) /* Operation timeout        */
 
 /* Slave Status Constants */
 #define I2C_TMP116_I2C_SSTAT_RD_CMPLT         (0x01u)    /* Read transfer complete                        */
@@ -467,6 +468,26 @@ CY_ISR_PROTO(I2C_TMP116_I2C_ISR);
 /* Returns TRUE if I2C_TMP116_state is in one of master states */
 #define I2C_TMP116_CHECK_I2C_MASTER_ACTIVE    (I2C_TMP116_CHECK_I2C_FSM_MASTER)
 
+/* Timeout mask: with value should not intersect with INTR_MASTER and INTR_SLAVE bit definitions */
+#define I2C_TMP116_I2C_MASTER_TIMEOUT_POS (31u)
+#define I2C_TMP116_I2C_MASTER_TIMEOUT     ((uint32) 0x01u << I2C_TMP116_I2C_MASTER_TIMEOUT_POS)
+
+/* Slave address match or general call */
+#define I2C_TMP116_SLAVE_INTR_I2C_ADDR    (I2C_TMP116_INTR_SLAVE_I2C_ADDR_MATCH | \
+                                                 I2C_TMP116_INTR_SLAVE_I2C_GENERAL)
+
+/* Send byte condition: used by */
+#define I2C_TMP116_INTR_MASTER_SEND_BYTE   (I2C_TMP116_INTR_MASTER_I2C_ACK      | \
+                                                  I2C_TMP116_INTR_MASTER_I2C_NACK     | \
+                                                  I2C_TMP116_INTR_MASTER_I2C_ARB_LOST | \
+                                                  I2C_TMP116_INTR_MASTER_I2C_BUS_ERROR)
+/* Receive byte error conditions */
+#define I2C_TMP116_INTR_MASTER_RECEIVE_BYTE   (I2C_TMP116_INTR_MASTER_I2C_ARB_LOST | \
+                                                     I2C_TMP116_INTR_MASTER_I2C_BUS_ERROR)
+/* Stop condition */
+#define I2C_TMP116_INTR_MASTER_SEND_STOP  (I2C_TMP116_INTR_MASTER_I2C_STOP     | \
+                                                 I2C_TMP116_INTR_MASTER_I2C_ARB_LOST | \
+                                                 I2C_TMP116_INTR_MASTER_I2C_BUS_ERROR)
 
 /***************************************
 *      Common Register Settings
@@ -504,7 +525,13 @@ CY_ISR_PROTO(I2C_TMP116_I2C_ISR);
 #define I2C_TMP116_I2C_SCL_LOW    (0u)
 #define I2C_TMP116_I2C_SCL_HIGH   (1u)
 
+/* Timeout in us for tLOW and tHIGH generation (equal to 20ms) */
+#define I2C_TMP116_I2C_PHASE_GEN_TIMEOUT      (20000u)
+
 #define I2C_TMP116_I2C_IGNORE_GENERAL_CALL    ((uint32) (0u == I2C_TMP116_I2C_ACCEPT_GENERAL_CALL))
+
+/* Convert the timeout in milliseconds to microseconds */
+#define I2C_TMP116_I2C_CONVERT_TIMEOUT_TO_US(timeoutMs)   ((timeoutMs) * 1000u)
 
 
 /***************************************
@@ -557,8 +584,7 @@ CY_ISR_PROTO(I2C_TMP116_I2C_ISR);
                 (I2C_TMP116_I2C_INTR_SLAVE_MASK | \
                  I2C_TMP116_GET_INTR_SLAVE_I2C_GENERAL(I2C_TMP116_I2C_ACCEPT_GENERAL_CALL)) : (0u))
 
-    #define I2C_TMP116_I2C_DEFAULT_INTR_MASTER_MASK   ((I2C_TMP116_I2C_MASTER) ? \
-                                                                (I2C_TMP116_I2C_INTR_MASTER_MASK) : (0u))
+    #define I2C_TMP116_I2C_DEFAULT_INTR_MASTER_MASK   (I2C_TMP116_NO_INTR_SOURCES)
 
 #endif /* (I2C_TMP116_SCB_MODE_I2C_CONST_CFG) */
 

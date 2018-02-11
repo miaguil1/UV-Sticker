@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file I2C_TMP116_I2C.c
-* \version 3.20
+* \version 4.0
 *
 * \brief
 *  This file provides the source code to the API for the SCB Component in
@@ -10,7 +10,7 @@
 *
 *******************************************************************************
 * \copyright
-* Copyright 2013-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2013-2017, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -163,9 +163,7 @@ volatile uint8 I2C_TMP116_state;  /* Current state of I2C FSM */
                             (I2C_TMP116_GET_INTR_SLAVE_I2C_GENERAL(config->acceptGeneralAddr) |
                              I2C_TMP116_I2C_INTR_SLAVE_MASK) : (I2C_TMP116_CLEAR_REG));
 
-            I2C_TMP116_INTR_MASTER_MASK_REG = ((I2C_TMP116_I2C_MASTER) ?
-                                                     (I2C_TMP116_I2C_INTR_MASTER_MASK) :
-                                                     (I2C_TMP116_CLEAR_REG));
+            I2C_TMP116_INTR_MASTER_MASK_REG = I2C_TMP116_NO_INTR_SOURCES;
 
             /* Configure global variables */
             I2C_TMP116_state = I2C_TMP116_I2C_FSM_IDLE;
@@ -265,7 +263,47 @@ volatile uint8 I2C_TMP116_state;  /* Current state of I2C FSM */
 *******************************************************************************/
 void I2C_TMP116_I2CStop(void)
 {
+    /* Clear command registers because they keep assigned value after IP block was disabled */
+    I2C_TMP116_I2C_MASTER_CMD_REG = 0u;
+    I2C_TMP116_I2C_SLAVE_CMD_REG  = 0u;
+    
     I2C_TMP116_state = I2C_TMP116_I2C_FSM_IDLE;
+}
+
+
+/*******************************************************************************
+* Function Name: I2C_TMP116_I2CFwBlockReset
+****************************************************************************//**
+*
+* Resets the scb IP block and I2C into the known state.
+*
+*******************************************************************************/
+void I2C_TMP116_I2CFwBlockReset(void)
+{
+    /* Disable scb IP: stop respond to I2C traffic */
+    I2C_TMP116_CTRL_REG &= (uint32) ~I2C_TMP116_CTRL_ENABLED;
+
+    /* Clear command registers they are not cleared after scb IP is disabled */
+    I2C_TMP116_I2C_MASTER_CMD_REG = 0u;
+    I2C_TMP116_I2C_SLAVE_CMD_REG  = 0u;
+
+    I2C_TMP116_DISABLE_AUTO_DATA;
+
+    I2C_TMP116_SetTxInterruptMode(I2C_TMP116_NO_INTR_SOURCES);
+    I2C_TMP116_SetRxInterruptMode(I2C_TMP116_NO_INTR_SOURCES);
+    
+#if(I2C_TMP116_CY_SCBIP_V0)
+    /* Clear interrupt sources as they are not cleared after scb IP is disabled */
+    I2C_TMP116_ClearTxInterruptSource    (I2C_TMP116_INTR_TX_ALL);
+    I2C_TMP116_ClearRxInterruptSource    (I2C_TMP116_INTR_RX_ALL);
+    I2C_TMP116_ClearSlaveInterruptSource (I2C_TMP116_INTR_SLAVE_ALL);
+    I2C_TMP116_ClearMasterInterruptSource(I2C_TMP116_INTR_MASTER_ALL);
+#endif /* (I2C_TMP116_CY_SCBIP_V0) */
+
+    I2C_TMP116_state = I2C_TMP116_I2C_FSM_IDLE;
+
+    /* Enable scb IP: start respond to I2C traffic */
+    I2C_TMP116_CTRL_REG |= (uint32) I2C_TMP116_CTRL_ENABLED;
 }
 
 
