@@ -444,10 +444,6 @@ C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Cor
 
 C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
 
-C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.o : C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cymetadata.c 
-
-C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cymetadata.c : 
-
 C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.o : C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyutils.c 
 
 C:/Users/Intern/Documents/GitHub/UV-Sticker/Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyutils.c : 

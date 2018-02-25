@@ -2,7 +2,7 @@
 --	Conversion of UV-SG-TEMP.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Feb 01 18:41:40 2018
+--	Fri Feb 23 16:32:31 2018
 --
 
 USE cypress.cypress.all;
@@ -46,41 +46,41 @@ TERMINAL Net_423 : bit;
 TERMINAL Net_424 : bit;
 TERMINAL Net_4183 : bit;
 TERMINAL Net_4186 : bit;
-SIGNAL \I2C_TMP116:Net_847\ : bit;
-SIGNAL \I2C_TMP116:select_s_wire\ : bit;
-SIGNAL \I2C_TMP116:rx_wire\ : bit;
-SIGNAL \I2C_TMP116:Net_1257\ : bit;
-SIGNAL \I2C_TMP116:uncfg_rx_irq\ : bit;
-SIGNAL \I2C_TMP116:Net_1170\ : bit;
-SIGNAL \I2C_TMP116:sclk_s_wire\ : bit;
-SIGNAL \I2C_TMP116:mosi_s_wire\ : bit;
-SIGNAL \I2C_TMP116:miso_m_wire\ : bit;
-SIGNAL \I2C_TMP116:tmpOE__sda_net_0\ : bit;
-SIGNAL \I2C_TMP116:tmpFB_0__sda_net_0\ : bit;
+SIGNAL \I2C:Net_847\ : bit;
+SIGNAL \I2C:select_s_wire\ : bit;
+SIGNAL \I2C:rx_wire\ : bit;
+SIGNAL \I2C:Net_1257\ : bit;
+SIGNAL \I2C:uncfg_rx_irq\ : bit;
+SIGNAL \I2C:Net_1170\ : bit;
+SIGNAL \I2C:sclk_s_wire\ : bit;
+SIGNAL \I2C:mosi_s_wire\ : bit;
+SIGNAL \I2C:miso_m_wire\ : bit;
+SIGNAL \I2C:tmpOE__sda_net_0\ : bit;
+SIGNAL \I2C:tmpFB_0__sda_net_0\ : bit;
 SIGNAL Net_856 : bit;
-TERMINAL \I2C_TMP116:tmpSIOVREF__sda_net_0\ : bit;
-SIGNAL \I2C_TMP116:tmpINTERRUPT_0__sda_net_0\ : bit;
-SIGNAL \I2C_TMP116:tmpOE__scl_net_0\ : bit;
-SIGNAL \I2C_TMP116:tmpFB_0__scl_net_0\ : bit;
+TERMINAL \I2C:tmpSIOVREF__sda_net_0\ : bit;
+SIGNAL \I2C:tmpINTERRUPT_0__sda_net_0\ : bit;
+SIGNAL \I2C:tmpOE__scl_net_0\ : bit;
+SIGNAL \I2C:tmpFB_0__scl_net_0\ : bit;
 SIGNAL Net_855 : bit;
-TERMINAL \I2C_TMP116:tmpSIOVREF__scl_net_0\ : bit;
-SIGNAL \I2C_TMP116:tmpINTERRUPT_0__scl_net_0\ : bit;
-SIGNAL \I2C_TMP116:Net_1099\ : bit;
-SIGNAL \I2C_TMP116:Net_1258\ : bit;
+TERMINAL \I2C:tmpSIOVREF__scl_net_0\ : bit;
+SIGNAL \I2C:tmpINTERRUPT_0__scl_net_0\ : bit;
+SIGNAL \I2C:Net_1099\ : bit;
+SIGNAL \I2C:Net_1258\ : bit;
 SIGNAL Net_838 : bit;
-SIGNAL \I2C_TMP116:cts_wire\ : bit;
-SIGNAL \I2C_TMP116:tx_wire\ : bit;
-SIGNAL \I2C_TMP116:rts_wire\ : bit;
-SIGNAL \I2C_TMP116:mosi_m_wire\ : bit;
-SIGNAL \I2C_TMP116:select_m_wire_3\ : bit;
-SIGNAL \I2C_TMP116:select_m_wire_2\ : bit;
-SIGNAL \I2C_TMP116:select_m_wire_1\ : bit;
-SIGNAL \I2C_TMP116:select_m_wire_0\ : bit;
-SIGNAL \I2C_TMP116:sclk_m_wire\ : bit;
-SIGNAL \I2C_TMP116:miso_s_wire\ : bit;
+SIGNAL \I2C:cts_wire\ : bit;
+SIGNAL \I2C:tx_wire\ : bit;
+SIGNAL \I2C:rts_wire\ : bit;
+SIGNAL \I2C:mosi_m_wire\ : bit;
+SIGNAL \I2C:select_m_wire_3\ : bit;
+SIGNAL \I2C:select_m_wire_2\ : bit;
+SIGNAL \I2C:select_m_wire_1\ : bit;
+SIGNAL \I2C:select_m_wire_0\ : bit;
+SIGNAL \I2C:sclk_m_wire\ : bit;
+SIGNAL \I2C:miso_s_wire\ : bit;
 SIGNAL Net_841 : bit;
 SIGNAL Net_840 : bit;
-SIGNAL \I2C_TMP116:Net_1000\ : bit;
+SIGNAL \I2C:Net_1000\ : bit;
 SIGNAL Net_837 : bit;
 SIGNAL Net_846 : bit;
 SIGNAL Net_847 : bit;
@@ -616,7 +616,7 @@ GND_2:cy_annotation_universal_v1_0
 		port_names=>"T1",
 		width=>1)
 	PORT MAP(connect=>Net_4186);
-\I2C_TMP116:SCBCLK\:cy_clock_v1_0
+\I2C:SCBCLK\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"3dbba19d-7851-4a83-b204-a0a386fe8d68/2dc2d7a8-ce2b-43c7-af4a-821c8cd73ccf",
 		source_clock_id=>"",
@@ -624,9 +624,9 @@ GND_2:cy_annotation_universal_v1_0
 		period=>"645161290.322581",
 		is_direct=>'0',
 		is_digital=>'0')
-	PORT MAP(clock_out=>\I2C_TMP116:Net_847\,
+	PORT MAP(clock_out=>\I2C:Net_847\,
 		dig_domain_out=>open);
-\I2C_TMP116:sda\:cy_psoc3_pins_v1_10
+\I2C:sda\:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"3dbba19d-7851-4a83-b204-a0a386fe8d68/5382e105-1382-4a2e-b9f4-3bb2feba71e0",
 		drive_mode=>"100",
 		ibuf_enabled=>"1",
@@ -684,10 +684,10 @@ GND_2:cy_annotation_universal_v1_0
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(tmpOE__SG1_A_net_0),
 		y=>(zero),
-		fb=>(\I2C_TMP116:tmpFB_0__sda_net_0\),
+		fb=>(\I2C:tmpFB_0__sda_net_0\),
 		analog=>(open),
 		io=>Net_856,
-		siovref=>(\I2C_TMP116:tmpSIOVREF__sda_net_0\),
+		siovref=>(\I2C:tmpSIOVREF__sda_net_0\),
 		annotation=>(open),
 		in_clock=>zero,
 		in_clock_en=>tmpOE__SG1_A_net_0,
@@ -695,8 +695,8 @@ GND_2:cy_annotation_universal_v1_0
 		out_clock=>zero,
 		out_clock_en=>tmpOE__SG1_A_net_0,
 		out_reset=>zero,
-		interrupt=>\I2C_TMP116:tmpINTERRUPT_0__sda_net_0\);
-\I2C_TMP116:scl\:cy_psoc3_pins_v1_10
+		interrupt=>\I2C:tmpINTERRUPT_0__sda_net_0\);
+\I2C:scl\:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"3dbba19d-7851-4a83-b204-a0a386fe8d68/22863ebe-a37b-476f-b252-6e49a8c00b12",
 		drive_mode=>"100",
 		ibuf_enabled=>"1",
@@ -754,10 +754,10 @@ GND_2:cy_annotation_universal_v1_0
 		input_buffer_sel=>"00")
 	PORT MAP(oe=>(tmpOE__SG1_A_net_0),
 		y=>(zero),
-		fb=>(\I2C_TMP116:tmpFB_0__scl_net_0\),
+		fb=>(\I2C:tmpFB_0__scl_net_0\),
 		analog=>(open),
 		io=>Net_855,
-		siovref=>(\I2C_TMP116:tmpSIOVREF__scl_net_0\),
+		siovref=>(\I2C:tmpSIOVREF__scl_net_0\),
 		annotation=>(open),
 		in_clock=>zero,
 		in_clock_en=>tmpOE__SG1_A_net_0,
@@ -765,26 +765,26 @@ GND_2:cy_annotation_universal_v1_0
 		out_clock=>zero,
 		out_clock_en=>tmpOE__SG1_A_net_0,
 		out_reset=>zero,
-		interrupt=>\I2C_TMP116:tmpINTERRUPT_0__scl_net_0\);
-\I2C_TMP116:SCB_IRQ\:cy_isr_v1_0
+		interrupt=>\I2C:tmpINTERRUPT_0__scl_net_0\);
+\I2C:SCB_IRQ\:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
 		is_nmi=>'0')
 	PORT MAP(int_signal=>Net_838);
-\I2C_TMP116:SCB\:cy_m0s8_scb_v2_0
+\I2C:SCB\:cy_m0s8_scb_v2_0
 	GENERIC MAP(cy_registers=>"",
 		scb_mode=>0)
-	PORT MAP(clock=>\I2C_TMP116:Net_847\,
+	PORT MAP(clock=>\I2C:Net_847\,
 		interrupt=>Net_838,
 		rx=>zero,
-		tx=>\I2C_TMP116:tx_wire\,
+		tx=>\I2C:tx_wire\,
 		cts=>zero,
-		rts=>\I2C_TMP116:rts_wire\,
-		mosi_m=>\I2C_TMP116:mosi_m_wire\,
+		rts=>\I2C:rts_wire\,
+		mosi_m=>\I2C:mosi_m_wire\,
 		miso_m=>zero,
-		select_m=>(\I2C_TMP116:select_m_wire_3\, \I2C_TMP116:select_m_wire_2\, \I2C_TMP116:select_m_wire_1\, \I2C_TMP116:select_m_wire_0\),
-		sclk_m=>\I2C_TMP116:sclk_m_wire\,
+		select_m=>(\I2C:select_m_wire_3\, \I2C:select_m_wire_2\, \I2C:select_m_wire_1\, \I2C:select_m_wire_0\),
+		sclk_m=>\I2C:sclk_m_wire\,
 		mosi_s=>zero,
-		miso_s=>\I2C_TMP116:miso_s_wire\,
+		miso_s=>\I2C:miso_s_wire\,
 		select_s=>zero,
 		sclk_s=>zero,
 		scl=>Net_855,

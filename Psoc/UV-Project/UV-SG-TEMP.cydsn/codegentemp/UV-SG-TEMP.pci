@@ -1,16 +1,20 @@
 # UV-SG-TEMP
-# 2018-02-02 02:41:42Z
+# 2018-02-24 00:32:33Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
 # IO_7@[IOP=(0)][IoId=(7)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 7
+# IO_0@[IOP=(6)][IoId=(0)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 0
+# IO_1@[IOP=(6)][IoId=(1)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 1
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
 set_io "SG1_A(0)" iocell 2 0
 set_io "SG2_A(0)" iocell 2 1
 set_io "GAIN(0)" iocell 2 2
-set_io "\I2C_TMP116:sda(0)\" iocell 0 0
-set_io "\I2C_TMP116:scl(0)\" iocell 0 1
+set_io "\I2C:sda(0)\" iocell 0 0
+set_io "\I2C:scl(0)\" iocell 0 1
 set_io "UVD_5NEG(0)" iocell 2 4
 set_io "UVD_5POS(0)" iocell 2 5
 set_io "UVD_5GAIN(0)" iocell 2 3

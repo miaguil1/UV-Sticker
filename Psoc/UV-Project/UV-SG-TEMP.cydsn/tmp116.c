@@ -7,21 +7,21 @@ float tmp116_get_celsius(void)
     uint32 tmp116_gnd_add = 0x48; //Slave Address for TMP116, ADD0 = GND
     uint8 i2c_reg_counts[2];
     uint32 i2c_byte_count = 2; //Number of bytes of buffer to read
-    uint32 i2c_mode = I2C_TMP116_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
+    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
     uint32 i2c_error;
 
     do
     {
-        i2c_error = I2C_TMP116_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c_mode);
+        i2c_error = I2C_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c_mode);
     }
-    while(i2c_error != I2C_TMP116_I2C_MSTR_NO_ERROR);
+    while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
    
     /* Wait for the data transfer to complete */
     //while(I2C_TMP116_I2CMasterStatus() & I2C_TMP116_I2C_MSTAT_XFER_INP);    
-    while(!(I2C_TMP116_I2CMasterStatus() & I2C_TMP116_I2C_MSTAT_RD_CMPLT)); //Wait until the Master has completed reading    
+    while(!(I2C_I2CMasterStatus() & I2C_I2C_MSTAT_RD_CMPLT)); //Wait until the Master has completed reading    
     /* Clear Read Complete Status bit */
-    I2C_TMP116_I2CMasterClearStatus();
-    I2C_TMP116_I2CMasterClearReadBuf();
+    I2C_I2CMasterClearStatus();
+    I2C_I2CMasterClearReadBuf();
  
     uint16 i2c_counts =  (i2c_reg_counts[0] << 8) | i2c_reg_counts[1];
     float celsius_counts = (float) i2c_counts;
@@ -35,21 +35,21 @@ uint16 tmp116_get_uint16(void)
     uint32 tmp116_gnd_add = 0x48; //Slave Address for TMP116, ADD0 = GND
     uint8 i2c_reg_counts[2];
     uint32 i2c_byte_count = 2; //Number of bytes of buffer to read
-    uint32 i2c_mode = I2C_TMP116_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
+    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
     uint32 i2c_error;
     
     do
     {
-        i2c_error = I2C_TMP116_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c_mode);
+        i2c_error = I2C_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c_mode);
     }
-    while(i2c_error != I2C_TMP116_I2C_MSTR_NO_ERROR);
+    while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
     
     /* Wait for the data transfer to complete */
-    while(I2C_TMP116_I2CMasterStatus() & I2C_TMP116_I2C_MSTAT_XFER_INP);    
+    while(I2C_I2CMasterStatus() & I2C_I2C_MSTAT_XFER_INP);    
              
     /* Clear Read Complete Status bit */
-    I2C_TMP116_I2CMasterClearStatus();
-    I2C_TMP116_I2CMasterClearReadBuf();
+    I2C_I2CMasterClearStatus();
+    I2C_I2CMasterClearReadBuf();
     
     uint16 i2c_counts =  (i2c_reg_counts[0] << 8) | i2c_reg_counts[1];
     return i2c_counts;

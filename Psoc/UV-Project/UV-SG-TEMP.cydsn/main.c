@@ -24,6 +24,8 @@
 
 int main()
 {
+    system_use_eco();   // Use External Fast frequency Clock
+    system_use_wco();   // Use External Low frequency Clock
     system_enable_interrupts(); // Enabling Global Interrupts
     system_init_hardware(); // Starting all hardware modules: UART, I2C, SG-AMP, UV-AMP, ADC 
     LED_BLUE_Write((uint8) 0); // Turn BLUE LED ON

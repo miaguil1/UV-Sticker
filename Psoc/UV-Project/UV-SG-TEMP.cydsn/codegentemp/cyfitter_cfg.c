@@ -173,10 +173,16 @@ static void ClockSetup(void)
 
 	/* Set Flash Cycles based on max possible frequency in case a glitch occurs during ClockSetup(). */
 	CY_SET_REG32((void CYXDATA *)(CYREG_CPUSS_FLASH_CTL), (0x0012u));
+
+	/* Start the WCO */
+	CySysClkWcoStart();
+	CyDelayCycles(12000000u); /* WCO may take up to 500ms to start */
+	(void)CySysClkWcoSetPowerMode(CY_SYS_CLK_WCO_LPM);    /* Switch to the low power mode */
+
 	/* Setup and trim IMO based on desired frequency. */
 	CySysClkWriteImoFreq(48u);
-	/* CYDEV_CLK_ILO_CONFIG Starting address: CYDEV_CLK_ILO_CONFIG */
-	CY_SET_REG32((void *)(CYREG_CLK_ILO_CONFIG), 0x80000006u);
+	/* CYDEV_WDT_CONFIG Starting address: CYDEV_WDT_CONFIG */
+	CY_SET_REG32((void *)(CYREG_WDT_CONFIG), 0x40000000u);
 
 
 	/* Enable fast start mode for XO */
@@ -202,7 +208,7 @@ static void ClockSetup(void)
 	CY_SET_REG32((void *)(CYREG_CLK_IMO_CONFIG), 0x82000000u);
 
 	/* CYDEV_CLK_SELECT Starting address: CYDEV_CLK_SELECT */
-	CY_SET_REG32((void *)(CYREG_CLK_SELECT), 0x00040000u);
+	CY_SET_REG32((void *)(CYREG_CLK_SELECT), 0x00040090u);
 
 	/* CYDEV_PERI_PCLK_CTL6 Starting address: CYDEV_PERI_PCLK_CTL6 */
 	CY_SET_REG32((void *)(CYREG_PERI_PCLK_CTL6), 0x00000041u);
@@ -213,7 +219,7 @@ static void ClockSetup(void)
 	/* CYDEV_PERI_PCLK_CTL1 Starting address: CYDEV_PERI_PCLK_CTL1 */
 	CY_SET_REG32((void *)(CYREG_PERI_PCLK_CTL1), 0x00000042u);
 
-	CY_SET_REG32((void *)(CYREG_WDT_CONFIG), 0x00000000u);
+	CY_SET_REG32((void *)(CYREG_WDT_CONFIG), 0x40000000u);
 }
 
 

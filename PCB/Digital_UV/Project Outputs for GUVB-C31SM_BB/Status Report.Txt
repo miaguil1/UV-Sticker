@@ -1,0 +1,18 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [GUVB-C31SM_BB.PrjPcb]
+   Generated File[GUVB-C31SM_BB.GTL]
+   Generated File[GUVB-C31SM_BB.GTO]
+   Generated File[GUVB-C31SM_BB.GTP]
+   Generated File[GUVB-C31SM_BB.GTS]
+   Generated File[GUVB-C31SM_BB.GKO]
+   Generated File[GUVB-C31SM_BB.GM3]
+   Generated File[GUVB-C31SM_BB.RUL]
+   Generated File[GUVB-C31SM_BB.EXTREP]
+   Generated File[GUVB-C31SM_BB.REP]
+
+
+Files Generated   : 9
+Documents Printed : 0
+
+Finished Output Generation At 8:18:13 PM On 2/22/2018

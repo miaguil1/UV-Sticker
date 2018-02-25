@@ -25,7 +25,7 @@ const uint32 timer2_toggle = 18;  // bit #18 is the bit for the timer to check. 
 void system_init_hardware(void)
 {
     UART_Start(); //Starting UART internal communication
-    I2C_TMP116_Start(); //Starting the I2C communication for TMP116 
+    I2C_Start(); //Starting the I2C communication for TMP116 
     SG_AMP_Start(); //Starting internal Op-amp titled SG_AMP
     UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
     ADC_Start(); //Starting ADC
@@ -77,6 +77,38 @@ void adc_conversion(void)
     ADC_StopConvert();   
 }
 
+void system_read_i2c(uint32 register_address, uint8 *register_value, uint32 register_byte_count)
+{
+    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
+    uint32 i2c_error;
+    do
+    {
+        i2c_error = I2C_I2CMasterReadBuf(register_address, register_value, register_byte_count, i2c_mode);
+    }
+    while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
+    /* Wait for the data transfer to complete */   
+    while(!(I2C_I2CMasterStatus() & I2C_I2C_MSTAT_RD_CMPLT)); //Wait until the Master has completed reading    
+    /* Clear Read Complete Status bit */
+    I2C_I2CMasterClearStatus();
+    I2C_I2CMasterClearReadBuf();
+}
+
+void system_write_i2c(uint32 register_address, uint8 register_value[], uint32 register_byte_count) 
+{
+    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
+    uint32 i2c_error;
+    do
+    {
+    i2c_error =  I2C_I2CMasterWriteBuf(register_address,register_value, register_byte_count, i2c_mode);        
+    }
+    while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
+    /* Wait for the data transfer to complete */ 
+    while(!(I2C_I2CMasterStatus() & I2C_I2C_MSTAT_WR_CMPLT)); //Wait until the Master has completed reading    
+    /* Clear Read Complete Status bit */
+    I2C_I2CMasterClearStatus();
+    I2C_I2CMasterClearWriteBuf();
+}
+    
 uint16 adc_acquire_channel(uint32 channel)
 {
     adc_conversion();
@@ -99,12 +131,12 @@ void adc_wakeup(void)
 
 void i2c_sleep(void)
 {
-    I2C_TMP116_Sleep(); // Prepares the I2C component for Deep Sleep   
+    I2C_Sleep(); // Prepares the I2C component for Deep Sleep   
 }
 
 void i2c_wakeup(void)
 {
-    I2C_TMP116_Wakeup(); // Tells the I2C component to Wake Up
+    I2C_Wakeup(); // Tells the I2C component to Wake Up
 }
 
 void uart_sleep(void)
@@ -130,6 +162,21 @@ void opamp_wakeup(void)
     
 }
 
+//  Start using External WCO
+void system_use_wco(void)
+{  
+    CySysClkWcoStart();     // Start WCO
+    CySysClkSetLfclkSource(CY_SYS_CLK_LFCLK_SRC_WCO);   // Select WCO as the clock source
+    CySysClkIloStop();  //Stop ILO (Internal Oscillator   
+}
+
+//  Start using External ECO
+void system_use_eco(void)
+{
+    CySysClkEcoStart(2000);
+}
+    
+// Stop Using ECO
 void system_stop_eco(void)
 {
     CySysClkEcoStop();
@@ -138,9 +185,4 @@ void system_stop_eco(void)
 void system_set_imo(int mhz)
 {
     CySysClkWriteImoFreq(mhz);
-}
-
-void system_enable_wco(void)
-{
-    CySysClkWcoStart();    
 }

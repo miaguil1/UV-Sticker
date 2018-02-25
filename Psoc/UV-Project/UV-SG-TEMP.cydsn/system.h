@@ -36,6 +36,10 @@ void system_red_led_blink(void);
 
 void adc_conversion(void);
 
+void system_read_i2c(uint32 register_address, uint8 *register_value, uint32 register_byte_count);
+
+void system_write_i2c(uint32 register_address, uint8 register_value[], uint32 register_byte_count); 
+
 uint16 adc_acquire_channel(uint32);
 
 void adc_sleep(void);
@@ -61,6 +65,10 @@ void system_deepsleep(void);
 void system_wakeup(void); 
 
 void system_stop_eco(void);
+
+void system_use_wco(void);
+
+void system_use_eco(void);
 
 void system_set_imo(int);
 
