@@ -3,7 +3,8 @@
 #include "tmp116.h"
 #include "battery.h"
 #include "bluetooth.h"
-
+#include "guvb_c31sm.h"
+#include "adafruit_guva.h"
 
 void WDT_ISR_Handler()
 {
@@ -11,52 +12,26 @@ void WDT_ISR_Handler()
     // Update Gatt Database every 8 seconds
     if(reason & CY_SYS_WDT_COUNTER2_INT)
     {
-        if(CyBle_GetState() == CYBLE_STATE_CONNECTED)
-        {
-            update_tmp116();
-            update_UV();
-            //update_battery();            
-        }
+//        if(CyBle_GetState() == CYBLE_STATE_CONNECTED)
+//        {
+//            system_wakeup();    // Waking up System from sleep to perform measurements
+//            update_tmp116();
+//            update_UV();
+//            update_battery();
+            wakeup_guvb_c31sm();
+            CyDelay(200);
+            shutdown_guvb_c31sm();
+            uint16 measurement =  guvb_c31sm_get_uint16();
+            uint8 lsb = measurement & 0xFF;
+            uint8 msb = measurement >> 8;
+            UART_UartPutChar(lsb);
+            UART_UartPutChar(msb);
+            adafruit_guva_uart();
+//            system_sleep(); // Took Measurements, now going back into sleep mode.
+//        }
         
         system_red_led_blink(); //Blink LED 
     }
-    
-//    if(reason & CY_SYS_WDT_COUNTER2_INT)
-//    {
-//        wdt2_disable(); // Disable Watchdog #2
-//        wdt1_enable();  // Enable Watchdog #1
-//        update_timer1();    // Update Timer #1 Count 
-//        
-//        
-//        if(CyBle_GetState() == CYBLE_STATE_CONNECTED)
-//        {
-//            update_tmp116();
-//            update_UV();
-//            //update_battery();            
-//        }
-//        system_red_led_blink(); //Blink LED 
-//    }
-//    if(reason & CY_SYS_WDT_COUNTER1_INT)
-//    {        
-//        wdt2_enable();  // Enable Watchdog #2
-//        wdt1_disable();  // Disable Watchdog #1
-//        
-//        //CyBle_ExitLPM(); // Exit BLE Sublayer stack low power mode
-//        //system_wakeup();    // Waking up all components and modules for proper operation
-//        //bluetooth_process(); // Process events on the GATT and GAP Stack
-//        
-//        if(CyBle_GetState() == CYBLE_STATE_CONNECTED)
-//        {
-//            update_tmp116();
-//            update_UV();
-//            //update_battery();            
-//        }
-//        
-//        system_red_led_blink(); //Blink LED 
-//        
-//        //CyBle_EnterLPM(CYBLE_BLESS_DEEPSLEEP);
-//        //system_sleep(); // Putting all components into low power/sleep mode        
-//    }
     CySysWdtClearInterrupt(reason); //Clear the WDT Interrupt
 }
 

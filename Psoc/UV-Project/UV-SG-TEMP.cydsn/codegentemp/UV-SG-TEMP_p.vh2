@@ -1,6 +1,6 @@
 -- Project:   UV-SG-TEMP
--- Generated: 02/23/2018 16:32:33
--- PSoC Creator  4.1 Update 1
+-- Generated: 03/06/2018 10:28:57
+-- PSoC Creator  4.2
 
 ENTITY \UV-SG-TEMP\ IS
     PORT(
@@ -11,17 +11,17 @@ ENTITY \UV-SG-TEMP\ IS
         LED_GREEN(0)_PAD : OUT std_ulogic;
         LED_RED(0)_PAD : OUT std_ulogic;
         LED_BLUE(0)_PAD : OUT std_ulogic);
-    ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_CTB OF __DEFAULT__ : ENTITY IS 3.3e0;
+    ATTRIBUTE voltage_VDDA_1 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_0 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDD_0 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_2 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_1 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDR_HLS OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDR_BGLS OF __DEFAULT__ : ENTITY IS 3.3e0;
-    ATTRIBUTE voltage_VDDR_LF OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDR_HF OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDR_SYN OF __DEFAULT__ : ENTITY IS 3.3e0;
+    ATTRIBUTE voltage_VDDR_LF OF __DEFAULT__ : ENTITY IS 3.3e0;
 END \UV-SG-TEMP\;
 
 ARCHITECTURE __DEFAULT__ OF \UV-SG-TEMP\ IS
@@ -125,7 +125,9 @@ ARCHITECTURE __DEFAULT__ OF \UV-SG-TEMP\ IS
     ATTRIBUTE lib_model OF GAIN(0) : LABEL IS "iocell3";
     ATTRIBUTE Location OF GAIN(0) : LABEL IS "P2[2]";
     ATTRIBUTE lib_model OF \I2C:sda(0)\ : LABEL IS "iocell4";
+    ATTRIBUTE Location OF \I2C:sda(0)\ : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF \I2C:scl(0)\ : LABEL IS "iocell5";
+    ATTRIBUTE Location OF \I2C:scl(0)\ : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF UVD_5NEG(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF UVD_5NEG(0) : LABEL IS "P2[4]";
     ATTRIBUTE lib_model OF UVD_5POS(0) : LABEL IS "iocell7";
@@ -133,10 +135,15 @@ ARCHITECTURE __DEFAULT__ OF \UV-SG-TEMP\ IS
     ATTRIBUTE lib_model OF UVD_5GAIN(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF UVD_5GAIN(0) : LABEL IS "P2[3]";
     ATTRIBUTE lib_model OF \UART:tx(0)\ : LABEL IS "iocell9";
+    ATTRIBUTE Location OF \UART:tx(0)\ : LABEL IS "P1[5]";
     ATTRIBUTE lib_model OF \UART:rx(0)\ : LABEL IS "iocell10";
+    ATTRIBUTE Location OF \UART:rx(0)\ : LABEL IS "P1[4]";
     ATTRIBUTE lib_model OF LED_GREEN(0) : LABEL IS "iocell11";
+    ATTRIBUTE Location OF LED_GREEN(0) : LABEL IS "P3[6]";
     ATTRIBUTE lib_model OF LED_RED(0) : LABEL IS "iocell12";
+    ATTRIBUTE Location OF LED_RED(0) : LABEL IS "P2[6]";
     ATTRIBUTE lib_model OF LED_BLUE(0) : LABEL IS "iocell13";
+    ATTRIBUTE Location OF LED_BLUE(0) : LABEL IS "P3[7]";
     ATTRIBUTE lib_model OF V_BATTERY(0) : LABEL IS "iocell14";
     ATTRIBUTE Location OF V_BATTERY(0) : LABEL IS "P3[4]";
     ATTRIBUTE lib_model OF GUVA(0) : LABEL IS "iocell15";
@@ -151,11 +158,11 @@ ARCHITECTURE __DEFAULT__ OF \UV-SG-TEMP\ IS
     END COMPONENT;
     COMPONENT iocell
         PORT (
-            pin_input : IN std_ulogic;
             oe : IN std_ulogic;
             fb : OUT std_ulogic;
-            pad_in : IN std_ulogic;
             pa_out : OUT std_ulogic;
+            pin_input : IN std_ulogic;
+            pad_in : IN std_ulogic;
             pad_out : OUT std_ulogic;
             oe_reg : OUT std_ulogic;
             oe_internal : IN std_ulogic;

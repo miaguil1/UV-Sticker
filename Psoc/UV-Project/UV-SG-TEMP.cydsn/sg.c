@@ -15,7 +15,7 @@ float sg_get_strain()
     float v_out = sg_mv - amp_iov[1] - amp_ibc[1]*sg_resistors[1]; //Get PhotoDiode Voltage, subtract Amplifier Noise
     float gain = (1 + 2 * sg_resistors[6] / sg_resistors[8]); //Calculating Gain from Strain Guage Differential Amplifier
     float sg_current = v_out/sg_resistors[2]; //Getting PhotoDiode Current from PhotoDiode Voltage
-    float sg_strain = sg_current/sg_resistors[3]; //Getting Power Density from PhotoDiode
+    float sg_strain = sg_current/sg_resistors[3]/gain; //Getting Power Density from PhotoDiode
     return sg_strain; //Returning Strain Guage Percent Change(%)
 }
 

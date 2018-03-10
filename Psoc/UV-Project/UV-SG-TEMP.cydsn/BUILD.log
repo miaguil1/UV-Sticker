@@ -1,97 +1,15 @@
---------------- Build Started: 02/23/2018 16:59:50 Project: UV-SG-TEMP, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 03/09/2018 10:59:26 Project: UV-SG-TEMP, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM0\ARM_GCC_541\Debug\main.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/tmp116.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c tmp116.c -o .\CortexM0\ARM_GCC_541\Debug\tmp116.o
-tmp116.c: In function 'tmp116_get_uint16':
-tmp116.c:34:11: warning: unused variable 'reg_cels_conv' [-Wunused-variable]
-     float reg_cels_conv = 7812.5; //1 Register unit = 0.0078125 Celcius
-           ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/bluetooth.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c bluetooth.c -o .\CortexM0\ARM_GCC_541\Debug\bluetooth.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/lmt70.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c lmt70.c -o .\CortexM0\ARM_GCC_541\Debug\lmt70.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/system.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c system.c -o .\CortexM0\ARM_GCC_541\Debug\system.o
-system.c: In function 'system_init_hardware':
-system.c:28:5: warning: implicit declaration of function 'I2C_TMP116_Start' [-Wimplicit-function-declaration]
-     I2C_TMP116_Start(); //Starting the I2C communication for TMP116 
-     ^
-system.c: In function 'i2c_sleep':
-system.c:134:5: warning: implicit declaration of function 'I2C_TMP116_Sleep' [-Wimplicit-function-declaration]
-     I2C_TMP116_Sleep(); // Prepares the I2C component for Deep Sleep   
-     ^
-system.c: In function 'i2c_wakeup':
-system.c:139:5: warning: implicit declaration of function 'I2C_TMP116_Wakeup' [-Wimplicit-function-declaration]
-     I2C_TMP116_Wakeup(); // Tells the I2C component to Wake Up
-     ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/uv.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c uv.c -o .\CortexM0\ARM_GCC_541\Debug\uv.o
-uv.c: In function 'uv_get_pd':
-uv.c:19:11: warning: unused variable 'uv_pd' [-Wunused-variable]
-     float uv_pd = uv_current/uv_respons; //Getting Power Density from PhotoDiode
-           ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/adafruit_guva.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c adafruit_guva.c -o .\CortexM0\ARM_GCC_541\Debug\adafruit_guva.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/sg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c sg.c -o .\CortexM0\ARM_GCC_541\Debug\sg.o
-sg.c: In function 'sg_get_strain':
-sg.c:16:11: warning: unused variable 'gain' [-Wunused-variable]
-     float gain = (1 + 2 * sg_resistors[6] / sg_resistors[8]); //Calculating Gain from Strain Guage Differential Amplifier
-           ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/watchdog.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c watchdog.c -o .\CortexM0\ARM_GCC_541\Debug\watchdog.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/led.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c led.c -o .\CortexM0\ARM_GCC_541\Debug\led.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/battery.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c battery.c -o .\CortexM0\ARM_GCC_541\Debug\battery.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_541\Debug/guvb_c31sm.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c guvb_c31sm.c -o .\CortexM0\ARM_GCC_541\Debug\guvb_c31sm.o
-guvb_c31sm.c: In function 'setup_guvb_c31sm':
-guvb_c31sm.c:11:37: warning: passing argument 2 of 'system_write_i2c' makes pointer from integer without a cast [-Wint-conversion]
-     system_write_i2c(mode_register, mode_register_value, register_byte_count);   //sending Message via I2C    
-                                     ^
-In file included from guvb_c31sm.h:4:0,
-                 from guvb_c31sm.c:1:
-system.h:41:6: note: expected 'uint8 * {aka unsigned char *}' but argument is of type 'uint8 {aka unsigned char}'
- void system_write_i2c(uint32 register_address, uint8 register_value[], uint32 register_byte_count); 
-      ^
-guvb_c31sm.c: In function 'guvb_c31sm_chipid':
-guvb_c31sm.c:18:12: warning: unused variable 'i2c_error' [-Wunused-variable]
-     uint32 i2c_error;
-            ^
-guvb_c31sm.c:17:12: warning: unused variable 'i2c_mode' [-Wunused-variable]
-     uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
-            ^
-guvb_c31sm.c: In function 'guvb_c31sm_get_uv':
-guvb_c31sm.c:32:23: error: 'I2C_TMP116_I2C_MODE_COMPLETE_XFER' undeclared (first use in this function)
-     uint32 i2c_mode = I2C_TMP116_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
-                       ^
-guvb_c31sm.c:32:23: note: each undeclared identifier is reported only once for each function it appears in
-guvb_c31sm.c:37:21: warning: implicit declaration of function 'I2C_TMP116_I2CMasterReadBuf' [-Wimplicit-function-declaration]
-         i2c_error = I2C_TMP116_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c_mode);
-                     ^
-guvb_c31sm.c:39:24: error: 'I2C_TMP116_I2C_MSTR_NO_ERROR' undeclared (first use in this function)
-     while(i2c_error != I2C_TMP116_I2C_MSTR_NO_ERROR);
-                        ^
-guvb_c31sm.c:42:13: warning: implicit declaration of function 'I2C_TMP116_I2CMasterStatus' [-Wimplicit-function-declaration]
-     while(!(I2C_TMP116_I2CMasterStatus() & I2C_TMP116_I2C_MSTAT_RD_CMPLT)); //Wait until the Master has completed reading    
-             ^
-guvb_c31sm.c:42:44: error: 'I2C_TMP116_I2C_MSTAT_RD_CMPLT' undeclared (first use in this function)
-     while(!(I2C_TMP116_I2CMasterStatus() & I2C_TMP116_I2C_MSTAT_RD_CMPLT)); //Wait until the Master has completed reading    
-The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
-                                            ^
-guvb_c31sm.c:44:5: warning: implicit declaration of function 'I2C_TMP116_I2CMasterClearStatus' [-Wimplicit-function-declaration]
-     I2C_TMP116_I2CMasterClearStatus();
-     ^
-guvb_c31sm.c:45:5: warning: implicit declaration of function 'I2C_TMP116_I2CMasterClearReadBuf' [-Wimplicit-function-declaration]
-     I2C_TMP116_I2CMasterClearReadBuf();
-     ^
-guvb_c31sm.c: In function 'uv_get_pd':
-guvb_c31sm.c:55:19: warning: implicit declaration of function 'uv_measure' [-Wimplicit-function-declaration]
-     float uv_mv = uv_measure(); //Measure Raw ADC value from Port
-                   ^
-guvb_c31sm.c:59:11: warning: unused variable 'uv_pd' [-Wunused-variable]
-     float uv_pd = uv_current/uv_respons; //Getting Power Density from PhotoDiode
-           ^
-guvb_c31sm.c: In function 'guvb_c31sm_get_uint8':
-guvb_c31sm.c:79:5: warning: implicit declaration of function 'uv_get_pd_string' [-Wimplicit-function-declaration]
-     uv_get_pd_string(uv_pd_string);
-     ^
-guvb_c31sm.c: In function 'guvb_c31sm_update_UV':
-guvb_c31sm.c:119:5: warning: implicit declaration of function 'uv_get_uint8' [-Wimplicit-function-declaration]
-     uv_get_uint8(uv_pd);    //Getting UV power Density as an uint8 array
-     ^
-guvb_c31sm.c:120:5: warning: implicit declaration of function 'uv_uart' [-Wimplicit-function-declaration]
-     uv_uart();
-     ^
---------------- Build Failed: 02/23/2018 16:59:52 ---------------
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_541\Debug\UV-SG-TEMP.a .\CortexM0\ARM_GCC_541\Debug\SG1_A.o .\CortexM0\ARM_GCC_541\Debug\SG1_A_PM.o .\CortexM0\ARM_GCC_541\Debug\SG2_A.o .\CortexM0\ARM_GCC_541\Debug\SG2_A_PM.o .\CortexM0\ARM_GCC_541\Debug\GAIN.o .\CortexM0\ARM_GCC_541\Debug\GAIN_PM.o .\CortexM0\ARM_GCC_541\Debug\UART.o .\CortexM0\ARM_GCC_541\Debug\UART_SPI_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_SPI_UART_INT.o .\CortexM0\ARM_GCC_541\Debug\UART_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_UART.o .\CortexM0\ARM_GCC_541\Debug\UART_BOOT.o .\CortexM0\ARM_GCC_541\Debug\UART_UART_BOOT.o .\CortexM0\ARM_GCC_541\Debug\BLE.o .\CortexM0\ARM_GCC_541\Debug\BLE_gatt.o .\CortexM0\ARM_GCC_541\Debug\BLE_eventHandler.o .\CortexM0\ARM_GCC_541\Debug\BLE_HAL_INT.o .\CortexM0\ARM_GCC_541\Debug\BLE_HAL_PVT.o .\CortexM0\ARM_GCC_541\Debug\BLE_custom.o .\CortexM0\ARM_GCC_541\Debug\ADC.o .\CortexM0\ARM_GCC_541\Debug\ADC_PM.o .\CortexM0\ARM_GCC_541\Debug\ADC_INT.o .\CortexM0\ARM_GCC_541\Debug\UART_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\UART_tx.o .\CortexM0\ARM_GCC_541\Debug\UART_tx_PM.o .\CortexM0\ARM_GCC_541\Debug\UART_rx.o .\CortexM0\ARM_GCC_541\Debug\UART_rx_PM.o .\CortexM0\ARM_GCC_541\Debug\BLE_bless_isr.o .\CortexM0\ARM_GCC_541\Debug\ADC_IRQ.o .\CortexM0\ARM_GCC_541\Debug\ADC_intClock.o .\CortexM0\ARM_GCC_541\Debug\CyFlash.o .\CortexM0\ARM_GCC_541\Debug\CyLib.o .\CortexM0\ARM_GCC_541\Debug\cyPm.o .\CortexM0\ARM_GCC_541\Debug\cyutils.o .\CortexM0\ARM_GCC_541\Debug\CyLFClk.o .\CortexM0\ARM_GCC_541\Debug\UVD_5NEG.o .\CortexM0\ARM_GCC_541\Debug\UVD_5NEG_PM.o .\CortexM0\ARM_GCC_541\Debug\UVD_5POS.o .\CortexM0\ARM_GCC_541\Debug\UVD_5POS_PM.o .\CortexM0\ARM_GCC_541\Debug\UVD_5GAIN.o .\CortexM0\ARM_GCC_541\Debug\UVD_5GAIN_PM.o .\CortexM0\ARM_GCC_541\Debug\SG_AMP.o .\CortexM0\ARM_GCC_541\Debug\SG_AMP_PM.o .\CortexM0\ARM_GCC_541\Debug\UV5_AMP.o .\CortexM0\ARM_GCC_541\Debug\UV5_AMP_PM.o .\CortexM0\ARM_GCC_541\Debug\LED_RED.o .\CortexM0\ARM_GCC_541\Debug\LED_RED_PM.o .\CortexM0\ARM_GCC_541\Debug\LED_GREEN.o .\CortexM0\ARM_GCC_541\Debug\LED_GREEN_PM.o .\CortexM0\ARM_GCC_541\Debug\LED_BLUE.o .\CortexM0\ARM_GCC_541\Debug\LED_BLUE_PM.o .\CortexM0\ARM_GCC_541\Debug\WDT_ISR.o .\CortexM0\ARM_GCC_541\Debug\RTC.o .\CortexM0\ARM_GCC_541\Debug\V_BATTERY.o .\CortexM0\ARM_GCC_541\Debug\V_BATTERY_PM.o .\CortexM0\ARM_GCC_541\Debug\GUVA.o .\CortexM0\ARM_GCC_541\Debug\GUVA_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C_INT.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_I2C_MASTER.o .\CortexM0\ARM_GCC_541\Debug\I2C_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_BOOT.o .\CortexM0\ARM_GCC_541\Debug\I2C_SCBCLK.o .\CortexM0\ARM_GCC_541\Debug\I2C_sda.o .\CortexM0\ARM_GCC_541\Debug\I2C_sda_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_scl.o .\CortexM0\ARM_GCC_541\Debug\I2C_scl_PM.o .\CortexM0\ARM_GCC_541\Debug\I2C_SCB_IRQ.o .\CortexM0\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM0\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_541\Debug\UV-SG-TEMP.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\CortexM0\ARM_GCC_541\Debug\UV-SG-TEMP.elf .\CortexM0\ARM_GCC_541\Debug\main.o .\CortexM0\ARM_GCC_541\Debug\tmp116.o .\CortexM0\ARM_GCC_541\Debug\bluetooth.o .\CortexM0\ARM_GCC_541\Debug\lmt70.o .\CortexM0\ARM_GCC_541\Debug\system.o .\CortexM0\ARM_GCC_541\Debug\uv.o .\CortexM0\ARM_GCC_541\Debug\adafruit_guva.o .\CortexM0\ARM_GCC_541\Debug\sg.o .\CortexM0\ARM_GCC_541\Debug\watchdog.o .\CortexM0\ARM_GCC_541\Debug\led.o .\CortexM0\ARM_GCC_541\Debug\battery.o .\CortexM0\ARM_GCC_541\Debug\guvb_c31sm.o .\CortexM0\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_541\Debug\cymetadata.o .\CortexM0\ARM_GCC_541\Debug\Cm0Start.o .\CortexM0\ARM_GCC_541\Debug\UV-SG-TEMP.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\BLE_v3_50\Library\gccCyBLEStack_BLE_SOC_PERIPHERAL.a" -mcpu=cortex-m0 -mthumb -L Generated_Source\PSoC4 -Wl,-Map,.\CortexM0\ARM_GCC_541\Debug/UV-SG-TEMP.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\CortexM0\ARM_GCC_541\Debug\UV-SG-TEMP.elf --flash_row_size 128 --flash_size 131072 --flash_offset 0x00000000
+No ELF section .cychecksum found, creating one
+Application checksum calculated and stored in ELF section .cychecksum
+Checksum calculated and stored in ELF section .cymeta
+cyelftool.exe -S C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\CortexM0\ARM_GCC_541\Debug\UV-SG-TEMP.elf
+Flash used: 103240 of 131072 bytes (78.8 %).
+SRAM used: 11488 of 16384 bytes (70.1 %). Stack: 2048 bytes. Heap: 512 bytes.
+--------------- Build Succeeded: 03/09/2018 10:59:27 ---------------

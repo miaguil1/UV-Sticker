@@ -18,7 +18,7 @@ def read_line():
 
 def read_text():
     buffer = '!'
-    startbit = b's'
+    startbit = b'a'
     endbit = b'\n'
     message = []
     while True:

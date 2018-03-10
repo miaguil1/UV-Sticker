@@ -2,7 +2,7 @@
 
 float adafruit_guva_measure()
 {
-    uint32 pd_channel = 1;
+    uint32 pd_channel = 3;
 
     float adc_counts_float = (float) adc_acquire_channel(pd_channel);
     float milli_volts = (adc_counts_float*vdd_calibration)/2048; 

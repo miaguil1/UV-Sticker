@@ -2,7 +2,7 @@
 * \file CyBle_L2cap.h
 *
 * \file CYBLE_StackL2cap.h
-* \version 3.40
+* \version 3.50
 *
 * \brief
 *  This file contains the L2CAP APIs of the BLE Host Stack IP
@@ -12,7 +12,7 @@
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.

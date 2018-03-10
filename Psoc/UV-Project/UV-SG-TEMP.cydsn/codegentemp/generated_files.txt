@@ -170,6 +170,8 @@
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\CyBootAsmGnu.s" value="SOURCE_ASM;CortexM0,CortexM0p,CortexM3,CortexM4,CortexM7;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\CyLFClk.c" value="SOURCE_C;CortexM0;;;;cy_lfclk" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\CyLFClk.h" value="HEADER;;;;;cy_lfclk" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cy_em_eeprom.c" value="SOURCE_C;CortexM0;;;;Em_EEPROM_Dynamic" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cy_em_eeprom.h" value="HEADER;;;;;Em_EEPROM_Dynamic" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cycodeshareimport.ld" value="OTHER;;;;;" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cycodeshareexport.ld" value="OTHER;;;;;" />
