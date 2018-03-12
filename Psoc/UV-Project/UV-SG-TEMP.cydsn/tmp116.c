@@ -1,58 +1,24 @@
 #include "tmp116.h"
-int counter = 0;
 
 float tmp116_get_celsius(void)
 {
     float reg_cels_conv = 7812.5; //1 Register unit = 0.0078125 Celcius
-    uint32 tmp116_gnd_add = 0x48; //Slave Address for TMP116, ADD0 = GND
-    uint8 i2c_reg_counts[2];
-    uint32 i2c_byte_count = 2; //Number of bytes of buffer to read
-    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
-    uint32 i2c_error;
-
-    do
-    {
-        i2c_error = I2C_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c_mode);
-    }
-    while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
-   
-    /* Wait for the data transfer to complete */
-    //while(I2C_TMP116_I2CMasterStatus() & I2C_TMP116_I2C_MSTAT_XFER_INP);    
-    while(!(I2C_I2CMasterStatus() & I2C_I2C_MSTAT_RD_CMPLT)); //Wait until the Master has completed reading    
-    /* Clear Read Complete Status bit */
-    I2C_I2CMasterClearStatus();
-    I2C_I2CMasterClearReadBuf();
- 
-    uint16 i2c_counts =  (i2c_reg_counts[0] << 8) | i2c_reg_counts[1];
-    float celsius_counts = (float) i2c_counts;
+    float celsius_counts = (float) tmp116_get_uint16();
     float tmp116_celsius = reg_cels_conv*celsius_counts/1000000;
     return tmp116_celsius;
 }
 
 uint16 tmp116_get_uint16(void)
 {
-    float reg_cels_conv = 7812.5; //1 Register unit = 0.0078125 Celcius
-    uint32 tmp116_gnd_add = 0x48; //Slave Address for TMP116, ADD0 = GND
-    uint8 i2c_reg_counts[2];
-    uint32 i2c_byte_count = 2; //Number of bytes of buffer to read
-    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
-    uint32 i2c_error;
+    uint32 tmp116_gnd_address = 0x48; //Slave Address for TMP116, ADD0 = GND
+    uint32 tmp116_temp_address = 0x00;  //Temperature values stored in this Address of TMP116
+    uint8 i2c_temp_counts[2];
+    uint32 temp_register_byte_count = 2; //Number of bytes of buffer to read
+
+    system_read_i2c(tmp116_gnd_address, tmp116_temp_address, i2c_temp_counts, temp_register_byte_count);
     
-    do
-    {
-        i2c_error = I2C_I2CMasterReadBuf(tmp116_gnd_add, i2c_reg_counts, i2c_byte_count, i2c_mode);
-    }
-    while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
-    
-    /* Wait for the data transfer to complete */
-    while(I2C_I2CMasterStatus() & I2C_I2C_MSTAT_XFER_INP);    
-             
-    /* Clear Read Complete Status bit */
-    I2C_I2CMasterClearStatus();
-    I2C_I2CMasterClearReadBuf();
-    
-    uint16 i2c_counts =  (i2c_reg_counts[0] << 8) | i2c_reg_counts[1];
-    return i2c_counts;
+    uint16 uint16_i2c_counts =  (i2c_temp_counts[0] << 8) | i2c_temp_counts[1];
+    return uint16_i2c_counts;
 }
 
 void tmp116_string_celsius(char *tmp116_temperature)
@@ -66,7 +32,7 @@ void tmp116_uart(void)
     char tmp116_temperature[5]; //Initializes the Character Array
     tmp116_string_celsius(tmp116_temperature); //Places the TMP116 Temperature in Character Vector
 
-    char tmp116_uart_string[7]; //Stores TMP116 Data in Message
+    char tmp116_uart_string[7] = {'0','0','0','0','0','0','0'}; //Stores TMP116 Data in Message
     tmp116_uart_string[0] = 't'; //Places an t as the first element in the arrray
     tmp116_uart_string[6] = '\n'; //Places a new line character in the last spot in the array
     

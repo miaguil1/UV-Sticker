@@ -6,10 +6,20 @@ def main():
             # sp1.flush_input()
             # print(sp1.text_to_decimal())
             #print(sp1.text_to_decimal())
-            # number1 = sp1.read_8()
-            # print(number1)
-            number2 = sp1.read_dec()
-            print(number2)
+            # part1 = sp1.read_8()
+            # part2 = sp1.read_8()
+            # print(part1)
+            # print(part2)
+            uvi = sp1.read_dec()
+            print("UVI: " + str(uvi))
+
+            print(sp1.read_text())
+            # chipID = sp1.read_8()
+            # print("ChipID: " + str(chipID))
+
+            # temp = sp1.read_dec()
+            # print("UVI: " + uvi)
+
             # print(sp1.text_to_decimal())
 
         except sp1.SerialTimeoutException:

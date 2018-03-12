@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device schemaVersion="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_0.xsd">
-  <name>CY8C4247FNI_BL483</name>
+  <name>CY8C4247LQI_BL483</name>
   <version>0.1</version>
   <description>PSoC 4200 BLE</description>
   <addressUnitBits>8</addressUnitBits>
@@ -6496,119 +6496,6 @@
           <access>read-write</access>
           <resetValue>0</resetValue>
           <resetMask>0</resetMask>
-        </register>
-        <register>
-          <name>INJ_CHAN_CONFIG</name>
-          <description>Injection channel configuration register</description>
-          <addressOffset>0x403A0280</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>INJ_PIN_ADDR</name>
-              <description>Address of the pin to be sampled by this channel</description>
-              <lsb>0</lsb>
-              <msb>2</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>INJ_PORT_ADDR</name>
-              <description>Address of the port that contains the pin to be sampled by this channel</description>
-              <lsb>4</lsb>
-              <msb>6</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>INJ_DIFFERENTIAL_EN</name>
-              <description>Differential enable for this channel</description>
-              <lsb>8</lsb>
-              <msb>8</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>INJ_RESOLUTION</name>
-              <description>Resolution for this channel</description>
-              <lsb>9</lsb>
-              <msb>9</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>INJ_AVG_EN</name>
-              <description>Averaging enable for this channel. If set the AVG_CNT and AVG_SHIFT settings are used for sampling the addressed pin(s).</description>
-              <lsb>10</lsb>
-              <msb>10</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>INJ_SAMPLE_TIME_SEL</name>
-              <description>Sample time select: select which of the 4 global sample times to use for this channel.</description>
-              <lsb>12</lsb>
-              <msb>13</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>INJ_TAILGATING</name>
-              <description>Injection channel tailgating</description>
-              <lsb>30</lsb>
-              <msb>30</msb>
-              <access>read-write</access>
-            </field>
-            <field>
-              <name>INJ_START_EN</name>
-              <description>Set by firmware to enable the injection channel</description>
-              <lsb>31</lsb>
-              <msb>31</msb>
-              <access>read-write</access>
-            </field>
-          </fields>
-        </register>
-        <register>
-          <name>INJ_RESULT</name>
-          <description>Injection channel result register</description>
-          <addressOffset>0x403A0290</addressOffset>
-          <size>32</size>
-          <access>read-write</access>
-          <resetValue>0</resetValue>
-          <resetMask>0</resetMask>
-          <fields>
-            <field>
-              <name>INJ_RESULT</name>
-              <description>SAR conversion result of the channel</description>
-              <lsb>0</lsb>
-              <msb>15</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>INJ_COLLISION_INTR_MIR</name>
-              <description>Mirror bit of corresponding bit in SAR_INTR register</description>
-              <lsb>28</lsb>
-              <msb>28</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>INJ_SATURATE_INTR_MIR</name>
-              <description>Mirror bit of corresponding bit in SAR_INTR register</description>
-              <lsb>29</lsb>
-              <msb>29</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>INJ_RANGE_INTR_MIR</name>
-              <description>Mirror bit of corresponding bit in SAR_INTR register</description>
-              <lsb>30</lsb>
-              <msb>30</msb>
-              <access>read-only</access>
-            </field>
-            <field>
-              <name>INJ_EOC_INTR_MIR</name>
-              <description>Mirror bit of corresponding bit in SAR_INTR register</description>
-              <lsb>31</lsb>
-              <msb>31</msb>
-              <access>read-only</access>
-            </field>
-          </fields>
         </register>
         <register>
           <name>MUX_SWITCH0</name>

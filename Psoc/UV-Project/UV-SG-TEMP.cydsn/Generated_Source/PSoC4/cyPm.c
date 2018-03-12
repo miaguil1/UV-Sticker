@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cyPm.c
-* \version 5.60
+* \version 5.70
 *
 * \brief Provides an API for the power management.
 *
@@ -9,7 +9,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2011-2017, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2011-2018, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -17,6 +17,7 @@
 
 #include "cyPm.h"
 #include "CyLib.h"
+#include "CyFlash.h"
 
 
 /*******************************************************************************
@@ -66,8 +67,22 @@ void CySysPmDeepSleep(void)
     #if(CY_IP_SRSSV2)
         volatile uint32 clkSelectReg;
     #endif /* (CY_IP_SRSSV2) */
-
+    
+    #if(CY_IP_ECO_SRSSLT)
+        volatile uint32 pllResoreFlag = 0u;
+    #endif /* (CY_IP_ECO_SRSSLT) */
+    
     interruptState = CyEnterCriticalSection();
+
+    #if(CY_IP_ECO_SRSSLT)
+        if(0u != (CY_SYS_ECO_CLK_SELECT_REG & CY_SYS_ECO_CLK_SELECT_ECO_PLL_MASK))
+        {
+            pllResoreFlag = 1u;
+            
+            /* Set default state = IMO for HFCLK_SEL bit mask */
+            CY_SYS_CLK_SELECT_REG &= (uint32)(~CY_SYS_CLK_SELECT_DIRECT_SEL_MASK);
+        }
+    #endif /* (CY_IP_ECO_SRSSLT) */
 
     #if(CY_IP_SRSSV2)
         /* Device enters DeepSleep mode when CPU asserts SLEEPDEEP signal */
@@ -91,7 +106,7 @@ void CySysPmDeepSleep(void)
         clkSelectReg = CY_SYS_CLK_SELECT_REG;
         CySysClkWriteSysclkDiv(CY_SYS_CLK_SYSCLK_DIV4);
     #endif /* (CY_IP_SRSSV2) */
-
+    
     /* Sleep and wait for interrupt */
     CY_PM_WFI;
 
@@ -99,10 +114,17 @@ void CySysPmDeepSleep(void)
         /* Restore system clock configuration */
         CY_SYS_CLK_SELECT_REG = clkSelectReg;
     #endif /* (CY_IP_SRSSV2) */
-
+    
     #if (CY_IP_CPUSS && CY_IP_SRSSV2)
         CY_PM_CPUSS_CONFIG_REG &= (uint32) (~CY_PM_CPUSS_CONFIG_FLSH_ACC_BYPASS);
     #endif /* (CY_IP_CPUSS && CY_IP_SRSSV2) */
+
+    #if(CY_IP_ECO_SRSSLT)
+        if(0u != pllResoreFlag)
+        {
+            CySysClkWriteHfclkDirect(CY_SYS_CLK_HFCLK_PLL0);
+        }
+    #endif /* (CY_IP_ECO_SRSSLT) */    
 
     CyExitCriticalSection(interruptState);
 }

@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE_custom.h
-* \version 3.40
+* \version 3.50
 * 
 * \brief
 *  Contains the function prototypes and constants for the Custom Service.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -91,7 +91,7 @@ typedef struct
     CYBLE_GATT_DB_ATTR_HANDLE_T customServCharHandle;
     /** Custom Characteristic Descriptors handles */
     CYBLE_GATT_DB_ATTR_HANDLE_T customServCharDesc[     /* MDK doesn't allow array with zero length */
-        CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT == 0u ? 1u : CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT];
+        (CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT == 0u) ? 1u : CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT];
 } CYBLE_CUSTOMS_INFO_T;
 
 /** Structure with Custom Service attribute handles. */
@@ -102,7 +102,7 @@ typedef struct
     
     /** Information about Custom Characteristics */
     CYBLE_CUSTOMS_INFO_T customServInfo[                /* MDK doesn't allow array with zero length */
-        CYBLE_CUSTOM_SERVICE_CHAR_COUNT == 0u ? 1u : CYBLE_CUSTOM_SERVICE_CHAR_COUNT];
+        (CYBLE_CUSTOM_SERVICE_CHAR_COUNT == 0u) ? 1u : CYBLE_CUSTOM_SERVICE_CHAR_COUNT];
 } CYBLE_CUSTOMS_T;
 
 

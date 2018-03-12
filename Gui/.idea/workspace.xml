@@ -1,139 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b73617e0-888a-49e9-94be-1c64870b4e77" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/med_1_51_08/30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/med_1_51_08/med_1_51_08.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/todd_1_51_06/30.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Data/todd_1_51_06/todd_1_51_06.xlsx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.a" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.elf" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyfit" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyfit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.cyfit" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.cyfit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/lcpsoc3/index" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/lcpsoc3/index" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/strain_guage_calc.py" afterPath="$PROJECT_DIR$/strain_guage_calc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-Project.cywrk.Intern" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-Project.cywrk.Intern" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/BUILD.log" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/BUILD.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_INT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_INT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_IRQ.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_IRQ.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_intClock.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_intClock.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_INT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_INT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_PVT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_PVT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_bless_isr.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_bless_isr.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_custom.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_custom.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_eventHandler.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_eventHandler.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_gatt.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_gatt.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GAIN.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GAIN.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GAIN_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GAIN_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GUVA.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GUVA.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GUVA_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/GUVA_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_BOOT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_BOOT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C_BOOT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C_BOOT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C_INT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C_INT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C_MASTER.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_I2C_MASTER.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_SCBCLK.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_SCBCLK.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_SCB_IRQ.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_SCB_IRQ.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_scl.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_scl.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_scl_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_scl_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_sda.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_sda.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_sda_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_TMP116_sda_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_BLUE.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_BLUE.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_BLUE_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_BLUE_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_GREEN.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_GREEN.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_GREEN_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_GREEN_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/RTC.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/RTC.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG1_A.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG1_A.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG1_A_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG1_A_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG2_A.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG2_A.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG2_A_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG2_A_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG_AMP.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG_AMP.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG_AMP_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG_AMP_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_BOOT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_BOOT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_SCBCLK.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_SCBCLK.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_SPI_UART.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_SPI_UART.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_SPI_UART_INT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_SPI_UART_INT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_UART.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_UART.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_UART_BOOT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_UART_BOOT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_rx.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_rx.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_rx_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_rx_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_tx.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_tx.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_tx_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UART_tx_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.hex" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.hex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.map" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV5_AMP.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV5_AMP.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV5_AMP_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV5_AMP_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5GAIN.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5GAIN.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5GAIN_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5GAIN_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5NEG.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5NEG.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5NEG_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5NEG_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5POS.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5POS.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5POS_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UVD_5POS_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/WDT_ISR.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/WDT_ISR.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/adafruit_guva.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/adafruit_guva.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/battery.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/battery.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/bluetooth.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/bluetooth.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/led.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/led.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/lmt70.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/lmt70.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/tmp116.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/tmp116.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/uv.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/uv.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/watchdog.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/watchdog.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cydwr" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cydwr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyprj.Intern" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyprj.Intern" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.rpt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.rpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP_timing.html" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP_timing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.ctl" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.ctl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pci" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pci" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pco" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pco" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.rpt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.rpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdf" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.tr" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.tr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.v" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.v" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.pco" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.pco" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_r.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_r.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_t.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_t.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_timing.html" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_timing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_u.sdc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_u.sdc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/bitstream.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/bitstream.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter_cfg.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter_cfg.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/placer.log" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/placer.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/project_ids.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/project_ids.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/main.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/system.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/system.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/system.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/system.h" />
-    </list>
+    <list default="true" id="b73617e0-888a-49e9-94be-1c64870b4e77" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,11 +21,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ex1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="204">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serial_2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/serial_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -195,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="strain_guage_calc.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="strain_guage_calc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strain_guage_calc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
+            <state relative-caret-position="9877">
               <caret line="591" column="40" lean-forward="false" selection-start-line="591" selection-start-column="40" selection-end-line="591" selection-end-column="40" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -272,7 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/ex1.py" />
         <option value="$PROJECT_DIR$/bled112_scanner.py" />
         <option value="$PROJECT_DIR$/bglib_test_htm_collector.py" />
         <option value="$PROJECT_DIR$/text_parse.py" />
@@ -280,6 +157,8 @@
         <option value="$PROJECT_DIR$/strain_guage_calc.spec" />
         <option value="$PROJECT_DIR$/DAC_Voltage_Regulator.py" />
         <option value="$PROJECT_DIR$/strain_guage_calc.py" />
+        <option value="$PROJECT_DIR$/ex1.py" />
+        <option value="$PROJECT_DIR$/serial_2.py" />
       </list>
     </option>
   </component>
@@ -305,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -317,6 +195,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -336,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.strain_guage_calc">
+  <component name="RunManager" selected="Python.ex1">
     <configuration name="DAC_Voltage_Regulator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -444,23 +323,6 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
-    <configuration name="bglib_test_htm_collector" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Gui" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bglib_test_htm_collector.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
     <configuration name="bled112_scanner" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -474,6 +336,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Gui" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bled112_scanner.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="ex1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Gui" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -514,18 +393,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.strain_guage_calc" />
-      <item index="1" class="java.lang.String" itemvalue="Python.bglib_test_htm_collector" />
-      <item index="2" class="java.lang.String" itemvalue="Python.bled112_scanner" />
-      <item index="3" class="java.lang.String" itemvalue="Python.DAC_Voltage_Regulator" />
-      <item index="4" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="1" class="java.lang.String" itemvalue="Python.bled112_scanner" />
+      <item index="2" class="java.lang.String" itemvalue="Python.DAC_Voltage_Regulator" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui" />
+      <item index="4" class="java.lang.String" itemvalue="Python.ex1" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.strain_guage_calc" />
-        <item index="1" class="java.lang.String" itemvalue="Python.gui" />
-        <item index="2" class="java.lang.String" itemvalue="Python.DAC_Voltage_Regulator" />
-        <item index="3" class="java.lang.String" itemvalue="Python.bled112_scanner" />
-        <item index="4" class="java.lang.String" itemvalue="Python.bglib_test_htm_collector" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ex1" />
+        <item index="1" class="java.lang.String" itemvalue="Python.strain_guage_calc" />
+        <item index="2" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="3" class="java.lang.String" itemvalue="Python.DAC_Voltage_Regulator" />
+        <item index="4" class="java.lang.String" itemvalue="Python.bled112_scanner" />
       </list>
     </recent_temporary>
   </component>
@@ -552,18 +431,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="22" width="1696" height="1066" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1216" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18826406" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1945629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3243824" sideWeight="0.28056234" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3243824" sideWeight="0.71943766" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32377428" sideWeight="0.50479746" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32867885" sideWeight="0.49755502" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839963" sideWeight="0.49520257" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32377428" sideWeight="0.71055436" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32008594" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -851,13 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serial_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/executable_setup.py" />
     <entry file="file://$PROJECT_DIR$/parse_log.py" />
     <entry file="file://$PROJECT_DIR$/build/strain_guage_calc/strain_guage_calc.exe.manifest">
@@ -918,6 +790,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strain_guage_calc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9877">
+          <caret line="591" column="40" lean-forward="false" selection-start-line="591" selection-start-column="40" selection-end-line="591" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/serial_tools.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -928,29 +818,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
+    <entry file="file://$PROJECT_DIR$/serial_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="85">
+          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ex1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/strain_guage_calc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="591" column="40" lean-forward="false" selection-start-line="591" selection-start-column="40" selection-end-line="591" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

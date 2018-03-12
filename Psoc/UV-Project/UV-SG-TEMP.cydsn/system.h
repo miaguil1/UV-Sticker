@@ -36,9 +36,9 @@ void system_red_led_blink(void);
 
 void adc_conversion(void);
 
-void system_read_i2c(uint32 register_address, uint8 *register_value, uint32 register_byte_count);
+void system_read_i2c(uint32 device_address, uint8 register_address, uint8 *register_value, uint32 register_byte_count);
 
-void system_write_i2c(uint32 register_address, uint8 register_value[], uint32 register_byte_count); 
+void system_write_i2c(uint32 device_address, uint8 *register_value, uint32 register_byte_count); 
 
 uint16 adc_acquire_channel(uint32);
 

@@ -2,7 +2,7 @@
 --	Conversion of UV-SG-TEMP.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Feb 23 16:32:31 2018
+--	Tue Mar 06 10:28:56 2018
 --
 
 USE cypress.cypress.all;

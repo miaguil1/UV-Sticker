@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file CyLib.c
-* \version 5.60
+* \version 5.70
 *
 * \brief Provides a system API for the Clocking, Interrupts, SysTick, and
 * Voltage Detect.
@@ -10,7 +10,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2010-2017, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2010-2018, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -34,10 +34,10 @@ uint32 cydelay32kMs   = CY_DELAY_MS_OVERFLOW * ((CYDEV_BCLK__SYSCLK__HZ + CY_DEL
 static cySysTickCallback CySysTickCallbacks[CY_SYS_SYST_NUM_OF_CALLBACKS];
 static void CySysTickServiceCallbacks(void);
 
-#if (CY_IP_SRSSV2 && CY_IP_PLL)
+#if (CY_IP_PLL)
     static uint32 CySysClkPllGetBypassMode(uint32 pll);
     static cystatus CySysClkPllConfigChangeAllowed(uint32 pll);
-#endif /* #if (CY_IP_SRSSV2 && CY_IP_PLL) */
+#endif /* (CY_IP_PLL) */
 
 
 /***************************************************************************//**
@@ -85,6 +85,7 @@ uint32 CySysTickInitVar = 0u;
 /* Stored CY_SYS_CLK_IMO_TRIM4_REG when modified for USB lock */
 #if (CY_IP_IMO_TRIMMABLE_BY_USB && CY_IP_SRSSV2)
     uint32 CySysClkImoTrim4 = 0u;
+    uint32 CySysClkImoTrim5 = 0u;
 #endif /* (CY_IP_IMO_TRIMMABLE_BY_USB && CY_IP_SRSSV2) */
 
 /* Stored PUMP_SEL configuration during disable (IMO output by default) */
@@ -96,11 +97,11 @@ uint32 CySysClkPumpConfig = CY_SYS_CLK_PUMP_ENABLE;
 *
 * Enables the IMO.
 *
-* For PSoC 4100M / PSoC 4200M / PSoC 4000S / PSoC 4100S / PSoC 4400 devices,
-* this function will also enable WCO lock if selected in the Design Wide
-* Resources tab.
+* For PSoC 4100M / PSoC 4200M / PSoC 4000S / PSoC 4100S / PSoC Analog 
+* Coprocessor devices, this function will also enable WCO lock if selected in 
+* the Design Wide Resources tab.
 *
-* For PSoC 4200L / devices, this function will also enable USB lock if selected
+* For PSoC 4200L devices, this function will also enable USB lock if selected
 * in the Design Wide Resources tab.
 *
 *******************************************************************************/
@@ -130,8 +131,8 @@ void CySysClkImoStart(void)
 *
 * Disables the IMO.
 *
-* For PSoC 4100M / PSoC 4200M / PSoC 4000S / PSoC 4100S / PSoC 4400 devices,
-* this function will also disable WCO lock.
+* For PSoC 4100M / PSoC 4200M / PSoC 4200L / PSoC 4000S / PSoC 4100S / 
+* PSoC Analog Coprocessor devices, this function will also disable WCO lock.
 *
 * For PSoC PSoC 4200L devices, this function will also disable USB lock.
 *
@@ -169,7 +170,7 @@ void CySysClkImoStop(void)
     * but not both.
     *
     * This function is applicable for PSoC 4100M / PSoC 4200M / PSoC 4000S /
-    * PSoC 4100S / PSoC 4400 / PSoC 4200L.
+    * PSoC 4100S / PSoC Analog Coprocessor / PSoC 4200L.
     *
     *******************************************************************************/
     void CySysClkImoEnableWcoLock(void)
@@ -279,7 +280,7 @@ void CySysClkImoStop(void)
     * but not both.
     *
     * This function is applicable for PSoC 4100M / PSoC 4200M / PSoC 4000S /
-    * PSoC 4100S / PSoC 4400 / PSoC 4200L.
+    * PSoC 4100S / PSoC Analog Coprocessor / PSoC 4200L.
     *
     *******************************************************************************/
     void CySysClkImoDisableWcoLock(void)
@@ -295,7 +296,7 @@ void CySysClkImoStop(void)
     * Reports the IMO to WCO lock enable state.
     *
     * This function is applicable for PSoC 4100M / PSoC 4200M / PSoC 4000S /
-    * PSoC 4100S / PSoC 4400 / PSoC 4200L.
+    * PSoC 4100S / PSoC Analog Coprocessor / PSoC 4200L.
     *
     * \return 1 if IMO to WCO lock is enabled.
     * \return 0 if IMO to WCO lock is disabled.
@@ -330,6 +331,26 @@ void CySysClkImoStop(void)
     *******************************************************************************/
     void CySysClkImoEnableUsbLock(void)
     {
+        #if(CY_IP_SRSSV2)
+            uint32 i;
+            
+            /* Check for new trim algorithm */
+            uint32 CySysClkUsbCuSortTrim = ((CY_SFLASH_S1_TESTPGM_OLD_REV < (CY_SFLASH_S1_TESTPGM_REV_REG & 
+                                                                            CY_SFLASH_S1_TESTPGM_REV_MASK)) ? 1u : 0u);
+
+            /* Get current IMO frequency based on the register value */
+            uint32 freq = CY_SYS_CLK_IMO_MIN_FREQ_MHZ;
+
+            for(i = 0u; i < CY_SYS_CLK_IMO_FREQ_TABLE_SIZE; i++)
+            {
+                if ((uint8) (CY_SYS_CLK_IMO_TRIM2_REG & CY_SYS_CLK_IMO_FREQ_BITS_MASK) == cyImoFreqMhz2Reg[i])
+                {
+                    freq = i + CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET;
+                    break;
+                }
+            }
+        #endif  /* (CY_IP_SRSSV2) */
+        
         /* Set oscillator interface control port to USB */
         #if (CY_IP_IMO_TRIMMABLE_BY_WCO && CY_IP_IMO_TRIMMABLE_BY_USB)
             CY_SYS_CLK_OSCINTF_CTL_REG = (CY_SYS_CLK_OSCINTF_CTL_REG & (uint32) ~CY_SYS_CLK_OSCINTF_CTL_PORT_SEL_MASK) |
@@ -337,10 +358,43 @@ void CySysClkImoStop(void)
         #endif /* (CY_IP_IMO_TRIMMABLE_BY_WCO && CY_IP_IMO_TRIMMABLE_BY_USB) */
 
         #if(CY_IP_SRSSV2)
+           
             /* Save CY_SYS_CLK_IMO_TRIM4_REG and set IMO gain for USB lock */
-            CySysClkImoTrim4 = CY_SYS_CLK_IMO_TRIM4_REG & (uint32) ~CY_SYS_CLK_IMO_TRIM4_GAIN_MASK;
-            CY_SYS_CLK_IMO_TRIM4_REG = (CY_SYS_CLK_IMO_TRIM4_REG & (uint32) ~CY_SYS_CLK_IMO_TRIM4_GAIN_MASK) |
-                                        CY_SYS_CLK_IMO_TRIM4_USB_GAIN;
+            CySysClkImoTrim4 = CY_SYS_CLK_IMO_TRIM4_REG;
+            
+            if(0u != CySysClkUsbCuSortTrim)
+            {
+                CySysClkImoTrim5 = CY_PWR_BG_TRIM5_REG;
+                
+                CY_SYS_CLK_IMO_TRIM4_REG = (CySysClkImoTrim4 & (uint32) ~CY_SYS_CLK_IMO_TRIM4_GAIN_MASK) |
+                                            CY_SFLASH_USBMODE_IMO_GAIN_TRIM_REG;
+                CY_PWR_BG_TRIM5_REG = CY_SFLASH_USBMODE_IMO_TEMPCO_REG;
+                
+            }
+            else
+            {
+                CY_SYS_CLK_IMO_TRIM4_REG = (CySysClkImoTrim4 & (uint32) ~CY_SYS_CLK_IMO_TRIM4_GAIN_MASK) |
+                                            CY_SYS_CLK_IMO_TRIM4_USB_GAIN;
+
+            }
+
+            if (48u == freq)
+            {
+                CY_SYS_CLK_IMO_TRIM1_REG = (0u != CySysClkUsbCuSortTrim) ? 
+                                           (uint32)CY_SFLASH_CU_IMO_TRIM_USBMODE_48_REG :
+                                           (uint32)CY_SFLASH_IMO_TRIM_USBMODE_48_REG;
+            }
+            else if (24u == freq)
+            {
+                CY_SYS_CLK_IMO_TRIM1_REG = (0u != CySysClkUsbCuSortTrim) ? 
+                                           (uint32)CY_SFLASH_CU_IMO_TRIM_USBMODE_24_REG :
+                                           (uint32)CY_SFLASH_IMO_TRIM_USBMODE_24_REG;
+            }
+            else
+            {
+                /* Do nothing */
+            }
+            
         #endif  /* (CY_IP_SRSSV2) */
 
         CY_SYS_CLK_USBDEVv2_CR1_REG |= CY_SYS_CLK_USBDEVv2_CR1_ENABLE_LOCK;
@@ -362,12 +416,40 @@ void CySysClkImoStop(void)
     *******************************************************************************/
     void CySysClkImoDisableUsbLock(void)
     {
+        #if(CY_IP_SRSSV2)
+            uint32 i;
+            
+            /* Check for new trim algorithm */
+            uint32 CySysClkUsbCuSortTrim = ((CY_SFLASH_S1_TESTPGM_OLD_REV < (CY_SFLASH_S1_TESTPGM_REV_REG & 
+                                                                            CY_SFLASH_S1_TESTPGM_REV_MASK)) ? 1u : 0u);
+
+            /* Get current IMO frequency based on the register value */
+            uint32 freq = CY_SYS_CLK_IMO_MIN_FREQ_MHZ;;
+
+            for(i = 0u; i < CY_SYS_CLK_IMO_FREQ_TABLE_SIZE; i++)
+            {
+                if ((uint8) (CY_SYS_CLK_IMO_TRIM2_REG & CY_SYS_CLK_IMO_FREQ_BITS_MASK) == cyImoFreqMhz2Reg[i])
+                {
+                    freq = i + CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET;
+                    break;
+                }
+            }           
+        #endif  /* (CY_IP_SRSSV2) */
+        
         CY_SYS_CLK_USBDEVv2_CR1_REG &= (uint32) ~CY_SYS_CLK_USBDEVv2_CR1_ENABLE_LOCK;
 
         #if(CY_IP_SRSSV2)
             /* Restore CY_SYS_CLK_IMO_TRIM4_REG */
-            CY_SYS_CLK_IMO_TRIM4_REG = (CY_SYS_CLK_IMO_TRIM4_REG & (uint32) ~CY_SYS_CLK_IMO_TRIM4_GAIN_MASK) |
-                                    CySysClkImoTrim4;
+            CY_SYS_CLK_IMO_TRIM4_REG = ((CY_SYS_CLK_IMO_TRIM4_REG & (uint32) ~CY_SYS_CLK_IMO_TRIM4_GAIN_MASK) |
+                                        (CySysClkImoTrim4 & CY_SYS_CLK_IMO_TRIM4_GAIN_MASK));
+
+            if(0u != CySysClkUsbCuSortTrim)
+            {
+                CY_PWR_BG_TRIM5_REG = CySysClkImoTrim5;
+            }
+            
+            CY_SYS_CLK_IMO_TRIM1_REG = CY_SFLASH_IMO_TRIM_REG(freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET);
+            
         #endif  /* (CY_IP_SRSSV2) */
     }
 
@@ -421,8 +503,10 @@ void CySysClkImoStop(void)
 * CY_SYS_CLK_HFCLK_IMO     IMO.
 * CY_SYS_CLK_HFCLK_EXTCLK  External clock pin.
 * CY_SYS_CLK_HFCLK_ECO     External crystal oscillator. Applicable for
-*                          PSoC 4100 BLE / PSoC 4200 BLE / PSoC 4200L.
-* CY_SYS_CLK_HFCLK_PLL0    PLL#0. Applicable for PSoC 4200L.
+*                          PSoC 4100 BLE / PSoC 4200 BLE / PSoC 4200L /
+*                          4100S with ECO.
+* CY_SYS_CLK_HFCLK_PLL0    PLL#0. Applicable for PSoC 4200L /
+*                          4100S with PLL.
 * CY_SYS_CLK_HFCLK_PLL1    PLL#1. Applicable for PSoC 4200L.
 *
 *******************************************************************************/
@@ -430,9 +514,37 @@ void CySysClkWriteHfclkDirect(uint32 clkSelect)
 {
     uint8  interruptState;
     uint32 tmpReg;
+    
+    #if (CY_IP_SRSSLT && CY_IP_PLL)
+        uint8 i = 0u;
+    #endif /* (CY_IP_SRSSLT && CY_IP_PLL) */
 
     interruptState = CyEnterCriticalSection();
 
+#if (CY_IP_SRSSLT && CY_IP_PLL)
+    if ((CY_SYS_CLK_HFCLK_PLL0 == clkSelect) || (CY_SYS_CLK_HFCLK_ECO == clkSelect))
+    {
+        tmpReg = CY_SYS_CLK_SELECT_REG & ~CY_SYS_CLK_SELECT_DIRECT_SEL_MASK;
+        tmpReg |= CY_SYS_CLK_HFCLK_IMO;
+        CY_SYS_CLK_SELECT_REG = tmpReg;        
+        
+        /* SRSSLT block does not have registers to select PLL. It is part of EXCO */ 
+        tmpReg = CY_SYS_ECO_CLK_SELECT_REG & ~CY_SYS_ECO_CLK_SELECT_ECO_PLL_MASK;
+        tmpReg |= ((clkSelect & CY_SYS_CLK_SELECT_HFCLK_SEL_PLL_MASK) >> CY_SYS_CLK_SELECT_HFCLK_PLL_SHIFT);
+        CY_SYS_ECO_CLK_SELECT_REG = tmpReg;
+        
+        /* Generate clock sequence to change clock source in CY_SYS_ECO_CLK_SELECT_REG */
+        CY_SYS_EXCO_PGM_CLK_REG |= CY_SYS_EXCO_PGM_CLK_ENABLE_MASK;
+        
+        for(i = 0u; i < CY_SYS_EXCO_PGM_CLK_SEQ_GENERATOR; i++)
+        {
+            CY_SYS_EXCO_PGM_CLK_REG |= CY_SYS_EXCO_PGM_CLK_CLK_ECO_MASK;
+            CY_SYS_EXCO_PGM_CLK_REG &= ~CY_SYS_EXCO_PGM_CLK_CLK_ECO_MASK;
+        }
+        
+        CY_SYS_EXCO_PGM_CLK_REG &= ~CY_SYS_EXCO_PGM_CLK_ENABLE_MASK;    
+    }
+#endif /* (CY_IP_SRSSLT && CY_IP_PLL) */
 
     tmpReg = CY_SYS_CLK_SELECT_REG & ~(CY_SYS_CLK_SELECT_DIRECT_SEL_MASK |
                                        CY_SYS_CLK_SELECT_HFCLK_SEL_MASK);
@@ -446,10 +558,10 @@ void CySysClkWriteHfclkDirect(uint32 clkSelect)
 #endif /* (CY_IP_SRSSV2 && CY_IP_PLL) */
     {
         tmpReg |= (clkSelect & CY_SYS_CLK_SELECT_DIRECT_SEL_MASK);
-    }
-
+    }   
+    
     CY_SYS_CLK_SELECT_REG = tmpReg;
-
+    
     CyExitCriticalSection(interruptState);
 }
 
@@ -523,6 +635,12 @@ uint32 CySysClkGetSysclkSource(void)
 #endif /* (CY_IP_SRSSV2 && CY_IP_PLL) */
     {
         sysclkSource = (CY_SYS_CLK_SELECT_REG & CY_SYS_CLK_SELECT_DIRECT_SEL_MASK);
+
+    #if (CY_IP_SRSSLT && CY_IP_PLL)
+        sysclkSource |= (((uint32)(CY_SYS_ECO_CLK_SELECT_REG & CY_SYS_ECO_CLK_SELECT_ECO_PLL_MASK)) <<
+                         CY_SYS_CLK_SELECT_HFCLK_PLL_SHIFT);
+    #endif /* (CY_IP_SRSSLT && CY_IP_PLL) */
+        
     }
 
     CyExitCriticalSection(interruptState);
@@ -615,8 +733,8 @@ void CySysClkWriteSysclkDiv(uint32 divider)
 *
 * \param freq All PSoC 4 families excluding the following: Valid range [3-48]
 * with step size equals 1. PSoC 4000: Valid values are 24, 32, and 48.
-* PSoC 4000S / PSoC 4100S / PSoC 4400: Valid range [24-48] with step size equals
-* 4.
+* PSoC 4000S / PSoC 4100S / PSoC Analog Coprocessor: Valid range [24-48] with 
+* step size equals 4.
 *
 *******************************************************************************/
 #if(CY_IP_SRSSV2)
@@ -630,7 +748,6 @@ void CySysClkWriteSysclkDiv(uint32 divider)
             uint8  bgTrim5;
             uint8  newImoTrim2Value;
             uint8  currentImoTrim2Value;
-            uint8  imoTrim1Value;
         #endif /* (CY_IP_FM) */
 
         #if (CY_IP_IMO_TRIMMABLE_BY_WCO)
@@ -767,26 +884,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
             }
 
             /* Set trims for the new IMO frequency */
-
-            #if (CY_IP_IMO_TRIMMABLE_BY_USB)
-                if ((1u == usbLock) && (48u == freq))
-                {
-                    imoTrim1Value = CY_SFLASH_IMO_TRIM_USBMODE_48_REG;
-                }
-                else if ((1u == usbLock) && (24u == freq))
-                {
-                    imoTrim1Value = CY_SFLASH_IMO_TRIM_USBMODE_24_REG;
-                }
-                else
-                {
-                    imoTrim1Value = (uint8) CY_SFLASH_IMO_TRIM_REG(freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET);
-                }
-            #else
-                imoTrim1Value = (uint8) CY_SFLASH_IMO_TRIM_REG(freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET);
-            #endif  /* (CY_IP_IMO_TRIMMABLE_BY_USB) */
-
-
-            CY_SYS_CLK_IMO_TRIM1_REG = (uint32) imoTrim1Value;
+            CY_SYS_CLK_IMO_TRIM1_REG = (uint32) CY_SFLASH_IMO_TRIM_REG(freq - CY_SYS_CLK_IMO_FREQ_TABLE_OFFSET);
             CY_PWR_BG_TRIM4_REG  = bgTrim4;
             CY_PWR_BG_TRIM5_REG  = bgTrim5;
             CyDelayUs(CY_SYS_CLK_IMO_TRIM_TIMEOUT_US);
@@ -1128,7 +1226,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
                 }
                 
             }
-        #else /* CY_IP_ECO_SRSSV2 */
+        #else /* CY_IP_ECO_SRSSV2 || CY_IP_ECO_SRSSLT */
             CY_SYS_CLK_ECO_CONFIG_REG |= CY_SYS_CLK_ECO_CONFIG_ENABLE;
             CyDelayUs(CY_SYS_CLK_ECO_CONFIG_CLK_EN_TIMEOUT_US);
             CY_SYS_CLK_ECO_CONFIG_REG |= CY_SYS_CLK_ECO_CONFIG_CLK_EN;
@@ -1191,13 +1289,13 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     * For PSoC 4100 BLE / PSoC 4200 BLE devices, the status bit is the
     * XO_AMP_DETECT bit in FSM register.
     *
-    * For PSoC 4200L devices, the error status bit is the WATCHDOG_ERROR bit in
-    * ECO_STATUS register.
+    * For PSoC 4200L / 4100S with ECO devices, the error status bit is the 
+    * WATCHDOG_ERROR bit in ECO_STATUS register.
     *
     * \return PSoC 4100 BLE/PSoC 4200 BLE: Non-zero indicates that ECO output
     * reached 50 ppm and is oscillating in valid range.
     *
-    * \return PSoC 4200L: Non-zero indicates that ECO is running.
+    * \return PSoC 4200L / 4100S with ECO: Non-zero indicates that ECO is running.
     *
     *******************************************************************************/
     uint32 CySysClkEcoReadStatus(void)
@@ -1274,7 +1372,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
         ****************************************************************************//**
         *
         * Selects trim setting values for ECO. This API is available only for PSoC
-        * 4200L devices only.
+        * 4200L / 4100S with ECO devices only.
         *
         * The following parameters can be trimmed for ECO. The affected registers are
         * ECO_TRIM0 and ECO_TRIM1.
@@ -1369,7 +1467,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
         * when setting the driveLevel parameter because driving a crystal beyond its
         * rated limit can permanently damage the crystal.
         *
-        * This API is available only for PSoC 4200L devices only.
+        * This API is available only for PSoC 4200L / 4100S with ECO devices only.
         *
         * \param freq Frequency of the crystal in kHz.
         * \param cLoad Crystal load capacitance in pF.
@@ -1508,7 +1606,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
 #endif /* (CY_IP_ECO) */
 
 
-#if (CY_IP_SRSSV2 && CY_IP_PLL)
+#if (CY_IP_PLL)
     /*******************************************************************************
     * Function Name: CySysClkPllStart
     ****************************************************************************//**
@@ -1519,11 +1617,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     * Clears the unlock occurred status bit by calling CySysClkPllGetUnlockStatus(),
     * once the PLL is locked if the wait parameter is 1).
     *
-    * This API is available only for PSoC 4200L devices.
+    * This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     * \param PLL:
     * 0   PLL#0
-    * 1   PLL#1
+    * 1   PLL#1 (available only for PSoC 4200L)
     *
     * \param wait:
     * 0 - Return immediately after configuration.
@@ -1596,11 +1694,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     *
     * Returns non-zero if the output of the specified PLL output is locked.
     *
-    * This API is available only for PSoC 4200L devices.
+    * This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     * PLL:
     *  0   PLL#0
-    *  1   PLL#1
+    *  1   PLL#1 (available only for PSoC 4200L)
     *
     * \return A non-zero value when the specified PLL is locked.
     *
@@ -1635,11 +1733,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     * Ensures that either PLL is not the source of HFCLK before it is disabled,
     * otherwise, the CPU will halt.
     *
-    * This API is available only for PSoC 4200L devices.
+    * This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     * PLL:
     *  0   PLL#0
-    *  1   PLL#1
+    *  1   PLL#1 (available only for PSoC 4200L)
     *
     *******************************************************************************/
     void CySysClkPllStop(uint32 pll)
@@ -1667,11 +1765,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     * The PLL must not be the system clock source when calling this function. The
     * PLL output will glitch during this function call.
     *
-    * This API is available only for PSoC 4200L devices.
+    * This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     * \param PLL:
     *  0   PLL#0
-    *  1   PLL#1
+    *  1   PLL#1 (available only for PSoC 4200L)
     *
     * \param feedback The P divider. Range 4 - 259. Control bits for the feedback
     * divider.
@@ -1738,11 +1836,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     * PLL output to the reference input. See description of 
     * CySysFlashSetWaitCycles() for more information.
     *
-    * This API is available only for PSoC 4200L devices.
+    * This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     * \param PLL:
     *  0   PLL#0
-    *  1   PLL#1
+    *  1   PLL#1 (available only for PSoC 4200L)
     *
     * \param bypass: The bypass mode.
     * CY_SYS_PLL_BYPASS_AUTO - Automatic usage of the lock indicator. When unlocked,
@@ -1778,11 +1876,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     ****************************************************************************//**
     *
     *  Gets the bypass mode for the specified PLL.
-    *  This API is available only for PSoC 4200L devices.
+    *  This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     *  \param PLL:
     *   0   PLL#0
-    *   1   PLL#1
+    *   1   PLL#1 (available only for PSoC 4200L)
     *
     *  \param bypass: Bypass mode.
     *   The same as the parameter of the CySysClkPllSetBypassMode().
@@ -1813,11 +1911,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     *  The function returns non-zero value if the specified PLL sources the System
     *  clock and the PLL is not in the bypass mode.
     *
-    *  This API is available only for PSoC 4200L devices.
+    *  This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     *  \param PLL:
     *   0   PLL#0
-    *   1   PLL#1
+    *   1   PLL#1 (available only for PSoC 4200L)
     *
     * \return Non-zero value when the specified PLL sources the System clock and
     * the PLL is not in the bypass mode.
@@ -1827,14 +1925,17 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     {
         uint32   pllBypassMode;
         uint32   sysclkSource;
-        cystatus returnValue = CYRET_LOCKED;
+        cystatus returnValue = CYRET_INVALID_STATE;
 
         sysclkSource  = CySysClkGetSysclkSource();
         pllBypassMode = CySysClkPllGetBypassMode(pll);
 
         if ((CY_SYS_PLL_BYPASS_PLL_REF == pllBypassMode)             ||
-            ((CY_SYS_CLK_HFCLK_PLL0 != sysclkSource) && (0u == pll)) ||
-            ((CY_SYS_CLK_HFCLK_PLL1 != sysclkSource) && (1u == pll)))
+            ((CY_SYS_CLK_HFCLK_PLL0 != sysclkSource) && (0u == pll))
+        #if (CY_IP_SRSSV2)
+            || ((CY_SYS_CLK_HFCLK_PLL1 != sysclkSource) && (1u == pll))
+        #endif /* (CY_IP_SRSSV2) */
+            )
         {
             returnValue = CYRET_SUCCESS;
         }
@@ -1852,11 +1953,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     *  during its operation. The unlock status is cleared once it is read using
     *  this API.
     *
-    *  This API is available only for PSoC 4200L devices.
+    *  This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     *  \param PLL:
     *   0   PLL#0
-    *   1   PLL#1
+    *   1   PLL#1 (available only for PSoC 4200L)
     *
     * \return Non-zero value when the specified PLL was unlocked.
     *
@@ -1888,11 +1989,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     * The PLL must not be the system clock source when calling this function. The
     * PLL output will glitch during this function call.
     *
-    * This API is available only for PSoC 4200L devices.
+    * This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     * \param pll:
     *  0   PLL#0
-    *  1   PLL#1
+    *  1   PLL#1 (available only for PSoC 4200L)
     *
     * \param inputFreq The reference frequency in KHz. The valid range is from 1000 to 49152 KHz.
     *
@@ -1987,7 +2088,6 @@ void CySysClkWriteSysclkDiv(uint32 divider)
         return (returnStatus);
     }
 
-
     /*******************************************************************************
     * Function Name: CySysClkPllSetSource
     ****************************************************************************//**
@@ -1995,40 +2095,62 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     *  Sets the input clock source to the PLL. The PLL must be disabled before
     *  calling this function.
     *
-    *  This API is available only for PSoC 4200L devices.
+    *  This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     *  \param PLL:
     *  0   PLL#0
-    *  1   PLL#1
+    *  1   PLL#1 (available only for PSoC 4200L)
     *
     * \param source:
     *  CY_SYS_PLL_SOURCE_IMO        IMO
-    *  CY_SYS_PLL_SOURCE_EXTCLK     External Clock
+    *  CY_SYS_PLL_SOURCE_EXTCLK     External Clock (available only for PSoC 4200L)
     *  CY_SYS_PLL_SOURCE_ECO        ECO
-    *  CY_SYS_PLL_SOURCE_DSI0       DSI_OUT[0]
-    *  CY_SYS_PLL_SOURCE_DSI1       DSI_OUT[1]
-    *  CY_SYS_PLL_SOURCE_DSI2       DSI_OUT[2]
-    *  CY_SYS_PLL_SOURCE_DSI3       DSI_OUT[3]
+    *  CY_SYS_PLL_SOURCE_DSI0       DSI_OUT[0] (available only for PSoC 4200L)
+    *  CY_SYS_PLL_SOURCE_DSI1       DSI_OUT[1] (available only for PSoC 4200L)
+    *  CY_SYS_PLL_SOURCE_DSI2       DSI_OUT[2] (available only for PSoC 4200L)
+    *  CY_SYS_PLL_SOURCE_DSI3       DSI_OUT[3] (available only for PSoC 4200L)
     *
     *******************************************************************************/
     void CySysClkPllSetSource(uint32 pll, uint32 source)
     {
         uint32 regTmp;
         uint8  interruptState;
+        
+        #if (CY_IP_SRSSLT)
+            uint8 i = 0u;
+        #endif /* (CY_IP_SRSSLT) */
 
         interruptState = CyEnterCriticalSection();
 
         if (pll < CY_IP_PLL_NR)
         {
-            regTmp = CY_SYS_CLK_SELECT_REG & (uint32) ~CY_SYS_CLK_SELECT_PLL_MASK(pll);
-            regTmp |= ((source << CY_SYS_CLK_SELECT_PLL_SHIFT(pll)) & CY_SYS_CLK_SELECT_PLL_MASK(pll));
-            CY_SYS_CLK_SELECT_REG = regTmp;
+            #if(CY_IP_SRSSV2)
+                regTmp = CY_SYS_CLK_SELECT_REG & (uint32) ~CY_SYS_CLK_SELECT_PLL_MASK(pll);
+                regTmp |= ((source << CY_SYS_CLK_SELECT_PLL_SHIFT(pll)) & CY_SYS_CLK_SELECT_PLL_MASK(pll));
+                CY_SYS_CLK_SELECT_REG = regTmp;
+            #else
+                regTmp = CY_SYS_ECO_CLK_SELECT_REG & (uint32) ~CY_SYS_ECO_CLK_SELECT_PLL0_MASK;
+                regTmp |= ((source << CY_SYS_ECO_CLK_SELECT_PLL0_SHIFT) & CY_SYS_ECO_CLK_SELECT_PLL0_MASK);
+                CY_SYS_ECO_CLK_SELECT_REG = regTmp;
+                
+                /* Generate clock sequence to change clock source in CY_SYS_ECO_CLK_SELECT_REG */
+                CY_SYS_EXCO_PGM_CLK_REG |= CY_SYS_EXCO_PGM_CLK_ENABLE_MASK;
+                
+                for(i = 0u; i < CY_SYS_EXCO_PGM_CLK_SEQ_GENERATOR; i++)
+                {
+                    CY_SYS_EXCO_PGM_CLK_REG |= CY_SYS_EXCO_PGM_CLK_CLK_ECO_MASK;
+                    CY_SYS_EXCO_PGM_CLK_REG &= ~CY_SYS_EXCO_PGM_CLK_CLK_ECO_MASK;
+                }
+                
+                CY_SYS_EXCO_PGM_CLK_REG &= ~CY_SYS_EXCO_PGM_CLK_ENABLE_MASK;
+
+            #endif /* (CY_IP_SRSSV2) */
         }
 
         CyExitCriticalSection(interruptState);
     }
 
-
+    
     /*******************************************************************************
     * Function Name: CySysClkPllSetOutputDivider
     ****************************************************************************//**
@@ -2038,11 +2160,11 @@ void CySysClkWriteSysclkDiv(uint32 divider)
     *  The PLL must not be the System Clock source when calling this function. The
     *  PLL output will glitch during this function call.
     *
-    *  This API is available only for PSoC 4200L devices.
+    *  This API is available only for PSoC 4200L / 4100S with PLL devices.
     *
     *  \param PLL:
     *   0   PLL#0
-    *   1   PLL#1
+    *   1   PLL#1 (available only for PSoC 4200L)
     *
     * \param divider:
     *  CY_SYS_PLL_OUTPUT_DIVPASS    Pass through
@@ -2081,7 +2203,7 @@ void CySysClkWriteSysclkDiv(uint32 divider)
 
         return (returnStatus);
     }
-#endif /* (CY_IP_SRSSV2 && CY_IP_PLL) */
+#endif /* (CY_IP_PLL) */
 
 
 #if(CY_IP_SRSSV2)
@@ -3014,7 +3136,8 @@ void CyGetUniqueId(uint32* uniqueId)
     *  configured to set the priority. Please refer to the device TRM for more
     *  details.
     *
-    *  This API is applicable for PSoC 4200M and PSoC 4200L devices only.
+    *  This API is applicable for PSoC 4200M / PSoC 4200L / 4100S with 
+    *  DMA devices only.
     *
     *  \param source:
     *   CY_SYS_ARB_PRIORITY_CPU              CPU has priority (Default)
@@ -3041,7 +3164,8 @@ void CyGetUniqueId(uint32* uniqueId)
     *  configured to set the priority. Please refer to the device TRM for more
     *  details.
     *
-    *  This API is applicable for PSoC 4200M and PSoC 4200L devices only.
+    *  This API is applicable for PSoC 4200M / PSoC 4200L / 4100S with 
+    *  DMA devices only.
     *
     *  \param source:
     *   CY_SYS_ARB_PRIORITY_CPU              CPU has priority (Default)
@@ -3068,7 +3192,8 @@ void CyGetUniqueId(uint32* uniqueId)
     *  register is configured to set the priority. Please refer to the device TRM
     *  for more details.
     *
-    *  This API is applicable for PSoC 4200M and PSoC 4200L devices only.
+    *  This API is applicable for PSoC 4200M / PSoC 4200L / 4100S with 
+    *  DMA devices only.
     *
     *  \param source:
     *   CY_SYS_ARB_PRIORITY_CPU              CPU has priority (Default)
@@ -3095,7 +3220,8 @@ void CyGetUniqueId(uint32* uniqueId)
     *  The SL_CTL register is configured to set the priority. Please refer to the
     *  device TRM for more details.
     *
-    *  This API is applicable for PSoC 4200M and PSoC 4200L devices only.
+    *  This API is applicable for PSoC 4200M / PSoC 4200L / 4100S with 
+    *  DMA devices only.
     *
     *  \param  interfaceNumber: the slave interface number. Please refer to the
     *  device TRM for more details.
@@ -3157,7 +3283,8 @@ void CyGetUniqueId(uint32* uniqueId)
     *  This API affects the voltage values available in
     *  \ref CySysPrbSetGlobalVrefVoltage().
     *
-    *  This API is applicable for PSoC 4200M, PSoC 4200L and PSoC 4400 devices only.
+    *  This API is applicable for PSoC 4200M, PSoC 4200L and PSoC Analog 
+    *  Coprocessor devices only.
     *
     *  \param source:
     *   CY_SYS_VREF_SOURCE_BG   Sets bandgap as the source of the global voltage

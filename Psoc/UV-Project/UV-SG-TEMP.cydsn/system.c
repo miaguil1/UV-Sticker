@@ -1,8 +1,8 @@
 #include "system.h"
+#include "guvb_c31sm.h"
 
 //const float vdd_calibration = 3255.01064;  
 const float vdd_calibration = 3300.00;   
-
 const float uv_gain = 5; //Gain Resistor Values for Each Photodiode Set in Mega Ohms
 const float uv_respons = 113; //Responsitivity of Photodiode in nA / mW/cm^2
 const float amp_iov[] = {1, 1}; //Input Offset Voltage of Amplifiers
@@ -26,9 +26,11 @@ void system_init_hardware(void)
 {
     UART_Start(); //Starting UART internal communication
     I2C_Start(); //Starting the I2C communication for TMP116 
-    SG_AMP_Start(); //Starting internal Op-amp titled SG_AMP
+    //SG_AMP_Start(); //Starting internal Op-amp titled SG_AMP
     UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
     ADC_Start(); //Starting ADC
+    CyDelay(10);
+    setup_guvb_c31sm(); // Setup GUVB_C31SM
 }
 
 void system_red_led_blink()
@@ -55,6 +57,7 @@ void system_sleep(void)
     uart_sleep();   // Telling UART to go into deep sleep mode
     opamp_sleep();  // Telling All Op-Amps to go into deep sleep mode
     CySysPmSleep(); // Telling System to go into sleep mode
+    shutdown_guvb_c31sm();  // Shuting down GUVB_C31SM to save power
 }
 
 void system_wakeup(void)
@@ -63,6 +66,7 @@ void system_wakeup(void)
     i2c_wakeup();   // Waking up I2C component from deep sleep mode
     uart_wakeup();  // Waking up UART component from deep sleep mode
     opamp_wakeup(); // Waking up All Op-Amps from deep sleep mode
+    wakeup_guvb_c31sm();    // Wake up GUVB_C31SM Module from Shutdown
 }
 
 void system_deepsleep(void)
@@ -77,13 +81,32 @@ void adc_conversion(void)
     ADC_StopConvert();   
 }
 
-void system_read_i2c(uint32 register_address, uint8 *register_value, uint32 register_byte_count)
+void system_read_i2c(uint32 device_address, uint8 register_address, uint8 *register_value, uint32 register_byte_count)
 {
-    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
+//    uint32 device_address = Right-justified 7-bit Slave address (valid range 8 to 120).
+    uint32 i2c_mode_no_stop = I2C_I2C_MODE_NO_STOP; //Transfer Mode Possibilities
+    uint32 i2c_mode_repeat_start = I2C_I2C_MODE_REPEAT_START; //Transfer Mode Possibilities
     uint32 i2c_error;
+    
+    uint8 *address_buffer_value = &register_address;
+    uint32 address_buffer_length = 1;    
+    
+//    Write to the Slave Device the address register you want to read from
     do
     {
-        i2c_error = I2C_I2CMasterReadBuf(register_address, register_value, register_byte_count, i2c_mode);
+        i2c_error =  I2C_I2CMasterWriteBuf(device_address, address_buffer_value, address_buffer_length, i2c_mode_no_stop);        
+    }
+    while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
+    /* Wait for the data transfer to complete */ 
+    while(!(I2C_I2CMasterStatus() & I2C_I2C_MSTAT_WR_CMPLT)); //Wait until the Master has completed reading    
+    /* Clear Read Complete Status bit */
+    I2C_I2CMasterClearStatus();
+    I2C_I2CMasterClearWriteBuf();
+    
+//    Read from the address register you previously wrote to the Slave Device to read from
+    do
+    {
+        i2c_error = I2C_I2CMasterReadBuf(device_address, register_value, register_byte_count, i2c_mode_repeat_start);
     }
     while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
     /* Wait for the data transfer to complete */   
@@ -93,13 +116,16 @@ void system_read_i2c(uint32 register_address, uint8 *register_value, uint32 regi
     I2C_I2CMasterClearReadBuf();
 }
 
-void system_write_i2c(uint32 register_address, uint8 register_value[], uint32 register_byte_count) 
+void system_write_i2c(uint32 device_address, uint8 *buffer_value, uint32 register_byte_count) 
 {
-    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //Transfer Mode Possibilities
+//    uint32 device_address = Right-justified 7-bit Slave address (valid range 8 to 120).
+//    Register Address and Data Values are contained inside Buffer Value Array
+    
+    uint32 i2c_mode = I2C_I2C_MODE_COMPLETE_XFER; //I2C Complete Transfer Mode
     uint32 i2c_error;
     do
     {
-    i2c_error =  I2C_I2CMasterWriteBuf(register_address,register_value, register_byte_count, i2c_mode);        
+    i2c_error =  I2C_I2CMasterWriteBuf(device_address, buffer_value, register_byte_count, i2c_mode);        
     }
     while(i2c_error != I2C_I2C_MSTR_NO_ERROR);
     /* Wait for the data transfer to complete */ 
@@ -167,13 +193,15 @@ void system_use_wco(void)
 {  
     CySysClkWcoStart();     // Start WCO
     CySysClkSetLfclkSource(CY_SYS_CLK_LFCLK_SRC_WCO);   // Select WCO as the clock source
-    CySysClkIloStop();  //Stop ILO (Internal Oscillator   
+    CySysWdtUnlock();
+    CySysClkIloStop();  //Stop ILO (Internal Oscillator)   
+    CySysWdtLock();
 }
-
+ 
 //  Start using External ECO
 void system_use_eco(void)
 {
-    CySysClkEcoStart(2000);
+    CySysClkEcoStart(2000); // 2000 is the timeout period
 }
     
 // Stop Using ECO

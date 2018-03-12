@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cytypes.h
-* \version 5.60
+* \version 5.70
 *
 * \brief CyTypes provides register access macros and approved types for use in
 * firmware.
@@ -16,7 +16,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2008-2017, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2018, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -159,8 +159,13 @@
     #define CY_PSOC4_4200BLII (0u != 0u)
 #endif  /* CYDEV_CHIP_MEMBER_4P */
 
-
-
+#ifdef CYDEV_CHIP_MEMBER_4V
+    #define CY_PSOC4_4100MS (CYDEV_CHIP_MEMBER_USED == CYDEV_CHIP_MEMBER_4V)
+    #define CY_PSOC4_4100MS (CYDEV_CHIP_MEMBER_USED == CYDEV_CHIP_MEMBER_4V)
+#else
+    #define CY_PSOC4_4100MS (0u != 0u)
+    #define CY_PSOC4_4100MS (0u != 0u)
+#endif  /* CYDEV_CHIP_MEMBER_4V */
 
 #define CY_IP_HOBTO_DEVICE      (!(0 == 1))
 
@@ -326,24 +331,12 @@
 
     #define CY_IP_WCO   (CY_IP_WCO_BLESS || CY_IP_WCO_WCO || CY_IP_WCO_WCOV2 || CY_IP_WCO_SRSSV2)
 
-
-    /* PLL is present */
-     #if (CY_IP_HOBTO_DEVICE && CY_IP_SRSSV2)
-         #define CY_IP_PLL           ((0 != 0) || \
-                                      (0 != 0))
-
-         #define CY_IP_PLL_NR         (0u + \
-                                      0u)
-     #else
-         #define CY_IP_PLL           (0 != 0)
-         #define CY_IP_PLL_NR        (0)
-     #endif  /* (CY_IP_HOBTO_DEVICE && CY_IP_SRSSV2) */
-
-
     /* External Crystal Oscillator is present (high frequency) */
     #if (CY_IP_HOBTO_DEVICE)
         #if (CY_IP_BLESS)
             #define CY_IP_ECO_SRSSV2        (0 != 0)
+            #define CY_IP_ECO_SRSSLT        (0 != 0)
+            
             #if (CY_IP_BLESSV3)
                 #define CY_IP_ECO_BLESS     (0 != 0)
                 #define CY_IP_ECO_BLESSV3   (0 == 0)
@@ -355,15 +348,38 @@
             #define CY_IP_ECO_BLESS         (0 != 0)
             #define CY_IP_ECO_BLESSV3       (0 != 0)
             #define CY_IP_ECO_SRSSV2        (0 == 1)
+            #define CY_IP_ECO_SRSSLT        ((0 != 0) && (0 != 0))
         #endif  /* (CY_IP_BLESS) */
     #else
         #define CY_IP_ECO_BLESS             (0 != 0)
         #define CY_IP_ECO_BLESSV3           (0 != 0)
         #define CY_IP_ECO_SRSSV2            (0 != 0)
+        #define CY_IP_ECO_SRSSLT            (0 != 0)
     #endif  /* (CY_IP_HOBTO_DEVICE) */
 
-    #define CY_IP_ECO   (CY_IP_ECO_BLESS || CY_IP_ECO_SRSSV2 || CY_IP_ECO_BLESSV3)
+    #define CY_IP_ECO   (CY_IP_ECO_BLESS || CY_IP_ECO_SRSSV2 || CY_IP_ECO_BLESSV3 || CY_IP_ECO_SRSSLT)
 
+    /* PLL is present */
+    #if (CY_IP_HOBTO_DEVICE)
+        #if(CY_IP_SRSSV2)
+            #define CY_IP_PLL           ((0 != 0) || \
+                                          (0 != 0)) 
+
+            #define CY_IP_PLL_NR        (0u + \
+                                          0u)
+        
+        #elif (CY_IP_SRSSLT)
+            #define CY_IP_PLL           (-1 == 1)
+
+            #define CY_IP_PLL_NR        (1)
+        #else
+            #define CY_IP_PLL           (0 != 0)
+            #define CY_IP_PLL_NR        (0)
+        #endif /* (CY_IP_SRSSV2) */
+    #else
+        #define CY_IP_PLL           (0 != 0)
+        #define CY_IP_PLL_NR        (0)
+    #endif  /* (CY_IP_HOBTO_DEVICE) */
 
     /* Clock Source clk_lf implemented in SysTick Counter. When 0, not implemented, 1=implemented */
     #if (CY_IP_HOBTO_DEVICE)
@@ -457,7 +473,9 @@
 #define CY_BOOT_5_30            (530u)
 #define CY_BOOT_5_40            (540u)
 #define CY_BOOT_5_50            (550u)
-#define CY_BOOT_VERSION         (CY_BOOT_5_50)
+#define CY_BOOT_5_60            (560u)
+#define CY_BOOT_5_70            (570u)
+#define CY_BOOT_VERSION         (CY_BOOT_5_70)
 
 
 /*******************************************************************************

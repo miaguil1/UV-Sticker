@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CYBLE.c
-* \version 3.40
+* \version 3.50
 * 
 * \brief
 *  This file contains the source code for the Common APIs of the BLE Component.
 * 
 ********************************************************************************
 * \copyright
-* Copyright 2014-2016, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2014-2018, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.

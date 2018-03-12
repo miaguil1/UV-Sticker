@@ -17,7 +17,7 @@ float uv_get_pd(void)
 //    float uv_current = v_out/uv_gain[diode_num-1]; //Getting PhotoDiode Current from PhotoDiode Voltage
     float uv_current = uv_mv/uv_gain; //Getting PhotoDiode Current from PhotoDiode Voltage
     float uv_pd = uv_current/uv_respons; //Getting Power Density from PhotoDiode
-    return (uv_mv/1000); //Returning UV Photodiode Power Density in mW/cm^2
+    return (uv_pd/1000); //Returning UV Photodiode Power Density in mW/cm^2
 }
 
 float uv_get_index(void)
