@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.intern.ble_ex1.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="com.example.intern.ble_ex1.MainActivity">
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
@@ -14,13 +12,14 @@
         android:layout_height="fill_parent">
 
         <com.jjoe64.graphview.GraphView
+            android:id="@+id/graph"
             android:layout_width="match_parent"
+            android:layout_margin="10dp"
             android:layout_height="0dp"
             android:layout_weight="2"
-            android:id="@+id/graph"
+            app:seriesColor="#ee0000"
             app:seriesData="0=5;2=5;3=0;4=2"
-            app:seriesType="line"
-            app:seriesColor="#ee0000" />
+            app:seriesType="line" />
 
         <LinearLayout
             android:id="@+id/rest1"
@@ -71,14 +70,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/start_name"
+                    android:text="@string/start_recording"
                     android:id="@+id/startBtn"
                     android:layout_gravity="center_horizontal" />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/stop_name"
+                    android:text="@string/stop_recording"
                     android:id="@+id/stopBtn"
                     android:layout_gravity="center_horizontal" />
                 <Button

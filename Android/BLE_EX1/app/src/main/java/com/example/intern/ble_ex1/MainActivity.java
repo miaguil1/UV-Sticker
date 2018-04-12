@@ -24,18 +24,16 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.content_main);
 
         //Connect U.I Elements
-        CheckBox temp_CheckBox = findViewById(R.id.temp_check);
-        CheckBox uv_CheckBox = findViewById(R.id.uv_check);
-        CheckBox resp_CheckBox = findViewById(R.id.resp_check);
-        GraphView graph = findViewById(R.id.graph);
-        Button start_Button = findViewById(R.id.startBtn);
-        Button stop_Button = findViewById(R.id.stopBtn);
-        Button save_Button = findViewById(R.id.saveBtn);
+        CheckBox temp_CheckBox = (CheckBox) findViewById(R.id.temp_check);
+        CheckBox uv_CheckBox = (CheckBox) findViewById(R.id.uv_check);
+        CheckBox resp_CheckBox = (CheckBox) findViewById(R.id.resp_check);
+        GraphView graph = (GraphView) findViewById(R.id.graph);
+        Button start_Button = (Button) findViewById(R.id.startBtn);
+        Button stop_Button = (Button) findViewById(R.id.stopBtn);
+        Button save_Button = (Button) findViewById(R.id.saveBtn);
 
         LineGraphSeries<DataPoint> temp_series = new LineGraphSeries<>(new DataPoint[] {});
         temp_series.setTitle("Temperature");
@@ -56,12 +54,11 @@ public class MainActivity extends AppCompatActivity
         buttonClicked(start_Button, stop_Button, save_Button);
         checkClicked(temp_CheckBox, uv_CheckBox, resp_CheckBox);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -80,6 +77,7 @@ public class MainActivity extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
+
     private void buttonClicked(Button start_Button, Button stop_Button, Button save_Button)
     {
         start_Button.setOnClickListener(new View.OnClickListener()
