@@ -23,8 +23,6 @@
 #include "CyLib.h"
 #include "cyfitter_cfg.h"
 
-#define CY_NEED_CYCLOCKSTARTUPERROR 1
-
 
 #if defined(__GNUC__) || defined(__ARMCC_VERSION)
     #define CYPACKED 
@@ -169,7 +167,6 @@ static void ClockSetup(void);
 CY_CFG_SECTION
 static void ClockSetup(void)
 {
-	uint8 ecoStatus;
 
 	/* Set Flash Cycles based on max possible frequency in case a glitch occurs during ClockSetup(). */
 	CY_SET_REG32((void CYXDATA *)(CYREG_CPUSS_FLASH_CTL), (0x0012u));
@@ -192,27 +189,23 @@ static void ClockSetup(void)
 	CY_SET_REG32((void *)(CYREG_BLE_BLESS_XTAL_CLK_DIV_CONFIG), 0x00000000u);
 	/* Disable Crystal Stable Interrupt before enabling ECO */
 	CY_SET_REG32((void*)CYREG_BLE_BLESS_LL_DSM_CTRL, CY_GET_REG32((void*)CYREG_BLE_BLESS_LL_DSM_CTRL) & (~(uint32)0x08u));
-	/* Start the ECO and check status since it is needed for HFCLK */
-	ecoStatus = CySysClkEcoStart(2000u);
-	if (ecoStatus != CYRET_SUCCESS)
-	{
-		CyClockStartupError(CYCLOCKSTART_XTAL_ERROR);
-	}
+	/* Start the ECO and do not check status since it is not needed for HFCLK */
+	(void)CySysClkEcoStart(2000u);
 	CyDelayUs(1500u); /* Wait to stabilize */
 
 	/* Setup phase aligned clocks */
-	CY_SET_REG32((void *)CYREG_PERI_DIV_16_CTL1, 0x00001300u);
+	CY_SET_REG32((void *)CYREG_PERI_DIV_16_CTL1, 0x00002700u);
 	CY_SET_REG32((void *)CYREG_PERI_DIV_CMD, 0x8000FF41u);
-	CY_SET_REG32((void *)CYREG_PERI_DIV_16_CTL0, 0x00000E00u);
+	CY_SET_REG32((void *)CYREG_PERI_DIV_16_CTL0, 0x00001D00u);
 	CY_SET_REG32((void *)CYREG_PERI_DIV_CMD, 0x8000FF40u);
-	CY_SET_REG32((void *)CYREG_PERI_DIV_16_CTL2, 0x00001900u);
+	CY_SET_REG32((void *)CYREG_PERI_DIV_16_CTL2, 0x00003300u);
 	CY_SET_REG32((void *)CYREG_PERI_DIV_CMD, 0x8000FF42u);
-
-	/* CYDEV_CLK_SELECT Starting address: CYDEV_CLK_SELECT */
-	CY_SET_REG32((void *)(CYREG_CLK_SELECT), 0x00000092u);
 
 	/* CYDEV_CLK_IMO_CONFIG Starting address: CYDEV_CLK_IMO_CONFIG */
 	CY_SET_REG32((void *)(CYREG_CLK_IMO_CONFIG), 0x82000000u);
+
+	/* CYDEV_CLK_SELECT Starting address: CYDEV_CLK_SELECT */
+	CY_SET_REG32((void *)(CYREG_CLK_SELECT), 0x00040000u);
 
 	/* CYDEV_PERI_PCLK_CTL6 Starting address: CYDEV_PERI_PCLK_CTL6 */
 	CY_SET_REG32((void *)(CYREG_PERI_PCLK_CTL6), 0x00000041u);
@@ -224,8 +217,6 @@ static void ClockSetup(void)
 	CY_SET_REG32((void *)(CYREG_PERI_PCLK_CTL1), 0x00000042u);
 
 	CY_SET_REG32((void *)(CYREG_WDT_CONFIG), 0x40000000u);
-	/* Set Flash Cycles based on newly configured 24.00MHz HFCLK. */
-	CY_SET_REG32((void CYXDATA *)(CYREG_CPUSS_FLASH_CTL), (0x0011u));
 }
 
 

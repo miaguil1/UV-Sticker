@@ -30,7 +30,7 @@ void system_init_hardware(void)
     UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
     ADC_Start(); //Starting ADC
     CyDelay(10);
-    setup_guvb_c31sm(); // Setup GUVB_C31SM
+    guvb_c31sm_setup();
 }
 
 void system_red_led_blink()
@@ -57,7 +57,7 @@ void system_sleep(void)
     uart_sleep();   // Telling UART to go into deep sleep mode
     opamp_sleep();  // Telling All Op-Amps to go into deep sleep mode
     CySysPmSleep(); // Telling System to go into sleep mode
-    shutdown_guvb_c31sm();  // Shuting down GUVB_C31SM to save power
+    guvb_c31sm_shutdown();  // Shuting down GUVB_C31SM to save power
 }
 
 void system_wakeup(void)
@@ -66,7 +66,7 @@ void system_wakeup(void)
     i2c_wakeup();   // Waking up I2C component from deep sleep mode
     uart_wakeup();  // Waking up UART component from deep sleep mode
     opamp_wakeup(); // Waking up All Op-Amps from deep sleep mode
-    wakeup_guvb_c31sm();    // Wake up GUVB_C31SM Module from Shutdown
+    guvb_c31sm_wakeup();    // Wake up GUVB_C31SM Module from Shutdown
 }
 
 void system_deepsleep(void)
@@ -191,9 +191,10 @@ void opamp_wakeup(void)
 //  Start using External WCO
 void system_use_wco(void)
 {  
+    CySysWdtUnlock();
     CySysClkWcoStart();     // Start WCO
     CySysClkSetLfclkSource(CY_SYS_CLK_LFCLK_SRC_WCO);   // Select WCO as the clock source
-    CySysWdtUnlock();
+    CyDelay(1);
     CySysClkIloStop();  //Stop ILO (Internal Oscillator)   
     CySysWdtLock();
 }

@@ -3,7 +3,7 @@
 const uint32 guvb_c31sm_address = 0x39;   //Slave Device Address of GUVB_C31SM
 
 // GUVB-C31SM Photodiodes
-void setup_guvb_c31sm(void)
+void guvb_c31sm_setup(void)
 {
     uint32 register_byte_count = 2; //Slave Address + Register Write Value
     
@@ -49,7 +49,7 @@ void soft_reset_guvb_c31sm(void)
     system_write_i2c(guvb_c31sm_address, soft_reset_register_value_pointer, register_byte_count);   //sending Message via I2C
 }
 
-void shutdown_guvb_c31sm(void)
+void guvb_c31sm_shutdown(void)
 {
     uint32 register_byte_count = 2;
     uint32 mode_register = 0x01;  //GUVB-C31SM Mode Register
@@ -62,7 +62,7 @@ void shutdown_guvb_c31sm(void)
     system_write_i2c(guvb_c31sm_address, mode_register_value_pointer, register_byte_count); //sending Message via I2C 
 }
 
-void wakeup_guvb_c31sm(void)
+void guvb_c31sm_wakeup(void)
 {
     uint32 register_byte_count = 2;
     uint32 mode_register = 0x01;  //GUVB-C31SM Mode Register
@@ -85,6 +85,19 @@ uint8 guvb_c31sm_chipid(void)
     system_read_i2c(guvb_c31sm_address, chipid_register, chipid_value_pointer, chipid_byte_count);
 
     return chipid_value[0];
+}
+
+void guvb_c31sm_range(void)
+{
+    uint32 register_byte_count = 1;    //Number of bytes to read from ChipID
+    uint32 range_uvb_register = 0x07;  //GUVB-C31SM UVB range of operation
+    uint8 range_uvb = 0b00000000;     //Setting UVB range of operation to (x1), 0
+    uint8 range_uvb_register_value[2]= {0};
+    range_uvb_register_value[0] = range_uvb_register;
+    range_uvb_register_value[1] = range_uvb;
+    uint8 *range_uvb_register_value_pointer = range_uvb_register_value;
+    
+    system_write_i2c(guvb_c31sm_address, range_uvb_register_value_pointer, register_byte_count);   //sending Message via I2C            
 }
 
 uint8 guvb_c31sm_read_register(uint32 register_address)
@@ -114,6 +127,43 @@ uint16 guvb_c31sm_get_uint16(void)
     
     uint16 i2c_counts =  (guvb_c31sm_msb_value[0] << 8) | guvb_c31sm_lsb_value[0]; // Combine LSB and MSB into 1 uint16 value
     return i2c_counts;
+}
+
+uint16 guvb_c31sm_nvm(void)
+{
+    uint32 register_byte_count = 1;    //Number of bytes to read from register
+    uint32 nvm_register = 0x30;  //GUVB-C31SM NVM Read Control
+    uint8 nvm_value = 0x0C;     //Setting NVM Read Control to B_Scale 
+    uint8 nvm_register_value[2]= {0};
+    nvm_register_value[0] = nvm_register;
+    nvm_register_value[1] = nvm_value;
+    uint8 *nvm_register_value_pointer = nvm_register_value;
+    
+    system_write_i2c(guvb_c31sm_address, nvm_register_value_pointer, register_byte_count);   //sending Message via I2C 
+    
+    uint32 guvb_c31sm_lsb_nvm_register = 0x32;  //UVB_LSB B_Scale Register 
+    uint32 guvb_c31sm_msb_nvm_register = 0x31;  //UVB_MSB B_Scale Register 
+    uint32 i2c_byte_count = 1; //Number of bytes of buffer to read per register
+    uint8 guvb_c31sm_lsb_nvm_value[1]={0};  //UVB_LSB B_Scale Value Array to store buffer in register
+    uint8 guvb_c31sm_msb_nvm_value[1]={0};  //UVB_MSB B_Scale Value Array to store buffer in register
+    uint8 *guvb_c31sm_lsb_nvm_value_pointer = guvb_c31sm_lsb_nvm_value; //UVB_LSB Pointer to Value Array
+    uint8 *guvb_c31sm_msb_nvm_value_pointer = guvb_c31sm_msb_nvm_value; //UVB_MSB Pointer to Value Array
+    
+    system_read_i2c(guvb_c31sm_address, guvb_c31sm_lsb_nvm_register, guvb_c31sm_lsb_nvm_value_pointer, i2c_byte_count); // Read LSB
+    system_read_i2c(guvb_c31sm_address, guvb_c31sm_msb_nvm_register, guvb_c31sm_msb_nvm_value_pointer, i2c_byte_count); // Read MSB
+    
+    uint16 b_scale =  (guvb_c31sm_msb_nvm_value[0] << 8) | guvb_c31sm_lsb_nvm_value[0]; // Combine LSB and MSB into 1 uint16 value
+    return b_scale;
+}
+
+uint16 guvb_c31sm_read_sensor(void)
+{
+    guvb_c31sm_wakeup();
+    guvb_c31sm_range();
+    uint16 b_scale = guvb_c31sm_nvm();
+    uint16 sensor_value = guvb_c31sm_get_uint16();
+    guvb_c31sm_shutdown();
+    return sensor_value;    
 }
 
 float guvb_c31sm_get_uv(void)

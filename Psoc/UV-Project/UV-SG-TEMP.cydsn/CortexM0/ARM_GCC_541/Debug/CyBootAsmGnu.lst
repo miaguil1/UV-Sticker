@@ -11695,15 +11695,15 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1632              	.set V_BATTERY__SHIFT, 4
  1633              	
  1634              	/* Miscellaneous */
- 1635              	.set CYDEV_BCLK__HFCLK__HZ, 24000000
- 1636              	.set CYDEV_BCLK__HFCLK__KHZ, 24000
- 1637              	.set CYDEV_BCLK__HFCLK__MHZ, 24
+ 1635              	.set CYDEV_BCLK__HFCLK__HZ, 48000000
+ 1636              	.set CYDEV_BCLK__HFCLK__KHZ, 48000
+ 1637              	.set CYDEV_BCLK__HFCLK__MHZ, 48
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 196
 
 
- 1638              	.set CYDEV_BCLK__SYSCLK__HZ, 24000000
- 1639              	.set CYDEV_BCLK__SYSCLK__KHZ, 24000
- 1640              	.set CYDEV_BCLK__SYSCLK__MHZ, 24
+ 1638              	.set CYDEV_BCLK__SYSCLK__HZ, 48000000
+ 1639              	.set CYDEV_BCLK__SYSCLK__KHZ, 48000
+ 1640              	.set CYDEV_BCLK__SYSCLK__MHZ, 48
  1641              	.set CYDEV_CHIP_DIE_LEOPARD, 1
  1642              	.set CYDEV_CHIP_DIE_PSOC4A, 18
  1643              	.set CYDEV_CHIP_DIE_PSOC5LP, 2

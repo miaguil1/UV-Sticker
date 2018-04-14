@@ -18,15 +18,33 @@ void WDT_ISR_Handler()
 //            update_tmp116();
 //            update_UV();
 //            update_battery();
-            wakeup_guvb_c31sm();
+        
+            guvb_c31sm_wakeup();
+            guvb_c31sm_range();
+//            uint16 b_scale = guvb_c31sm_nvm();
             CyDelay(200);
-            shutdown_guvb_c31sm();
-            uint16 measurement =  guvb_c31sm_get_uint16();
-            uint8 lsb = measurement & 0xFF;
-            uint8 msb = measurement >> 8;
-            UART_UartPutChar(lsb);
-            UART_UartPutChar(msb);
-            adafruit_guva_uart();
+//            uint8 nvm_control = guvb_c31sm_read_register(0x30);
+            uint16 sensor_value = guvb_c31sm_get_uint16();
+            guvb_c31sm_shutdown();            
+            
+            uint8 lsb1 = sensor_value & 0xFF;
+            uint8 msb1 = sensor_value >> 8;
+            UART_UartPutChar(lsb1);
+            UART_UartPutChar(msb1);
+            
+//            uint8 lsb2 = b_scale & 0xFF;
+//            uint8 msb2 = b_scale >> 8;
+//            UART_UartPutChar(lsb2);
+//            UART_UartPutChar(msb2);
+//            
+//            UART_UartPutChar(nvm_control);           
+            
+            uint16 guva = (uint16) adc_acquire_channel(3);
+            uint8 lsb3 = guva & 0xFF;
+            uint8 msb3 = guva >> 8;
+            UART_UartPutChar(lsb3);
+            UART_UartPutChar(msb3);
+            
 //            system_sleep(); // Took Measurements, now going back into sleep mode.
 //        }
         
