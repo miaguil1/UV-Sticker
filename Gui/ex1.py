@@ -1,4 +1,5 @@
 import serial_2 as sp1
+from datetime import datetime
 
 def main():
     while 1:
@@ -13,7 +14,16 @@ def main():
             uvi = sp1.read_dec()
             print("UVI: " + str(uvi))
 
-            print(sp1.read_text())
+            # b_scale = sp1.read_dec()
+            # print("B Scale: " + str(b_scale))
+            #
+            # nvm = sp1.read_8()
+            # print("NVM: " + str(nvm))
+
+            guva = sp1.read_dec()
+            print("Guva: " + str(guva))
+
+            print(datetime.now().time())
             # chipID = sp1.read_8()
             # print("ChipID: " + str(chipID))
 

@@ -5,11 +5,13 @@
 
 const uint32 guvb_c31sm_address;
     
-void setup_guvb_c31sm(void);
-void soft_reset_guvb_c31sm(void);
-void shutdown_guvb_c31sm(void);
-void wakeup_guvb_c31sm(void);
+void guvb_c31sm_setup(void);
+void guvb_c31sm_soft_reset(void);
+void guvb_c31sm_shutdown(void);
+void guvb_c31sm_wakeup(void);
 uint8 guvb_c31sm_chipid(void);
+void guvb_c31sm_range(void);
+uint16 guvb_c31sm_nvm(void);
 uint8 guvb_c31sm_read_register(uint32);
 uint16 guvb_c31sm_get_uint16(void);
 float guvb_c31sm_get_uv(void);
