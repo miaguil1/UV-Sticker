@@ -1,0 +1,2 @@
+Removed Pin From Net: NetName=V_BATT Pin=J2-3
+Change Component Footprint: Designator=J2 Old Footprint= New Footprint=LINX_BATT_HLDR

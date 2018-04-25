@@ -1,0 +1,9 @@
+Added Component: Designator=J4(Mounting Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J5(Mounting Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J6(Mounting Hole)
+Add component. Clean all parameters for all variants
+Added Member To Class: ClassName=UV_Watch_1 Member=Component J4 M2/2-56 Mounting Hole
+Added Member To Class: ClassName=UV_Watch_1 Member=Component J5 M2/2-56 Mounting Hole
+Added Member To Class: ClassName=UV_Watch_1 Member=Component J6 M2/2-56 Mounting Hole
