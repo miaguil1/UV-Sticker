@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=ANTENNA Pin=C36-1
+Removed Pin From Net: NetName=GND Pin=C36-2
+Removed Pin From Net: NetName=GND Pin=C37-2
+Removed Pin From Net: NetName=ANTENNA Pin=L1-1
+Removed Member From Class: ClassName=tempsensor Member=C36
+Removed Member From Class: ClassName=tempsensor Member=C37
+Added Component: Designator=C6(CAP_0402(1005)_M)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C7(CAP_0402(1005)_M)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=ANTENNA Pin=C6-1
+Added Pin To Net: NetName=GND Pin=C7-2
+Added Pin To Net: NetName=GND Pin=L1-1
+Added Pin To Net: NetName=NetC6_2 Pin=C6-2
+Added Pin To Net: NetName=NetC6_2 Pin=C7-1
+Added Pin To Net: NetName=NetC6_2 Pin=L1-2
+Added Pin To Net: NetName=NetC6_2 Pin=L3-1
+Added Net: Name=NetC6_2
+Added Member To Class: ClassName=tempsensor Member=Component C6 Capacitance
+Added Member To Class: ClassName=tempsensor Member=Component C7 Capacitance
+Added Member To Class: ClassName=tempsensor Member=Component U7 CY8C4127FNI-BL483

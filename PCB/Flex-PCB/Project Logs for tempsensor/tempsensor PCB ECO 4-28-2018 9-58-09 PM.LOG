@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=ANTENNA Pin=C6-1
+Added Component: Designator=R6(RES_0201(0603)_M)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=ANTENNA Pin=R6-1
+Added Pin To Net: NetName=NetC6_1 Pin=C6-1
+Added Pin To Net: NetName=NetC6_1 Pin=R6-2
+Added Net: Name=NetC6_1
+Added Member To Class: ClassName=tempsensor Member=Component R6 Resistance

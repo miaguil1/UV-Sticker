@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=GND Pin=J8-2
+Added Component: Designator=J9(Battery_PAD)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=J9-1
+Added Member To Class: ClassName=tempsensor Member=Component J9 Battery_Connector

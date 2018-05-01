@@ -1,0 +1,10 @@
+Removed Pin From Net: NetName=BATTERY_LEVEL Pin=U7-A3
+Added Component: Designator=J13(Pogo-CLOCK-PAD)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J14(Pogo-CLOCK-PAD)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=XTAL_HF_IN Pin=J13-1
+Added Pin To Net: NetName=XTAL_HF_OUT Pin=J14-1
+Added Pin To Net: NetName=BATTERY_LEVEL Pin=U7-A4
+Added Member To Class: ClassName=tempsensor Member=Component J13 Probe-CLOCK
+Added Member To Class: ClassName=tempsensor Member=Component J14 Probe-CLOCK

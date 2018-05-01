@@ -1,0 +1,8 @@
+Change Component Designator: OldDesignator=J1 NewDesignator=SCL
+Change Component Designator: OldDesignator=J2 NewDesignator=GND
+Change Component Designator: OldDesignator=J3 NewDesignator=V_BAT
+Change Component Designator: OldDesignator=J4 NewDesignator=VCC
+Change Component Designator: OldDesignator=J5 NewDesignator=SWD_CLK
+Change Component Designator: OldDesignator=J6 NewDesignator=SWD_DATA
+Change Component Designator: OldDesignator=J7 NewDesignator=SDA
+Change Component Designator: OldDesignator=J10 NewDesignator=XRES

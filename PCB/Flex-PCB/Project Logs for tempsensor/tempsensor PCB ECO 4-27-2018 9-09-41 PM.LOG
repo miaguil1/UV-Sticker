@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=V_BATT Pin=J8-1
+Change Component Designator: OldDesignator=V_BAT NewDesignator=V_BATT
+Added Pin To Net: NetName=V_BAT Pin=J8-1
