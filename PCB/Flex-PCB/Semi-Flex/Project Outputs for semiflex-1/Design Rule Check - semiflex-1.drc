@@ -1,25 +1,25 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Intern\Documents\GitHub\UV-Sticker\PCB\Flex-PCB\Semi-Flex\semiflex-1.PcbDoc
-Date     : 5/1/2018
-Time     : 12:41:03 PM
+Date     : 5/2/2018
+Time     : 1:22:40 PM
 
 WARNING: Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again
    Polygon named: RF_GND_BOTTOM In net GND On Bottom Layer
    Polygon named: RF_GND_BOTTOM In net GND On Bottom Layer
 
-Processing Rule : Clearance Constraint (Gap=5mil) (All),(All)
+Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=5mil) ((InNet('GND'))),(All)
+Processing Rule : Clearance Constraint (Gap=4mil) (All),(All)
 Rule Violations :0
 
-Processing Rule : Short-Circuit Constraint (Allowed=Yes) (All),(All)
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=5mil) (Max=100mil) (Preferred=5mil) (All)
+Processing Rule : Width Constraint (Min=4mil) (Max=100mil) (Preferred=5mil) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
@@ -125,4 +125,4 @@ Rule Violations :0
 
 Violations Detected : 70
 Waived Violations : 0
-Time Elapsed        : 00:00:03
+Time Elapsed        : 00:00:08

@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [semiflex-1.PcbDoc]
+   Generated File[semiflex-1.TXT]
+   Generated File[semiflex-1.LDP]
+   Generated File[semiflex-1.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 10:40:54 PM On 5/1/2018

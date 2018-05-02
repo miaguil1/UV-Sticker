@@ -106,20 +106,12 @@
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\A3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\A3_PM.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\adafruit_guva.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_intClock.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ALERT.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ALERT_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B3_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B6.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B6_PM.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\battery.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_bless_isr.lst</v>
@@ -129,10 +121,6 @@
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_INT.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_PVT.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\bluetooth.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C3_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C6.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C6_PM.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -143,16 +131,6 @@
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\D3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\D3_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\E3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\E3_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\E6.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\E6_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\F3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\F3_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\G3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\G3_PM.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\guvb_c31sm.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
@@ -194,20 +172,12 @@
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\A3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\A3_PM.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\adafruit_guva.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_INT.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_intClock.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_IRQ.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ALERT.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\ALERT_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B3_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B6.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\B6_PM.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\battery.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_bless_isr.lst</v>
@@ -217,10 +187,6 @@
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_INT.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_HAL_PVT.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\bluetooth.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C3.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C3_PM.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C6.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\C6_PM.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
@@ -228,6 +194,16 @@
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\guvb_c31sm.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_I2C.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_I2C_BOOT.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_I2C_INT.lst</v>
+<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\I2C_I2C_MASTER.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -299,7 +275,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1532, 762" SelectedTabbedMdiWindow="4c082689-8fd5-457e-a11d-5e34ca613763"><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" Guid="bdf0e948-92f5-4838-a3ac-4f0b203f75db" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" Guid="4c082689-8fd5-457e-a11d-5e34ca613763" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\main.c" Guid="d62554ec-8976-4d9b-9c47-968944710778" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\watchdog.c" Guid="f5a47108-cbe1-47ac-afce-dfdbf045fb00" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\system.c" Guid="1b314f12-0698-412a-9561-2c09cb00cd43" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\guvb_c31sm.c" Guid="ccf786f0-55be-4f2e-92a4-077b7cc18741" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\guvb_c31sm.h" Guid="007d0fc3-3ca9-45dc-a909-38fbd93af7fb" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="46301dfc-fdac-4998-8984-e99b83e1f8c9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1335, 722" SelectedTabbedMdiWindow="bdf0e948-92f5-4838-a3ac-4f0b203f75db"><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" Guid="bdf0e948-92f5-4838-a3ac-4f0b203f75db" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" Guid="4c082689-8fd5-457e-a11d-5e34ca613763" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\main.c" Guid="d62554ec-8976-4d9b-9c47-968944710778" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\watchdog.c" Guid="f5a47108-cbe1-47ac-afce-dfdbf045fb00" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\system.c" Guid="1b314f12-0698-412a-9561-2c09cb00cd43" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\guvb_c31sm.c" Guid="ccf786f0-55be-4f2e-92a4-077b7cc18741" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\guvb_c31sm.h" Guid="007d0fc3-3ca9-45dc-a909-38fbd93af7fb" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="46301dfc-fdac-4998-8984-e99b83e1f8c9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
