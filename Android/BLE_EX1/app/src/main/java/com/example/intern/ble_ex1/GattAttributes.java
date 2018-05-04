@@ -24,17 +24,28 @@ import java.util.HashMap;
 public class GattAttributes
 {
     private static HashMap<String, String> attributes = new HashMap();
-    //Services
-    public static String UV_MEASUREMENT = "7D2EA28A-F7BD-485A-BD9D-92AD6ECFE93E"; //0xDB42
-    public static String BATTERY_LEVEL = "7D2EA28A-F7BD-485A-BD9D-92AD6ECFE93E";  //0x5C96
-    public static String BODY_TEMPERATURE = "07D2EA28A-F7BD-485A-BD9D-92AD6ECFE93E";   //0x8CD4
-    public static String HEART_RATE = "0000180d-0000-1000-8000-00805f9b34fb";
+    //Service and Characteristic by type
+    public static String SERVICE_UV_MEASUREMENT = "0000DB42-0000-1000-8000-00805F9B34FB";
 
-    //Characteristics
-    public static String POWER_DENSITY = "7D2EBAAD-F7BD-485A-BD9D-92AD6ECFE93E";  //0xE5CB
-    public static String UV_INDEX = "7D2EBAAD-F7BD-485A-BD9D-92AD6ECFE93E";   //0xC3C2
-    public static String BATTERY_PERCENT = "7D2EBAAD-F7BD-485A-BD9D-92AD6ECFE93E";    //0x6922
-    public static String TEMPERATURE = "7D2EBAAD-F7BD-485A-BD9D-92AD6ECFE93E";    //0x46AA
+    public static String POWER_DENSITY = "0000E5CB-0000-1000-8000-00805F9B34FB";
+    public static String POWER_DENSITY_CCC = "00002902-0000-1000-8000-00805F9B34FB";
+    public static String POWER_DENSITY_CUD = "00002901-0000-1000-8000-00805F9B34FB";
+
+    public static String UV_INDEX = "0000C3C2-0000-1000-8000-00805F9B34FB";
+    public static String UV_INDEX_CCC = "00002902-0000-1000-8000-00805F9B34FB";
+    public static String UV_INDEX_CUD = "00002901-0000-1000-8000-00805F9B34FB";
+
+    public static String SERVICE_BATTERY = "00005C96-0000-1000-8000-00805F9B34FB";
+
+    public static String BATTERY_LEVEL = "00006922-0000-1000-8000-00805F9B34FB";
+    public static String BATTERY_LEVEL_CCC = "00002902-0000-1000-8000-00805F9B34FB";
+    public static String BATTERY_LEVEL_CUD = "00002901-0000-1000-8000-00805F9B34FB";
+
+    public static String SERVICE_BODY_TEMPERATURE = "00008CD4-0000-1000-8000-00805F9B34FB";
+
+    public static String TEMPERATURE = "000046AA-0000-1000-8000-00805F9B34FB";
+    public static String TEMPERATURE_CCC = "00002902-0000-1000-8000-00805F9B34FB";
+    public static String TEMPERATURE_CUD = "00002901-0000-1000-8000-00805F9B34FB";
 
     static
     {
