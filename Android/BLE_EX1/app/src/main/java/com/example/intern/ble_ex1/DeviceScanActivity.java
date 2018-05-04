@@ -56,6 +56,9 @@ public class DeviceScanActivity extends ListActivity
     private boolean mScanning;
     private Handler mHandler;
 
+    private boolean enableScanning;
+    private boolean currentScanning;
+
     private ListView bleList;
 
     private static final int REQUEST_ENABLE_BT = 1;
@@ -69,6 +72,9 @@ public class DeviceScanActivity extends ListActivity
         super.onCreate(savedInstanceState);
         mHandler = new Handler();
 
+        enableScanning = false; // Boolean used to only scan when button has been pressed
+        currentScanning = false;    // Boolean used to determine if scanning is in progress
+
         setContentView(R.layout.ble_connect);
 
         Log.w(TAG, "ScanLeDevice: Bluetooth Device");
@@ -78,7 +84,6 @@ public class DeviceScanActivity extends ListActivity
         Button start_Scan_Button = (Button) findViewById(R.id.startScanBtn);
         Button stop_Scan_Button = (Button) findViewById(R.id.stopScanBtn);
         bleList = getListView();
-//        bleList = (ListView) findViewById(R.id.scanBLEList);
         bleList.setAdapter(new LeDeviceListAdapter());
 
         arrayAdapter = new ArrayAdapter<String>(DeviceScanActivity.this, android.R.layout.simple_expandable_list_item_1, ble_array_list);
@@ -150,6 +155,7 @@ public class DeviceScanActivity extends ListActivity
             public void onClick(View view)
             {
                 Log.w(TAG, "Scan Button Pressed");
+                enableScanning = true;
                 scanLeDevice(true);
                 ble_array_list.add("UV Sticker");
                 bleList.setAdapter(arrayAdapter);
@@ -162,6 +168,7 @@ public class DeviceScanActivity extends ListActivity
             public void onClick(View view)
             {
                 Log.w(TAG, "Stop Button Pressed");
+                enableScanning = false;
                 scanLeDevice(false);
             }
         });
@@ -172,6 +179,7 @@ public class DeviceScanActivity extends ListActivity
             public void onClick(View view)
             {
                 Log.w(TAG, "Connect Button Pressed");
+                enableScanning = false;
             }
         });
     }
@@ -226,7 +234,7 @@ public class DeviceScanActivity extends ListActivity
     {
         mHandler = new Handler();
         Log.w(TAG, "ScanLeDevice Function Called");
-        if (enable)
+        if (enable && enableScanning)
         {
             Log.w(TAG, "ScanLeDevice: Start Scanning");
             // Stops scanning after a pre-defined scan period.
