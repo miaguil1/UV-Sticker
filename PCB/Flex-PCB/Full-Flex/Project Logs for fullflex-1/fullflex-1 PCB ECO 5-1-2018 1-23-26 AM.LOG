@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=VCC Pin=U7-A3
+Removed Pin From Net: NetName=VCC Pin=U7-B3
+Removed Pin From Net: NetName=GND Pin=U7-B6
+Removed Pin From Net: NetName=VCC Pin=U7-C3
+Removed Pin From Net: NetName=GND Pin=U7-C6
+Removed Pin From Net: NetName=VCC Pin=U7-D3
+Removed Pin From Net: NetName=VCC Pin=U7-E3
+Removed Pin From Net: NetName=GND Pin=U7-E6
+Removed Pin From Net: NetName=VCC Pin=U7-F3
+Removed Pin From Net: NetName=VCC Pin=U7-G3
+Change Component Footprint: Designator=U7 Old Footprint=WLCSP-68_MOD New Footprint=WLCSP-68
+Change Class Name : Old Net Name=tempsensor New Net Name=fullflex-1

@@ -1,0 +1,32 @@
+Added Component: Designator=J1(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J2(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J3(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J4(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J5(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J6(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J7(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J10(Pogo-Pin-Hole)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=SCL Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J2-1
+Added Pin To Net: NetName=V_BAT Pin=J3-1
+Added Pin To Net: NetName=VCC Pin=J4-1
+Added Pin To Net: NetName=SWD_CLK Pin=J5-1
+Added Pin To Net: NetName=SWD_DATA Pin=J6-1
+Added Pin To Net: NetName=SDA Pin=J7-1
+Added Pin To Net: NetName=XRES Pin=J10-1
+Added Member To Class: ClassName=tempsensor Member=Component J1 Probe-Pin Pad
+Added Member To Class: ClassName=tempsensor Member=Component J2 Probe-Pin Pad
+Added Member To Class: ClassName=tempsensor Member=Component J3 Probe-Pin Pad
+Added Member To Class: ClassName=tempsensor Member=Component J4 Probe-Pin Pad
+Added Member To Class: ClassName=tempsensor Member=Component J5 Probe-Pin Pad
+Added Member To Class: ClassName=tempsensor Member=Component J6 Probe-Pin Pad
+Added Member To Class: ClassName=tempsensor Member=Component J7 Probe-Pin Pad
+Added Member To Class: ClassName=tempsensor Member=Component J10 Probe-Pin Pad

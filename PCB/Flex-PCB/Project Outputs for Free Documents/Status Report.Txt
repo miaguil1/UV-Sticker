@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [tempsensor.PcbDoc]
+   Generated File[tempsensor.TXT]
+   Generated File[tempsensor.LDP]
+   Generated File[tempsensor.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 10:29:51 PM On 5/1/2018

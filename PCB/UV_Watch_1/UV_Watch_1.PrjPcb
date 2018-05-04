@@ -72,7 +72,28 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HOCJADKG
 
+[Document3]
+DocumentPath=OutJob-1.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [GeneratedDocument1]
+DocumentPath=Project Outputs for UV_Watch_1\Design Rule Check - UV_Watch_1.html
+DItemRevisionGUID=
+
+[GeneratedDocument2]
 DocumentPath=Project Outputs for UV_Watch_1\UV_Watch_1.nsx
 DItemRevisionGUID=
 

@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=XTAL_LF_OUT Pin=U7-B7
+Removed Pin From Net: NetName=XTAL_LF_IN Pin=U7-B8
+Added Pin To Net: NetName=XTAL_LF_IN Pin=U7-B7
+Added Pin To Net: NetName=XTAL_LF_OUT Pin=U7-B8
+Change Net Name : Old Net Name=XTAL_LF_IN New Net Name=XTAL_LF_P
+Change Net Name : Old Net Name=XTAL_LF_OUT New Net Name=XTAL_LF_N
+Added Pin To Net: NetName=XTAL_HF_N Pin=J14-1
+Added Pin To Net: NetName=XTAL_HF_N Pin=U7-H4
+Added Pin To Net: NetName=XTAL_HF_N Pin=Y3-3
+Added Net: Name=XTAL_HF_N
+Added Pin To Net: NetName=XTAL_HF_P Pin=J13-1
+Added Pin To Net: NetName=XTAL_HF_P Pin=U7-H3
+Added Pin To Net: NetName=XTAL_HF_P Pin=Y3-1
+Added Net: Name=XTAL_HF_P
+Added Differential Pair: Name=XTAL_HF
+Added Differential Pair: Name=XTAL_LF

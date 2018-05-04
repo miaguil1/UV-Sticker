@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 12:05:48 PM On 5/3/2018
+
+Output: BOM-Rigid
+Type  : BOM
+From  : Variant [[No Variations]] of PCB Document [tempsensor.PcbDoc]
+   Generated File[BOM-Rigid-tempsensor.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 12:06:48 PM On 5/3/2018

@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=XTAL_LF_P Pin=U7-B7
+Removed Pin From Net: NetName=XTAL_LF_N Pin=U7-B8
+Removed Pin From Net: NetName=XTAL_HF_P Pin=U7-H3
+Removed Pin From Net: NetName=XTAL_HF_N Pin=U7-H4
+Added Pin To Net: NetName=XTAL_LF_N Pin=U7-B7
+Added Pin To Net: NetName=XTAL_LF_P Pin=U7-B8
+Added Pin To Net: NetName=XTAL_HF_N Pin=U7-H3
+Added Pin To Net: NetName=XTAL_HF_P Pin=U7-H4

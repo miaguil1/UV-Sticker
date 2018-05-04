@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=BATTERY_LEVEL Pin=U7-C8
+Added Pin To Net: NetName=BATTERY_LEVEL Pin=U7-A4
+Added Pin To Net: NetName=LED_RED Pin=U7-C8

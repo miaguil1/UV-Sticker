@@ -12,3 +12,9 @@ ProjectPath=Coin_Cell_Boost\Coin_Cell_Boost.PrjPCB
 ProjectPath=Digital_UV\GUVB-C31SM_BB.PrjPcb
 [Project6]
 ProjectPath=UV_Watch_1\UV_Watch_1.PrjPcb
+[Project7]
+ProjectPath=Flex-PCB\tempsensor.PrjPcb
+[Project8]
+ProjectPath=Flex-PCB\Semi-Flex\semiflex-1.PrjPcb
+[Project9]
+ProjectPath=Flex-PCB\Full-Flex\fullflex-1.PrjPcb
