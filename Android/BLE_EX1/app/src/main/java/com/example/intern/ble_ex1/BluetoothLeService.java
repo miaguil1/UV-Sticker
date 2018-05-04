@@ -58,6 +58,8 @@ public class BluetoothLeService extends Service
     public final static String ACTION_GATT_SERVICES_DISCOVERED = "com.example.bluetooth.le.ACTION_GATT_SERVICES_DISCOVERED";
     public final static String ACTION_DATA_AVAILABLE = "com.example.bluetooth.le.ACTION_DATA_AVAILABLE";
     public final static String EXTRA_DATA = "com.example.bluetooth.le.EXTRA_DATA";
+
+    public final static UUID UUID_UV_POWER = UUID.fromString(GattAttributes.UV_MEASUREMENT);
     public final static UUID UUID_UV_POWER_DENSITY_MEASUREMENT = UUID.fromString(GattAttributes.POWER_DENSITY);
 
     // Implements callback methods for GATT events that the app cares about.  For example,

@@ -28,13 +28,12 @@ public class StartPage extends AppCompatActivity
 {
     private final static String TAG = BluetoothLeService.class.getSimpleName();
     final private int REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS = 124;
-    private List<String> ble_array_list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ble_connect);
+        setContentView(R.layout.banner_page);
 
         if (Build.VERSION.SDK_INT >= 23)
         {
@@ -43,14 +42,9 @@ public class StartPage extends AppCompatActivity
         }
 
         //Connect U.I Elements
-        Button  connect_Ble_Button = (Button) findViewById(R.id.ConnectBleBtn);
-        Button start_Scan_Button = (Button) findViewById(R.id.startScanBtn);
-        Button stop_Scan_Button = (Button) findViewById(R.id.stopScanBtn);
-        ListView bleList = (ListView) findViewById(R.id.listview_ble_scan);
+        Button  continue_Button = (Button) findViewById(R.id.continueBtn);
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(StartPage.this, android.R.layout.simple_expandable_list_item_1, ble_array_list);
-
-        buttonClicked(start_Scan_Button, stop_Scan_Button, connect_Ble_Button, bleList, arrayAdapter);
+        buttonClicked(continue_Button);
     }
 
     @Override
@@ -70,40 +64,16 @@ public class StartPage extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    private void buttonClicked(Button start_Scan_Button, Button stop_Scan_Button, Button connect_Ble_Button, final ListView bleList, final ArrayAdapter arrayAdapter)
+    private void buttonClicked(Button continue_Button)
     {
-        start_Scan_Button.setOnClickListener(new View.OnClickListener()
+        continue_Button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                Log.w(TAG, "Starting Scanning");
-//                Intent intent = new Intent(StartPage.this, DeviceScanActivity.class);
-//                startActivity(intent);
-                ble_array_list.add("Foo");
-                ble_array_list.add("Bar");
-                ble_array_list.add("Carl!");
-                bleList.setAdapter(arrayAdapter);
-
-//                startGraph(temp_Notification, uv_Notification, resp_Notification);
-            }
-        });
-        stop_Scan_Button.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                //stopGraph(temp_Notification, uv_Notification, resp_Notification);
-            }
-        });
-        connect_Ble_Button.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(StartPage.this, MainActivity.class);
+                Log.w(TAG, "Continue Button Pressed");
+                Intent intent = new Intent(StartPage.this, DeviceScanActivity.class);
                 startActivity(intent);
-                //saveGraph(temp_Notification, uv_Notification, resp_Notification);
             }
         });
     }
