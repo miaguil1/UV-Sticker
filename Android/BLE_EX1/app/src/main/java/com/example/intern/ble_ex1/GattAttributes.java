@@ -60,6 +60,8 @@ public class GattAttributes
         attributes.put(UV_INDEX, "UV Index Measurement");                   //UV Index Measurement for UV Measurement Service
         attributes.put(BATTERY_PERCENT, "Battery Level Measurement");       //Battery Level Measurement for Battery Level Service
         attributes.put(TEMPERATURE, "Body Temperature Measurement");        //Body Temperature Measurement for Body Temperature Service
+        //User Descriptions
+
     }
 
     public static String lookup(String uuid, String defaultName)
