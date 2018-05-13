@@ -27,41 +27,49 @@
 #define CYBLE_CUSTOMS_SERVICE_COUNT                  (0x03u)
 #define CYBLE_CUSTOMC_SERVICE_COUNT                  (0x00u)
 #define CYBLE_CUSTOM_SERVICE_CHAR_COUNT              (0x02u)
-#define CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
+#define CYBLE_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x02u)
 
 /* Below are the indexes and handles of the defined Custom Services and their characteristics */
 #define CYBLE_UV_MEASUREMENT_SERVICE_INDEX   (0x00u) /* Index of UV Measurement service in the cyBle_customs array */
 #define CYBLE_UV_MEASUREMENT_POWER_DENSITY_CHAR_INDEX   (0x00u) /* Index of Power Density characteristic */
 #define CYBLE_UV_MEASUREMENT_POWER_DENSITY_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_INDEX   (0x00u) /* Index of Client Characteristic Configuration descriptor */
+#define CYBLE_UV_MEASUREMENT_POWER_DENSITY_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x01u) /* Index of Characteristic User Description descriptor */
 #define CYBLE_UV_MEASUREMENT_UV_INDEX_CHAR_INDEX   (0x01u) /* Index of UV Index characteristic */
 #define CYBLE_UV_MEASUREMENT_UV_INDEX_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_INDEX   (0x00u) /* Index of Client Characteristic Configuration descriptor */
+#define CYBLE_UV_MEASUREMENT_UV_INDEX_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x01u) /* Index of Characteristic User Description descriptor */
 
 #define CYBLE_BATTERY_SERVICE_INDEX   (0x01u) /* Index of Battery service in the cyBle_customs array */
 #define CYBLE_BATTERY_BATTERY_LEVEL_CHAR_INDEX   (0x00u) /* Index of Battery Level characteristic */
 #define CYBLE_BATTERY_BATTERY_LEVEL_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_INDEX   (0x00u) /* Index of Client Characteristic Configuration descriptor */
+#define CYBLE_BATTERY_BATTERY_LEVEL_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x01u) /* Index of Characteristic User Description descriptor */
 
 #define CYBLE_BODY_TEMPERATURE_SERVICE_INDEX   (0x02u) /* Index of Body Temperature service in the cyBle_customs array */
 #define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CHAR_INDEX   (0x00u) /* Index of Temperature characteristic */
 #define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_INDEX   (0x00u) /* Index of Client Characteristic Configuration descriptor */
+#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x01u) /* Index of Characteristic User Description descriptor */
 
 
 #define CYBLE_UV_MEASUREMENT_SERVICE_HANDLE   (0x0010u) /* Handle of UV Measurement service */
 #define CYBLE_UV_MEASUREMENT_POWER_DENSITY_DECL_HANDLE   (0x0011u) /* Handle of Power Density characteristic declaration */
 #define CYBLE_UV_MEASUREMENT_POWER_DENSITY_CHAR_HANDLE   (0x0012u) /* Handle of Power Density characteristic */
 #define CYBLE_UV_MEASUREMENT_POWER_DENSITY_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE   (0x0013u) /* Handle of Client Characteristic Configuration descriptor */
-#define CYBLE_UV_MEASUREMENT_UV_INDEX_DECL_HANDLE   (0x0014u) /* Handle of UV Index characteristic declaration */
-#define CYBLE_UV_MEASUREMENT_UV_INDEX_CHAR_HANDLE   (0x0015u) /* Handle of UV Index characteristic */
-#define CYBLE_UV_MEASUREMENT_UV_INDEX_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE   (0x0016u) /* Handle of Client Characteristic Configuration descriptor */
+#define CYBLE_UV_MEASUREMENT_POWER_DENSITY_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0014u) /* Handle of Characteristic User Description descriptor */
+#define CYBLE_UV_MEASUREMENT_UV_INDEX_DECL_HANDLE   (0x0015u) /* Handle of UV Index characteristic declaration */
+#define CYBLE_UV_MEASUREMENT_UV_INDEX_CHAR_HANDLE   (0x0016u) /* Handle of UV Index characteristic */
+#define CYBLE_UV_MEASUREMENT_UV_INDEX_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE   (0x0017u) /* Handle of Client Characteristic Configuration descriptor */
+#define CYBLE_UV_MEASUREMENT_UV_INDEX_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0018u) /* Handle of Characteristic User Description descriptor */
 
-#define CYBLE_BATTERY_SERVICE_HANDLE   (0x0017u) /* Handle of Battery service */
-#define CYBLE_BATTERY_BATTERY_LEVEL_DECL_HANDLE   (0x0018u) /* Handle of Battery Level characteristic declaration */
-#define CYBLE_BATTERY_BATTERY_LEVEL_CHAR_HANDLE   (0x0019u) /* Handle of Battery Level characteristic */
-#define CYBLE_BATTERY_BATTERY_LEVEL_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE   (0x001Au) /* Handle of Client Characteristic Configuration descriptor */
+#define CYBLE_BATTERY_SERVICE_HANDLE   (0x0019u) /* Handle of Battery service */
+#define CYBLE_BATTERY_BATTERY_LEVEL_DECL_HANDLE   (0x001Au) /* Handle of Battery Level characteristic declaration */
+#define CYBLE_BATTERY_BATTERY_LEVEL_CHAR_HANDLE   (0x001Bu) /* Handle of Battery Level characteristic */
+#define CYBLE_BATTERY_BATTERY_LEVEL_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE   (0x001Cu) /* Handle of Client Characteristic Configuration descriptor */
+#define CYBLE_BATTERY_BATTERY_LEVEL_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x001Du) /* Handle of Characteristic User Description descriptor */
 
-#define CYBLE_BODY_TEMPERATURE_SERVICE_HANDLE   (0x001Bu) /* Handle of Body Temperature service */
-#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_DECL_HANDLE   (0x001Cu) /* Handle of Temperature characteristic declaration */
-#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CHAR_HANDLE   (0x001Du) /* Handle of Temperature characteristic */
-#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE   (0x001Eu) /* Handle of Client Characteristic Configuration descriptor */
+#define CYBLE_BODY_TEMPERATURE_SERVICE_HANDLE   (0x001Eu) /* Handle of Body Temperature service */
+#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_DECL_HANDLE   (0x001Fu) /* Handle of Temperature characteristic declaration */
+#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CHAR_HANDLE   (0x0020u) /* Handle of Temperature characteristic */
+#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CLIENT_CHARACTERISTIC_CONFIGURATION_DESC_HANDLE   (0x0021u) /* Handle of Client Characteristic Configuration descriptor */
+#define CYBLE_BODY_TEMPERATURE_TEMPERATURE_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0022u) /* Handle of Characteristic User Description descriptor */
 
 
 

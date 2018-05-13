@@ -24,10 +24,10 @@ const uint32 timer2_toggle = 18;  // bit #18 is the bit for the timer to check. 
 
 void system_init_hardware(void)
 {
-    UART_Start(); //Starting UART internal communication
+//    UART_Start(); //Starting UART internal communication
     I2C_Start(); //Starting the I2C communication for TMP116 
     //SG_AMP_Start(); //Starting internal Op-amp titled SG_AMP
-    UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
+//    UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
     ADC_Start(); //Starting ADC
     CyDelay(10);
     guvb_c31sm_setup();
@@ -167,24 +167,24 @@ void i2c_wakeup(void)
 
 void uart_sleep(void)
 {
-    UART_Sleep(); // Prepares the UART component for Deep Sleep
+//    UART_Sleep(); // Prepares the UART component for Deep Sleep
 }
 
 void uart_wakeup(void)
 {
-    UART_Wakeup(); // Tells the UART component to Wake up
+//    UART_Wakeup(); // Tells the UART component to Wake up
 }
 
 void opamp_sleep(void)
 {
-    SG_AMP_Sleep(); // Prepares the SG Op-Amp component for sleep
-    UV5_AMP_Sleep();    // Preapres the UV5 Op-Amp component for sleep
+//    SG_AMP_Sleep(); // Prepares the SG Op-Amp component for sleep
+//    UV5_AMP_Sleep();    // Preapres the UV5 Op-Amp component for sleep
 }
 
 void opamp_wakeup(void)
 {
-    SG_AMP_Wakeup();    // Tells the SG Op-Amp component to Wake Up
-    UV5_AMP_Wakeup();   // Tells the UV5 Op-Amp component to Wake Up
+//    SG_AMP_Wakeup();    // Tells the SG Op-Amp component to Wake Up
+//    UV5_AMP_Wakeup();   // Tells the UV5 Op-Amp component to Wake Up
     
 }
 

@@ -1,14 +1,12 @@
-Project Outputs Generation Report
----------------------------------
-Start Output Generation At 9:44:55 PM On 4/20/2018
-
-Output: Bill of Materials
-Type  : BOM
-From  : Variant [[No Variations]] of Project [UV_Watch_1.PrjPcb]
-   Generated File[Bill of Materials-UV_Watch_1.xlsx]
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [UV_Watch_Pogo-1.PcbDoc]
+   Generated File[UV_Watch_Pogo-1.TXT]
+   Generated File[UV_Watch_Pogo-1.LDP]
+   Generated File[UV_Watch_Pogo-1.DRR]
 
 
-Files Generated   : 1
+Files Generated   : 3
 Documents Printed : 0
 
-Finished Output Generation At 9:45:21 PM On 4/20/2018
+Finished Output Generation At 10:06:23 AM On 5/11/2018

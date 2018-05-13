@@ -12,25 +12,25 @@ void WDT_ISR_Handler()
     // Update Gatt Database every 8 seconds
     if(reason & CY_SYS_WDT_COUNTER2_INT)
     {
-//        if(CyBle_GetState() == CYBLE_STATE_CONNECTED)
-//        {
+        if(CyBle_GetState() == CYBLE_STATE_CONNECTED)
+        {
 //            system_wakeup();    // Waking up System from sleep to perform measurements
-//            update_tmp116();
+            update_tmp116();
 //            update_UV();
 //            update_battery();
         
-            guvb_c31sm_wakeup();
-            guvb_c31sm_range();
+//            guvb_c31sm_wakeup();
+//            guvb_c31sm_range();
 //            uint16 b_scale = guvb_c31sm_nvm();
-            CyDelay(200);
+//            CyDelay(200);
 //            uint8 nvm_control = guvb_c31sm_read_register(0x30);
-            uint16 sensor_value = guvb_c31sm_get_uint16();
-            guvb_c31sm_shutdown();            
-            
-            uint8 lsb1 = sensor_value & 0xFF;
-            uint8 msb1 = sensor_value >> 8;
-            UART_UartPutChar(lsb1);
-            UART_UartPutChar(msb1);
+//            uint16 sensor_value = guvb_c31sm_get_uint16();
+//            guvb_c31sm_shutdown();            
+//            
+//            uint8 lsb1 = sensor_value & 0xFF;
+//            uint8 msb1 = sensor_value >> 8;
+//            UART_UartPutChar(lsb1);
+//            UART_UartPutChar(msb1);
             
 //            uint8 lsb2 = b_scale & 0xFF;
 //            uint8 msb2 = b_scale >> 8;
@@ -39,14 +39,14 @@ void WDT_ISR_Handler()
 //            
 //            UART_UartPutChar(nvm_control);           
             
-            uint16 guva = (uint16) adc_acquire_channel(3);
-            uint8 lsb3 = guva & 0xFF;
-            uint8 msb3 = guva >> 8;
-            UART_UartPutChar(lsb3);
-            UART_UartPutChar(msb3);
+//            uint16 guva = (uint16) adc_acquire_channel(3);
+//            uint8 lsb3 = guva & 0xFF;
+//            uint8 msb3 = guva >> 8;
+//            UART_UartPutChar(lsb3);
+//            UART_UartPutChar(msb3);
             
 //            system_sleep(); // Took Measurements, now going back into sleep mode.
-//        }
+        }
         
         system_red_led_blink(); //Blink LED 
     }
