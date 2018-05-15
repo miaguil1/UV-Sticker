@@ -76,9 +76,9 @@ void system_deepsleep(void)
 
 void adc_conversion(void)
 {
-    ADC_StartConvert();
-    ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
-    ADC_StopConvert();   
+//    ADC_StartConvert();
+//    ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
+//    ADC_StopConvert();   
 }
 
 void system_read_i2c(uint32 device_address, uint8 register_address, uint8 *register_value, uint32 register_byte_count)
@@ -135,25 +135,25 @@ void system_write_i2c(uint32 device_address, uint8 *buffer_value, uint32 registe
     I2C_I2CMasterClearWriteBuf();
 }
     
-uint16 adc_acquire_channel(uint32 channel)
-{
-    adc_conversion();
-    uint16 adc_counts = (uint16) ADC_GetResult16(channel);
-    return adc_counts;
-}
+//uint16 adc_acquire_channel(uint32 channel)
+//{
+////    adc_conversion();
+////    uint16 adc_counts = (uint16) ADC_GetResult16(channel);
+////    return adc_counts;
+//}
 
-void adc_sleep(void)
-{
-    if (ADC_SAR_CTRL_REG  & ADC_ENABLE) 
-    { 
-        ADC_Sleep(); 
-    }     
-}
+//void adc_sleep(void)
+//{
+//    if (ADC_SAR_CTRL_REG  & ADC_ENABLE) 
+//    { 
+//        ADC_Sleep(); 
+//    }     
+//}
 
-void adc_wakeup(void)
-{
-    ADC_Wakeup();    
-}
+//void adc_wakeup(void)
+//{
+//    ADC_Wakeup();    
+//}
 
 void i2c_sleep(void)
 {

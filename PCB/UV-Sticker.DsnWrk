@@ -20,3 +20,5 @@ ProjectPath=Flex-PCB\Semi-Flex\semiflex-1.PrjPcb
 ProjectPath=Flex-PCB\Full-Flex\fullflex-1.PrjPcb
 [Project10]
 ProjectPath=UV_Watch_1\UV_Watch_Pogo-1.PrjPcb
+[Project11]
+ProjectPath=Flex-PCB\Rigid-QFN\Rigid-QFN-1.PrjPcb
