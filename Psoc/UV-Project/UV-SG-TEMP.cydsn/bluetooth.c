@@ -16,7 +16,7 @@ static void BLE_Stack_Handler(uint32 eventCode, void *eventParam)
         ***********************************************************/
 		case CYBLE_EVT_STACK_ON: /* This event received when component is Started */
             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
-            LED_BLUE_Write((uint8) 0); //Turn BLUE LED ON
+//            LED_BLUE_Write((uint8) 0); //Turn BLUE LED ON
             break;
 		case CYBLE_EVT_TIMEOUT: 
 			break;
@@ -48,14 +48,14 @@ static void BLE_Stack_Handler(uint32 eventCode, void *eventParam)
             }
             break;
         case CYBLE_EVT_GAP_DEVICE_CONNECTED:
-            LED_BLUE_Write((uint8) 255); //Turn BLUE LED OFF
+//            LED_BLUE_Write((uint8) 255); //Turn BLUE LED OFF
             break;
         case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
             /* Put the device to discoverable mode so that remote can search it. */
             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
             temperature_Notify = 0;
             uv_Power_Notify = 0;
-            LED_BLUE_Write((uint8) 0); //Turn BLUE LED ON
+//            LED_BLUE_Write((uint8) 0); //Turn BLUE LED ON
             break;
         case CYBLE_EVT_GAP_ENCRYPT_CHANGE:
             break;

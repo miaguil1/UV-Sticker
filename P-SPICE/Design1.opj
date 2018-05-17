@@ -15,19 +15,27 @@
   (Folder "Referenced Projects")
   (MPSSessionName "Intern")
   (PartMRUSelector
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
       (LibraryName
          "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
       (DeviceIndex "0"))
-    (LP2951
-      (FullPartName "LP2951.Normal")
-      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\OPAMP.OLB")
+    (0
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
       (DeviceIndex "0"))
     (VDC
       (FullPartName "VDC.Normal")
       (LibraryName
          "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (LP2951
+      (FullPartName "LP2951.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\OPAMP.OLB")
       (DeviceIndex "0"))
     (LP2950
       (FullPartName "LP2950.Normal")
@@ -37,9 +45,6 @@
       (FullPartName "E.Normal")
       (LibraryName
          "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
-      (DeviceIndex "0"))
-    (0
-      (LibraryName "C:\CADENCE\SPB_17.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
       (DeviceIndex "0")))
   (GlobalState
     (FileView
@@ -60,7 +65,7 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 2 3 -1 -1 -8 -30 50 1694 50 518")
-        (Scroll "0 0")
+        (Scroll "-3 152")
         (Zoom "189")
         (Occurrence "/"))
       (Path "C:\USERS\INTERN\DOCUMENTS\GITHUB\UV-STICKER\P-SPICE\DESIGN1.DSN")

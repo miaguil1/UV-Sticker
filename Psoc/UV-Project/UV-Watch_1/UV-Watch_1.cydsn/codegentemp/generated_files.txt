@@ -13,14 +13,10 @@
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1.h" value="HEADER;;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1_PM.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1_INT.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_In.c" value="SOURCE_C;CortexM0;;;;ADC_In" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_In.h" value="HEADER;;;;;ADC_In" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_In_aliases.h" value="HEADER;;;;;ADC_In" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_In_PM.c" value="SOURCE_C;CortexM0;;;;ADC_In" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_LOW_BATT.c" value="SOURCE_C;CortexM0;;;;LED_LOW_BATT" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_LOW_BATT.h" value="HEADER;;;;;LED_LOW_BATT" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_LOW_BATT_aliases.h" value="HEADER;;;;;LED_LOW_BATT" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_LOW_BATT_PM.c" value="SOURCE_C;CortexM0;;;;LED_LOW_BATT" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_BLE.c" value="SOURCE_C;CortexM0;;;;LED_BLE" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_BLE.h" value="HEADER;;;;;LED_BLE" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_BLE_aliases.h" value="HEADER;;;;;LED_BLE" />
@@ -76,10 +72,22 @@
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SPI_SPI_UART_PVT.h" value="HEADER;;;;;SPI" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SPI_PVT.h" value="HEADER;;;;;SPI" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SPI_BOOT.h" value="HEADER;;;;;SPI" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1_IRQ.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1_IRQ" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1_IRQ.h" value="HEADER;;;;;ADC_SAR_Seq_1_IRQ" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1_intClock.c" value="SOURCE_C;CortexM0;;;;ADC_SAR_Seq_1_intClock" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\ADC_SAR_Seq_1_intClock.h" value="HEADER;;;;;ADC_SAR_Seq_1_intClock" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SD_ISR.c" value="SOURCE_C;CortexM0;;;;SD_ISR" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SD_ISR.h" value="HEADER;;;;;SD_ISR" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SD_FLAG.c" value="SOURCE_C;CortexM0;;;;SD_FLAG" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SD_FLAG.h" value="HEADER;;;;;SD_FLAG" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SD_FLAG_aliases.h" value="HEADER;;;;;SD_FLAG" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\SD_FLAG_PM.c" value="SOURCE_C;CortexM0;;;;SD_FLAG" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_IND.c" value="SOURCE_C;CortexM0;;;;LED_IND" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_IND.h" value="HEADER;;;;;LED_IND" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_IND_aliases.h" value="HEADER;;;;;LED_IND" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LED_IND_PM.c" value="SOURCE_C;CortexM0;;;;LED_IND" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LOW_BATT_ALERT.c" value="SOURCE_C;CortexM0;;;;LOW_BATT_ALERT" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LOW_BATT_ALERT.h" value="HEADER;;;;;LOW_BATT_ALERT" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LOW_BATT_ALERT_aliases.h" value="HEADER;;;;;LOW_BATT_ALERT" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\LOW_BATT_ALERT_PM.c" value="SOURCE_C;CortexM0;;;;LOW_BATT_ALERT" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\BATT_ISR.c" value="SOURCE_C;CortexM0;;;;BATT_ISR" />
+  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\BATT_ISR.h" value="HEADER;;;;;BATT_ISR" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\I2C_SCBCLK.c" value="SOURCE_C;CortexM0;;;;I2C_SCBCLK" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\I2C_SCBCLK.h" value="HEADER;;;;;I2C_SCBCLK" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\codegentemp\I2C_sda.c" value="SOURCE_C;CortexM0;;;;I2C_sda" />

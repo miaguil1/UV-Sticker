@@ -1,0 +1,249 @@
+Removed Pin From Net: NetName=3.3V Pin=3.3V-1
+Added Component: Designator=J1(Header 5x1 8.5mm)
+Add component. Clean all parameters for all variants
+Added Component: Designator=TP1(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP2(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP3(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP4(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP5(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP6(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP7(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP8(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP9(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP10(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP11(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Component: Designator=TP12(S1751-46R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Category"; Value = "Test and Measurement"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Color"; Value = "Natural"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://cdn.harwin.com/pdfs/S1751.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Harwin Inc."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "S1751-46R"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Material"; Value = "Copper Alloy"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Cut Tape (CT)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=0.29, 10=0.272, 25=0.2324, 50=0.2032, 100=0.1888, 250=0.167, 500=0.15972, 1000=0.13068 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "275112"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "952-1478-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Terminal"; Value = "0.128" x 0.065" x 0.079" (3.25mm x 1.65mm x 2.00mm) Brass, Tin Plated"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = "PC Test Point"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3.3V Pin=J1-1
+Added Pin To Net: NetName=GND Pin=J1-2
+Added Pin To Net: NetName=XRES Pin=J1-3
+Added Pin To Net: NetName=SWD_CLK Pin=J1-4
+Added Pin To Net: NetName=SWD_DATA Pin=J1-5
+Added Pin To Net: NetName=MOSI Pin=TP1-1
+Added Pin To Net: NetName=MISO Pin=TP2-1
+Added Pin To Net: NetName=SCLK Pin=TP3-1
+Added Pin To Net: NetName=CHARGE_EN Pin=TP4-1
+Added Pin To Net: NetName=SD_CS Pin=TP5-1
+Added Pin To Net: NetName=LDO_EN Pin=TP6-1
+Added Pin To Net: NetName=SDA Pin=TP7-1
+Added Pin To Net: NetName=SCL Pin=TP8-1
+Added Pin To Net: NetName=V_BATT Pin=TP9-1
+Added Pin To Net: NetName=3.3V Pin=TP10-1
+Added Pin To Net: NetName=GND Pin=TP11-1
+Added Pin To Net: NetName=V_USB Pin=TP12-1
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component J1 MiniProg3
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP1 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP2 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP3 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP4 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP5 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP6 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP7 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP8 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP9 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP10 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP11 S1751-46R
+Added Member To Class: ClassName=UV_Watch_Pogo-1 Member=Component TP12 S1751-46R

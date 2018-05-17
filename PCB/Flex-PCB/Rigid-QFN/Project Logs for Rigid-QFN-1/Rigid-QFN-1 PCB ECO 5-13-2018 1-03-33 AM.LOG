@@ -1,0 +1,95 @@
+Removed Pin From Net: NetName=VREF Pin=U7-A1
+Removed Pin From Net: NetName=GND Pin=U7-A2
+Removed Pin From Net: NetName=VCC Pin=U7-A3
+Removed Pin From Net: NetName=BATTERY_LEVEL Pin=U7-A4
+Removed Pin From Net: NetName=GND Pin=U7-A5
+Removed Pin From Net: NetName=GND Pin=U7-A6
+Removed Pin From Net: NetName=VCCD Pin=U7-A7
+Removed Pin From Net: NetName=VCC Pin=U7-A8
+Removed Pin From Net: NetName=ALERT Pin=U7-B1
+Removed Pin From Net: NetName=GND Pin=U7-B2
+Removed Pin From Net: NetName=VCC Pin=U7-B3
+Removed Pin From Net: NetName=GND Pin=U7-B6
+Removed Pin From Net: NetName=XTAL_LF_N Pin=U7-B7
+Removed Pin From Net: NetName=XTAL_LF_P Pin=U7-B8
+Removed Pin From Net: NetName=GND Pin=U7-C1
+Removed Pin From Net: NetName=VCC Pin=U7-C3
+Removed Pin From Net: NetName=GND Pin=U7-C6
+Removed Pin From Net: NetName=XRES Pin=U7-C7
+Removed Pin From Net: NetName=LED_RED Pin=U7-D1
+Removed Pin From Net: NetName=VCC Pin=U7-D2
+Removed Pin From Net: NetName=VCC Pin=U7-D3
+Removed Pin From Net: NetName=GND Pin=U7-D6
+Removed Pin From Net: NetName=VCC Pin=U7-E3
+Removed Pin From Net: NetName=GND Pin=U7-E6
+Removed Pin From Net: NetName=GND Pin=U7-E8
+Removed Pin From Net: NetName=GND Pin=U7-F1
+Removed Pin From Net: NetName=SWD_CLK Pin=U7-F2
+Removed Pin From Net: NetName=VCC Pin=U7-F3
+Removed Pin From Net: NetName=GND Pin=U7-F6
+Removed Pin From Net: NetName=GND Pin=U7-F7
+Removed Pin From Net: NetName=VCC Pin=U7-F8
+Removed Pin From Net: NetName=SWD_DATA Pin=U7-G1
+Removed Pin From Net: NetName=VCC Pin=U7-G2
+Removed Pin From Net: NetName=VCC Pin=U7-G3
+Removed Pin From Net: NetName=GND Pin=U7-G4
+Removed Pin From Net: NetName=GND Pin=U7-G5
+Removed Pin From Net: NetName=GND Pin=U7-G6
+Removed Pin From Net: NetName=GND Pin=U7-G7
+Removed Pin From Net: NetName=GND Pin=U7-G8
+Removed Pin From Net: NetName=SCL Pin=U7-H1
+Removed Pin From Net: NetName=XTAL_HF_N Pin=U7-H3
+Removed Pin From Net: NetName=XTAL_HF_P Pin=U7-H4
+Removed Pin From Net: NetName=GND Pin=U7-H5
+Removed Pin From Net: NetName=GND Pin=U7-H6
+Removed Pin From Net: NetName=ANTENNA Pin=U7-H7
+Removed Pin From Net: NetName=SDA Pin=U7-J1
+Removed Pin From Net: NetName=VCC Pin=U7-J3
+Removed Pin From Net: NetName=VCC Pin=U7-J6
+Removed Member From Class: ClassName=tempsensor Member=U7
+Added Component: Designator=U1(QFN40P700X700X60-57N)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Case/Package"; Value = "QFN EP"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com/26911/getdatasheetpartid-718692-26911745.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com/26911/getdatasheetpartid-718692-26911745.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "https://datasheet.ciiva.com/22658/1699500-22658213.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://datasheet.ciiva.com/22658/1699500-22658213.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "https://datasheet.ciiva.com/16431/001-87197-16431545.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://datasheet.ciiva.com/16431/001-87197-16431545.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "https://datasheet.ciiva.com/30028/001-87197-30028665.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "https://datasheet.ciiva.com/30028/001-87197-30028665.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Plating"; Value = "Nickel,Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Core Architecture"; Value = "ARM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Data Bus Width"; Value = "32b"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 1"; Value = "IC MCU 32BIT 32KB FLASH 40QFN"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Frequency"; Value = "48MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Interface"; Value = "I2C,SPI,UART"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Free"; Value = "Lead Free"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Cypress"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "CY8C4245LQI-483"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Frequency"; Value = "48MHz"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Operating Temperature"; Value = "85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Max Supply Voltage"; Value = "5.5V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Memory Size"; Value = "32KB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Memory Type"; Value = "SRAM,FLASH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Operating Temperature"; Value = "-40°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Min Supply Voltage"; Value = "1.71V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mount"; Value = "Surface Mount"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of I/Os"; Value = "34"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Pins"; Value = "40"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Timers/Counters"; Value = "4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Supply Voltage"; Value = "1.8V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Quantity"; Value = "490"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Tray"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Peripherals"; Value = "PWM,I2C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pricing 1"; Value = "1=4.28, 10=3.825, 25=3.4424, 100=3.1365, 250=2.8305, 500=2.5398, 1000=2.142, 2500=2.0349, 5000=1.9584 (USD)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Radiation Hardening"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RAM Size"; Value = "4KB"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "REACH SVHC"; Value = "No SVHC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "11906"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "CY8C4245LQI-483-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Watchdog Timer"; Value = "Yes"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Weight"; Value = "0.004138oz"; VariantName = "[No Variations]"
+Change Class Name : Old Net Name=tempsensor New Net Name=Rigid-QFN-1
+Added Member To Class: ClassName=Rigid-QFN-1 Member=Component U1 CY8C4247LQI-BL483

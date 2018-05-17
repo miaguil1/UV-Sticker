@@ -54,18 +54,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitteriar.inc</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cyfitter.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cydisabledsheets.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1_INT.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_In.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_In.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_In_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_In_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC4\cm0gcc.ld</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC4\Cm0RealView.scat</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\Cm0Start.c</File>
@@ -186,6 +174,26 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_ss0_m.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_ss0_m_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SPI_ss0_m_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_LOW_BATT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_LOW_BATT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_LOW_BATT_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_LOW_BATT_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SD_ISR.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SD_ISR.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SD_FLAG.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SD_FLAG.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SD_FLAG_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\SD_FLAG_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_IND.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_IND.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_IND_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LED_IND_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LOW_BATT_ALERT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LOW_BATT_ALERT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LOW_BATT_ALERT_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\LOW_BATT_ALERT_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\BATT_ISR.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\BATT_ISR.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-Watch_1\UV-Watch_1.cydsn\Export\ARM_GCC_Generic\BLE_v3_51">

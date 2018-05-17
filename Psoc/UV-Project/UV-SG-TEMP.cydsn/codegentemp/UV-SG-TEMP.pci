@@ -1,5 +1,5 @@
 # UV-SG-TEMP
-# 2018-04-30 18:50:44Z
+# 2018-05-13 05:36:15Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
@@ -10,19 +10,6 @@ dont_use_io iocell 6 0
 # IO_1@[IOP=(6)][IoId=(1)] is reserved: KhzXtalEnabled
 dont_use_io iocell 6 1
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
-set_io "E6(0)" iocell 2 4
-set_io "B6(0)" iocell 3 6
-set_io "\I2C:sda(0)\" iocell 0 4
-set_io "\I2C:scl(0)\" iocell 0 5
-set_io "C6(0)" iocell 3 2
-set_io "A3(0)" iocell 3 3
-set_io "B3(0)" iocell 2 7
-set_io "C3(0)" iocell 2 6
-set_io "D3(0)" iocell 2 0
-set_io "E3(0)" iocell 1 4
-set_io "F3(0)" iocell 0 3
-set_io "G3(0)" iocell 0 2
+set_io "\I2C:sda(0)\" iocell 0 0
+set_io "\I2C:scl(0)\" iocell 0 1
 set_io "LED_RED(0)" iocell 1 7
-set_io "V_BATTERY(0)" iocell 3 7
-set_io "ALERT(0)" iocell 2 3
-set_location "\ADC:cy_psoc4_sar\" p4sarcell -1 -1 0

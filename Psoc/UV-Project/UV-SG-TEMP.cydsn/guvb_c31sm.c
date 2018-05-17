@@ -224,7 +224,7 @@ void guvb_c31sm_uart(void)
     //Sends the Value over UART
     for(unsigned int i = 0; i<strlen(uv_uart_string); i++)
     {
-        UART_UartPutChar(uv_uart_string[i]);           
+//        UART_UartPutChar(uv_uart_string[i]);           
     } 
 }
 
