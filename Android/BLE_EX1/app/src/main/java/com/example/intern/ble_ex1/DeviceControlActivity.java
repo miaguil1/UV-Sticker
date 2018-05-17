@@ -74,7 +74,8 @@ public class DeviceControlActivity extends Activity
         public void onServiceConnected(ComponentName componentName, IBinder service)
         {
             mBluetoothLeService = ((BluetoothLeService.LocalBinder) service).getService();
-            if (!mBluetoothLeService.initialize()) {
+            if (!mBluetoothLeService.initialize())
+            {
                 Log.e(TAG, "Unable to initialize Bluetooth");
                 finish();
             }
@@ -132,16 +133,17 @@ public class DeviceControlActivity extends Activity
                 @Override
                 public boolean onChildClick(ExpandableListView parent, View v, int groupPosition,
                                             int childPosition, long id) {
-                    if (mGattCharacteristics != null) {
-                        final BluetoothGattCharacteristic characteristic =
-                                mGattCharacteristics.get(groupPosition).get(childPosition);
+                    if (mGattCharacteristics != null)
+                    {
+                        final BluetoothGattCharacteristic characteristic = mGattCharacteristics.get(groupPosition).get(childPosition);
                         final int charaProp = characteristic.getProperties();
-                        if ((charaProp | BluetoothGattCharacteristic.PROPERTY_READ) > 0) {
+                        if ((charaProp | BluetoothGattCharacteristic.PROPERTY_READ) > 0)
+                        {
                             // If there is an active notification on a characteristic, clear
                             // it first so it doesn't update the data field on the user interface.
-                            if (mNotifyCharacteristic != null) {
-                                mBluetoothLeService.setCharacteristicNotification(
-                                        mNotifyCharacteristic, false);
+                            if (mNotifyCharacteristic != null)
+                            {
+                                mBluetoothLeService.setCharacteristicNotification(mNotifyCharacteristic, false);
                                 mNotifyCharacteristic = null;
                             }
                             mBluetoothLeService.readCharacteristic(characteristic);
@@ -231,8 +233,10 @@ public class DeviceControlActivity extends Activity
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch(item.getItemId())
+        {
             case R.id.menu_connect:
                 mBluetoothLeService.connect(mDeviceAddress);
                 return true;
@@ -246,7 +250,8 @@ public class DeviceControlActivity extends Activity
         return super.onOptionsItemSelected(item);
     }
 
-    private void updateConnectionState(final int resourceId) {
+    private void updateConnectionState(final int resourceId)
+    {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -255,8 +260,10 @@ public class DeviceControlActivity extends Activity
         });
     }
 
-    private void displayData(String data) {
-        if (data != null) {
+    private void displayData(String data)
+    {
+        if (data != null)
+        {
             mDataField.setText(data);
         }
     }
@@ -264,7 +271,8 @@ public class DeviceControlActivity extends Activity
     // Demonstrates how to iterate through the supported GATT Services/Characteristics.
     // In this sample, we populate the data structure that is bound to the ExpandableListView
     // on the UI.
-    private void displayGattServices(List<BluetoothGattService> gattServices) {
+    private void displayGattServices(List<BluetoothGattService> gattServices)
+    {
         if (gattServices == null) return;
         String uuid = null;
         String unknownServiceString = getResources().getString(R.string.unknown_service);
