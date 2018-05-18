@@ -34,4 +34,8 @@
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
 
+    <string name="ble_device_name">BLE Device: </string>
+    <string name="ble_device_address">Address: </string>
+    <string name="ble_device_status">Status: </string>
+
 </resources>

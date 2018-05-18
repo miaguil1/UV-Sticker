@@ -11,12 +11,67 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/BLUE"
+                android:text="@string/ble_device_name"/>
+            <TextView
+                android:id="@+id/ble_device_name_connected"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/BLACK"
+                android:text="Sample"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/BLUE"
+                android:text="@string/ble_device_address"/>
+            <TextView
+                android:id="@+id/ble_device_address_connected"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/BLACK"
+                android:text="00:00:00:00"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/BLACK"
+                android:textSize="20sp"
+                android:text="@string/ble_device_status"/>
+            <TextView
+                android:id="@+id/ble_device_status"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/BLACK"
+                android:textSize="20sp"
+                android:text="-------"/>
+        </LinearLayout>
+
         <com.jjoe64.graphview.GraphView
             android:id="@+id/graph"
             android:layout_width="match_parent"
             android:layout_margin="10dp"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="15"
             app:seriesColor="#ee0000"
             app:seriesData="0=5;2=5;3=0;4=2"
             app:seriesType="line" />
@@ -25,7 +80,7 @@
             android:id="@+id/rest1"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="8"
             android:orientation="horizontal">
 
             <LinearLayout

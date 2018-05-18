@@ -39,16 +39,16 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import static android.content.ContentValues.TAG;
-
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
  */
 public class DeviceScanActivity extends ListActivity
 {
-    private LeDeviceListAdapter mLeDeviceListAdapter;
+    private final static String TAG = DeviceControlActivity.class.getSimpleName();
 
+    private LeDeviceListAdapter mLeDeviceListAdapter;
     private BluetoothAdapter mBluetoothAdapter;
+
     private boolean mScanning;
     private Handler mHandler;
 
@@ -83,7 +83,7 @@ public class DeviceScanActivity extends ListActivity
         mLeDeviceListAdapter = new LeDeviceListAdapter();   // Create an object a List Adapter
         setListAdapter(mLeDeviceListAdapter);        // Initialize List from ListActivity
 
-        connectIntent = new Intent(this, DeviceControlActivity.class);
+        connectIntent = new Intent(this, MainActivity.class);
 
         checkBLE();     // Check if the function has BLE functionality
         initialize_bluetooth_adapter(); // Initialize Bluetooth Adapter

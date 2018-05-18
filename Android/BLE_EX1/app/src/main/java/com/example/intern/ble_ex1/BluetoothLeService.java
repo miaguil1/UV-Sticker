@@ -47,6 +47,9 @@ public class BluetoothLeService extends Service
     private BluetoothAdapter mBluetoothAdapter;
     private String mBluetoothDeviceAddress;
     private BluetoothGatt mBluetoothGatt;
+
+    private BluetoothGattCharacteristic characteristic;
+
     private int mConnectionState = STATE_DISCONNECTED;
 
     private static final int STATE_DISCONNECTED = 0;
@@ -59,8 +62,20 @@ public class BluetoothLeService extends Service
     public final static String ACTION_DATA_AVAILABLE = "com.example.bluetooth.le.ACTION_DATA_AVAILABLE";
     public final static String EXTRA_DATA = "com.example.bluetooth.le.EXTRA_DATA";
 
-    public final static UUID UUID_UV_POWER = UUID.fromString(GattAttributes.SERVICE_UV_MEASUREMENT);
-    public final static UUID UUID_UV_POWER_DENSITY_MEASUREMENT = UUID.fromString(GattAttributes.POWER_DENSITY);
+    public final static UUID UUID_SERVICE_BODY_TEMPERATURE = UUID.fromString(GattAttributes.SERVICE_BODY_TEMPERATURE);
+    public final static UUID UUID_TEMPERATURE = UUID.fromString(GattAttributes.TEMPERATURE);
+    public final static UUID UUID_TEMPERATURE_CCC = UUID.fromString(GattAttributes.TEMPERATURE_CCC);
+    public final static UUID UUID_TEMPERATURE_CUD = UUID.fromString(GattAttributes.TEMPERATURE_CUD);
+
+    public final static UUID UUID_SERVICE_UV_MEASUREMENT = UUID.fromString(GattAttributes.SERVICE_UV_MEASUREMENT);
+
+    public final static UUID UUID_POWER_DENSITY = UUID.fromString(GattAttributes.POWER_DENSITY);
+    public final static UUID UUID_POWER_DENSITY_CCC = UUID.fromString(GattAttributes.POWER_DENSITY_CCC);
+    public final static UUID UUID_POWER_DENSITY_CUD = UUID.fromString(GattAttributes.POWER_DENSITY_CUD);
+
+    public final static UUID UUID_UV_INDEX = UUID.fromString(GattAttributes.UV_INDEX);
+    public final static UUID UUID_UV_INDEX_CCC = UUID.fromString(GattAttributes.UV_INDEX_CCC);
+    public final static UUID UUID_UV_INDEX_CUD = UUID.fromString(GattAttributes.UV_INDEX_CUD);
 
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
@@ -75,16 +90,16 @@ public class BluetoothLeService extends Service
                 intentAction = ACTION_GATT_CONNECTED;
                 mConnectionState = STATE_CONNECTED;
                 broadcastUpdate(intentAction);
-                Log.i(TAG, "Connected to GATT server.");
+                Log.d(TAG, "UV: Connected to GATT server.");
                 // Attempts to discover services after successful connection.
-                Log.i(TAG, "Attempting to start service discovery:" + mBluetoothGatt.discoverServices());
-
+                Log.d(TAG, "UV: Attempting to start service discovery:" + mBluetoothGatt.discoverServices());
             }
+
             else if (newState == BluetoothProfile.STATE_DISCONNECTED)
             {
                 intentAction = ACTION_GATT_DISCONNECTED;
                 mConnectionState = STATE_DISCONNECTED;
-                Log.i(TAG, "Disconnected from GATT server.");
+                Log.d(TAG, "UV: Disconnected from GATT server.");
                 broadcastUpdate(intentAction);
             }
         }
@@ -98,7 +113,7 @@ public class BluetoothLeService extends Service
             }
             else
             {
-                Log.w(TAG, "onServicesDiscovered received: " + status);
+                Log.d(TAG, "UV: onServicesDiscovered received: " + status);
             }
         }
 
@@ -128,25 +143,23 @@ public class BluetoothLeService extends Service
     {
         final Intent intent = new Intent(action);
 
-        // This is special handling for the Heart Rate Measurement profile.  Data parsing is
-        // carried out as per profile specifications:
-        // http://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml
-        if (UUID_UV_POWER_DENSITY_MEASUREMENT.equals(characteristic.getUuid()))
+        // Special Handling for the UV Power Density profile
+        if (UUID_POWER_DENSITY.equals(characteristic.getUuid()))
         {
             int flag = characteristic.getProperties();
             int format = -1;
             if ((flag & 0x01) != 0)
             {
                 format = BluetoothGattCharacteristic.FORMAT_UINT16;
-                Log.d(TAG, "Heart rate format UINT16.");
+                Log.d(TAG, "UV: Heart rate format UINT16.");
             }
             else
             {
                 format = BluetoothGattCharacteristic.FORMAT_UINT8;
-                Log.d(TAG, "Heart rate format UINT8.");
+                Log.d(TAG, "UV: Heart rate format UINT8.");
             }
             final int heartRate = characteristic.getIntValue(format, 1);
-            Log.d(TAG, String.format("Received heart rate: %d", heartRate));
+            Log.d(TAG, String.format("UV: Received heart rate: %d", heartRate));
             intent.putExtra(EXTRA_DATA, String.valueOf(heartRate));
         }
         else
@@ -161,6 +174,10 @@ public class BluetoothLeService extends Service
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
         }
+
+
+
+        
         sendBroadcast(intent);
     }
 
@@ -259,8 +276,7 @@ public class BluetoothLeService extends Service
             Log.w(TAG, "Device not found.  Unable to connect.");
             return false;
         }
-        // We want to directly connect to the device, so we are setting the autoConnect
-        // parameter to false.
+        // We want to directly connect to the device, so we are setting the autoConnect parameter to false
         mBluetoothGatt = device.connectGatt(this, false, mGattCallback);
         Log.d(TAG, "Trying to create a new connection.");
         mBluetoothDeviceAddress = address;
@@ -325,13 +341,13 @@ public class BluetoothLeService extends Service
     {
         if (mBluetoothAdapter == null || mBluetoothGatt == null)
         {
-            Log.w(TAG, "BluetoothAdapter not initialized");
+            Log.d(TAG, "UV: BluetoothAdapter not initialized");
             return;
         }
         mBluetoothGatt.setCharacteristicNotification(characteristic, enabled);
 
         // This is specific to UV POWER DENSITY
-        if (UUID_UV_POWER_DENSITY_MEASUREMENT.equals(characteristic.getUuid()))
+        if (UUID_POWER_DENSITY.equals(characteristic.getUuid()))
         {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(UUID.fromString(GattAttributes.POWER_DENSITY));
             descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
