@@ -17,33 +17,38 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
+
     <LinearLayout
         android:id="@+id/rest3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
+        android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/BLECheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="3"
             android:focusable="false"
-            android:layout_weight="1"
             android:focusableInTouchMode="false"
             android:text="" />
+
         <TextView
             android:id="@+id/device_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="4"
+            android:text="SUP"
             android:textSize="24dp"
-            android:text="SUP"/>
+            android:textAlignment="viewStart"/>
+
         <TextView
             android:id="@+id/device_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="4"
+            android:text="ZOOT ZOOT"
             android:textSize="12dp"
-            android:text="ZOOT ZOOT"/>
+            android:textAlignment="viewEnd"/>
     </LinearLayout>
 </LinearLayout>

@@ -30,15 +30,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
@@ -49,9 +48,6 @@ public class DeviceScanActivity extends ListActivity
 {
     private LeDeviceListAdapter mLeDeviceListAdapter;
 
-    private List<String> ble_array_list = new ArrayList<>();
-    private ArrayAdapter<String> arrayAdapter;
-
     private BluetoothAdapter mBluetoothAdapter;
     private boolean mScanning;
     private Handler mHandler;
@@ -59,7 +55,7 @@ public class DeviceScanActivity extends ListActivity
     private boolean enableScanning;
     private boolean currentScanning;
 
-    private ListView bleList;
+    private Intent connectIntent;
 
     private static final int REQUEST_ENABLE_BT = 1;
 
@@ -77,19 +73,17 @@ public class DeviceScanActivity extends ListActivity
 
         setContentView(R.layout.ble_connect);
 
-        Log.w(TAG, "DeviceScanActivity: onCreate");
+        Log.d(TAG, "UV: DeviceScanActivity: onCreate");
 
         //Connect U.I Elements
         Button  connect_Ble_Button = (Button) findViewById(R.id.ConnectBleBtn);     //Connect to BLE Device
         Button start_Scan_Button = (Button) findViewById(R.id.startScanBtn);        //Start BLE Scan
         Button stop_Scan_Button = (Button) findViewById(R.id.stopScanBtn);          //Stop BLE Scan
-        bleList = getListView();
-        bleList.setAdapter(new LeDeviceListAdapter());
 
-        mLeDeviceListAdapter = new LeDeviceListAdapter();
-        setListAdapter(mLeDeviceListAdapter);        // Initializes list view adapter.
+        mLeDeviceListAdapter = new LeDeviceListAdapter();   // Create an object a List Adapter
+        setListAdapter(mLeDeviceListAdapter);        // Initialize List from ListActivity
 
-        arrayAdapter = new ArrayAdapter<String>(DeviceScanActivity.this, android.R.layout.simple_expandable_list_item_1, ble_array_list);
+        connectIntent = new Intent(this, DeviceControlActivity.class);
 
         checkBLE();     // Check if the function has BLE functionality
         initialize_bluetooth_adapter(); // Initialize Bluetooth Adapter
@@ -102,14 +96,17 @@ public class DeviceScanActivity extends ListActivity
     @Override
     protected void onResume()
     {
+        Log.d(TAG, "UV: DeviceScanActivity: onResume");
         super.onResume();
         enable_bluetooth();
+        mLeDeviceListAdapter.clear();
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        Log.v(TAG, "DeviceScanActivity: onActivityResult");
+        Log.d(TAG, "UV: DeviceScanActivity: onActivityResult");
 
         // User chose not to enable Bluetooth.
         if (requestCode == REQUEST_ENABLE_BT && resultCode == Activity.RESULT_CANCELED)
@@ -123,32 +120,29 @@ public class DeviceScanActivity extends ListActivity
     @Override
     protected void onPause()
     {
-        Log.v(TAG, "DeviceScanActivity: onPause");
+        Log.d(TAG, "UV: DeviceScanActivity: onPause");
         super.onPause();
         stopScan();
-//        scanLeDevice(false);
-        mLeDeviceListAdapter = new LeDeviceListAdapter();
-        setListAdapter(mLeDeviceListAdapter);
         mLeDeviceListAdapter.clear();
+        mLeDeviceListAdapter.notifyDataSetChanged();
     }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id)
     {
-        final BluetoothDevice device = mLeDeviceListAdapter.getDevice(position);
-        if(device == null)
+        Log.d(TAG, "UV: onListItemClick");
+        final BluetoothDevice selectedDevice = mLeDeviceListAdapter.getDevice(position);    //Get device number from List
+        if(selectedDevice == null)
         {
             return;
         }
-        final Intent intent = new Intent(this, DeviceControlActivity.class);
-        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.getName());
-        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.getAddress());
+        connectIntent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, selectedDevice.getName());
+        connectIntent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, selectedDevice.getAddress());
         if(mScanning)
         {
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
             mScanning = false;
         }
-        startActivity(intent);
     }
 
     private void buttonClicked(Button start_Scan_Button, Button stop_Scan_Button, Button connect_Ble_Button)
@@ -158,18 +152,11 @@ public class DeviceScanActivity extends ListActivity
             @Override
             public void onClick(View view)
             {
-                Log.w(TAG, "Scan Button Pressed");
+                Log.d(TAG, "UV: Scan Button Pressed");
+                mLeDeviceListAdapter.clear();
+                mLeDeviceListAdapter.notifyDataSetChanged();
                 enableScanning = true;
-//                mLeDeviceListAdapter.clear();
-//                mLeDeviceListAdapter = new LeDeviceListAdapter();
-//                setListAdapter(mLeDeviceListAdapter);
-//                scanLeDevice(true);
                 startScan();
-//                bleList.setAdapter(arrayAdapter);
-                mLeDeviceListAdapter = new LeDeviceListAdapter();
-                setListAdapter(mLeDeviceListAdapter);
-//        startScan();
-                scanLeDevice(true);
             }
         });
 
@@ -178,12 +165,9 @@ public class DeviceScanActivity extends ListActivity
             @Override
             public void onClick(View view)
             {
-                Log.w(TAG, "Stop Button Pressed");
+                Log.d(TAG, "UV: Stop Button Pressed");
                 enableScanning = false;
                 stopScan();
-                mLeDeviceListAdapter = new LeDeviceListAdapter();
-                setListAdapter(mLeDeviceListAdapter);
-                mLeDeviceListAdapter.clear();
             }
         });
 
@@ -192,8 +176,9 @@ public class DeviceScanActivity extends ListActivity
             @Override
             public void onClick(View view)
             {
-                Log.w(TAG, "Connect Button Pressed");
+                Log.d(TAG, "UV: Connect Button Pressed");
                 enableScanning = false;
+                startActivity(connectIntent);
             }
         });
     }
@@ -201,7 +186,7 @@ public class DeviceScanActivity extends ListActivity
     // This function checks if BLE is enabled on the device
     private void checkBLE()
     {
-        Log.v(TAG, "DeviceScanActivity: checkBLE");
+        Log.d(TAG, "UV: DeviceScanActivity: checkBLE");
         // Use this check to determine whether BLE is supported on the device.  Then you can
         // selectively disable BLE-related features.
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE))
@@ -214,7 +199,7 @@ public class DeviceScanActivity extends ListActivity
     // This function checks if Bluetooth is enabled on the device
     private void checkBluetooth()
     {
-        Log.v(TAG, "DeviceScanActivity: CheckBluetooth");
+        Log.d(TAG, "UV: DeviceScanActivity: CheckBluetooth");
         // Checks if Bluetooth is supported on the device.
         if (mBluetoothAdapter == null)
         {
@@ -227,7 +212,7 @@ public class DeviceScanActivity extends ListActivity
     private void initialize_bluetooth_adapter()
     {
         // Initializes Bluetooth adapter.
-        Log.w(TAG, "DeviceScanActivity: Initialize Bluetooth Adapter");
+        Log.d(TAG, "UV: DeviceScanActivity: Initialize Bluetooth Adapter");
         final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = bluetoothManager.getAdapter();
     }
@@ -235,7 +220,7 @@ public class DeviceScanActivity extends ListActivity
     // Eanble Bluetooth on Device
     private void enable_bluetooth()
     {
-        Log.w(TAG, "DeviceScanActivity: Enable Bluetooth Adapter");
+        Log.d(TAG, "UV: DeviceScanActivity: Enable Bluetooth Adapter");
         // Ensures Bluetooth is available on the device and it is enabled. If not,
         // displays a dialog requesting user permission to enable Bluetooth.
         if (mBluetoothAdapter == null || !mBluetoothAdapter.isEnabled())
@@ -247,7 +232,7 @@ public class DeviceScanActivity extends ListActivity
 
     private void startScan()
     {
-        Log.v(TAG, "DeviceScanActivity: startScan");
+        Log.d(TAG, "UV: DeviceScanActivity: startScan");
         if(enableScanning && !currentScanning)
         {
             scanLeDevice(true);
@@ -257,7 +242,7 @@ public class DeviceScanActivity extends ListActivity
 
     private void stopScan()
     {
-        Log.v(TAG, "DeviceScanActivity: stopScan");
+        Log.d(TAG, "UV: DeviceScanActivity: stopScan");
         if(!enableScanning && currentScanning)
         {
             scanLeDevice(false);
@@ -267,10 +252,10 @@ public class DeviceScanActivity extends ListActivity
 
     private void scanLeDevice(final boolean enable)
     {
-        Log.w(TAG, "DeviceScanActivity: ScanLeDevice");
+        Log.d(TAG, "UV: DeviceScanActivity: ScanLeDevice");
         if(enable)
         {
-            Log.w(TAG, "ScanLeDevice: Start Scanning");
+            Log.d(TAG, "UV: ScanLeDevice: Start Scanning");
             // Stops scanning after a pre-defined scan period.
             mHandler.postDelayed(new Runnable()
             {
@@ -288,7 +273,7 @@ public class DeviceScanActivity extends ListActivity
         }
         else
         {
-            Log.w(TAG, "ScanLeDevice: Stop Scanning");
+            Log.d(TAG, "UV: ScanLeDevice: Stop Scanning");
             mScanning = false;
             mBluetoothAdapter.stopLeScan(mLeScanCallback);
         }
@@ -353,9 +338,23 @@ public class DeviceScanActivity extends ListActivity
             {
                 view = mInflator.inflate(R.layout.listitem_device, null);
                 viewHolder = new ViewHolder();
-                viewHolder.deviceAddress = (TextView) view.findViewById(R.id.device_address);
-                viewHolder.deviceName = (TextView) view.findViewById(R.id.device_name);
+                viewHolder.deviceAddress = (TextView) view.findViewById(R.id.device_address);   // Gets Text Parameter for Device Address in Layout
+                viewHolder.deviceName = (TextView) view.findViewById(R.id.device_name); // Gets Text Parameter for Device Name in Layout
+                viewHolder.deviceCheckBox = (CheckBox) view.findViewById(R.id.BLECheckBox);   // Gets CheckBox Parameter for Device Selected from ArrayList
                 view.setTag(viewHolder);
+
+                viewHolder.deviceCheckBox.setOnClickListener(new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        CheckBox device_cb = (CheckBox) v;
+                        if(device_cb.isChecked())
+                        {
+                            Log.d(TAG, "UV: Checkbox Checked");
+                        }
+                    }
+                });
             }
             else
             {
@@ -365,9 +364,14 @@ public class DeviceScanActivity extends ListActivity
             BluetoothDevice device = mLeDevices.get(i);
             final String deviceName = device.getName();
             if (deviceName != null && deviceName.length() > 0)
+            {
                 viewHolder.deviceName.setText(deviceName);
+            }
             else
+            {
                 viewHolder.deviceName.setText(R.string.unknown_device);
+            }
+
             viewHolder.deviceAddress.setText(device.getAddress());
 
             return view;
@@ -396,5 +400,6 @@ public class DeviceScanActivity extends ListActivity
     {
         TextView deviceName;
         TextView deviceAddress;
+        CheckBox deviceCheckBox;
     }
 }

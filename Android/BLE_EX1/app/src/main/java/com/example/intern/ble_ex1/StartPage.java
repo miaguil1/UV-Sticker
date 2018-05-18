@@ -71,7 +71,7 @@ public class StartPage extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Log.w(TAG, "Continue Button Pressed");
+                Log.d(TAG, "UV: Continue Button Pressed");
                 Intent intent = new Intent(StartPage.this, DeviceScanActivity.class);
                 startActivity(intent);
             }
