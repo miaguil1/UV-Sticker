@@ -13,14 +13,6 @@
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cyfitteriar.inc" value="HEADER;;;;;" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cyfitter.h" value="HEADER;;;;;" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cydisabledsheets.h" value="HEADER;;;;;" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E6.c" value="SOURCE_C;CortexM0;;;;E6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E6.h" value="HEADER;;;;;E6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E6_aliases.h" value="HEADER;;;;;E6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E6_PM.c" value="SOURCE_C;CortexM0;;;;E6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B6.c" value="SOURCE_C;CortexM0;;;;B6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B6.h" value="HEADER;;;;;B6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B6_aliases.h" value="HEADER;;;;;B6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B6_PM.c" value="SOURCE_C;CortexM0;;;;B6" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\I2C.c" value="SOURCE_C;CortexM0;;;;I2C" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\I2C.h" value="HEADER;;;;;I2C" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\I2C_I2C.h" value="HEADER;;;;;I2C" />
@@ -54,42 +46,6 @@
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\BLE_eventHandler.h" value="HEADER;;;;;BLE" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\BLE_custom.h" value="HEADER;;;;;BLE" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\BLE_custom.c" value="SOURCE_C;CortexM0;;;;BLE" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC.c" value="SOURCE_C;CortexM0;;;;ADC" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC.h" value="HEADER;;;;;ADC" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC_PM.c" value="SOURCE_C;CortexM0;;;;ADC" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC_INT.c" value="SOURCE_C;CortexM0;;;;ADC" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C6.c" value="SOURCE_C;CortexM0;;;;C6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C6.h" value="HEADER;;;;;C6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C6_aliases.h" value="HEADER;;;;;C6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C6_PM.c" value="SOURCE_C;CortexM0;;;;C6" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\A3.c" value="SOURCE_C;CortexM0;;;;A3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\A3.h" value="HEADER;;;;;A3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\A3_aliases.h" value="HEADER;;;;;A3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\A3_PM.c" value="SOURCE_C;CortexM0;;;;A3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B3.c" value="SOURCE_C;CortexM0;;;;B3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B3.h" value="HEADER;;;;;B3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B3_aliases.h" value="HEADER;;;;;B3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\B3_PM.c" value="SOURCE_C;CortexM0;;;;B3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C3.c" value="SOURCE_C;CortexM0;;;;C3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C3.h" value="HEADER;;;;;C3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C3_aliases.h" value="HEADER;;;;;C3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\C3_PM.c" value="SOURCE_C;CortexM0;;;;C3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\D3.c" value="SOURCE_C;CortexM0;;;;D3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\D3.h" value="HEADER;;;;;D3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\D3_aliases.h" value="HEADER;;;;;D3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\D3_PM.c" value="SOURCE_C;CortexM0;;;;D3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E3.c" value="SOURCE_C;CortexM0;;;;E3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E3.h" value="HEADER;;;;;E3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E3_aliases.h" value="HEADER;;;;;E3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\E3_PM.c" value="SOURCE_C;CortexM0;;;;E3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\F3.c" value="SOURCE_C;CortexM0;;;;F3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\F3.h" value="HEADER;;;;;F3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\F3_aliases.h" value="HEADER;;;;;F3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\F3_PM.c" value="SOURCE_C;CortexM0;;;;F3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\G3.c" value="SOURCE_C;CortexM0;;;;G3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\G3.h" value="HEADER;;;;;G3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\G3_aliases.h" value="HEADER;;;;;G3" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\G3_PM.c" value="SOURCE_C;CortexM0;;;;G3" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\LED_RED.c" value="SOURCE_C;CortexM0;;;;LED_RED" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\LED_RED.h" value="HEADER;;;;;LED_RED" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\LED_RED_aliases.h" value="HEADER;;;;;LED_RED" />
@@ -98,14 +54,6 @@
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\RTC.h" value="HEADER;;;;;RTC" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\WDT_ISR.c" value="SOURCE_C;CortexM0;;;;WDT_ISR" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\WDT_ISR.h" value="HEADER;;;;;WDT_ISR" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\V_BATTERY.c" value="SOURCE_C;CortexM0;;;;V_BATTERY" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\V_BATTERY.h" value="HEADER;;;;;V_BATTERY" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\V_BATTERY_aliases.h" value="HEADER;;;;;V_BATTERY" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\V_BATTERY_PM.c" value="SOURCE_C;CortexM0;;;;V_BATTERY" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ALERT.c" value="SOURCE_C;CortexM0;;;;ALERT" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ALERT.h" value="HEADER;;;;;ALERT" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ALERT_aliases.h" value="HEADER;;;;;ALERT" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ALERT_PM.c" value="SOURCE_C;CortexM0;;;;ALERT" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\I2C_SCBCLK.c" value="SOURCE_C;CortexM0;;;;I2C_SCBCLK" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\I2C_SCBCLK.h" value="HEADER;;;;;I2C_SCBCLK" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\I2C_sda.c" value="SOURCE_C;CortexM0;;;;I2C_sda" />
@@ -120,10 +68,6 @@
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\I2C_SCB_IRQ.h" value="HEADER;;;;;I2C_SCB_IRQ" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\BLE_bless_isr.c" value="SOURCE_C;CortexM0;;;;BLE_bless_isr" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\BLE_bless_isr.h" value="HEADER;;;;;BLE_bless_isr" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC_IRQ.c" value="SOURCE_C;CortexM0;;;;ADC_IRQ" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC_IRQ.h" value="HEADER;;;;;ADC_IRQ" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC_intClock.c" value="SOURCE_C;CortexM0;;;;ADC_intClock" />
-  <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\ADC_intClock.h" value="HEADER;;;;;ADC_intClock" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\cm0gcc.ld" value="LINKER_SCRIPT;;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;;cy_boot" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\Cm0RealView.scat" value="LINKER_SCRIPT;;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;;cy_boot" />
   <file name="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\codegentemp\Cm0Start.c" value="SOURCE_C;CortexM0;;;;cy_boot" />

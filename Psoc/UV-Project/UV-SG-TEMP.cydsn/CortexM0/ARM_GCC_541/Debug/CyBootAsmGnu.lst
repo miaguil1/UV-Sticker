@@ -11016,105 +11016,105 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  986              	.set BLE_cy_m0s8_ble__XTAL_CLK_DIV_CONFIG, CYREG_BLE_BLESS_XTAL_CLK_DIV_CONFIG
  987              	
  988              	/* I2C */
- 989              	.set I2C_SCB__CTRL, CYREG_SCB0_CTRL
- 990              	.set I2C_SCB__EZ_DATA0, CYREG_SCB0_EZ_DATA0
- 991              	.set I2C_SCB__EZ_DATA1, CYREG_SCB0_EZ_DATA1
- 992              	.set I2C_SCB__EZ_DATA10, CYREG_SCB0_EZ_DATA10
- 993              	.set I2C_SCB__EZ_DATA11, CYREG_SCB0_EZ_DATA11
- 994              	.set I2C_SCB__EZ_DATA12, CYREG_SCB0_EZ_DATA12
- 995              	.set I2C_SCB__EZ_DATA13, CYREG_SCB0_EZ_DATA13
- 996              	.set I2C_SCB__EZ_DATA14, CYREG_SCB0_EZ_DATA14
- 997              	.set I2C_SCB__EZ_DATA15, CYREG_SCB0_EZ_DATA15
- 998              	.set I2C_SCB__EZ_DATA16, CYREG_SCB0_EZ_DATA16
- 999              	.set I2C_SCB__EZ_DATA17, CYREG_SCB0_EZ_DATA17
- 1000              	.set I2C_SCB__EZ_DATA18, CYREG_SCB0_EZ_DATA18
- 1001              	.set I2C_SCB__EZ_DATA19, CYREG_SCB0_EZ_DATA19
- 1002              	.set I2C_SCB__EZ_DATA2, CYREG_SCB0_EZ_DATA2
- 1003              	.set I2C_SCB__EZ_DATA20, CYREG_SCB0_EZ_DATA20
- 1004              	.set I2C_SCB__EZ_DATA21, CYREG_SCB0_EZ_DATA21
- 1005              	.set I2C_SCB__EZ_DATA22, CYREG_SCB0_EZ_DATA22
- 1006              	.set I2C_SCB__EZ_DATA23, CYREG_SCB0_EZ_DATA23
- 1007              	.set I2C_SCB__EZ_DATA24, CYREG_SCB0_EZ_DATA24
- 1008              	.set I2C_SCB__EZ_DATA25, CYREG_SCB0_EZ_DATA25
- 1009              	.set I2C_SCB__EZ_DATA26, CYREG_SCB0_EZ_DATA26
- 1010              	.set I2C_SCB__EZ_DATA27, CYREG_SCB0_EZ_DATA27
+ 989              	.set I2C_SCB__CTRL, CYREG_SCB1_CTRL
+ 990              	.set I2C_SCB__EZ_DATA0, CYREG_SCB1_EZ_DATA0
+ 991              	.set I2C_SCB__EZ_DATA1, CYREG_SCB1_EZ_DATA1
+ 992              	.set I2C_SCB__EZ_DATA10, CYREG_SCB1_EZ_DATA10
+ 993              	.set I2C_SCB__EZ_DATA11, CYREG_SCB1_EZ_DATA11
+ 994              	.set I2C_SCB__EZ_DATA12, CYREG_SCB1_EZ_DATA12
+ 995              	.set I2C_SCB__EZ_DATA13, CYREG_SCB1_EZ_DATA13
+ 996              	.set I2C_SCB__EZ_DATA14, CYREG_SCB1_EZ_DATA14
+ 997              	.set I2C_SCB__EZ_DATA15, CYREG_SCB1_EZ_DATA15
+ 998              	.set I2C_SCB__EZ_DATA16, CYREG_SCB1_EZ_DATA16
+ 999              	.set I2C_SCB__EZ_DATA17, CYREG_SCB1_EZ_DATA17
+ 1000              	.set I2C_SCB__EZ_DATA18, CYREG_SCB1_EZ_DATA18
+ 1001              	.set I2C_SCB__EZ_DATA19, CYREG_SCB1_EZ_DATA19
+ 1002              	.set I2C_SCB__EZ_DATA2, CYREG_SCB1_EZ_DATA2
+ 1003              	.set I2C_SCB__EZ_DATA20, CYREG_SCB1_EZ_DATA20
+ 1004              	.set I2C_SCB__EZ_DATA21, CYREG_SCB1_EZ_DATA21
+ 1005              	.set I2C_SCB__EZ_DATA22, CYREG_SCB1_EZ_DATA22
+ 1006              	.set I2C_SCB__EZ_DATA23, CYREG_SCB1_EZ_DATA23
+ 1007              	.set I2C_SCB__EZ_DATA24, CYREG_SCB1_EZ_DATA24
+ 1008              	.set I2C_SCB__EZ_DATA25, CYREG_SCB1_EZ_DATA25
+ 1009              	.set I2C_SCB__EZ_DATA26, CYREG_SCB1_EZ_DATA26
+ 1010              	.set I2C_SCB__EZ_DATA27, CYREG_SCB1_EZ_DATA27
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 185
 
 
- 1011              	.set I2C_SCB__EZ_DATA28, CYREG_SCB0_EZ_DATA28
- 1012              	.set I2C_SCB__EZ_DATA29, CYREG_SCB0_EZ_DATA29
- 1013              	.set I2C_SCB__EZ_DATA3, CYREG_SCB0_EZ_DATA3
- 1014              	.set I2C_SCB__EZ_DATA30, CYREG_SCB0_EZ_DATA30
- 1015              	.set I2C_SCB__EZ_DATA31, CYREG_SCB0_EZ_DATA31
- 1016              	.set I2C_SCB__EZ_DATA4, CYREG_SCB0_EZ_DATA4
- 1017              	.set I2C_SCB__EZ_DATA5, CYREG_SCB0_EZ_DATA5
- 1018              	.set I2C_SCB__EZ_DATA6, CYREG_SCB0_EZ_DATA6
- 1019              	.set I2C_SCB__EZ_DATA7, CYREG_SCB0_EZ_DATA7
- 1020              	.set I2C_SCB__EZ_DATA8, CYREG_SCB0_EZ_DATA8
- 1021              	.set I2C_SCB__EZ_DATA9, CYREG_SCB0_EZ_DATA9
- 1022              	.set I2C_SCB__I2C_CFG, CYREG_SCB0_I2C_CFG
- 1023              	.set I2C_SCB__I2C_CTRL, CYREG_SCB0_I2C_CTRL
- 1024              	.set I2C_SCB__I2C_M_CMD, CYREG_SCB0_I2C_M_CMD
- 1025              	.set I2C_SCB__I2C_S_CMD, CYREG_SCB0_I2C_S_CMD
- 1026              	.set I2C_SCB__I2C_STATUS, CYREG_SCB0_I2C_STATUS
- 1027              	.set I2C_SCB__INTR_CAUSE, CYREG_SCB0_INTR_CAUSE
- 1028              	.set I2C_SCB__INTR_I2C_EC, CYREG_SCB0_INTR_I2C_EC
- 1029              	.set I2C_SCB__INTR_I2C_EC_MASK, CYREG_SCB0_INTR_I2C_EC_MASK
- 1030              	.set I2C_SCB__INTR_I2C_EC_MASKED, CYREG_SCB0_INTR_I2C_EC_MASKED
- 1031              	.set I2C_SCB__INTR_M, CYREG_SCB0_INTR_M
- 1032              	.set I2C_SCB__INTR_M_MASK, CYREG_SCB0_INTR_M_MASK
- 1033              	.set I2C_SCB__INTR_M_MASKED, CYREG_SCB0_INTR_M_MASKED
- 1034              	.set I2C_SCB__INTR_M_SET, CYREG_SCB0_INTR_M_SET
- 1035              	.set I2C_SCB__INTR_RX, CYREG_SCB0_INTR_RX
- 1036              	.set I2C_SCB__INTR_RX_MASK, CYREG_SCB0_INTR_RX_MASK
- 1037              	.set I2C_SCB__INTR_RX_MASKED, CYREG_SCB0_INTR_RX_MASKED
- 1038              	.set I2C_SCB__INTR_RX_SET, CYREG_SCB0_INTR_RX_SET
- 1039              	.set I2C_SCB__INTR_S, CYREG_SCB0_INTR_S
- 1040              	.set I2C_SCB__INTR_S_MASK, CYREG_SCB0_INTR_S_MASK
- 1041              	.set I2C_SCB__INTR_S_MASKED, CYREG_SCB0_INTR_S_MASKED
- 1042              	.set I2C_SCB__INTR_S_SET, CYREG_SCB0_INTR_S_SET
- 1043              	.set I2C_SCB__INTR_SPI_EC, CYREG_SCB0_INTR_SPI_EC
- 1044              	.set I2C_SCB__INTR_SPI_EC_MASK, CYREG_SCB0_INTR_SPI_EC_MASK
- 1045              	.set I2C_SCB__INTR_SPI_EC_MASKED, CYREG_SCB0_INTR_SPI_EC_MASKED
- 1046              	.set I2C_SCB__INTR_TX, CYREG_SCB0_INTR_TX
- 1047              	.set I2C_SCB__INTR_TX_MASK, CYREG_SCB0_INTR_TX_MASK
- 1048              	.set I2C_SCB__INTR_TX_MASKED, CYREG_SCB0_INTR_TX_MASKED
- 1049              	.set I2C_SCB__INTR_TX_SET, CYREG_SCB0_INTR_TX_SET
- 1050              	.set I2C_SCB__RX_CTRL, CYREG_SCB0_RX_CTRL
- 1051              	.set I2C_SCB__RX_FIFO_CTRL, CYREG_SCB0_RX_FIFO_CTRL
- 1052              	.set I2C_SCB__RX_FIFO_RD, CYREG_SCB0_RX_FIFO_RD
- 1053              	.set I2C_SCB__RX_FIFO_RD_SILENT, CYREG_SCB0_RX_FIFO_RD_SILENT
- 1054              	.set I2C_SCB__RX_FIFO_STATUS, CYREG_SCB0_RX_FIFO_STATUS
- 1055              	.set I2C_SCB__RX_MATCH, CYREG_SCB0_RX_MATCH
- 1056              	.set I2C_SCB__SPI_CTRL, CYREG_SCB0_SPI_CTRL
- 1057              	.set I2C_SCB__SPI_STATUS, CYREG_SCB0_SPI_STATUS
+ 1011              	.set I2C_SCB__EZ_DATA28, CYREG_SCB1_EZ_DATA28
+ 1012              	.set I2C_SCB__EZ_DATA29, CYREG_SCB1_EZ_DATA29
+ 1013              	.set I2C_SCB__EZ_DATA3, CYREG_SCB1_EZ_DATA3
+ 1014              	.set I2C_SCB__EZ_DATA30, CYREG_SCB1_EZ_DATA30
+ 1015              	.set I2C_SCB__EZ_DATA31, CYREG_SCB1_EZ_DATA31
+ 1016              	.set I2C_SCB__EZ_DATA4, CYREG_SCB1_EZ_DATA4
+ 1017              	.set I2C_SCB__EZ_DATA5, CYREG_SCB1_EZ_DATA5
+ 1018              	.set I2C_SCB__EZ_DATA6, CYREG_SCB1_EZ_DATA6
+ 1019              	.set I2C_SCB__EZ_DATA7, CYREG_SCB1_EZ_DATA7
+ 1020              	.set I2C_SCB__EZ_DATA8, CYREG_SCB1_EZ_DATA8
+ 1021              	.set I2C_SCB__EZ_DATA9, CYREG_SCB1_EZ_DATA9
+ 1022              	.set I2C_SCB__I2C_CFG, CYREG_SCB1_I2C_CFG
+ 1023              	.set I2C_SCB__I2C_CTRL, CYREG_SCB1_I2C_CTRL
+ 1024              	.set I2C_SCB__I2C_M_CMD, CYREG_SCB1_I2C_M_CMD
+ 1025              	.set I2C_SCB__I2C_S_CMD, CYREG_SCB1_I2C_S_CMD
+ 1026              	.set I2C_SCB__I2C_STATUS, CYREG_SCB1_I2C_STATUS
+ 1027              	.set I2C_SCB__INTR_CAUSE, CYREG_SCB1_INTR_CAUSE
+ 1028              	.set I2C_SCB__INTR_I2C_EC, CYREG_SCB1_INTR_I2C_EC
+ 1029              	.set I2C_SCB__INTR_I2C_EC_MASK, CYREG_SCB1_INTR_I2C_EC_MASK
+ 1030              	.set I2C_SCB__INTR_I2C_EC_MASKED, CYREG_SCB1_INTR_I2C_EC_MASKED
+ 1031              	.set I2C_SCB__INTR_M, CYREG_SCB1_INTR_M
+ 1032              	.set I2C_SCB__INTR_M_MASK, CYREG_SCB1_INTR_M_MASK
+ 1033              	.set I2C_SCB__INTR_M_MASKED, CYREG_SCB1_INTR_M_MASKED
+ 1034              	.set I2C_SCB__INTR_M_SET, CYREG_SCB1_INTR_M_SET
+ 1035              	.set I2C_SCB__INTR_RX, CYREG_SCB1_INTR_RX
+ 1036              	.set I2C_SCB__INTR_RX_MASK, CYREG_SCB1_INTR_RX_MASK
+ 1037              	.set I2C_SCB__INTR_RX_MASKED, CYREG_SCB1_INTR_RX_MASKED
+ 1038              	.set I2C_SCB__INTR_RX_SET, CYREG_SCB1_INTR_RX_SET
+ 1039              	.set I2C_SCB__INTR_S, CYREG_SCB1_INTR_S
+ 1040              	.set I2C_SCB__INTR_S_MASK, CYREG_SCB1_INTR_S_MASK
+ 1041              	.set I2C_SCB__INTR_S_MASKED, CYREG_SCB1_INTR_S_MASKED
+ 1042              	.set I2C_SCB__INTR_S_SET, CYREG_SCB1_INTR_S_SET
+ 1043              	.set I2C_SCB__INTR_SPI_EC, CYREG_SCB1_INTR_SPI_EC
+ 1044              	.set I2C_SCB__INTR_SPI_EC_MASK, CYREG_SCB1_INTR_SPI_EC_MASK
+ 1045              	.set I2C_SCB__INTR_SPI_EC_MASKED, CYREG_SCB1_INTR_SPI_EC_MASKED
+ 1046              	.set I2C_SCB__INTR_TX, CYREG_SCB1_INTR_TX
+ 1047              	.set I2C_SCB__INTR_TX_MASK, CYREG_SCB1_INTR_TX_MASK
+ 1048              	.set I2C_SCB__INTR_TX_MASKED, CYREG_SCB1_INTR_TX_MASKED
+ 1049              	.set I2C_SCB__INTR_TX_SET, CYREG_SCB1_INTR_TX_SET
+ 1050              	.set I2C_SCB__RX_CTRL, CYREG_SCB1_RX_CTRL
+ 1051              	.set I2C_SCB__RX_FIFO_CTRL, CYREG_SCB1_RX_FIFO_CTRL
+ 1052              	.set I2C_SCB__RX_FIFO_RD, CYREG_SCB1_RX_FIFO_RD
+ 1053              	.set I2C_SCB__RX_FIFO_RD_SILENT, CYREG_SCB1_RX_FIFO_RD_SILENT
+ 1054              	.set I2C_SCB__RX_FIFO_STATUS, CYREG_SCB1_RX_FIFO_STATUS
+ 1055              	.set I2C_SCB__RX_MATCH, CYREG_SCB1_RX_MATCH
+ 1056              	.set I2C_SCB__SPI_CTRL, CYREG_SCB1_SPI_CTRL
+ 1057              	.set I2C_SCB__SPI_STATUS, CYREG_SCB1_SPI_STATUS
  1058              	.set I2C_SCB__SS0_POSISTION, 0
  1059              	.set I2C_SCB__SS1_POSISTION, 1
  1060              	.set I2C_SCB__SS2_POSISTION, 2
  1061              	.set I2C_SCB__SS3_POSISTION, 3
- 1062              	.set I2C_SCB__STATUS, CYREG_SCB0_STATUS
- 1063              	.set I2C_SCB__TX_CTRL, CYREG_SCB0_TX_CTRL
- 1064              	.set I2C_SCB__TX_FIFO_CTRL, CYREG_SCB0_TX_FIFO_CTRL
- 1065              	.set I2C_SCB__TX_FIFO_STATUS, CYREG_SCB0_TX_FIFO_STATUS
- 1066              	.set I2C_SCB__TX_FIFO_WR, CYREG_SCB0_TX_FIFO_WR
- 1067              	.set I2C_SCB__UART_CTRL, CYREG_SCB0_UART_CTRL
+ 1062              	.set I2C_SCB__STATUS, CYREG_SCB1_STATUS
+ 1063              	.set I2C_SCB__TX_CTRL, CYREG_SCB1_TX_CTRL
+ 1064              	.set I2C_SCB__TX_FIFO_CTRL, CYREG_SCB1_TX_FIFO_CTRL
+ 1065              	.set I2C_SCB__TX_FIFO_STATUS, CYREG_SCB1_TX_FIFO_STATUS
+ 1066              	.set I2C_SCB__TX_FIFO_WR, CYREG_SCB1_TX_FIFO_WR
+ 1067              	.set I2C_SCB__UART_CTRL, CYREG_SCB1_UART_CTRL
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 186
 
 
- 1068              	.set I2C_SCB__UART_FLOW_CTRL, CYREG_SCB0_UART_FLOW_CTRL
- 1069              	.set I2C_SCB__UART_RX_CTRL, CYREG_SCB0_UART_RX_CTRL
- 1070              	.set I2C_SCB__UART_RX_STATUS, CYREG_SCB0_UART_RX_STATUS
- 1071              	.set I2C_SCB__UART_TX_CTRL, CYREG_SCB0_UART_TX_CTRL
+ 1068              	.set I2C_SCB__UART_FLOW_CTRL, CYREG_SCB1_UART_FLOW_CTRL
+ 1069              	.set I2C_SCB__UART_RX_CTRL, CYREG_SCB1_UART_RX_CTRL
+ 1070              	.set I2C_SCB__UART_RX_STATUS, CYREG_SCB1_UART_RX_STATUS
+ 1071              	.set I2C_SCB__UART_TX_CTRL, CYREG_SCB1_UART_TX_CTRL
  1072              	.set I2C_SCB_IRQ__INTC_CLR_EN_REG, CYREG_CM0_ICER
  1073              	.set I2C_SCB_IRQ__INTC_CLR_PD_REG, CYREG_CM0_ICPR
- 1074              	.set I2C_SCB_IRQ__INTC_MASK, 0x200
- 1075              	.set I2C_SCB_IRQ__INTC_NUMBER, 9
- 1076              	.set I2C_SCB_IRQ__INTC_PRIOR_MASK, 0xC000
+ 1074              	.set I2C_SCB_IRQ__INTC_MASK, 0x400
+ 1075              	.set I2C_SCB_IRQ__INTC_NUMBER, 10
+ 1076              	.set I2C_SCB_IRQ__INTC_PRIOR_MASK, 0xC00000
  1077              	.set I2C_SCB_IRQ__INTC_PRIOR_NUM, 0
  1078              	.set I2C_SCB_IRQ__INTC_PRIOR_REG, CYREG_CM0_IPR2
  1079              	.set I2C_SCB_IRQ__INTC_SET_EN_REG, CYREG_CM0_ISER
  1080              	.set I2C_SCB_IRQ__INTC_SET_PD_REG, CYREG_CM0_ISPR
- 1081              	.set I2C_SCBCLK__CTRL_REGISTER, CYREG_PERI_PCLK_CTL1
+ 1081              	.set I2C_SCBCLK__CTRL_REGISTER, CYREG_PERI_PCLK_CTL2
  1082              	.set I2C_SCBCLK__DIV_ID, 0x00000040
  1083              	.set I2C_SCBCLK__DIV_REGISTER, CYREG_PERI_DIV_16_CTL0
  1084              	.set I2C_SCBCLK__PA_DIV_ID, 0x000000FF
@@ -11126,8 +11126,8 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1090              	.set I2C_scl__0__HSIOM_GPIO, 0
  1091              	.set I2C_scl__0__HSIOM_I2C, 14
  1092              	.set I2C_scl__0__HSIOM_I2C_SCL, 14
- 1093              	.set I2C_scl__0__HSIOM_MASK, 0x00F00000
- 1094              	.set I2C_scl__0__HSIOM_SHIFT, 20
+ 1093              	.set I2C_scl__0__HSIOM_MASK, 0x000000F0
+ 1094              	.set I2C_scl__0__HSIOM_SHIFT, 4
  1095              	.set I2C_scl__0__HSIOM_SPI, 15
  1096              	.set I2C_scl__0__HSIOM_SPI_MISO, 15
  1097              	.set I2C_scl__0__HSIOM_UART, 9
@@ -11136,7 +11136,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1100              	.set I2C_scl__0__INTR, CYREG_GPIO_PRT0_INTR
  1101              	.set I2C_scl__0__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
  1102              	.set I2C_scl__0__INTSTAT, CYREG_GPIO_PRT0_INTR
- 1103              	.set I2C_scl__0__MASK, 0x20
+ 1103              	.set I2C_scl__0__MASK, 0x02
  1104              	.set I2C_scl__0__PA__CFG0, CYREG_UDB_PA0_CFG0
  1105              	.set I2C_scl__0__PA__CFG1, CYREG_UDB_PA0_CFG1
  1106              	.set I2C_scl__0__PA__CFG10, CYREG_UDB_PA0_CFG10
@@ -11156,7 +11156,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1120              	.set I2C_scl__0__PC2, CYREG_GPIO_PRT0_PC2
  1121              	.set I2C_scl__0__PORT, 0
  1122              	.set I2C_scl__0__PS, CYREG_GPIO_PRT0_PS
- 1123              	.set I2C_scl__0__SHIFT, 5
+ 1123              	.set I2C_scl__0__SHIFT, 1
  1124              	.set I2C_scl__DR, CYREG_GPIO_PRT0_DR
 ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 187
 
@@ -11168,7 +11168,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1129              	.set I2C_scl__INTR, CYREG_GPIO_PRT0_INTR
  1130              	.set I2C_scl__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
  1131              	.set I2C_scl__INTSTAT, CYREG_GPIO_PRT0_INTR
- 1132              	.set I2C_scl__MASK, 0x20
+ 1132              	.set I2C_scl__MASK, 0x02
  1133              	.set I2C_scl__PA__CFG0, CYREG_UDB_PA0_CFG0
  1134              	.set I2C_scl__PA__CFG1, CYREG_UDB_PA0_CFG1
  1135              	.set I2C_scl__PA__CFG10, CYREG_UDB_PA0_CFG10
@@ -11188,7 +11188,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1149              	.set I2C_scl__PC2, CYREG_GPIO_PRT0_PC2
  1150              	.set I2C_scl__PORT, 0
  1151              	.set I2C_scl__PS, CYREG_GPIO_PRT0_PS
- 1152              	.set I2C_scl__SHIFT, 5
+ 1152              	.set I2C_scl__SHIFT, 1
  1153              	.set I2C_sda__0__DR, CYREG_GPIO_PRT0_DR
  1154              	.set I2C_sda__0__DR_CLR, CYREG_GPIO_PRT0_DR_CLR
  1155              	.set I2C_sda__0__DR_INV, CYREG_GPIO_PRT0_DR_INV
@@ -11197,8 +11197,8 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1158              	.set I2C_sda__0__HSIOM_GPIO, 0
  1159              	.set I2C_sda__0__HSIOM_I2C, 14
  1160              	.set I2C_sda__0__HSIOM_I2C_SDA, 14
- 1161              	.set I2C_sda__0__HSIOM_MASK, 0x000F0000
- 1162              	.set I2C_sda__0__HSIOM_SHIFT, 16
+ 1161              	.set I2C_sda__0__HSIOM_MASK, 0x0000000F
+ 1162              	.set I2C_sda__0__HSIOM_SHIFT, 0
  1163              	.set I2C_sda__0__HSIOM_SPI, 15
  1164              	.set I2C_sda__0__HSIOM_SPI_MOSI, 15
  1165              	.set I2C_sda__0__HSIOM_UART, 9
@@ -11207,7 +11207,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1168              	.set I2C_sda__0__INTR, CYREG_GPIO_PRT0_INTR
  1169              	.set I2C_sda__0__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
  1170              	.set I2C_sda__0__INTSTAT, CYREG_GPIO_PRT0_INTR
- 1171              	.set I2C_sda__0__MASK, 0x10
+ 1171              	.set I2C_sda__0__MASK, 0x01
  1172              	.set I2C_sda__0__PA__CFG0, CYREG_UDB_PA0_CFG0
  1173              	.set I2C_sda__0__PA__CFG1, CYREG_UDB_PA0_CFG1
  1174              	.set I2C_sda__0__PA__CFG10, CYREG_UDB_PA0_CFG10
@@ -11230,7 +11230,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1188              	.set I2C_sda__0__PC2, CYREG_GPIO_PRT0_PC2
  1189              	.set I2C_sda__0__PORT, 0
  1190              	.set I2C_sda__0__PS, CYREG_GPIO_PRT0_PS
- 1191              	.set I2C_sda__0__SHIFT, 4
+ 1191              	.set I2C_sda__0__SHIFT, 0
  1192              	.set I2C_sda__DR, CYREG_GPIO_PRT0_DR
  1193              	.set I2C_sda__DR_CLR, CYREG_GPIO_PRT0_DR_CLR
  1194              	.set I2C_sda__DR_INV, CYREG_GPIO_PRT0_DR_INV
@@ -11239,7 +11239,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1197              	.set I2C_sda__INTR, CYREG_GPIO_PRT0_INTR
  1198              	.set I2C_sda__INTR_CFG, CYREG_GPIO_PRT0_INTR_CFG
  1199              	.set I2C_sda__INTSTAT, CYREG_GPIO_PRT0_INTR
- 1200              	.set I2C_sda__MASK, 0x10
+ 1200              	.set I2C_sda__MASK, 0x01
  1201              	.set I2C_sda__PA__CFG0, CYREG_UDB_PA0_CFG0
  1202              	.set I2C_sda__PA__CFG1, CYREG_UDB_PA0_CFG1
  1203              	.set I2C_sda__PA__CFG10, CYREG_UDB_PA0_CFG10
@@ -11259,7 +11259,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1217              	.set I2C_sda__PC2, CYREG_GPIO_PRT0_PC2
  1218              	.set I2C_sda__PORT, 0
  1219              	.set I2C_sda__PS, CYREG_GPIO_PRT0_PS
- 1220              	.set I2C_sda__SHIFT, 4
+ 1220              	.set I2C_sda__SHIFT, 0
  1221              	
  1222              	/* ALERT */
  1223              	.set ALERT__0__DR, CYREG_GPIO_PRT2_DR
@@ -11474,12 +11474,12 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  1420              	.set V_BATTERY__SHIFT, 7
  1421              	
  1422              	/* Miscellaneous */
- 1423              	.set CYDEV_BCLK__HFCLK__HZ, 48000000
- 1424              	.set CYDEV_BCLK__HFCLK__KHZ, 48000
- 1425              	.set CYDEV_BCLK__HFCLK__MHZ, 48
- 1426              	.set CYDEV_BCLK__SYSCLK__HZ, 48000000
- 1427              	.set CYDEV_BCLK__SYSCLK__KHZ, 48000
- 1428              	.set CYDEV_BCLK__SYSCLK__MHZ, 48
+ 1423              	.set CYDEV_BCLK__HFCLK__HZ, 24000000
+ 1424              	.set CYDEV_BCLK__HFCLK__KHZ, 24000
+ 1425              	.set CYDEV_BCLK__HFCLK__MHZ, 24
+ 1426              	.set CYDEV_BCLK__SYSCLK__HZ, 24000000
+ 1427              	.set CYDEV_BCLK__SYSCLK__KHZ, 24000
+ 1428              	.set CYDEV_BCLK__SYSCLK__MHZ, 24
  1429              	.set CYDEV_CHIP_DIE_LEOPARD, 1
  1430              	.set CYDEV_CHIP_DIE_PSOC4A, 18
  1431              	.set CYDEV_CHIP_DIE_PSOC5LP, 2

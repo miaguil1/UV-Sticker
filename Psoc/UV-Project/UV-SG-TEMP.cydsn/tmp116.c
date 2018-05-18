@@ -45,7 +45,7 @@ void tmp116_uart(void)
     //Sends the Value over UART
     for(unsigned int i = 0; i<strlen(tmp116_uart_string); i++)
     {
-        UART_UartPutChar(tmp116_uart_string[i]);           
+//        UART_UartPutChar(tmp116_uart_string[i]);           
     } 
 }
 

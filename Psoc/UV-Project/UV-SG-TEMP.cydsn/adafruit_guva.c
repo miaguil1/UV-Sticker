@@ -41,7 +41,7 @@ void adafruit_guva_uart()
     //Sends the Value over UART
     for(unsigned int i = 0; i<strlen(a_guva_uart_string); i++)
     {
-        UART_UartPutChar(a_guva_uart_string[i]);           
+//        UART_UartPutChar(a_guva_uart_string[i]);           
     } 
 }
 

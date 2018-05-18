@@ -1,0 +1,50 @@
+*************************************************************
+FileName = UV_Watch_Pogo-1.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : UV_Watch_Pogo-1.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : UV_Watch_Pogo-1.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 3
+      File : UV_Watch_Pogo-1.GM3
+
+    Adding Layer      : Mechanical 3
+
+
+Used DCodes :
+    D12
+*************************************************************
+

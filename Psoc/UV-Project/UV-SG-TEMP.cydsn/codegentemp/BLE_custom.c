@@ -37,16 +37,18 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x03u] = {
                 /* Array of Descriptors handles */
                 {
                     0x0013u, /* Handle of the Client Characteristic Configuration descriptor */ 
+                    0x0014u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
 
             /* UV Index characteristic */
             {
-                0x0015u, /* Handle of the UV Index characteristic */ 
+                0x0016u, /* Handle of the UV Index characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0016u, /* Handle of the Client Characteristic Configuration descriptor */ 
+                    0x0017u, /* Handle of the Client Characteristic Configuration descriptor */ 
+                    0x0018u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
         }, 
@@ -54,16 +56,17 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x03u] = {
 
     /* Battery service */
     {
-        0x0017u, /* Handle of the Battery service */ 
+        0x0019u, /* Handle of the Battery service */ 
         {
 
             /* Battery Level characteristic */
             {
-                0x0019u, /* Handle of the Battery Level characteristic */ 
+                0x001Bu, /* Handle of the Battery Level characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x001Au, /* Handle of the Client Characteristic Configuration descriptor */ 
+                    0x001Cu, /* Handle of the Client Characteristic Configuration descriptor */ 
+                    0x001Du, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
             {
@@ -72,6 +75,7 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x03u] = {
                 /* Array of Descriptors handles */
                 {
                     CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                    CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
         }, 
@@ -79,16 +83,17 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x03u] = {
 
     /* Body Temperature service */
     {
-        0x001Bu, /* Handle of the Body Temperature service */ 
+        0x001Eu, /* Handle of the Body Temperature service */ 
         {
 
             /* Temperature characteristic */
             {
-                0x001Du, /* Handle of the Temperature characteristic */ 
+                0x0020u, /* Handle of the Temperature characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x001Eu, /* Handle of the Client Characteristic Configuration descriptor */ 
+                    0x0021u, /* Handle of the Client Characteristic Configuration descriptor */ 
+                    0x0022u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
             {
@@ -96,6 +101,7 @@ const CYBLE_CUSTOMS_T cyBle_customs[0x03u] = {
                 
                 /* Array of Descriptors handles */
                 {
+                    CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                     CYBLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },

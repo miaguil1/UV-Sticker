@@ -24,10 +24,10 @@ const uint32 timer2_toggle = 18;  // bit #18 is the bit for the timer to check. 
 
 void system_init_hardware(void)
 {
-    UART_Start(); //Starting UART internal communication
+//    UART_Start(); //Starting UART internal communication
     I2C_Start(); //Starting the I2C communication for TMP116 
     //SG_AMP_Start(); //Starting internal Op-amp titled SG_AMP
-    UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
+//    UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
     ADC_Start(); //Starting ADC
     CyDelay(10);
     guvb_c31sm_setup();
@@ -76,9 +76,9 @@ void system_deepsleep(void)
 
 void adc_conversion(void)
 {
-    ADC_StartConvert();
-    ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
-    ADC_StopConvert();   
+//    ADC_StartConvert();
+//    ADC_IsEndConversion(ADC_WAIT_FOR_RESULT);
+//    ADC_StopConvert();   
 }
 
 void system_read_i2c(uint32 device_address, uint8 register_address, uint8 *register_value, uint32 register_byte_count)
@@ -135,25 +135,25 @@ void system_write_i2c(uint32 device_address, uint8 *buffer_value, uint32 registe
     I2C_I2CMasterClearWriteBuf();
 }
     
-uint16 adc_acquire_channel(uint32 channel)
-{
-    adc_conversion();
-    uint16 adc_counts = (uint16) ADC_GetResult16(channel);
-    return adc_counts;
-}
+//uint16 adc_acquire_channel(uint32 channel)
+//{
+////    adc_conversion();
+////    uint16 adc_counts = (uint16) ADC_GetResult16(channel);
+////    return adc_counts;
+//}
 
-void adc_sleep(void)
-{
-    if (ADC_SAR_CTRL_REG  & ADC_ENABLE) 
-    { 
-        ADC_Sleep(); 
-    }     
-}
+//void adc_sleep(void)
+//{
+//    if (ADC_SAR_CTRL_REG  & ADC_ENABLE) 
+//    { 
+//        ADC_Sleep(); 
+//    }     
+//}
 
-void adc_wakeup(void)
-{
-    ADC_Wakeup();    
-}
+//void adc_wakeup(void)
+//{
+//    ADC_Wakeup();    
+//}
 
 void i2c_sleep(void)
 {
@@ -167,24 +167,24 @@ void i2c_wakeup(void)
 
 void uart_sleep(void)
 {
-    UART_Sleep(); // Prepares the UART component for Deep Sleep
+//    UART_Sleep(); // Prepares the UART component for Deep Sleep
 }
 
 void uart_wakeup(void)
 {
-    UART_Wakeup(); // Tells the UART component to Wake up
+//    UART_Wakeup(); // Tells the UART component to Wake up
 }
 
 void opamp_sleep(void)
 {
-    SG_AMP_Sleep(); // Prepares the SG Op-Amp component for sleep
-    UV5_AMP_Sleep();    // Preapres the UV5 Op-Amp component for sleep
+//    SG_AMP_Sleep(); // Prepares the SG Op-Amp component for sleep
+//    UV5_AMP_Sleep();    // Preapres the UV5 Op-Amp component for sleep
 }
 
 void opamp_wakeup(void)
 {
-    SG_AMP_Wakeup();    // Tells the SG Op-Amp component to Wake Up
-    UV5_AMP_Wakeup();   // Tells the UV5 Op-Amp component to Wake Up
+//    SG_AMP_Wakeup();    // Tells the SG Op-Amp component to Wake Up
+//    UV5_AMP_Wakeup();   // Tells the UV5 Op-Amp component to Wake Up
     
 }
 
