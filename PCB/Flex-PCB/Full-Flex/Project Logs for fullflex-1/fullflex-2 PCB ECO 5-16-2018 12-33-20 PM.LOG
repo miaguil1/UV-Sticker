@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=GND Pin=C40-1
+Removed Pin From Net: NetName=VCC Pin=C40-2
+Removed Pin From Net: NetName=GND Pin=C41-1
+Removed Pin From Net: NetName=VCC Pin=C41-2
+Removed Pin From Net: NetName=GND Pin=U6-1
+Removed Pin From Net: NetName=SDA Pin=U6-2
+Removed Pin From Net: NetName=SCL Pin=U6-3
+Removed Pin From Net: NetName=VCC Pin=U6-4
+Removed Member From Class: ClassName=fullflex-1 Member=C40
+Removed Member From Class: ClassName=fullflex-1 Member=C41
+Removed Member From Class: ClassName=fullflex-1 Member=U6
+Added Room: Name=fullflex-1
