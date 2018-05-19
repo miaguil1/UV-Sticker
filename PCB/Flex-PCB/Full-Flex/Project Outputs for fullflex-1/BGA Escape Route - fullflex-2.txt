@@ -1,0 +1,48 @@
+BGA Escape Route
+Filename     : C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc
+Date         : 5/18/2018
+Time         : 2:26:44 PM
+Time Elapsed : 00:00:00
+
+U7
+    Differential Pair : Differential Pair XTAL_LF Pad : Pad U7-B8(-0.237mm,-0.211mm) on CuNiAu Pads on Net XTAL_LF_P Pad : Pad U7-B7(-0.637mm,-0.211mm) on CuNiAu Pads on Net XTAL_LF_N
+    Differential Pair : Differential Pair XTAL_HF Pad : Pad U7-H3(-2.237mm,-2.611mm) on CuNiAu Pads on Net XTAL_HF_N Pad : Pad U7-H4(-1.837mm,-2.611mm) on CuNiAu Pads on Net XTAL_HF_P
+    Pad U7-A8(-0.237mm,0.189mm) on CuNiAu Pads on Net VCC
+    Pad U7-A1(-3.037mm,0.189mm) on CuNiAu Pads on Net VREF
+    Pad U7-J1(-3.037mm,-3.011mm) on CuNiAu Pads on Net SDA
+    Pad U7-A7(-0.637mm,0.189mm) on CuNiAu Pads on Net VCCD
+    Pad U7-A2(-2.637mm,0.189mm) on CuNiAu Pads on Net GND
+    Pad U7-B8(-0.237mm,-0.211mm) on CuNiAu Pads on Net XTAL_LF_P
+    Pad U7-B1(-3.037mm,-0.211mm) on CuNiAu Pads on Net ALERT
+    Pad U7-H1(-3.037mm,-2.611mm) on CuNiAu Pads on Net SCL
+    Pad U7-J3(-2.237mm,-3.011mm) on CuNiAu Pads on Net VCC
+    Pad U7-A6(-1.037mm,0.189mm) on CuNiAu Pads on Net GND
+    Pad U7-J6(-1.037mm,-3.011mm) on CuNiAu Pads on Net VCC
+    Pad U7-G8(-0.237mm,-2.211mm) on CuNiAu Pads on Net GND
+    Pad U7-C1(-3.037mm,-0.611mm) on CuNiAu Pads on Net GND
+    Pad U7-G1(-3.037mm,-2.211mm) on CuNiAu Pads on Net SWD_DATA
+    Pad U7-A5(-1.437mm,0.189mm) on CuNiAu Pads on Net GND
+    Pad U7-A4(-1.837mm,0.189mm) on CuNiAu Pads on Net BATTERY_LEVEL
+    Pad U7-B7(-0.637mm,-0.211mm) on CuNiAu Pads on Net XTAL_LF_N
+    Pad U7-B2(-2.637mm,-0.211mm) on CuNiAu Pads on Net GND
+    Pad U7-H7(-0.637mm,-2.611mm) on CuNiAu Pads on Net ANTENNA
+    Pad U7-F8(-0.237mm,-1.811mm) on CuNiAu Pads on Net VCC
+    Pad U7-D1(-3.037mm,-1.011mm) on CuNiAu Pads on Net LED_RED
+    Pad U7-F1(-3.037mm,-1.811mm) on CuNiAu Pads on Net GND
+    Pad U7-E8(-0.237mm,-1.411mm) on CuNiAu Pads on Net GND
+    Pad U7-H6(-1.037mm,-2.611mm) on CuNiAu Pads on Net GND
+    Pad U7-H3(-2.237mm,-2.611mm) on CuNiAu Pads on Net XTAL_HF_N
+    Pad U7-C7(-0.637mm,-0.611mm) on CuNiAu Pads on Net XRES
+    Pad U7-G7(-0.637mm,-2.211mm) on CuNiAu Pads on Net GND
+    Pad U7-G2(-2.637mm,-2.211mm) on CuNiAu Pads on Net VCC
+    Pad U7-H4(-1.837mm,-2.611mm) on CuNiAu Pads on Net XTAL_HF_P
+    Pad U7-H5(-1.437mm,-2.611mm) on CuNiAu Pads on Net GND
+    Pad U7-F7(-0.637mm,-1.811mm) on CuNiAu Pads on Net GND
+    Pad U7-D2(-2.637mm,-1.011mm) on CuNiAu Pads on Net VCC
+    Pad U7-F2(-2.637mm,-1.811mm) on CuNiAu Pads on Net SWD_CLK
+    Pad U7-G6(-1.037mm,-2.211mm) on CuNiAu Pads on Net GND
+    Pad U7-G5(-1.437mm,-2.211mm) on CuNiAu Pads on Net GND
+    Pad U7-G4(-1.837mm,-2.211mm) on CuNiAu Pads on Net GND
+    Pad U7-F6(-1.037mm,-1.811mm) on CuNiAu Pads on Net GND
+    Pad U7-D6(-1.037mm,-1.011mm) on CuNiAu Pads on Net GND
+count : 40
