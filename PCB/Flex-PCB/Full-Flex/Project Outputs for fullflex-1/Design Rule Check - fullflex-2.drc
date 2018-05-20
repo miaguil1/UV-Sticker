@@ -1,0 +1,560 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Intern\Documents\GitHub\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc
+Date     : 5/19/2018
+Time     : 11:18:13 PM
+
+WARNING: Zero hole size multi-layer pad(s) detected
+   Pad Free-1(-4.433mm,4.356mm) on Multi-Layer on Net XTAL_LF_P
+   Pad Free-1(-3.078mm,4.311mm) on Multi-Layer on Net XTAL_LF_P
+   Pad Free-1(-1.976mm,4.311mm) on Multi-Layer on Net XTAL_LF_N
+   Pad Free-1(-1.976mm,4.311mm) on Multi-Layer on Net XTAL_LF_N
+   Pad Free-1(-3.078mm,4.311mm) on Multi-Layer on Net XTAL_LF_P
+   Pad Free-1(-1.976mm,4.311mm) on Multi-Layer on Net XTAL_LF_N
+   Pad Free-1(-2.514mm,2.335mm) on Multi-Layer on Net XTAL_LF_P
+   Pad Free-1(-2.236mm,2.335mm) on Multi-Layer on Net XTAL_LF_N
+   Pad Free-1(4.633mm,-1.52mm) on Multi-Layer on Net XTAL_HF_N
+   Pad Free-1(3.233mm,0.18mm) on Multi-Layer on Net XTAL_HF_P
+
+Processing Rule : Clearance Constraint (Gap=0.127mm) (OnLayer('CuNiAu Pads')),(OnLayer('CuNiAu Pads'))
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net XTAL_LF_P Between Via (-3.007mm,4.318mm) from CuNiAu Pads to metal3 And Via (-3.007mm,4.318mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Track (-3.007mm,2.785mm)(-2.882mm,2.659mm) on metal3 
+   Violation between Un-Routed Net Constraint:  
+   Violation between Un-Routed Net Constraint: Net XTAL_LF_N Between Via (-1.905mm,4.318mm) from metal3 to metal2 And Via (-1.905mm,4.318mm) from metal3 to metal2 
+   Violation between Un-Routed Net Constraint: Track (-2.882mm,1.141mm)(-2.882mm,2.845mm) on metal2 
+   Violation between Un-Routed Net Constraint: Track (3.229mm,0.184mm)(3.268mm,0.145mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net XTAL_HF_N Between Via (4.699mm,-1.524mm) from metal3 to metal2 And Via (4.699mm,-1.524mm) from metal3 to metal2 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (-0.881mm,0.341mm)(-0.881mm,0.341mm) on metal3 And Via (-0.482mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-3.282mm,-0.859mm) from CuNiAu Pads to metal3 And Track (-2.882mm,-0.859mm)(-2.882mm,-0.859mm) on metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-1.281mm,0.741mm) from CuNiAu Pads to metal3 And Track (-0.882mm,0.741mm)(-0.882mm,0.741mm) on metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (-0.882mm,-0.059mm)(-0.882mm,-0.059mm) on metal3 And Pad U7-G5(-0.882mm,0.341mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U7-H5(-0.482mm,0.341mm) on CuNiAu Pads And Via (-0.482mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U7-A5(-3.282mm,0.341mm) on CuNiAu Pads And Pad U7-A6(-3.282mm,0.741mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U7-F7(-1.282mm,1.141mm) on CuNiAu Pads And Via (-0.882mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U7-G7(-0.882mm,1.141mm) on CuNiAu Pads And Pad U7-G8(-0.882mm,1.541mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-2.081mm,0.741mm) from CuNiAu Pads to metal3 And Track (-1.282mm,0.741mm)(-1.281mm,0.741mm) on metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-1.682mm,1.541mm) from CuNiAu Pads to metal3 And Via (-1.282mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-2.882mm,-0.859mm) from CuNiAu Pads to metal3 And Pad U7-C1(-2.482mm,-1.259mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (0.508mm,-6.858mm) from CuNiAu Pads to metal3 And Via (1.397mm,-6.858mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-6.858mm,-5.461mm) from CuNiAu Pads to metal3 And Via (-6.858mm,-4.572mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (6.35mm,-7.493mm) from CuNiAu Pads to metal3 And Via (6.567mm,-6.712mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-7(6.985mm,-6.443mm) on CuNiAu Pads And Pad U4-2(6.985mm,-5.393mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U7-C1(-2.482mm,-1.259mm) on CuNiAu Pads And Pad U7-F1(-1.282mm,-1.259mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-6.08mm,-1.143mm) from CuNiAu Pads to metal3 And Via (-5.842mm,-0.127mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C5-2(-6.858mm,-9.001mm) on CuNiAu Pads And Pad C27-2(-5.842mm,-8.763mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-7.874mm,-8.763mm) from CuNiAu Pads to metal3 And Pad C5-2(-6.858mm,-9.001mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C3-2(-6.08mm,0.889mm) on CuNiAu Pads And Via (-5.842mm,-0.127mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (2.54mm,5.334mm) from CuNiAu Pads to metal3 And Via (2.54mm,6.604mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-6.08mm,-1.143mm) from CuNiAu Pads to metal3 And Via (-5.837mm,-2.245mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-3.048mm,-3.429mm) from CuNiAu Pads to metal3 And Pad GND-1(-1.524mm,-3.556mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (0.127mm,-8.128mm) from CuNiAu Pads to metal3 And Via (0.508mm,-6.858mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-6.858mm,-5.461mm) from CuNiAu Pads to metal3 And Via (-5.588mm,-6.477mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (0.508mm,-6.858mm) from CuNiAu Pads to metal3 And Via (0.889mm,-4.953mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-2(-8.89mm,-7.001mm) on CuNiAu Pads And Via (-7.874mm,-8.763mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C3-2(-6.08mm,0.889mm) on CuNiAu Pads And Pad C1-2(-5.334mm,3.175mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (3.302mm,-1.524mm) from CuNiAu Pads to metal3 And Via (4.699mm,0.127mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C8-2(-4.175mm,5.969mm) on CuNiAu Pads And Via (-0.931mm,5.971mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-2.54mm,-8.763mm) from CuNiAu Pads to metal3 And Via (0.127mm,-8.128mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J9-1(-7.239mm,7.747mm) on CuNiAu Pads And Via (-4.191mm,5.969mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-0.882mm,0.741mm) from CuNiAu Pads to metal3 And Pad U7-G5(-0.882mm,0.341mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U7-F7(-1.282mm,1.141mm) on CuNiAu Pads And Via (-1.281mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-3.282mm,-0.859mm) from CuNiAu Pads to metal3 And Via (-3.282mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C27-2(-5.842mm,-8.763mm) on CuNiAu Pads And Pad U5-B2(-5.588mm,-6.485mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad GND-1(-1.524mm,-3.556mm) on CuNiAu Pads And Pad U7-F1(-1.282mm,-1.259mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C3-2(-6.08mm,0.889mm) on CuNiAu Pads And Via (-3.282mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C27-2(-5.842mm,-8.763mm) on CuNiAu Pads And Via (-2.54mm,-8.763mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-5.334mm,3.175mm) from CuNiAu Pads to metal3 And Via (-4.191mm,5.969mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C9-2(-0.905mm,5.969mm) on CuNiAu Pads And Pad C7-2(2.524mm,6.604mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-1.281mm,-1.259mm) from CuNiAu Pads to metal3 And Pad Y3-2(3.299mm,-1.524mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (1.397mm,-6.858mm) from CuNiAu Pads to metal3 And Via (6.567mm,-6.712mm) from CuNiAu Pads to metal3 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U7-A6(-3.282mm,0.741mm) on CuNiAu Pads And Pad U7-D6(-2.082mm,0.741mm) on CuNiAu Pads 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (-6.858mm,-4.572mm) from CuNiAu Pads to metal3 And Pad C23-2(-5.842mm,-2.286mm) on CuNiAu Pads 
+Rule Violations :52
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.178mm) (Max=2.5mm) (Preferred=0.203mm) (All)
+   Violation between Width Constraint: Via (0.889mm,-4.191mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0.889mm,-4.191mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-0.889mm,-4.191mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-0.889mm,-4.191mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0mm,-4.445mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0mm,-4.445mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.382mm,2.667mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.382mm,2.667mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,0.889mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,0.889mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-0.127mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-0.127mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-1.143mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-1.143mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-2.286mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-2.286mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-3.556mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.08mm,-3.556mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-0.889mm,-4.953mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-0.889mm,-4.953mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (3.429mm,-6.096mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (3.429mm,-6.096mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (2.286mm,-6.096mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (2.286mm,-6.096mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (1.397mm,-6.096mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (1.397mm,-6.096mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0.508mm,-6.096mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0.508mm,-6.096mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (6.985mm,-7.493mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (6.985mm,-7.493mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (3.429mm,-7.874mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (3.429mm,-7.874mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.382mm,2.667mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-1.282mm,1.541mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-1.282mm,1.541mm) from metal3 to metal2 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-3.282mm,1.541mm) from metal3 to metal2 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-3.282mm,1.541mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-5.08mm,0.889mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-0.082mm,0.741mm) from metal3 to metal2 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-0.082mm,0.741mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-5.08mm,-0.127mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-0.081mm,-0.459mm) from metal3 to metal2 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-0.081mm,-0.459mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-2.081mm,-0.859mm) from metal3 to metal2 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-2.081mm,-0.859mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-0.882mm,-0.859mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-0.882mm,-0.859mm) from metal3 to metal2 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-5.08mm,-1.143mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-5.08mm,-2.286mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-5.08mm,-3.556mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-0.889mm,-4.953mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (3.429mm,-6.096mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (2.286mm,-6.096mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (1.397mm,-6.096mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (0.508mm,-6.096mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (6.985mm,-7.493mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (3.429mm,-7.874mm) from metal2 to metal1 Actual Width = 0.175mm
+   Violation between Width Constraint: Via (-4.318mm,-6.985mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-4.318mm,-6.985mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.588mm,-6.985mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.588mm,-6.985mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-6.985mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-6.985mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-4.826mm,-8.001mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-4.826mm,-8.001mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.842mm,-8.001mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.842mm,-8.001mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.858mm,-8.001mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.858mm,-8.001mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-7.874mm,-8.001mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-7.874mm,-8.001mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.89mm,-8.001mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.89mm,-8.001mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.89mm,-10.033mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.89mm,-10.033mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-3.556mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-3.556mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-4.572mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-4.572mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-5.461mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-5.461mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-4.318mm,-5.969mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-4.318mm,-5.969mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-6.477mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.096mm,-6.477mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-1.016mm,-7.747mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-1.016mm,-7.747mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-7.239mm,7.747mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (2.54mm,6.604mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-0.931mm,5.971mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-4.191mm,5.969mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (2.54mm,5.334mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.334mm,3.175mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.206mm,0.877mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (4.699mm,0.127mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.842mm,-0.127mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.08mm,-1.143mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (3.302mm,-1.524mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.837mm,-2.245mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-3.048mm,-3.429mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-1.524mm,-3.556mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.858mm,-4.572mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0.889mm,-4.953mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (6.985mm,-5.334mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.858mm,-5.461mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (7.492mm,-6.23mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (6.532mm,-6.278mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.588mm,-6.477mm) from metal3 to metal2 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.588mm,-6.477mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (7.379mm,-6.683mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (6.567mm,-6.712mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (1.397mm,-6.858mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0.508mm,-6.858mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-8.893mm,-6.887mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (6.35mm,-7.493mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (0.127mm,-8.128mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-2.54mm,-8.763mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-5.842mm,-8.763mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-7.874mm,-8.763mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+   Violation between Width Constraint: Via (-6.858mm,-9.017mm) from CuNiAu Pads to metal3 Actual Width = 0.15mm
+Rule Violations :120
+
+Processing Rule : SMD Neck-Down Constraint (Percent=50%) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=0.54mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-3.282mm,1.541mm) from CuNiAu Pads to metal3 And Via (-3.282mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-3.282mm,0.741mm) from CuNiAu Pads to metal3 And Via (-3.282mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.882mm,1.141mm) from CuNiAu Pads to metal3 And Via (-3.282mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.482mm,1.141mm) from CuNiAu Pads to metal3 And Via (-2.882mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.882mm,1.541mm) from CuNiAu Pads to metal3 And Via (-2.882mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-3.282mm,0.341mm) from CuNiAu Pads to metal3 And Via (-3.282mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.882mm,1.541mm) from CuNiAu Pads to metal3 And Via (-3.282mm,1.541mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-1.682mm,1.541mm) from CuNiAu Pads to metal3 And Via (-1.282mm,1.541mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-1.282mm,1.141mm) from CuNiAu Pads to metal3 And Via (-1.282mm,1.541mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,1.541mm) from CuNiAu Pads to metal3 And Via (-1.282mm,1.541mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-1.281mm,0.741mm) from CuNiAu Pads to metal3 And Via (-1.282mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,1.141mm) from CuNiAu Pads to metal3 And Via (-1.282mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,1.141mm) from CuNiAu Pads to metal3 And Via (-0.882mm,1.541mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-1.281mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-0.882mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-0.882mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,-0.859mm) from CuNiAu Pads to metal3 And Via (-0.882mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-1.282mm,-0.859mm) from CuNiAu Pads to metal3 And Via (-1.281mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,-0.859mm) from CuNiAu Pads to metal3 And Via (-1.282mm,-0.859mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,-0.059mm) from CuNiAu Pads to metal3 And Via (-0.482mm,-0.459mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.081mm,-0.459mm) from CuNiAu Pads to metal3 And Via (-0.482mm,-0.459mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,0.341mm) from CuNiAu Pads to metal3 And Via (-0.482mm,-0.059mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,-0.059mm) from CuNiAu Pads to metal3 And Via (-0.482mm,-0.059mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,0.741mm) from CuNiAu Pads to metal3 And Via (-0.482mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.881mm,0.341mm) from CuNiAu Pads to metal3 And Via (-0.482mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,-0.059mm) from CuNiAu Pads to metal3 And Via (-0.881mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,0.741mm) from CuNiAu Pads to metal3 And Via (-0.881mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.082mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-2.081mm,-0.859mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-3.282mm,-0.859mm) from CuNiAu Pads to metal3 And Via (-2.882mm,-0.859mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.881mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-2.882mm,-0.859mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-3.282mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-3.282mm,-0.859mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.881mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-3.282mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,0.741mm) from CuNiAu Pads to metal3 And Via (-1.281mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,0.741mm) from CuNiAu Pads to metal3 And Via (-0.882mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.882mm,1.141mm) from CuNiAu Pads to metal3 And Via (-0.882mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,1.141mm) from CuNiAu Pads to metal3 And Via (-0.882mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,0.741mm) from CuNiAu Pads to metal3 And Via (-0.482mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,0.741mm) from CuNiAu Pads to metal3 And Via (-0.082mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-0.482mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-0.082mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.082mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-2.482mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Hole To Hole Clearance Constraint: (0.222mm < 0.254mm) Between Via (-2.881mm,-1.259mm) from CuNiAu Pads to metal3 And Via (-2.482mm,-1.259mm) from CuNiAu Pads to metal3 
+Rule Violations :40
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.254mm) Between Pad U5-A2(-6.088mm,-6.485mm) on CuNiAu Pads And Pad U5-B2(-5.588mm,-6.485mm) on CuNiAu Pads [pad expose] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.254mm) Between Pad U5-B1(-5.588mm,-6.985mm) on CuNiAu Pads And Pad U5-B2(-5.588mm,-6.485mm) on CuNiAu Pads [pad expose] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.254mm) Between Pad U5-A1(-6.088mm,-6.985mm) on CuNiAu Pads And Pad U5-B1(-5.588mm,-6.985mm) on CuNiAu Pads [pad expose] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.14mm < 0.254mm) Between Pad U5-A1(-6.088mm,-6.985mm) on CuNiAu Pads And Pad U5-A2(-6.088mm,-6.485mm) on CuNiAu Pads [pad expose] Mask Sliver [0.14mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad Y3-4(4.699mm,0.176mm) on CuNiAu Pads And Pad Y3-1(3.299mm,0.176mm) on CuNiAu Pads [pad expose] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad Y3-3(4.699mm,-1.524mm) on CuNiAu Pads And Pad Y3-2(3.299mm,-1.524mm) on CuNiAu Pads [pad expose] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H7(-0.482mm,1.141mm) on CuNiAu Pads And Pad U7-J7(-0.082mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-J6(-0.082mm,0.741mm) on CuNiAu Pads And Pad U7-J7(-0.082mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H6(-0.482mm,0.741mm) on CuNiAu Pads And Pad U7-J6(-0.082mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H3(-0.482mm,-0.459mm) on CuNiAu Pads And Pad U7-J3(-0.082mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-J2(-0.082mm,-0.859mm) on CuNiAu Pads And Pad U7-J3(-0.082mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H2(-0.482mm,-0.859mm) on CuNiAu Pads And Pad U7-J2(-0.082mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-J1(-0.082mm,-1.259mm) on CuNiAu Pads And Pad U7-J2(-0.082mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H1(-0.482mm,-1.259mm) on CuNiAu Pads And Pad U7-J1(-0.082mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H6(-0.482mm,0.741mm) on CuNiAu Pads And Pad U7-H7(-0.482mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G7(-0.882mm,1.141mm) on CuNiAu Pads And Pad U7-H7(-0.482mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H5(-0.482mm,0.341mm) on CuNiAu Pads And Pad U7-H6(-0.482mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G6(-0.882mm,0.741mm) on CuNiAu Pads And Pad U7-H6(-0.482mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H4(-0.482mm,-0.059mm) on CuNiAu Pads And Pad U7-H5(-0.482mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G5(-0.882mm,0.341mm) on CuNiAu Pads And Pad U7-H5(-0.482mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H3(-0.482mm,-0.459mm) on CuNiAu Pads And Pad U7-H4(-0.482mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G4(-0.882mm,-0.059mm) on CuNiAu Pads And Pad U7-H4(-0.482mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H2(-0.482mm,-0.859mm) on CuNiAu Pads And Pad U7-H3(-0.482mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G3(-0.882mm,-0.459mm) on CuNiAu Pads And Pad U7-H3(-0.482mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-H1(-0.482mm,-1.259mm) on CuNiAu Pads And Pad U7-H2(-0.482mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G2(-0.882mm,-0.859mm) on CuNiAu Pads And Pad U7-H2(-0.482mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G1(-0.882mm,-1.259mm) on CuNiAu Pads And Pad U7-H1(-0.482mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F8(-1.282mm,1.541mm) on CuNiAu Pads And Pad U7-G8(-0.882mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G7(-0.882mm,1.141mm) on CuNiAu Pads And Pad U7-G8(-0.882mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F7(-1.282mm,1.141mm) on CuNiAu Pads And Pad U7-G7(-0.882mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G6(-0.882mm,0.741mm) on CuNiAu Pads And Pad U7-G7(-0.882mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F6(-1.282mm,0.741mm) on CuNiAu Pads And Pad U7-G6(-0.882mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G5(-0.882mm,0.341mm) on CuNiAu Pads And Pad U7-G6(-0.882mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F5(-1.282mm,0.341mm) on CuNiAu Pads And Pad U7-G5(-0.882mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G4(-0.882mm,-0.059mm) on CuNiAu Pads And Pad U7-G5(-0.882mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F4(-1.282mm,-0.059mm) on CuNiAu Pads And Pad U7-G4(-0.882mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G3(-0.882mm,-0.459mm) on CuNiAu Pads And Pad U7-G4(-0.882mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F3(-1.282mm,-0.459mm) on CuNiAu Pads And Pad U7-G3(-0.882mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G2(-0.882mm,-0.859mm) on CuNiAu Pads And Pad U7-G3(-0.882mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F2(-1.282mm,-0.859mm) on CuNiAu Pads And Pad U7-G2(-0.882mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-G1(-0.882mm,-1.259mm) on CuNiAu Pads And Pad U7-G2(-0.882mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F1(-1.282mm,-1.259mm) on CuNiAu Pads And Pad U7-G1(-0.882mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E8(-1.682mm,1.541mm) on CuNiAu Pads And Pad U7-F8(-1.282mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F7(-1.282mm,1.141mm) on CuNiAu Pads And Pad U7-F8(-1.282mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E7(-1.682mm,1.141mm) on CuNiAu Pads And Pad U7-F7(-1.282mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F6(-1.282mm,0.741mm) on CuNiAu Pads And Pad U7-F7(-1.282mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E6(-1.682mm,0.741mm) on CuNiAu Pads And Pad U7-F6(-1.282mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F5(-1.282mm,0.341mm) on CuNiAu Pads And Pad U7-F6(-1.282mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F4(-1.282mm,-0.059mm) on CuNiAu Pads And Pad U7-F5(-1.282mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E5(-1.682mm,0.341mm) on CuNiAu Pads And Pad U7-F5(-1.282mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E4(-1.682mm,-0.059mm) on CuNiAu Pads And Pad U7-F4(-1.282mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F3(-1.282mm,-0.459mm) on CuNiAu Pads And Pad U7-F4(-1.282mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E3(-1.682mm,-0.459mm) on CuNiAu Pads And Pad U7-F3(-1.282mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F2(-1.282mm,-0.859mm) on CuNiAu Pads And Pad U7-F3(-1.282mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E2(-1.682mm,-0.859mm) on CuNiAu Pads And Pad U7-F2(-1.282mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-F1(-1.282mm,-1.259mm) on CuNiAu Pads And Pad U7-F2(-1.282mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E1(-1.682mm,-1.259mm) on CuNiAu Pads And Pad U7-F1(-1.282mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D8(-2.082mm,1.541mm) on CuNiAu Pads And Pad U7-E8(-1.682mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E7(-1.682mm,1.141mm) on CuNiAu Pads And Pad U7-E8(-1.682mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D7(-2.082mm,1.141mm) on CuNiAu Pads And Pad U7-E7(-1.682mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E6(-1.682mm,0.741mm) on CuNiAu Pads And Pad U7-E7(-1.682mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D6(-2.082mm,0.741mm) on CuNiAu Pads And Pad U7-E6(-1.682mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E5(-1.682mm,0.341mm) on CuNiAu Pads And Pad U7-E6(-1.682mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E4(-1.682mm,-0.059mm) on CuNiAu Pads And Pad U7-E5(-1.682mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D5(-2.082mm,0.341mm) on CuNiAu Pads And Pad U7-E5(-1.682mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D4(-2.082mm,-0.059mm) on CuNiAu Pads And Pad U7-E4(-1.682mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E3(-1.682mm,-0.459mm) on CuNiAu Pads And Pad U7-E4(-1.682mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D3(-2.082mm,-0.459mm) on CuNiAu Pads And Pad U7-E3(-1.682mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E2(-1.682mm,-0.859mm) on CuNiAu Pads And Pad U7-E3(-1.682mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D2(-2.082mm,-0.859mm) on CuNiAu Pads And Pad U7-E2(-1.682mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-E1(-1.682mm,-1.259mm) on CuNiAu Pads And Pad U7-E2(-1.682mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D1(-2.082mm,-1.259mm) on CuNiAu Pads And Pad U7-E1(-1.682mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C8(-2.482mm,1.541mm) on CuNiAu Pads And Pad U7-D8(-2.082mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D7(-2.082mm,1.141mm) on CuNiAu Pads And Pad U7-D8(-2.082mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C7(-2.482mm,1.141mm) on CuNiAu Pads And Pad U7-D7(-2.082mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D6(-2.082mm,0.741mm) on CuNiAu Pads And Pad U7-D7(-2.082mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C6(-2.482mm,0.741mm) on CuNiAu Pads And Pad U7-D6(-2.082mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D5(-2.082mm,0.341mm) on CuNiAu Pads And Pad U7-D6(-2.082mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D4(-2.082mm,-0.059mm) on CuNiAu Pads And Pad U7-D5(-2.082mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C5(-2.482mm,0.341mm) on CuNiAu Pads And Pad U7-D5(-2.082mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.24mm < 0.254mm) Between Pad U7-C4(-2.482mm,-0.059mm) on CuNiAu Pads And Pad U7-D4(-2.082mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.24mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D3(-2.082mm,-0.459mm) on CuNiAu Pads And Pad U7-D4(-2.082mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C3(-2.482mm,-0.459mm) on CuNiAu Pads And Pad U7-D3(-2.082mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D2(-2.082mm,-0.859mm) on CuNiAu Pads And Pad U7-D3(-2.082mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C2(-2.482mm,-0.859mm) on CuNiAu Pads And Pad U7-D2(-2.082mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-D1(-2.082mm,-1.259mm) on CuNiAu Pads And Pad U7-D2(-2.082mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C1(-2.482mm,-1.259mm) on CuNiAu Pads And Pad U7-D1(-2.082mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C7(-2.482mm,1.141mm) on CuNiAu Pads And Pad U7-C8(-2.482mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B8(-2.882mm,1.541mm) on CuNiAu Pads And Pad U7-C8(-2.482mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C6(-2.482mm,0.741mm) on CuNiAu Pads And Pad U7-C7(-2.482mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B7(-2.882mm,1.141mm) on CuNiAu Pads And Pad U7-C7(-2.482mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C5(-2.482mm,0.341mm) on CuNiAu Pads And Pad U7-C6(-2.482mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B6(-2.882mm,0.741mm) on CuNiAu Pads And Pad U7-C6(-2.482mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.24mm < 0.254mm) Between Pad U7-C4(-2.482mm,-0.059mm) on CuNiAu Pads And Pad U7-C5(-2.482mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.24mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B5(-2.882mm,0.341mm) on CuNiAu Pads And Pad U7-C5(-2.482mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.24mm < 0.254mm) Between Pad U7-C3(-2.482mm,-0.459mm) on CuNiAu Pads And Pad U7-C4(-2.482mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.24mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.24mm < 0.254mm) Between Pad U7-B4(-2.882mm,-0.059mm) on CuNiAu Pads And Pad U7-C4(-2.482mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.24mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C2(-2.482mm,-0.859mm) on CuNiAu Pads And Pad U7-C3(-2.482mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B3(-2.882mm,-0.459mm) on CuNiAu Pads And Pad U7-C3(-2.482mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-C1(-2.482mm,-1.259mm) on CuNiAu Pads And Pad U7-C2(-2.482mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B2(-2.882mm,-0.859mm) on CuNiAu Pads And Pad U7-C2(-2.482mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B1(-2.882mm,-1.259mm) on CuNiAu Pads And Pad U7-C1(-2.482mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A8(-3.282mm,1.541mm) on CuNiAu Pads And Pad U7-B8(-2.882mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B7(-2.882mm,1.141mm) on CuNiAu Pads And Pad U7-B8(-2.882mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A7(-3.282mm,1.141mm) on CuNiAu Pads And Pad U7-B7(-2.882mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B6(-2.882mm,0.741mm) on CuNiAu Pads And Pad U7-B7(-2.882mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A6(-3.282mm,0.741mm) on CuNiAu Pads And Pad U7-B6(-2.882mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B5(-2.882mm,0.341mm) on CuNiAu Pads And Pad U7-B6(-2.882mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A5(-3.282mm,0.341mm) on CuNiAu Pads And Pad U7-B5(-2.882mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B4(-2.882mm,-0.059mm) on CuNiAu Pads And Pad U7-B5(-2.882mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A4(-3.282mm,-0.059mm) on CuNiAu Pads And Pad U7-B4(-2.882mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B3(-2.882mm,-0.459mm) on CuNiAu Pads And Pad U7-B4(-2.882mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A3(-3.282mm,-0.459mm) on CuNiAu Pads And Pad U7-B3(-2.882mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B2(-2.882mm,-0.859mm) on CuNiAu Pads And Pad U7-B3(-2.882mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A2(-3.282mm,-0.859mm) on CuNiAu Pads And Pad U7-B2(-2.882mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-B1(-2.882mm,-1.259mm) on CuNiAu Pads And Pad U7-B2(-2.882mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A1(-3.282mm,-1.259mm) on CuNiAu Pads And Pad U7-B1(-2.882mm,-1.259mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A7(-3.282mm,1.141mm) on CuNiAu Pads And Pad U7-A8(-3.282mm,1.541mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A6(-3.282mm,0.741mm) on CuNiAu Pads And Pad U7-A7(-3.282mm,1.141mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A5(-3.282mm,0.341mm) on CuNiAu Pads And Pad U7-A6(-3.282mm,0.741mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A4(-3.282mm,-0.059mm) on CuNiAu Pads And Pad U7-A5(-3.282mm,0.341mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A3(-3.282mm,-0.459mm) on CuNiAu Pads And Pad U7-A4(-3.282mm,-0.059mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A2(-3.282mm,-0.859mm) on CuNiAu Pads And Pad U7-A3(-3.282mm,-0.459mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.19mm < 0.254mm) Between Pad U7-A1(-3.282mm,-1.259mm) on CuNiAu Pads And Pad U7-A2(-3.282mm,-0.859mm) on CuNiAu Pads [pad expose] Mask Sliver [0.19mm]
+Rule Violations :124
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (0.127mm < 0.254mm) Between Arc (-6.363mm,-7.235mm) on Top Overlay And Pad U5-A1(-6.088mm,-6.985mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.127mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.19mm < 0.254mm) Between Arc (2.41mm,1.139mm) on Top Overlay And Pad Y3-1(3.299mm,0.176mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.19mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.215mm < 0.254mm) Between Arc (-3.714mm,-1.637mm) on Top Overlay And Pad U7-A1(-3.282mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.215mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.131mm < 0.254mm) Between Track (-3.769mm,4.318mm)(-3.515mm,4.318mm) on Top Overlay And Pad Y4-1(-3.007mm,4.318mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.131mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.131mm < 0.254mm) Between Track (-3.515mm,3.556mm)(-3.515mm,5.08mm) on Top Overlay And Pad Y4-1(-3.007mm,4.318mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.131mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.135mm < 0.254mm) Between Track (-3.515mm,3.556mm)(-1.356mm,3.556mm) on Top Overlay And Pad Y4-1(-3.007mm,4.318mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.135mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.135mm < 0.254mm) Between Track (-3.515mm,5.08mm)(-1.356mm,5.08mm) on Top Overlay And Pad Y4-1(-3.007mm,4.318mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.135mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.172mm < 0.254mm) Between Track (-1.356mm,3.556mm)(-1.356mm,5.08mm) on Top Overlay And Pad Y4-2(-1.905mm,4.318mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.172mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.135mm < 0.254mm) Between Track (-3.515mm,3.556mm)(-1.356mm,3.556mm) on Top Overlay And Pad Y4-2(-1.905mm,4.318mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.135mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.135mm < 0.254mm) Between Track (-3.515mm,5.08mm)(-1.356mm,5.08mm) on Top Overlay And Pad Y4-2(-1.905mm,4.318mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.135mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.07mm < 0.254mm) Between Track (-6.363mm,-6.235mm)(-5.313mm,-6.235mm) on Top Overlay And Pad U5-B2(-5.588mm,-6.485mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.07mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.095mm < 0.254mm) Between Track (-5.313mm,-7.235mm)(-5.313mm,-6.235mm) on Top Overlay And Pad U5-B2(-5.588mm,-6.485mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.095mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.149mm < 0.254mm) Between Text "U5" (-5.731mm,-5.934mm) on Top Overlay And Pad U5-B2(-5.588mm,-6.485mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.149mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.095mm < 0.254mm) Between Track (-5.313mm,-7.235mm)(-5.313mm,-6.235mm) on Top Overlay And Pad U5-B1(-5.588mm,-6.985mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.095mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.07mm < 0.254mm) Between Track (-6.363mm,-7.235mm)(-5.313mm,-7.235mm) on Top Overlay And Pad U5-B1(-5.588mm,-6.985mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.07mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.095mm < 0.254mm) Between Track (-6.363mm,-7.235mm)(-6.363mm,-6.235mm) on Top Overlay And Pad U5-A2(-6.088mm,-6.485mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.095mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.07mm < 0.254mm) Between Track (-6.363mm,-6.235mm)(-5.313mm,-6.235mm) on Top Overlay And Pad U5-A2(-6.088mm,-6.485mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.07mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.095mm < 0.254mm) Between Track (-6.363mm,-7.235mm)(-6.363mm,-6.235mm) on Top Overlay And Pad U5-A1(-6.088mm,-6.985mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.095mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.07mm < 0.254mm) Between Track (-6.363mm,-7.235mm)(-5.313mm,-7.235mm) on Top Overlay And Pad U5-A1(-6.088mm,-6.985mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.07mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Track (8.035mm,-5.643mm)(8.035mm,-5.393mm) on Top Overlay And Pad U4-1(7.635mm,-5.393mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.174mm < 0.254mm) Between Track (5.715mm,-4.792mm)(8.255mm,-4.792mm) on Top Overlay And Pad U4-1(7.635mm,-5.393mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.174mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.174mm < 0.254mm) Between Track (5.715mm,-4.792mm)(8.255mm,-4.792mm) on Top Overlay And Pad U4-2(6.985mm,-5.393mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.174mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Track (5.935mm,-5.643mm)(5.935mm,-5.393mm) on Top Overlay And Pad U4-3(6.335mm,-5.393mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.174mm < 0.254mm) Between Track (5.715mm,-4.792mm)(8.255mm,-4.792mm) on Top Overlay And Pad U4-3(6.335mm,-5.393mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.174mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Track (8.035mm,-7.493mm)(8.035mm,-7.243mm) on Top Overlay And Pad U4-6(7.635mm,-7.493mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.174mm < 0.254mm) Between Track (5.715mm,-8.094mm)(8.255mm,-8.094mm) on Top Overlay And Pad U4-6(7.635mm,-7.493mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.174mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.174mm < 0.254mm) Between Track (5.715mm,-8.094mm)(8.255mm,-8.094mm) on Top Overlay And Pad U4-5(6.985mm,-7.493mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.174mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Track (5.935mm,-7.493mm)(5.935mm,-7.243mm) on Top Overlay And Pad U4-4(6.335mm,-7.493mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.174mm < 0.254mm) Between Track (5.715mm,-8.094mm)(8.255mm,-8.094mm) on Top Overlay And Pad U4-4(6.335mm,-7.493mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.174mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.085mm < 0.254mm) Between Track (2.537mm,-2.364mm)(2.537mm,1.065mm) on Top Overlay And Pad Y3-1(3.299mm,0.176mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.085mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (2.537mm,1.065mm)(5.458mm,1.065mm) on Top Overlay And Pad Y3-1(3.299mm,0.176mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.085mm < 0.254mm) Between Track (2.537mm,-2.364mm)(2.537mm,1.065mm) on Top Overlay And Pad Y3-2(3.299mm,-1.524mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.085mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.113mm < 0.254mm) Between Track (2.537mm,-2.364mm)(5.458mm,-2.364mm) on Top Overlay And Pad Y3-2(3.299mm,-1.524mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.113mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.082mm < 0.254mm) Between Track (5.458mm,1.065mm)(5.458mm,-2.364mm) on Top Overlay And Pad Y3-3(4.699mm,-1.524mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.082mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.113mm < 0.254mm) Between Track (2.537mm,-2.364mm)(5.458mm,-2.364mm) on Top Overlay And Pad Y3-3(4.699mm,-1.524mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.113mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.082mm < 0.254mm) Between Track (5.458mm,1.065mm)(5.458mm,-2.364mm) on Top Overlay And Pad Y3-4(4.699mm,0.176mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.082mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (2.537mm,1.065mm)(5.458mm,1.065mm) on Top Overlay And Pad Y3-4(4.699mm,0.176mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (0.286mm,-1.631mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-J7(-0.082mm,1.141mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (0.286mm,-1.631mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-J6(-0.082mm,0.741mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (0.286mm,-1.631mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-J3(-0.082mm,-0.459mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (0.286mm,-1.631mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-J2(-0.082mm,-0.859mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (0.286mm,-1.631mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-J1(-0.082mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-J1(-0.082mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-H1(-0.482mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.649mm,1.914mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-G8(-0.882mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-G1(-0.882mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.649mm,1.914mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-F8(-1.282mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-F1(-1.282mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.649mm,1.914mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-E8(-1.682mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-E1(-1.682mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.649mm,1.914mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-D8(-2.082mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-D1(-2.082mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.649mm,1.914mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-C8(-2.482mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-C1(-2.482mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.649mm,1.914mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-B8(-2.882mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-B1(-2.882mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A8(-3.282mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.649mm,1.914mm)(0.286mm,1.914mm) on Top Overlay And Pad U7-A8(-3.282mm,1.541mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A7(-3.282mm,1.141mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A6(-3.282mm,0.741mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A5(-3.282mm,0.341mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A4(-3.282mm,-0.059mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A3(-3.282mm,-0.459mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A2(-3.282mm,-0.859mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.162mm < 0.254mm) Between Track (-3.649mm,-1.631mm)(-3.649mm,1.914mm) on Top Overlay And Pad U7-A1(-3.282mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.162mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.167mm < 0.254mm) Between Track (-3.592mm,-1.631mm)(0.286mm,-1.631mm) on Top Overlay And Pad U7-A1(-3.282mm,-1.259mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.167mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.024mm < 0.254mm) Between Text "C28" (-8.335mm,-9.223mm) on Top Overlay And Pad J8-1(-8.89mm,-10.033mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.024mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Text "J8" (-7.937mm,-9.814mm) on Top Overlay And Pad J8-1(-8.89mm,-10.033mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.181mm < 0.254mm) Between Text "J9" (-6.097mm,8.011mm) on Top Overlay And Pad J9-1(-7.239mm,7.747mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.181mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.161mm < 0.254mm) Between Track (10.922mm,7.874mm)(10.922mm,9.906mm) on Top Overlay And Pad E2-2(10.264mm,8.89mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.161mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.139mm < 0.254mm) Between Track (6.223mm,7.874mm)(10.922mm,7.874mm) on Top Overlay And Pad E2-2(10.264mm,8.89mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.139mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.139mm < 0.254mm) Between Track (6.223mm,9.906mm)(10.922mm,9.906mm) on Top Overlay And Pad E2-2(10.264mm,8.89mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.139mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.138mm < 0.254mm) Between Track (6.223mm,7.874mm)(6.223mm,9.906mm) on Top Overlay And Pad E2-1(6.858mm,8.89mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.138mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.139mm < 0.254mm) Between Track (6.223mm,7.874mm)(10.922mm,7.874mm) on Top Overlay And Pad E2-1(6.858mm,8.89mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.139mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.139mm < 0.254mm) Between Track (6.223mm,9.906mm)(10.922mm,9.906mm) on Top Overlay And Pad E2-1(6.858mm,8.89mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.139mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Text "R3" (1.871mm,-4.294mm) on Top Overlay And Pad SCL-1(1.809mm,-3.84mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Text "SWD_DATA" (1.063mm,-2.372mm) on Top Overlay And Pad SDA-1(2.54mm,-3.429mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Text "SWD_CLK" (-0.484mm,-3.138mm) on Top Overlay And Pad SWD_CLK-1(-0.58mm,-2.944mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Text "C35" (0.613mm,-3.306mm) on Top Overlay And Pad SWD_DATA-1(0.635mm,-2.794mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Text "XRES" (-0.22mm,-5.275mm) on Top Overlay And Pad XRES-1(0.024mm,-4.403mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.05mm < 0.254mm) Between Text "SWD_CLK" (-0.484mm,-3.138mm) on Top Overlay And Pad XRES-1(0.024mm,-4.403mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.05mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.224mm < 0.254mm) Between Text "D1" (-1.77mm,-9.017mm) on Top Overlay And Pad D1-K(-1.016mm,-8.805mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.224mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.23mm < 0.254mm) Between Track (2.537mm,-2.364mm)(5.458mm,-2.364mm) on Top Overlay And Pad J14-1(4.699mm,-2.921mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.23mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.178mm < 0.254mm) Between Text "C15" (-3.205mm,-3.915mm) on Top Overlay And Pad C15-2(-3.048mm,-3.429mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.178mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.193mm < 0.254mm) Between Text "C21" (-6.647mm,-0.051mm) on Top Overlay And Pad C21-2(-5.842mm,-0.127mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.193mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.032mm < 0.254mm) Between Text "C23" (-6.526mm,-2.285mm) on Top Overlay And Pad C23-2(-5.842mm,-2.286mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.032mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.099mm < 0.254mm) Between Text "C27" (-6.214mm,-9.164mm) on Top Overlay And Pad C27-2(-5.842mm,-8.763mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.099mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.189mm < 0.254mm) Between Text "C28" (-8.335mm,-9.223mm) on Top Overlay And Pad C28-2(-7.874mm,-8.763mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.189mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.153mm < 0.254mm) Between Text "C34" (-7.611mm,-5.592mm) on Top Overlay And Pad C34-2(-6.858mm,-5.461mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.153mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.142mm < 0.254mm) Between Text "SWD_CLK" (-0.484mm,-3.138mm) on Top Overlay And Pad C35-1(0.889mm,-4.191mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.142mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.085mm < 0.254mm) Between Text "C42" (-7.607mm,-4.54mm) on Top Overlay And Pad C42-2(-6.858mm,-4.572mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.085mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.228mm < 0.254mm) Between Text "C4" (-9.017mm,-6.222mm) on Top Overlay And Pad C4-2(-8.89mm,-7.001mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.228mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.235mm < 0.254mm) Between Text "C8" (-4.62mm,6.502mm) on Top Overlay And Pad C8-2(-4.175mm,5.969mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.235mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Text "L2" (-7.036mm,-3.424mm) on Top Overlay And Pad L2-1(-6.11mm,-3.556mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Text "R5" (-3.466mm,-9.304mm) on Top Overlay And Pad R5-1(-3.302mm,-8.763mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.058mm < 0.254mm) Between Text "R6" (-3.96mm,-7.095mm) on Top Overlay And Pad R6-1(-4.318mm,-6.985mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.058mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.125mm < 0.254mm) Between Text "GND" (-1.33mm,-3.256mm) on Top Overlay And Pad GND-1(-1.524mm,-3.556mm) on CuNiAu Pads [Top Overlay] to [pad expose] clearance [0.125mm]
+Rule Violations :97
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (0.126mm < 0.254mm) Between Text "U5" (-5.731mm,-5.934mm) on Top Overlay And Track (-5.313mm,-7.235mm)(-5.313mm,-6.235mm) on Top Overlay Silk Text to Silk Clearance [0.126mm]
+   Violation between Silk To Silk Clearance Constraint: (0.048mm < 0.254mm) Between Text "U5" (-5.731mm,-5.934mm) on Top Overlay And Track (-6.363mm,-6.235mm)(-5.313mm,-6.235mm) on Top Overlay Silk Text to Silk Clearance [0.048mm]
+   Violation between Silk To Silk Clearance Constraint: (0.055mm < 0.254mm) Between Text "R3" (1.871mm,-4.294mm) on Top Overlay And Text "SCL" (2.331mm,-4.39mm) on Top Overlay Silk Text to Silk Clearance [0.055mm]
+   Violation between Silk To Silk Clearance Constraint: (Collision < 0.254mm) Between Text "C28" (-8.335mm,-9.223mm) on Top Overlay And Text "J8" (-7.937mm,-9.814mm) on Top Overlay Silk Text to Silk Clearance [0mm]
+Rule Violations :4
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Via (2.54mm,5.334mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-4.191mm,5.969mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (3.302mm,-1.524mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (4.699mm,0.127mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (1.397mm,-6.858mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (0.508mm,-6.858mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-7.874mm,-8.763mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-6.858mm,-9.017mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-1.524mm,-3.556mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (6.985mm,-5.334mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (6.35mm,-7.493mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-2.54mm,-8.763mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (0.127mm,-8.128mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-5.842mm,-8.763mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-3.048mm,-3.429mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-5.334mm,3.175mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-6.858mm,-4.572mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-6.858mm,-5.461mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-5.588mm,-6.477mm) from metal3 to metal2 
+   Violation between Net Antennae: Via (0.889mm,-4.953mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-5.842mm,-0.127mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-6.08mm,-1.143mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-6.206mm,0.877mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-3.282mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-1.282mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-0.882mm,1.541mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-1.281mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-0.482mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-0.881mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-2.882mm,-0.859mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-3.282mm,-0.859mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-2.081mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-1.682mm,1.541mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-1.281mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-0.882mm,1.141mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-0.482mm,0.741mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-0.882mm,-0.059mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-3.282mm,0.341mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-2.482mm,-1.259mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-5.837mm,-2.245mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (7.492mm,-6.23mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (7.379mm,-6.683mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (6.532mm,-6.278mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (6.567mm,-6.712mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-8.893mm,-6.887mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-0.931mm,5.971mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (2.54mm,6.604mm) from CuNiAu Pads to metal3 
+   Violation between Net Antennae: Via (-7.239mm,7.747mm) from CuNiAu Pads to metal3 
+Rule Violations :48
+
+Processing Rule : Parallel Segment Constraint (Gap=0.254mm ) (Limit=254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Matched Lengths(Tolerance=2.54mm) (InxSignalClass('xSignals_U7_Y3,Y4_MatchLengthsClass'))
+Rule Violations :0
+
+Processing Rule : Matched Lengths(Tolerance=25.4mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 485
+Waived Violations : 0
+Time Elapsed        : 00:00:02

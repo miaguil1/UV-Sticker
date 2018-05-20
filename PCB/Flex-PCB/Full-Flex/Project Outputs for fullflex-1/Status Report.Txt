@@ -1,0 +1,21 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 10:53:50 PM On 5/19/2018
+
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [fullflex-2.PcbDoc]
+   Generated File[fullflex-2.TX1]
+   Generated File[fullflex-2.DR1]
+   Generated File[fullflex-2.TX2]
+   Generated File[fullflex-2.DR2]
+   Generated File[fullflex-2.TX3]
+   Generated File[fullflex-2.DR3]
+   Generated File[fullflex-2.LDP]
+   Generated File[fullflex-2.DRR]
+
+
+Files Generated   : 8
+Documents Printed : 0
+
+Finished Output Generation At 10:53:51 PM On 5/19/2018

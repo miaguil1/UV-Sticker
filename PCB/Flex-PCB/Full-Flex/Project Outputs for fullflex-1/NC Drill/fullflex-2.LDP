@@ -1,0 +1,4 @@
+Layer Pairs Export File for PCB: C:\Users\Intern\Documents\GitHub\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc
+LayersSetName=CuNiAu Pads_metal3_Blind_Vias|DrillFile=fullflex-2.tx1|DrillLayers=gtl,g1
+LayersSetName=metal3_metal2_Buried_Vias|DrillFile=fullflex-2.tx2|DrillLayers=g1,g2
+LayersSetName=metal2_metal1_Blind_Vias|DrillFile=fullflex-2.tx3|DrillLayers=g2,gbl
