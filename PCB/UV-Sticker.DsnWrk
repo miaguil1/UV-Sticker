@@ -22,3 +22,5 @@ ProjectPath=Flex-PCB\Full-Flex\fullflex-1.PrjPcb
 ProjectPath=UV_Watch_1\UV_Watch_Pogo-1.PrjPcb
 [Project11]
 ProjectPath=Flex-PCB\Rigid-QFN\Rigid-QFN-1.PrjPcb
+[Project12]
+ProjectPath=Flex-PCB\Marcelo-Board\Marcelo-v1.PrjPcb

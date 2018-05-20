@@ -1,0 +1,14 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Marcelo-v1.PcbDoc]
+   Generated File[Marcelo-v1.TXT]
+   Generated File[Marcelo-v1.TX1]
+   Generated File[Marcelo-v1.TX2]
+   Generated File[Marcelo-v1.LDP]
+   Generated File[Marcelo-v1.DRR]
+
+
+Files Generated   : 5
+Documents Printed : 0
+
+Finished Output Generation At 1:48:34 PM On 5/16/2018
