@@ -1,0 +1,323 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body { 
+			font-family : segoe ui;
+		}
+
+		td, th {  
+			padding: 0.5em;
+			text-align : left;
+		}
+		th { 
+			background-color : #EEEEEE;
+		
+		}
+		th.column1, td.column1 { 
+			width : 50%; 
+		}
+
+        th.column2, td.column2 {
+            width : 25%;
+        }
+
+		table { 
+			width : 100%; 
+            font-size: 0.9em;
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 5em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script><title>BGA Escape Route</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD17\Templates\AD_logo.png
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>BGA Escape Route</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">5/18/2018</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2:26:44 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc" class="file"><acronym title="C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc">C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc</acronym></a></td>
+</tr>
+</table><a name="IDJJFGVAW2OSSWEFWWPGADNSES0FNC11RAX2P5MIJA1X1LVGAH04TH"><h2>BGA Component Pads that can't be escape routed</h2></a><a name="IDO5B5R4K5IGVTIIYAWHGMZVYBYCNQXCFMTLWL2NLBR0EME53EB4XF"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">U7</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Differential Pair : <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3684.952mil|Location2.X=4029.82mil|Location1.Y=2837.686mil|Location2.Y=3044.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3684.952mil|Location2.X=4029.82mil|Location1.Y=2837.686mil|Location2.Y=3044.843mil|Absolute=True">Differential Pair XTAL_LF</acronym></a> Pad : <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True">Pad U7-B8(-0.237mm,-0.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3687.378mil|Location2.X=4029.82mil|Location1.Y=2925.157mil|Location2.Y=3000.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3687.378mil|Location2.X=4029.82mil|Location1.Y=2925.157mil|Location2.Y=3000.759mil|Absolute=True">Net XTAL_LF_P</acronym></a> Pad : <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True">Pad U7-B7(-0.637mm,-0.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3684.952mil|Location2.X=4014.072mil|Location1.Y=2837.686mil|Location2.Y=3044.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3684.952mil|Location2.X=4014.072mil|Location1.Y=2837.686mil|Location2.Y=3044.843mil|Absolute=True">Net XTAL_LF_N</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Differential Pair : <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=4214.842mil|Location1.Y=2838.054mil|Location2.Y=3034.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=4214.842mil|Location1.Y=2838.054mil|Location2.Y=3034.798mil|Absolute=True">Differential Pair XTAL_HF</acronym></a> Pad : <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=3951.08mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=3951.08mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True">Pad U7-H3(-2.237mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=4214.842mil|Location1.Y=2838.054mil|Location2.Y=3026.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=4214.842mil|Location1.Y=2838.054mil|Location2.Y=3026.447mil|Absolute=True">Net XTAL_HF_N</acronym></a> Pad : <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=3966.828mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=3966.828mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True">Pad U7-H4(-1.837mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=4114.798mil|Location1.Y=2838.054mil|Location2.Y=3034.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=4114.798mil|Location1.Y=2838.054mil|Location2.Y=3034.798mil|Absolute=True">Net XTAL_HF_P</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.551mil|Location2.X=4029.819mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.551mil|Location2.X=4029.819mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True">Pad U7-A8(-0.237mm,0.189mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True">Net VCC</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True">Pad U7-A1(-3.037mm,0.189mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3759.651mil|Location2.X=3970.846mil|Location1.Y=2790.863mil|Location2.Y=2811.762mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3759.651mil|Location2.X=3970.846mil|Location1.Y=2790.863mil|Location2.Y=2811.762mil|Absolute=True">Net VREF</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2822.307mil|Location2.Y=2830.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2822.307mil|Location2.Y=2830.574mil|Absolute=True">Pad U7-J1(-3.037mm,-3.011mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.238mil|Location2.X=4482.468mil|Location1.Y=2674.121mil|Location2.Y=2961.413mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4048.238mil|Location2.X=4482.468mil|Location1.Y=2674.121mil|Location2.Y=2961.413mil|Absolute=True">Net SDA</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2948.292mil|Location2.Y=2956.559mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2948.292mil|Location2.Y=2956.559mil|Absolute=True">Pad U7-A7(-0.637mm,0.189mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3892.34mil|Location2.X=3914.137mil|Location1.Y=2625.863mil|Location2.Y=2878.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3892.34mil|Location2.X=3914.137mil|Location1.Y=2625.863mil|Location2.Y=2878.574mil|Absolute=True">Net VCCD</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.065mil|Location2.X=3935.332mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.065mil|Location2.X=3935.332mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True">Pad U7-A2(-2.637mm,0.189mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True">Pad U7-B8(-0.237mm,-0.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3687.378mil|Location2.X=4029.82mil|Location1.Y=2925.157mil|Location2.Y=3000.759mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3687.378mil|Location2.X=4029.82mil|Location1.Y=2925.157mil|Location2.Y=3000.759mil|Absolute=True">Net XTAL_LF_P</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2932.542mil|Location2.Y=2940.809mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2932.542mil|Location2.Y=2940.809mil|Absolute=True">Pad U7-B1(-3.037mm,-0.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3970.29mil|Location2.X=4386.236mil|Location1.Y=2811.206mil|Location2.Y=2975.349mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3970.29mil|Location2.X=4386.236mil|Location1.Y=2811.206mil|Location2.Y=2975.349mil|Absolute=True">Net ALERT</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2838.055mil|Location2.Y=2846.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2838.055mil|Location2.Y=2846.323mil|Absolute=True">Pad U7-H1(-3.037mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4037.102mil|Location2.X=4419.134mil|Location1.Y=2878.018mil|Location2.Y=3305.879mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4037.102mil|Location2.X=4419.134mil|Location1.Y=2878.018mil|Location2.Y=3305.879mil|Absolute=True">Net SCL</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=3951.08mil|Location1.Y=2822.305mil|Location2.Y=2830.573mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=3951.08mil|Location1.Y=2822.305mil|Location2.Y=2830.573mil|Absolute=True">Pad U7-J3(-2.237mm,-3.011mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True">Net VCC</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.057mil|Location2.X=3998.324mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.057mil|Location2.X=3998.324mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True">Pad U7-A6(-1.037mm,0.189mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.057mil|Location2.X=3998.324mil|Location1.Y=2822.307mil|Location2.Y=2830.574mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.057mil|Location2.X=3998.324mil|Location1.Y=2822.307mil|Location2.Y=2830.574mil|Absolute=True">Pad U7-J6(-1.037mm,-3.011mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True">Net VCC</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True">Pad U7-G8(-0.237mm,-2.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.315mil|Location2.X=3919.582mil|Location1.Y=2916.794mil|Location2.Y=2925.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.315mil|Location2.X=3919.582mil|Location1.Y=2916.794mil|Location2.Y=2925.062mil|Absolute=True">Pad U7-C1(-3.037mm,-0.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.315mil|Location2.X=3919.582mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.315mil|Location2.X=3919.582mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True">Pad U7-G1(-3.037mm,-2.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4025.968mil|Location2.X=4305.879mil|Location1.Y=2866.882mil|Location2.Y=3235.879mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4025.968mil|Location2.X=4305.879mil|Location1.Y=2866.882mil|Location2.Y=3235.879mil|Absolute=True">Net SWD_DATA</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3974.308mil|Location2.X=3982.576mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3974.308mil|Location2.X=3982.576mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True">Pad U7-A5(-1.437mm,0.189mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.559mil|Location2.X=3966.827mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.559mil|Location2.X=3966.827mil|Location1.Y=2948.29mil|Location2.Y=2956.558mil|Absolute=True">Pad U7-A4(-1.837mm,0.189mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3925.748mil|Location2.X=4066.447mil|Location1.Y=2670.825mil|Location2.Y=2845.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3925.748mil|Location2.X=4066.447mil|Location1.Y=2670.825mil|Location2.Y=2845.168mil|Absolute=True">Net BATTERY_LEVEL</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True">Pad U7-B7(-0.637mm,-0.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3684.952mil|Location2.X=4014.072mil|Location1.Y=2837.686mil|Location2.Y=3044.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3684.952mil|Location2.X=4014.072mil|Location1.Y=2837.686mil|Location2.Y=3044.843mil|Absolute=True">Net XTAL_LF_N</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2932.543mil|Location2.Y=2940.811mil|Absolute=True">Pad U7-B2(-2.637mm,-0.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True">Pad U7-H7(-0.637mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3962.985mil|Location2.X=3999.175mil|Location1.Y=2944.832mil|Location2.Y=3069.175mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3962.985mil|Location2.X=3999.175mil|Location1.Y=2944.832mil|Location2.Y=3069.175mil|Absolute=True">Net ANTENNA</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2869.551mil|Location2.Y=2877.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.553mil|Location2.X=4029.82mil|Location1.Y=2869.551mil|Location2.Y=2877.819mil|Absolute=True">Pad U7-F8(-0.237mm,-1.811mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True">Net VCC</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2901.047mil|Location2.Y=2909.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2901.047mil|Location2.Y=2909.315mil|Absolute=True">Pad U7-D1(-3.037mm,-1.011mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3792.798mil|Location2.X=4004.252mil|Location1.Y=2696.459mil|Location2.Y=2845.168mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3792.798mil|Location2.X=4004.252mil|Location1.Y=2696.459mil|Location2.Y=2845.168mil|Absolute=True">Net LED_RED</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2869.55mil|Location2.Y=2877.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3911.316mil|Location2.X=3919.584mil|Location1.Y=2869.55mil|Location2.Y=2877.817mil|Absolute=True">Pad U7-F1(-3.037mm,-1.811mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.551mil|Location2.X=4029.819mil|Location1.Y=2885.298mil|Location2.Y=2893.566mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4021.551mil|Location2.X=4029.819mil|Location1.Y=2885.298mil|Location2.Y=2893.566mil|Absolute=True">Pad U7-E8(-0.237mm,-1.411mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.055mil|Location2.X=3998.323mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.055mil|Location2.X=3998.323mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True">Pad U7-H6(-1.037mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=3951.08mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=3951.08mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True">Pad U7-H3(-2.237mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=4214.842mil|Location1.Y=2838.054mil|Location2.Y=3026.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3942.812mil|Location2.X=4214.842mil|Location1.Y=2838.054mil|Location2.Y=3026.447mil|Absolute=True">Net XTAL_HF_N</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2916.794mil|Location2.Y=2925.062mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2916.794mil|Location2.Y=2925.062mil|Absolute=True">Pad U7-C7(-0.637mm,-0.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3719.121mil|Location2.X=3926.304mil|Location1.Y=2889.154mil|Location2.Y=3150.879mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3719.121mil|Location2.X=3926.304mil|Location1.Y=2889.154mil|Location2.Y=3150.879mil|Absolute=True">Net XRES</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True">Pad U7-G7(-0.637mm,-2.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True">Pad U7-G2(-2.637mm,-2.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True">Net VCC</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=3966.828mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=3966.828mil|Location1.Y=2838.054mil|Location2.Y=2846.321mil|Absolute=True">Pad U7-H4(-1.837mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=4114.798mil|Location1.Y=2838.054mil|Location2.Y=3034.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=4114.798mil|Location1.Y=2838.054mil|Location2.Y=3034.798mil|Absolute=True">Net XTAL_HF_P</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3974.308mil|Location2.X=3982.576mil|Location1.Y=2838.055mil|Location2.Y=2846.323mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3974.308mil|Location2.X=3982.576mil|Location1.Y=2838.055mil|Location2.Y=2846.323mil|Absolute=True">Pad U7-H5(-1.437mm,-2.611mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2869.551mil|Location2.Y=2877.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4005.804mil|Location2.X=4014.072mil|Location1.Y=2869.551mil|Location2.Y=2877.819mil|Absolute=True">Pad U7-F7(-0.637mm,-1.811mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2901.046mil|Location2.Y=2909.313mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2901.046mil|Location2.Y=2909.313mil|Absolute=True">Pad U7-D2(-2.637mm,-1.011mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3793.553mil|Location2.X=4466.02mil|Location1.Y=2484.121mil|Location2.Y=3121.447mil|Absolute=True">Net VCC</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2869.551mil|Location2.Y=2877.819mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.063mil|Location2.X=3935.331mil|Location1.Y=2869.551mil|Location2.Y=2877.819mil|Absolute=True">Pad U7-F2(-2.637mm,-1.811mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4003.696mil|Location2.X=4370.879mil|Location1.Y=2866.882mil|Location2.Y=3155.879mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4003.696mil|Location2.X=4370.879mil|Location1.Y=2866.882mil|Location2.Y=3155.879mil|Absolute=True">Net SWD_CLK</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.055mil|Location2.X=3998.323mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.055mil|Location2.X=3998.323mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True">Pad U7-G6(-1.037mm,-2.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3974.308mil|Location2.X=3982.576mil|Location1.Y=2853.801mil|Location2.Y=2862.069mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3974.308mil|Location2.X=3982.576mil|Location1.Y=2853.801mil|Location2.Y=2862.069mil|Absolute=True">Pad U7-G5(-1.437mm,-2.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=3966.828mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3958.561mil|Location2.X=3966.828mil|Location1.Y=2853.802mil|Location2.Y=2862.07mil|Absolute=True">Pad U7-G4(-1.837mm,-2.211mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.057mil|Location2.X=3998.324mil|Location1.Y=2869.55mil|Location2.Y=2877.817mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.057mil|Location2.X=3998.324mil|Location1.Y=2869.55mil|Location2.Y=2877.817mil|Absolute=True">Pad U7-F6(-1.037mm,-1.811mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.055mil|Location2.X=3998.323mil|Location1.Y=2901.046mil|Location2.Y=2909.313mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3990.055mil|Location2.X=3998.323mil|Location1.Y=2901.046mil|Location2.Y=2909.313mil|Absolute=True">Pad U7-D6(-1.037mm,-1.011mm) on CuNiAu Pads</acronym></a> on <a href="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\jesss\Documents\code\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3259.121mil|Location2.X=4455.325mil|Location1.Y=2519.978mil|Location2.Y=3181.124mil|Absolute=True">Net GND</acronym></a></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

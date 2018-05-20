@@ -50,18 +50,24 @@ public class GattAttributes
     static
     {
         //Services
-        attributes.put(HEART_RATE, "Heart Rate Service"); //Example Service
-        attributes.put(UV_MEASUREMENT, "UV Measurement Service");   //UV Measurement Service
-        attributes.put(BATTERY_LEVEL, "Battery Level Service");     //Battery Measurement Service
-        attributes.put(BODY_TEMPERATURE, "Body Temperature Service");       //Body Temperature Service
+        attributes.put(SERVICE_UV_MEASUREMENT, "UV Measurement Service");   //UV Measurement Service
+        attributes.put(SERVICE_BATTERY, "Battery Level Service");     //Battery Measurement Service
+        attributes.put(SERVICE_BODY_TEMPERATURE, "Body Temperature Service");       //Body Temperature Service
         //Characteristics
-        attributes.put("00002a29-0000-1000-8000-00805f9b34fb", "Manufacturer Name String"); //Example Characteristic
         attributes.put(POWER_DENSITY, "Power Density Measurement");         //UV Power Density Measurement for UV Measurement Service
         attributes.put(UV_INDEX, "UV Index Measurement");                   //UV Index Measurement for UV Measurement Service
-        attributes.put(BATTERY_PERCENT, "Battery Level Measurement");       //Battery Level Measurement for Battery Level Service
+        attributes.put(BATTERY_LEVEL, "Battery Level Measurement");       //Battery Level Measurement for Battery Level Service
         attributes.put(TEMPERATURE, "Body Temperature Measurement");        //Body Temperature Measurement for Body Temperature Service
-        //User Descriptions
-
+        //Client Characteristic Configuration
+        attributes.put(POWER_DENSITY_CCC, "Power Density Client Configuration");         //UV Power Density Client Configuration for UV Measurement Service
+        attributes.put(UV_INDEX_CCC, "UV Index Client Configuration");                   //UV Index Client Configuration for UV Measurement Service
+        attributes.put(BATTERY_LEVEL_CCC, "Battery Level Client Configuration");       //Battery Level Client Configuration for Battery Level Service
+        attributes.put(TEMPERATURE_CCC, "Body Temperature Client Configuration");        //Body Temperature Client Configuration for Body Temperature Service
+        //Client User Description
+        attributes.put(POWER_DENSITY_CUD, "Power Density Client User Description");         //UV Power Density Client User Description for UV Measurement Service
+        attributes.put(UV_INDEX_CUD, "UV Index Client User Description");                   //UV Index Client User Description for UV Measurement Service
+        attributes.put(BATTERY_LEVEL_CUD, "Battery Level Client User Description");       //Battery Level Client User Description for Battery Level Service
+        attributes.put(TEMPERATURE_CUD, "Body Temperature Client User Description");        //Body Temperature Client User Description for Body Temperature Service
     }
 
     public static String lookup(String uuid, String defaultName)
