@@ -147,7 +147,7 @@ public class BluetoothLeService extends Service
                 mTemperatureCharacteristic = mTempService.getCharacteristic(UUID_TEMPERATURE);              //Body Temperature Characteristics
                 mBatteryCharacteristic = mBatteryService.getCharacteristic(UUID_BATTERY_LEVEL);             //Battery Level Characteristics
 
-                // Linking UUID to Descriptors
+                // Linking UUID to Custom Client Configuration Descriptors
                 mUVCccd = mUVCharacteristic.getDescriptor(UUID_POWER_DENSITY_CCC);                          //UV Power Density Descriptor
                 mTemperatureCccd = mTemperatureCharacteristic.getDescriptor(UUID_TEMPERATURE_CCC);          //Body Temperature Descriptor
                 mBatteryCccd = mBatteryCharacteristic.getDescriptor(UUID_BATTERY_LEVEL_CCC);                //Battery Level Descriptor
@@ -215,7 +215,7 @@ public class BluetoothLeService extends Service
         final Intent intent = new Intent(action);
         sendBroadcast(intent);
     }
-    
+
     public class LocalBinder extends Binder
     {
         BluetoothLeService getService()
@@ -365,51 +365,28 @@ public class BluetoothLeService extends Service
         mBluetoothGatt.readCharacteristic(characteristic);
     }
 
-//    /**
-//     * Enables or disables notification on a give characteristic.
-//     *
-//     * @param characteristic Characteristic to act on.
-//     * @param enabled If true, enable notification.  False otherwise.
-//     */
-//    public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic, boolean enabled)
-//    {
-//        if (mBluetoothAdapter == null || mBluetoothGatt == null)
-//        {
-//            Log.d(TAG, "UV: BluetoothAdapter not initialized");
-//            return;
-//        }
-//        mBluetoothGatt.setCharacteristicNotification(characteristic, enabled);
-//
-//        // This is specific to UV POWER DENSITY
-//        if (UUID_POWER_DENSITY.equals(characteristic.getUuid()))
-//        {
-//            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(UUID.fromString(GattAttributes.POWER_DENSITY));
-//            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
-//            mBluetoothGatt.writeDescriptor(descriptor);
-//        }
-//    }
-
     public void writeCharacteristicNotification(boolean uv_Notification, boolean temp_Notification, boolean battery_Notification)
     {
+        Log.d(TAG, "UV: writeCharacteristicNotification");
         if (mBluetoothAdapter == null || mBluetoothGatt == null)
         {
             Log.d(TAG, "UV: BluetoothAdapter not initialized");
             return;
         }
 
-        mBluetoothGatt.setCharacteristicNotification(mUVCharacteristic, uv_Notification);   //Enabling or Disabling UV Characteristic Notification
-        byte[] uv_byteVal = new byte[1];
-        if(uv_Notification)
-        {
-            uv_byteVal[0] = 1;
-        }
-        else
-        {
-            uv_byteVal[0] = 0;
-        }
-        Log.d(TAG, "UV: UV Notification:"+uv_Notification);
-        mUVCccd.setValue(uv_byteVal);
-        mBluetoothGatt.writeDescriptor(mUVCccd);
+//        mBluetoothGatt.setCharacteristicNotification(mUVCharacteristic, uv_Notification);   //Enabling or Disabling UV Characteristic Notification
+//        byte[] uv_byteVal = new byte[1];
+//        if(uv_Notification)
+//        {
+//            uv_byteVal[0] = 1;
+//        }
+//        else
+//        {
+//            uv_byteVal[0] = 0;
+//        }
+//        Log.d(TAG, "UV: UV Notification: "+uv_Notification);
+//        mUVCccd.setValue(uv_byteVal);
+//        mBluetoothGatt.writeDescriptor(mUVCccd);
 
         mBluetoothGatt.setCharacteristicNotification(mTemperatureCharacteristic, temp_Notification);   //Enabling or Disabling Temperature Characteristic Notification
         byte[] temp_byteVal = new byte[1];
@@ -421,23 +398,23 @@ public class BluetoothLeService extends Service
         {
             temp_byteVal[0] = 0;
         }
-        Log.d(TAG, "UV: Temperature Notification:"+temp_Notification);
+        Log.d(TAG, "UV: Temperature Notification: "+temp_byteVal);
         mTemperatureCccd.setValue(temp_byteVal);
         mBluetoothGatt.writeDescriptor(mTemperatureCccd);
 
-        mBluetoothGatt.setCharacteristicNotification(mBatteryCharacteristic, battery_Notification);   //Enabling or Disabling Battery Characteristic Notification
-        byte[] battery_byteVal = new byte[1];
-        if(battery_Notification)
-        {
-            battery_byteVal[0] = 1;
-        }
-        else
-        {
-            battery_byteVal[0] = 0;
-        }
-        Log.d(TAG, "UV: Battery Notification:"+battery_Notification);
-        mBatteryCccd.setValue(battery_byteVal);
-        mBluetoothGatt.writeDescriptor(mBatteryCccd);
+//        mBluetoothGatt.setCharacteristicNotification(mBatteryCharacteristic, battery_Notification);   //Enabling or Disabling Battery Characteristic Notification
+//        byte[] battery_byteVal = new byte[1];
+//        if(battery_Notification)
+//        {
+//            battery_byteVal[0] = 1;
+//        }
+//        else
+//        {
+//            battery_byteVal[0] = 0;
+//        }
+//        Log.d(TAG, "UV: Battery Notification:"+battery_Notification);
+//        mBatteryCccd.setValue(battery_byteVal);
+//        mBluetoothGatt.writeDescriptor(mBatteryCccd);
     }
 
     /**

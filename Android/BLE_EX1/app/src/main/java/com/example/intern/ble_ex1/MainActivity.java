@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity
     private boolean uv_streaming = false;
     private boolean battery_streaming = false;
 
+    private CheckBox uv_CheckBox;
+    private CheckBox temp_CheckBox;
+    private CheckBox battery_CheckBox;
+
     private LineGraphSeries<DataPoint> temp_series;
     private LineGraphSeries<DataPoint> battery_series;
     private LineGraphSeries<DataPoint> uv_series;
@@ -90,36 +94,35 @@ public class MainActivity extends AppCompatActivity
         Log.d(TAG, String.format("UV: Connection State %b",connectionString));
 
         //Connect U.I Elements
-        CheckBox temp_CheckBox = (CheckBox) findViewById(R.id.temp_check);  //Temperature Checkbox
-        CheckBox uv_CheckBox = (CheckBox) findViewById(R.id.uv_check);      //UV Checkbox
-        CheckBox battery_CheckBox = (CheckBox) findViewById(R.id.battery_check);  //Respiration Checkbox
+        temp_CheckBox = (CheckBox) findViewById(R.id.temp_check);  //Temperature Checkbox
+        uv_CheckBox = (CheckBox) findViewById(R.id.uv_check);      //UV Checkbox
+        battery_CheckBox = (CheckBox) findViewById(R.id.battery_check);  //Respiration Checkbox
 
         Button start_Button = (Button) findViewById(R.id.startBtn);         //Start button to start graphing and enable notifications of Selected Values
         Button stop_Button = (Button) findViewById(R.id.stopBtn);           //Stop button to stop graphing and disable notifications of Selected Values
         Button save_Button = (Button) findViewById(R.id.saveBtn);           //Save button to save data from enabled graph and Selected Values
+        
+        temperatureValue = (TextView) findViewById(R.id.temp_value);        //Initializing Textview to display BLE Temperature Data
 
         dataGraph = (GraphView) findViewById(R.id.graph);             //Graphview to Display Data
-
-        temperatureValue = (TextView) findViewById(R.id.temp_value);        //Initializing Textview to display BLE Temperature Data
         //Initializing Temperature Dataset on Graph
-//        temp_data = (0);
         temp_series = new LineGraphSeries<>(new DataPoint[] {});
         temp_series.setTitle("Temperature");
         temp_series.setColor(Color.RED);
         temp_series.setThickness(8);
         dataGraph.addSeries(temp_series);
 
-        uv_series = new LineGraphSeries<>(new DataPoint[] {});
-        temp_series.setTitle("UV Power Density");
-        temp_series.setColor(Color.BLUE);
-        temp_series.setThickness(8);
-        dataGraph.addSeries(uv_series);
-
-        battery_series = new LineGraphSeries<>(new DataPoint[] {});
-        battery_series.setTitle("Respiration");
-        battery_series.setColor(Color.GREEN);
-        battery_series.setThickness(8);
-        dataGraph.addSeries(battery_series);
+//        uv_series = new LineGraphSeries<>(new DataPoint[] {});
+//        temp_series.setTitle("UV Power Density");
+//        temp_series.setColor(Color.BLUE);
+//        temp_series.setThickness(8);
+//        dataGraph.addSeries(uv_series);
+//
+//        battery_series = new LineGraphSeries<>(new DataPoint[] {});
+//        battery_series.setTitle("Respiration");
+//        battery_series.setColor(Color.GREEN);
+//        battery_series.setThickness(8);
+//        dataGraph.addSeries(battery_series);
 
         buttonClicked(start_Button, stop_Button, save_Button);
         checkClicked(temp_CheckBox, uv_CheckBox, battery_CheckBox);
@@ -211,6 +214,18 @@ public class MainActivity extends AppCompatActivity
                 uv_Notification = false;
                 temp_Notification = false;
                 battery_Notification = false;
+                if(uv_CheckBox.isChecked())
+                {
+                    uv_CheckBox.setChecked(uv_Notification);
+                }
+                if(temp_CheckBox.isChecked())
+                {
+                    temp_CheckBox.setChecked(temp_Notification);
+                }
+                if(battery_CheckBox.isChecked())
+                {
+                    battery_CheckBox.setChecked(battery_Notification);
+                }
                 mBluetoothLeService.writeCharacteristicNotification(uv_Notification, temp_Notification, battery_Notification);
                 //stopGraph(temp_Notification, uv_Notification, resp_Notification);
             }
@@ -367,6 +382,11 @@ public class MainActivity extends AppCompatActivity
                     if(temp_Notification)
                     {
                         temperatureValue.setText(gattTemperatureValue);
+                        recordData(gattTemperatureValue);
+                    }
+                    else
+                    {
+                        temperatureValue.setText("Zoot");
                     }
                     break;
                 default:
@@ -374,6 +394,12 @@ public class MainActivity extends AppCompatActivity
             }
         }
     };
+
+    // Convert String Data to Int Data and Save Data to Graph
+    private void recordData(String gattTemperatureValue)
+    {
+        double tempValue = Double.parseDouble(gattTemperatureValue);
+    }
 
     private void saveData()
     {
