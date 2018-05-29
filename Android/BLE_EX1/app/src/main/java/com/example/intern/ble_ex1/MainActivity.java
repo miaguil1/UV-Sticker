@@ -1,7 +1,6 @@
 package com.example.intern.ble_ex1;
 
 import android.bluetooth.BluetoothGattCharacteristic;
-import android.bluetooth.BluetoothGattService;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,15 +11,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ExpandableListView;
-import android.widget.SimpleExpandableListAdapter;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
@@ -45,25 +41,27 @@ public class MainActivity extends AppCompatActivity
     private BluetoothLeService mBluetoothLeService;
     private BluetoothGattCharacteristic mNotifyCharacteristic;
 
-    private ArrayList<ArrayList<BluetoothGattCharacteristic>> mGattCharacteristics = new ArrayList<ArrayList<BluetoothGattCharacteristic>>();
-
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
 
-    private boolean mConnected = false;
+    private boolean mConnectionState = false;
 
     private boolean temp_Notification = false;
     private boolean uv_Notification = false;
-    private boolean resp_Notification = false;
+    private boolean battery_Notification = false;
 
     private boolean temp_streaming = false;
     private boolean uv_streaming = false;
-    private boolean resp_streaming = false;
+    private boolean battery_streaming = false;
 
     private LineGraphSeries<DataPoint> temp_series;
-    private LineGraphSeries<DataPoint> resp_series;
+    private LineGraphSeries<DataPoint> battery_series;
     private LineGraphSeries<DataPoint> uv_series;
     private GraphView dataGraph;
+
+    private static TextView temperatureValue;
+
+    private DataPoint[] temp_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -73,6 +71,8 @@ public class MainActivity extends AppCompatActivity
 
         mDeviceStatus = "Connected";
 
+        mBluetoothLeService = new BluetoothLeService();     //Initializing Bluetooth Service Object
+
         final Intent startIntent = getIntent();
         mDeviceName = startIntent.getStringExtra(EXTRAS_DEVICE_NAME);    //Get Device Name from Previous Intent
         mDeviceAddress = startIntent.getStringExtra(EXTRAS_DEVICE_ADDRESS);  //Get Device Address from Previous Intent
@@ -81,22 +81,28 @@ public class MainActivity extends AppCompatActivity
         ((TextView) findViewById(R.id.ble_device_address_connected)).setText(mDeviceAddress);   //Sets the Text of the Device Address
         ((TextView) findViewById(R.id.ble_device_status)).setText(mDeviceStatus);   //Sets the Text of the Device Connection Status
 
-
         Intent gattServiceIntent = new Intent(this, BluetoothLeService.class);  //Creates an intent for the Bluetooth Service
         bindService(gattServiceIntent, mServiceConnection, BIND_AUTO_CREATE);   //Binds Service to the Gatt Service
 
-        mBluetoothLeService.connect(mDeviceAddress);    //Connect to BLE Device on Creation
+        Log.d(TAG, String.format("UV: %s",mDeviceAddress));
+        Log.d(TAG, String.format("UV: %s",mDeviceName));
+        Boolean connectionString = mBluetoothLeService.connect(mDeviceAddress);    //Connect to BLE Device on Creation
+        Log.d(TAG, String.format("UV: Connection State %b",connectionString));
 
         //Connect U.I Elements
         CheckBox temp_CheckBox = (CheckBox) findViewById(R.id.temp_check);  //Temperature Checkbox
         CheckBox uv_CheckBox = (CheckBox) findViewById(R.id.uv_check);      //UV Checkbox
-        CheckBox resp_CheckBox = (CheckBox) findViewById(R.id.resp_check);  //Respiration Checkbox
-        dataGraph = (GraphView) findViewById(R.id.graph);             //Graphview to Display Data
+        CheckBox battery_CheckBox = (CheckBox) findViewById(R.id.battery_check);  //Respiration Checkbox
+
         Button start_Button = (Button) findViewById(R.id.startBtn);         //Start button to start graphing and enable notifications of Selected Values
         Button stop_Button = (Button) findViewById(R.id.stopBtn);           //Stop button to stop graphing and disable notifications of Selected Values
         Button save_Button = (Button) findViewById(R.id.saveBtn);           //Save button to save data from enabled graph and Selected Values
 
+        dataGraph = (GraphView) findViewById(R.id.graph);             //Graphview to Display Data
+
+        temperatureValue = (TextView) findViewById(R.id.temp_value);        //Initializing Textview to display BLE Temperature Data
         //Initializing Temperature Dataset on Graph
+//        temp_data = (0);
         temp_series = new LineGraphSeries<>(new DataPoint[] {});
         temp_series.setTitle("Temperature");
         temp_series.setColor(Color.RED);
@@ -109,14 +115,14 @@ public class MainActivity extends AppCompatActivity
         temp_series.setThickness(8);
         dataGraph.addSeries(uv_series);
 
-        resp_series = new LineGraphSeries<>(new DataPoint[] {});
-        temp_series.setTitle("Respiration");
-        temp_series.setColor(Color.GREEN);
-        temp_series.setThickness(8);
-        dataGraph.addSeries(resp_series);
+        battery_series = new LineGraphSeries<>(new DataPoint[] {});
+        battery_series.setTitle("Respiration");
+        battery_series.setColor(Color.GREEN);
+        battery_series.setThickness(8);
+        dataGraph.addSeries(battery_series);
 
         buttonClicked(start_Button, stop_Button, save_Button);
-        checkClicked(temp_CheckBox, uv_CheckBox, resp_CheckBox);
+        checkClicked(temp_CheckBox, uv_CheckBox, battery_CheckBox);
     }
 
     @Override
@@ -145,15 +151,17 @@ public class MainActivity extends AppCompatActivity
     {
         Log.d(TAG, "UV: onDestroy");
         super.onDestroy();
+        mBluetoothLeService.close();
         unbindService(mServiceConnection);
         mBluetoothLeService = null;
+//        mServiceConnection = false;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        if (mConnected)
+        if (mConnectionState)
         {
             menu.findItem(R.id.menu_connect).setVisible(false);
             menu.findItem(R.id.menu_disconnect).setVisible(true);
@@ -191,7 +199,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                enableNotifications();
+                mBluetoothLeService.writeCharacteristicNotification(uv_Notification, temp_Notification, battery_Notification);
 //                startGraph(temp_Notification, uv_Notification, resp_Notification);
             }
         });
@@ -200,7 +208,10 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                disableNotifications();
+                uv_Notification = false;
+                temp_Notification = false;
+                battery_Notification = false;
+                mBluetoothLeService.writeCharacteristicNotification(uv_Notification, temp_Notification, battery_Notification);
                 //stopGraph(temp_Notification, uv_Notification, resp_Notification);
             }
         });
@@ -209,19 +220,22 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+                uv_Notification = false;
+                temp_Notification = false;
+                battery_Notification = false;
+                mBluetoothLeService.writeCharacteristicNotification(uv_Notification, temp_Notification, battery_Notification);
                 //saveGraph(temp_Notification, uv_Notification, resp_Notification);
             }
         });
     }
 
-    private void checkClicked(CheckBox temp_CheckBox, CheckBox uv_CheckBox, CheckBox resp_CheckBox)
+    private void checkClicked(CheckBox temp_CheckBox, CheckBox uv_CheckBox, CheckBox battery_CheckBox)
     {
         temp_CheckBox.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                //temp_toggle = true;
                 if(((CheckBox)view).isChecked())
                 {
                     temp_Notification = true;
@@ -238,7 +252,6 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                //temp_toggle = true;
                 if(((CheckBox)view).isChecked())
                 {
                     uv_Notification = true;
@@ -250,19 +263,18 @@ public class MainActivity extends AppCompatActivity
             }
 
         });
-        resp_CheckBox.setOnClickListener(new View.OnClickListener()
+        battery_CheckBox.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
-                //temp_toggle = true;
                 if(((CheckBox)view).isChecked())
                 {
-                    uv_Notification = true;
+                    battery_Notification = true;
                 }
                 else
                 {
-                    uv_Notification = false;
+                    battery_Notification = false;
                 }
             }
 
@@ -327,64 +339,45 @@ public class MainActivity extends AppCompatActivity
         public void onReceive(Context context, Intent intent)
         {
             final String action = intent.getAction();
-            if (BluetoothLeService.ACTION_GATT_CONNECTED.equals(action))
+            switch(action)
             {
-                mConnected = true;
-                updateConnectionState(R.string.connected);
-                invalidateOptionsMenu();
-            }
-            else if (BluetoothLeService.ACTION_GATT_DISCONNECTED.equals(action))
-            {
-                mConnected = false;
-                updateConnectionState(R.string.disconnected);
-                invalidateOptionsMenu();
-            }
-            else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED.equals(action))
-            {
-                // Show all the supported services and characteristics on the user interface.
+                case BluetoothLeService.ACTION_GATT_CONNECTED:
+                    mConnectionState = true;
+                    updateConnectionState(R.string.connected);
+                    invalidateOptionsMenu();
+                    Log.d(TAG, "UV: BLE GATT Connected");
+                    break;
+
+                case BluetoothLeService.ACTION_GATT_DISCONNECTED:
+                    mConnectionState = false;
+                    updateConnectionState(R.string.disconnected);
+                    invalidateOptionsMenu();
+                    Log.d(TAG, "UV: BLE GATT Disconnected");
+                    break;
+
+                case BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED:
+                    // Show all the supported services and characteristics on the user interface.
 //                displayGattServices(mBluetoothLeService.getSupportedGattServices());
-            }
-            else if (BluetoothLeService.ACTION_DATA_AVAILABLE.equals(action))
-            {
-//                displayData(intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
+                    Log.d(TAG, "UV: BLE GATT Services Discovered");
+                    break;
+                case BluetoothLeService.ACTION_DATA_AVAILABLE:
+                    Log.d(TAG, "UV: BLE GATT Action Data Available");
+//                    displayData(intent.getStringExtra(BluetoothLeService.EXTRA_DATA));
+                    String gattTemperatureValue = mBluetoothLeService.getmTemperatureValue();
+                    if(temp_Notification)
+                    {
+                        temperatureValue.setText(gattTemperatureValue);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
     };
 
-    private void enableNotifications()
+    private void saveData()
     {
-        if(uv_Notification)
-        {
-            mBluetoothLeService.setCharacteristicNotification(, true);
-            uv_streaming = true;
-        }
-        if(resp_Notification)
-        {
-            mBluetoothLeService.setCharacteristicNotification(, true);
-            resp_streaming = true;
-        }
-        if(temp_Notification)
-        {
-            mBluetoothLeService.setCharacteristicNotification(,true);
-            temp_streaming = true;
-        }
-    }
-    private void disableNotifications()
-    {
-        if(uv_streaming)
-        {
-            mBluetoothLeService.setCharacteristicNotification(, true);
-            uv_streaming = false;
-        }
-        if(resp_streaming)
-        {
-            mBluetoothLeService.setCharacteristicNotification(, true);
-            resp_streaming = false;
-        }
-        if(temp_streaming)
-        {
-            mBluetoothLeService.setCharacteristicNotification(,true);
-            temp_streaming = false;
-        }
+
+
     }
 }

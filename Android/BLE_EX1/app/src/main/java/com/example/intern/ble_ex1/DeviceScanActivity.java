@@ -44,7 +44,7 @@ import java.util.ArrayList;
  */
 public class DeviceScanActivity extends ListActivity
 {
-    private final static String TAG = DeviceControlActivity.class.getSimpleName();
+    private final static String TAG = DeviceScanActivity.class.getSimpleName();
 
     private LeDeviceListAdapter mLeDeviceListAdapter;
     private BluetoothAdapter mBluetoothAdapter;
@@ -136,8 +136,8 @@ public class DeviceScanActivity extends ListActivity
         {
             return;
         }
-        connectIntent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, selectedDevice.getName());
-        connectIntent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, selectedDevice.getAddress());
+        connectIntent.putExtra(MainActivity.EXTRAS_DEVICE_NAME, selectedDevice.getName());
+        connectIntent.putExtra(MainActivity.EXTRAS_DEVICE_ADDRESS, selectedDevice.getAddress());
         if(mScanning)
         {
             mBluetoothAdapter.stopLeScan(mLeScanCallback);

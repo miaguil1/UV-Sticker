@@ -5,6 +5,7 @@
     <string name="temp_name">Temperature</string>
     <string name="uv_name">UV Power Density</string>
     <string name="resp_name">Respiration</string>
+    <string name="battery_name">Battery</string>
     <string name="start_scan">Start Scan</string>
     <string name="stop_scan">Stop Scan</string>
     <string name="save_name">Save</string>

@@ -109,9 +109,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="@string/resp_name"
+                    android:text="@string/battery_name"
                     android:textColor="@color/GREEN"
-                    android:id="@+id/resp_check"
+                    android:id="@+id/battery_check"
                     android:layout_gravity="start"/>
             </LinearLayout>
 
@@ -144,5 +144,13 @@
                     android:layout_gravity="center_horizontal" />
             </LinearLayout>
         </LinearLayout>
+        <TextView
+            android:id="@+id/temp_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/BLACK"
+            android:textSize="20sp"
+            android:text="Value"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
