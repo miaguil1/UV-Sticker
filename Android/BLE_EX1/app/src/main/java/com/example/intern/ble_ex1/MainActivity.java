@@ -67,6 +67,9 @@ public class MainActivity extends AppCompatActivity
 
     private DataPoint[] temp_data;
 
+    private double counter;
+    private int maxDataSet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -74,6 +77,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.content_main);
 
         mDeviceStatus = "Connected";
+        counter = 0;
+        maxDataSet = 10000;
 
         mBluetoothLeService = new BluetoothLeService();     //Initializing Bluetooth Service Object
 
@@ -101,17 +106,30 @@ public class MainActivity extends AppCompatActivity
         Button start_Button = (Button) findViewById(R.id.startBtn);         //Start button to start graphing and enable notifications of Selected Values
         Button stop_Button = (Button) findViewById(R.id.stopBtn);           //Stop button to stop graphing and disable notifications of Selected Values
         Button save_Button = (Button) findViewById(R.id.saveBtn);           //Save button to save data from enabled graph and Selected Values
-        
+
         temperatureValue = (TextView) findViewById(R.id.temp_value);        //Initializing Textview to display BLE Temperature Data
+
+        temp_data = new DataPoint[1];
+        temp_data[0] = new DataPoint(0,0);
 
         dataGraph = (GraphView) findViewById(R.id.graph);             //Graphview to Display Data
         //Initializing Temperature Dataset on Graph
-        temp_series = new LineGraphSeries<>(new DataPoint[] {});
+        temp_series = new LineGraphSeries<>(temp_data);
         temp_series.setTitle("Temperature");
         temp_series.setColor(Color.RED);
         temp_series.setThickness(8);
+        temp_series.setDrawDataPoints(true);        //Setting Data Points to be visible on graph
+        temp_series.setDataPointsRadius(5);         //Setting the radius of the Data Point
         dataGraph.addSeries(temp_series);
+        dataGraph.getViewport().setYAxisBoundsManual(true);
+        dataGraph.getViewport().setMinY(20);
+        dataGraph.getViewport().setMaxY(32);
 
+        dataGraph.getViewport().setXAxisBoundsManual(true);
+        dataGraph.getViewport().setMinX(0);
+        dataGraph.getViewport().setMaxX(10);
+
+        dataGraph.getViewport().setScrollable(true);    //Enable Horizontal Scrolling
 //        uv_series = new LineGraphSeries<>(new DataPoint[] {});
 //        temp_series.setTitle("UV Power Density");
 //        temp_series.setColor(Color.BLUE);
@@ -399,6 +417,10 @@ public class MainActivity extends AppCompatActivity
     private void recordData(String gattTemperatureValue)
     {
         double tempValue = Double.parseDouble(gattTemperatureValue);
+        counter = counter + 8;
+        DataPoint values = new DataPoint(counter, tempValue);
+        temp_series.appendData(values, true, maxDataSet);
+        dataGraph.animate();
     }
 
     private void saveData()
