@@ -1,0 +1,6 @@
+DRC Rules Export File for PCB: C:\Users\Intern\Documents\GitHub\UV-Sticker\PCB\Flex-PCB\Full-Flex\fullflex-2.PcbDoc
+RuleKind=Clearance|RuleName=CuNiAu Pads|Scope=Board|Minimum=5.00
+RuleKind=MinimumAnnularRing|RuleName=MinimumAnnularRing|Scope=Board|Minimum=0.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=-1.97
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=7.00
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
