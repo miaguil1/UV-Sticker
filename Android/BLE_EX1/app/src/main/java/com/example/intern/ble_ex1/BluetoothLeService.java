@@ -47,6 +47,48 @@ public class BluetoothLeService extends Service
     private BluetoothAdapter mBluetoothAdapter;
     private String mBluetoothDeviceAddress;
     private BluetoothGatt mBluetoothGatt;
+
+    // Bluetooth Services that need to be read/write from
+    private static BluetoothGattService mUVService;         //UV Service
+    private static BluetoothGattService mTempService;       //Temperature Service
+    private static BluetoothGattService mBatteryService;    //Battery Service
+
+    // Bluetooth characteristics that we need to read/write
+    private static BluetoothGattCharacteristic mUVCharacteristic;   //UV Characteristic
+    private static BluetoothGattCharacteristic mBatteryCharacteristic;  //Battery Characteristic
+    private static BluetoothGattCharacteristic mTemperatureCharacteristic;  //Temperature Characteristic
+
+    // Bluetooth Custom Client Characteristic Configuration Descriptors
+    private static BluetoothGattDescriptor mUVCccd; //UV Custom Client Characteristic Configuration Descriptor
+    private static BluetoothGattDescriptor mBatteryCccd; //Battery Custom Client Characteristic Configuration Descriptor
+    private static BluetoothGattDescriptor mTemperatureCccd; //Temperature Custom Client Characteristic Configuration Descriptor
+
+    public final static UUID UUID_SERVICE_BODY_TEMPERATURE = UUID.fromString(GattAttributes.SERVICE_BODY_TEMPERATURE);
+    public final static UUID UUID_TEMPERATURE = UUID.fromString(GattAttributes.TEMPERATURE);
+    public final static UUID UUID_TEMPERATURE_CCC = UUID.fromString(GattAttributes.TEMPERATURE_CCC);
+    public final static UUID UUID_TEMPERATURE_CUD = UUID.fromString(GattAttributes.TEMPERATURE_CUD);
+
+    public final static UUID UUID_SERVICE_UV_MEASUREMENT = UUID.fromString(GattAttributes.SERVICE_UV_MEASUREMENT);
+
+    public final static UUID UUID_POWER_DENSITY = UUID.fromString(GattAttributes.POWER_DENSITY);
+    public final static UUID UUID_POWER_DENSITY_CCC = UUID.fromString(GattAttributes.POWER_DENSITY_CCC);
+    public final static UUID UUID_POWER_DENSITY_CUD = UUID.fromString(GattAttributes.POWER_DENSITY_CUD);
+
+    public final static UUID UUID_UV_INDEX = UUID.fromString(GattAttributes.UV_INDEX);
+    public final static UUID UUID_UV_INDEX_CCC = UUID.fromString(GattAttributes.UV_INDEX_CCC);
+    public final static UUID UUID_UV_INDEX_CUD = UUID.fromString(GattAttributes.UV_INDEX_CUD);
+
+    public final static UUID UUID_SERVICE_BATTERY = UUID.fromString(GattAttributes.SERVICE_BATTERY);
+
+    public final static UUID UUID_BATTERY_LEVEL = UUID.fromString(GattAttributes.BATTERY_LEVEL);
+    public final static UUID UUID_BATTERY_LEVEL_CCC = UUID.fromString(GattAttributes.BATTERY_LEVEL_CCC);
+    public final static UUID UUID_BATTERY_LEVEL_CUD = UUID.fromString(GattAttributes.BATTERY_LEVEL_CUD);
+
+    private static String mUVValue = "sup";              //UV Message Value
+    private static String mBatteryValue = "zoot";         //Battery Message Value
+    private static String mTemperatureValue = "zip";     //Temperature Notifications
+
+
     private int mConnectionState = STATE_DISCONNECTED;
 
     private static final int STATE_DISCONNECTED = 0;
@@ -59,8 +101,6 @@ public class BluetoothLeService extends Service
     public final static String ACTION_DATA_AVAILABLE = "com.example.bluetooth.le.ACTION_DATA_AVAILABLE";
     public final static String EXTRA_DATA = "com.example.bluetooth.le.EXTRA_DATA";
 
-    public final static UUID UUID_UV_POWER = UUID.fromString(GattAttributes.SERVICE_UV_MEASUREMENT);
-    public final static UUID UUID_UV_POWER_DENSITY_MEASUREMENT = UUID.fromString(GattAttributes.POWER_DENSITY);
 
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
@@ -75,16 +115,17 @@ public class BluetoothLeService extends Service
                 intentAction = ACTION_GATT_CONNECTED;
                 mConnectionState = STATE_CONNECTED;
                 broadcastUpdate(intentAction);
-                Log.i(TAG, "Connected to GATT server.");
+                Log.d(TAG, "UV: Connected to GATT server.");
                 // Attempts to discover services after successful connection.
-                Log.i(TAG, "Attempting to start service discovery:" + mBluetoothGatt.discoverServices());
-
+                boolean service_discovery = mBluetoothGatt.discoverServices();  //Discovering Services
+                Log.d(TAG, "UV: Attempting to start service discovery:" + service_discovery);   //Printing "Discovering Services" Results
             }
+
             else if (newState == BluetoothProfile.STATE_DISCONNECTED)
             {
                 intentAction = ACTION_GATT_DISCONNECTED;
                 mConnectionState = STATE_DISCONNECTED;
-                Log.i(TAG, "Disconnected from GATT server.");
+                Log.d(TAG, "UV: Disconnected from GATT server.");
                 broadcastUpdate(intentAction);
             }
         }
@@ -94,11 +135,28 @@ public class BluetoothLeService extends Service
         {
             if (status == BluetoothGatt.GATT_SUCCESS)
             {
+                Log.d(TAG, "UV: onServicesDiscovered");
+
+                // Linking UUID to Services
+                mUVService = gatt.getService(UUID_SERVICE_UV_MEASUREMENT);          //UV Measurement Service assigned to specific UUID
+                mTempService = gatt.getService(UUID_SERVICE_BODY_TEMPERATURE);      //Body Temperature Service assigned to specific UUID
+                mBatteryService = gatt.getService(UUID_SERVICE_BATTERY);            //Battery Level Service assigned to specific UUID
+
+                // Linking UUID to Characteristics
+                mUVCharacteristic = mUVService.getCharacteristic(UUID_POWER_DENSITY);                       //UV Power Density Characteristics
+                mTemperatureCharacteristic = mTempService.getCharacteristic(UUID_TEMPERATURE);              //Body Temperature Characteristics
+                mBatteryCharacteristic = mBatteryService.getCharacteristic(UUID_BATTERY_LEVEL);             //Battery Level Characteristics
+
+                // Linking UUID to Custom Client Configuration Descriptors
+                mUVCccd = mUVCharacteristic.getDescriptor(UUID_POWER_DENSITY_CCC);                          //UV Power Density Descriptor
+                mTemperatureCccd = mTemperatureCharacteristic.getDescriptor(UUID_TEMPERATURE_CCC);          //Body Temperature Descriptor
+                mBatteryCccd = mBatteryCharacteristic.getDescriptor(UUID_BATTERY_LEVEL_CCC);                //Battery Level Descriptor
+
                 broadcastUpdate(ACTION_GATT_SERVICES_DISCOVERED);
             }
             else
             {
-                Log.w(TAG, "onServicesDiscovered received: " + status);
+                Log.d(TAG, "UV: onServicesDiscovered received: " + status);
             }
         }
 
@@ -107,60 +165,54 @@ public class BluetoothLeService extends Service
         {
             if (status == BluetoothGatt.GATT_SUCCESS)
             {
-                broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
+//                broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
             }
         }
 
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic)
         {
-            broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
+            Log.d(TAG, "UV: onCharacteristicChanged");
+            //This is called when a characteristic notification changes
+            //It broadcasts to the main activity with the changed data
+            if(UUID_POWER_DENSITY.equals(characteristic.getUuid()))
+            {
+                mUVValue = characteristic.getStringValue(0);
+                Log.d(TAG, String.format("UV: UV Power Density Value: %s", mUVValue));
+            }
+            if(UUID_TEMPERATURE.equals(characteristic.getUuid()))
+            {
+                mTemperatureValue = characteristic.getStringValue(0);
+                Log.d(TAG, String.format("UV: Temperature Value: %s", mTemperatureValue));
+            }
+            if(UUID_BATTERY_LEVEL.equals(characteristic.getUuid()))
+            {
+                mBatteryValue = characteristic.getStringValue(0);
+                Log.d(TAG, String.format("UV: Battery Value: %s", mBatteryValue));
+            }
+
+            broadcastUpdate(ACTION_DATA_AVAILABLE);
         }
     };
+
+    public String getmUVValue()
+    {
+        return mUVValue;
+    }
+
+    public String getmTemperatureValue()
+    {
+        return mTemperatureValue;
+    }
+
+    public String getmBatteryValue()
+    {
+        return mBatteryValue;
+    }
 
     private void broadcastUpdate(final String action)
     {
         final Intent intent = new Intent(action);
-        sendBroadcast(intent);
-    }
-
-    private void broadcastUpdate(final String action, final BluetoothGattCharacteristic characteristic)
-    {
-        final Intent intent = new Intent(action);
-
-        // This is special handling for the Heart Rate Measurement profile.  Data parsing is
-        // carried out as per profile specifications:
-        // http://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml
-        if (UUID_UV_POWER_DENSITY_MEASUREMENT.equals(characteristic.getUuid()))
-        {
-            int flag = characteristic.getProperties();
-            int format = -1;
-            if ((flag & 0x01) != 0)
-            {
-                format = BluetoothGattCharacteristic.FORMAT_UINT16;
-                Log.d(TAG, "Heart rate format UINT16.");
-            }
-            else
-            {
-                format = BluetoothGattCharacteristic.FORMAT_UINT8;
-                Log.d(TAG, "Heart rate format UINT8.");
-            }
-            final int heartRate = characteristic.getIntValue(format, 1);
-            Log.d(TAG, String.format("Received heart rate: %d", heartRate));
-            intent.putExtra(EXTRA_DATA, String.valueOf(heartRate));
-        }
-        else
-        {
-            // For all other profiles, writes the data formatted in HEX.
-            final byte[] data = characteristic.getValue();
-            if (data != null && data.length > 0)
-            {
-                final StringBuilder stringBuilder = new StringBuilder(data.length);
-                for(byte byteChar : data)
-                    stringBuilder.append(String.format("%02X ", byteChar));
-                intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
-            }
-        }
         sendBroadcast(intent);
     }
 
@@ -204,7 +256,7 @@ public class BluetoothLeService extends Service
             mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
             if (mBluetoothManager == null)
             {
-                Log.e(TAG, "Unable to initialize BluetoothManager.");
+                Log.d(TAG, "UV: Unable to initialize BluetoothManager.");
                 return false;
             }
         }
@@ -212,7 +264,7 @@ public class BluetoothLeService extends Service
         mBluetoothAdapter = mBluetoothManager.getAdapter();
         if (mBluetoothAdapter == null)
         {
-            Log.e(TAG, "Unable to obtain a BluetoothAdapter.");
+            Log.d(TAG, "UV: Unable to obtain a BluetoothAdapter.");
             return false;
         }
 
@@ -233,15 +285,14 @@ public class BluetoothLeService extends Service
     {
         if (mBluetoothAdapter == null || address == null)
         {
-            Log.w(TAG, "BluetoothAdapter not initialized or unspecified address.");
+            Log.d(TAG, "UV: BluetoothAdapter not initialized or unspecified address.");
             return false;
         }
 
         // Previously connected device.  Try to reconnect.
-        if (mBluetoothDeviceAddress != null && address.equals(mBluetoothDeviceAddress)
-                && mBluetoothGatt != null)
+        if (mBluetoothDeviceAddress != null && address.equals(mBluetoothDeviceAddress) && mBluetoothGatt != null)
         {
-            Log.d(TAG, "Trying to use an existing mBluetoothGatt for connection.");
+            Log.d(TAG, "UV: Trying to use an existing mBluetoothGatt for connection.");
             if (mBluetoothGatt.connect())
             {
                 mConnectionState = STATE_CONNECTING;
@@ -259,10 +310,9 @@ public class BluetoothLeService extends Service
             Log.w(TAG, "Device not found.  Unable to connect.");
             return false;
         }
-        // We want to directly connect to the device, so we are setting the autoConnect
-        // parameter to false.
+        // We want to directly connect to the device, so we are setting the autoConnect parameter to false
         mBluetoothGatt = device.connectGatt(this, false, mGattCallback);
-        Log.d(TAG, "Trying to create a new connection.");
+        Log.d(TAG, "UV: Trying to create a new connection.");
         mBluetoothDeviceAddress = address;
         mConnectionState = STATE_CONNECTING;
         return true;
@@ -278,7 +328,7 @@ public class BluetoothLeService extends Service
     {
         if (mBluetoothAdapter == null || mBluetoothGatt == null)
         {
-            Log.w(TAG, "BluetoothAdapter not initialized");
+            Log.d(TAG, "UV: BluetoothAdapter not initialized");
             return;
         }
         mBluetoothGatt.disconnect();
@@ -315,28 +365,56 @@ public class BluetoothLeService extends Service
         mBluetoothGatt.readCharacteristic(characteristic);
     }
 
-    /**
-     * Enables or disables notification on a give characteristic.
-     *
-     * @param characteristic Characteristic to act on.
-     * @param enabled If true, enable notification.  False otherwise.
-     */
-    public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic, boolean enabled)
+    public void writeCharacteristicNotification(boolean uv_Notification, boolean temp_Notification, boolean battery_Notification)
     {
+        Log.d(TAG, "UV: writeCharacteristicNotification");
         if (mBluetoothAdapter == null || mBluetoothGatt == null)
         {
-            Log.w(TAG, "BluetoothAdapter not initialized");
+            Log.d(TAG, "UV: BluetoothAdapter not initialized");
             return;
         }
-        mBluetoothGatt.setCharacteristicNotification(characteristic, enabled);
 
-        // This is specific to UV POWER DENSITY
-        if (UUID_UV_POWER_DENSITY_MEASUREMENT.equals(characteristic.getUuid()))
+//        mBluetoothGatt.setCharacteristicNotification(mUVCharacteristic, uv_Notification);   //Enabling or Disabling UV Characteristic Notification
+//        byte[] uv_byteVal = new byte[1];
+//        if(uv_Notification)
+//        {
+//            uv_byteVal[0] = 1;
+//        }
+//        else
+//        {
+//            uv_byteVal[0] = 0;
+//        }
+//        Log.d(TAG, "UV: UV Notification: "+uv_Notification);
+//        mUVCccd.setValue(uv_byteVal);
+//        mBluetoothGatt.writeDescriptor(mUVCccd);
+
+        mBluetoothGatt.setCharacteristicNotification(mTemperatureCharacteristic, temp_Notification);   //Enabling or Disabling Temperature Characteristic Notification
+        byte[] temp_byteVal = new byte[1];
+        if(temp_Notification)
         {
-            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(UUID.fromString(GattAttributes.POWER_DENSITY));
-            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
-            mBluetoothGatt.writeDescriptor(descriptor);
+            temp_byteVal[0] = 1;
         }
+        else
+        {
+            temp_byteVal[0] = 0;
+        }
+        Log.d(TAG, "UV: Temperature Notification: "+temp_byteVal);
+        mTemperatureCccd.setValue(temp_byteVal);
+        mBluetoothGatt.writeDescriptor(mTemperatureCccd);
+
+//        mBluetoothGatt.setCharacteristicNotification(mBatteryCharacteristic, battery_Notification);   //Enabling or Disabling Battery Characteristic Notification
+//        byte[] battery_byteVal = new byte[1];
+//        if(battery_Notification)
+//        {
+//            battery_byteVal[0] = 1;
+//        }
+//        else
+//        {
+//            battery_byteVal[0] = 0;
+//        }
+//        Log.d(TAG, "UV: Battery Notification:"+battery_Notification);
+//        mBatteryCccd.setValue(battery_byteVal);
+//        mBluetoothGatt.writeDescriptor(mBatteryCccd);
     }
 
     /**

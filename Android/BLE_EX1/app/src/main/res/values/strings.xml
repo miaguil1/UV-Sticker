@@ -5,6 +5,7 @@
     <string name="temp_name">Temperature</string>
     <string name="uv_name">UV Power Density</string>
     <string name="resp_name">Respiration</string>
+    <string name="battery_name">Battery</string>
     <string name="start_scan">Start Scan</string>
     <string name="stop_scan">Stop Scan</string>
     <string name="save_name">Save</string>
@@ -33,5 +34,9 @@
     <string name="menu_disconnect">Disconnect</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
+
+    <string name="ble_device_name">BLE Device: </string>
+    <string name="ble_device_address">Address: </string>
+    <string name="ble_device_status">Status: </string>
 
 </resources>
