@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [Rigid-QFN-2.PcbDoc]
+   Generated File[Rigid-QFN-2.TXT]
+   Generated File[Rigid-QFN-2.LDP]
+   Generated File[Rigid-QFN-2.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 1:10:01 AM On 5/24/2018

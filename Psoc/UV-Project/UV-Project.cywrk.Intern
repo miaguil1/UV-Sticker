@@ -243,12 +243,6 @@
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\bluetooth.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
 <v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>UV-Project\UV-SG-TEMP\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -316,7 +310,8 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" />
+<name v=".\Test_Board.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Test_Board.cydsn\Test_Board.cydwr" />
 <name v=".\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
@@ -325,7 +320,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1335, 869" SelectedTabbedMdiWindow="5a941b32-13e0-4557-aeff-5a8eed9226e6"><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" Guid="c89bc334-ebfe-4104-b7c5-ea8e1c8d5265" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" Guid="5a941b32-13e0-4557-aeff-5a8eed9226e6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1335, 765" SelectedTabbedMdiWindow="82e90709-a087-417b-89d8-c3d303a2e3ec"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="46301dfc-fdac-4998-8984-e99b83e1f8c9" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\TopDesign\TopDesign.cysch" Guid="e0d01322-82d9-4700-bf7d-71685acce0dd" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Test_Board.cydwr" Guid="2bc4f8f7-c289-442a-8163-8262088df6e5" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" Guid="82e90709-a087-417b-89d8-c3d303a2e3ec" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
