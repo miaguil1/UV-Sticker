@@ -62,10 +62,17 @@ public class MainActivity extends AppCompatActivity
     private LineGraphSeries<DataPoint> battery_series;
     private LineGraphSeries<DataPoint> uv_series;
     private GraphView dataGraph;
+    private Excel excelFile;
 
     private static TextView temperatureValue;
 
     private DataPoint[] temp_data;
+
+    private ArrayList<Double> temp_data_array;
+    private ArrayList<Double> counter_array;
+
+    private Double[] uv_data_double;
+    private Double[] battery_data_double;
 
     private double counter;
     private int maxDataSet;
@@ -79,6 +86,11 @@ public class MainActivity extends AppCompatActivity
         mDeviceStatus = "Connected";
         counter = 0;
         maxDataSet = 10000;
+
+        temp_data_array = new ArrayList<>();
+        counter_array = new ArrayList<>();
+
+        excelFile = new Excel();        //Creating an instance of an Excel Spreadsheet to store values properly
 
         mBluetoothLeService = new BluetoothLeService();     //Initializing Bluetooth Service Object
 
@@ -127,7 +139,7 @@ public class MainActivity extends AppCompatActivity
 
         dataGraph.getViewport().setXAxisBoundsManual(true);
         dataGraph.getViewport().setMinX(0);
-        dataGraph.getViewport().setMaxX(10);
+        dataGraph.getViewport().setMaxX(100);
 
         dataGraph.getViewport().setScrollable(true);    //Enable Horizontal Scrolling
 //        uv_series = new LineGraphSeries<>(new DataPoint[] {});
@@ -257,7 +269,7 @@ public class MainActivity extends AppCompatActivity
                 temp_Notification = false;
                 battery_Notification = false;
                 mBluetoothLeService.writeCharacteristicNotification(uv_Notification, temp_Notification, battery_Notification);
-                //saveGraph(temp_Notification, uv_Notification, resp_Notification);
+                saveData();
             }
         });
     }
@@ -417,15 +429,22 @@ public class MainActivity extends AppCompatActivity
     private void recordData(String gattTemperatureValue)
     {
         double tempValue = Double.parseDouble(gattTemperatureValue);
-        counter = counter + 8;
         DataPoint values = new DataPoint(counter, tempValue);
         temp_series.appendData(values, true, maxDataSet);
         dataGraph.animate();
+        temp_data_array.add(tempValue);
+        counter_array.add(counter);
+        counter = counter + 8;
     }
 
     private void saveData()
     {
-
-
+        Log.d(TAG, "UV: saveData");
+        String sampleFile = "Test1";
+        excelFile.setOutputFile(sampleFile);
+        excelFile.createWorkbook();
+        excelFile.createSheet();
+        excelFile.writeData(counter_array, temp_data_array, uv_Notification, temp_Notification, battery_Notification);
+        excelFile.closeWorkbook();
     }
 }

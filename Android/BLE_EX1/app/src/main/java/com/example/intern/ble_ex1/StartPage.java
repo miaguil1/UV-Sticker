@@ -38,7 +38,7 @@ public class StartPage extends AppCompatActivity
         if (Build.VERSION.SDK_INT >= 23)
         {
             // Marshmallow+ Permission APIs
-            askforPermission();
+            askForPermission();
         }
 
         //Connect U.I Elements
@@ -99,14 +99,14 @@ public class StartPage extends AppCompatActivity
                     // All Permissions Granted
 
                     // Permission Denied
-                    Toast.makeText(StartPage.this, "All Permission GRANTED !! Thank You :)", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StartPage.this, "All Permission GRANTED !! Thank You :)", Toast.LENGTH_LONG).show();
 
 
                 }
                 else
                 {
                     // Permission Denied
-                    Toast.makeText(StartPage.this, "One or More Permissions are DENIED Exiting App :(", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(StartPage.this, "One or More Permissions are DENIED Exiting App :(", Toast.LENGTH_LONG).show();
                     finish();
                 }
             }
@@ -118,13 +118,28 @@ public class StartPage extends AppCompatActivity
 
 
     @TargetApi(Build.VERSION_CODES.M)
-    private void askforPermission()
+    private void askForPermission()
     {
         List<String> permissionsNeeded = new ArrayList<String>();
-
         final List<String> permissionsList = new ArrayList<String>();
+
         if (!addPermission(permissionsList, Manifest.permission.ACCESS_FINE_LOCATION))
-            permissionsNeeded.add("Show Location");
+            permissionsNeeded.add("Show Fine Location");
+
+        if (!addPermission(permissionsList, Manifest.permission.ACCESS_COARSE_LOCATION))
+            permissionsNeeded.add("Show Course Location");
+
+        if (!addPermission(permissionsList, Manifest.permission.WRITE_EXTERNAL_STORAGE))
+            permissionsNeeded.add("Write External Storage");
+
+        if (!addPermission(permissionsList, Manifest.permission.READ_EXTERNAL_STORAGE))
+            permissionsNeeded.add("Read External Storage");
+
+        if (!addPermission(permissionsList, Manifest.permission.BLUETOOTH_ADMIN))
+            permissionsNeeded.add("Bluetooth Admin");
+
+        if (!addPermission(permissionsList, Manifest.permission.BLUETOOTH))
+            permissionsNeeded.add("Bluetooth");
 
         if (permissionsList.size() > 0)
         {
