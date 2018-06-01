@@ -13,7 +13,7 @@ int main()
     system_use_wco();   // Use External Low frequency Clock
     system_enable_interrupts(); // Enabling Global Interrupts
     system_init_hardware(); // Starting all hardware modules: UART, I2C, SG-AMP, UV-AMP, ADC, GUVB-C31SM
-//    LED_BLUE_Write((uint8) 0); // Turn BLUE LED ON
+    LED_RED_Write((uint8) 0); // Turn RED LED ON
     bluetooth_start(); // Starting CyBLE, Generic Event Handler 
     watchdog_start(); // Starting the Watchdog Timer
 //    system_sleep(); // Telling System and Components to go into Sleep Mode

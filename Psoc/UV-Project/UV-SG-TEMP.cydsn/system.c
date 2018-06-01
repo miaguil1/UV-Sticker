@@ -30,7 +30,7 @@ void system_init_hardware(void)
 //    UV5_AMP_Start(); //Starting internal Op-amp titled UV5_AMP
     ADC_Start(); //Starting ADC
     CyDelay(10);
-    guvb_c31sm_setup();
+//    guvb_c31sm_setup();
 }
 
 void system_red_led_blink()

@@ -1,7 +1,8 @@
-C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cyprj|5bbb3bda-e96a-4966-a893-f7fbb1acb773
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c85e1a89-a68e-4857-ad7b-fa7baee49be4
-C:\Users\Intern\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|06f949da-5ac9-40e6-8d8e-883d44aef997
-C:\Users\Intern\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|a885ae52-1128-43b8-b205-28f24f6a618e
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|15b501be-a836-4e42-8862-ab6084e15437
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|270d9d08-cfb0-446b-adab-cc08a41811ed
-C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|561d6ee2-48d5-4ee3-8b02-625d958bfe72
+C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cyprj|ddb52e25-1aaf-4015-b77a-dc9f815fbe51
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|8469ab59-6e7a-4542-a601-3c2a3c3e0b40
+C:\Users\Intern\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|54c69d05-6ceb-43da-ae05-f15cfca8b8a8
+C:\Users\Intern\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|d9959eaa-4550-4c13-83df-4785bfac4bc8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|7721efc4-d199-449f-b94e-350d6ecb8d41
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8f7764f3-7dde-478d-902b-63279a5ecd40
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3c0b073e-9406-4b08-bb84-3e2c772b29d5
+C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Test_Board.cyprj|ce1cd46d-a66f-42ff-a32d-356f4a2aa236

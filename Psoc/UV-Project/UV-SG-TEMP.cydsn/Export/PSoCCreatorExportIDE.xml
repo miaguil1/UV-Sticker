@@ -177,46 +177,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\I2C_SCB_IRQ.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cy_em_eeprom.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\cy_em_eeprom.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E6.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E6.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E6_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E6_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B6.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B6.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B6_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B6_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C6.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C6.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C6_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C6_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\A3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\B3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\C3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\D3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\D3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\D3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\D3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\E3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\F3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\F3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\F3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\F3_PM.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\G3.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\G3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\G3_aliases.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC4\G3_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\Export\ARM_GCC_Generic\BLE_v3_50">
