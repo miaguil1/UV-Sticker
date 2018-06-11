@@ -1,188 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b73617e0-888a-49e9-94be-1c64870b4e77" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../PCB/Flex-PCB/Rigid-QFN-2/History/Rigid-QFN-2.~(10).PcbDoc.Zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/pins_68-WLCSP.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Flex-PCB/Rigid-QFN-2/Rigid-QFN-2.PcbDoc" afterPath="$PROJECT_DIR$/../PCB/Flex-PCB/Rigid-QFN-2/Rigid-QFN-2.PcbDoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Test_Board.a" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Test_Board.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Test_Board.elf" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Test_Board.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.cyfit" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.cyfit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.cyfit" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.cyfit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/lcpsoc3/index" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/lcpsoc3/index" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.a" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.a" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.elf" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.elf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.o" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/TopDesign/TopDesign.cysch" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/TopDesign/TopDesign.cysch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyfit" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyfit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.cyfit" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.cyfit" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/lcpsoc3/index" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/lcpsoc3/index" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Flex-PCB/Rigid-QFN-2/__Previews/Rigid-QFN-2.PcbDocPreview" afterPath="$PROJECT_DIR$/../PCB/Flex-PCB/Rigid-QFN-2/__Previews/Rigid-QFN-2.PcbDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../PCB/Flex-PCB/Rigid-QFN-2/__Previews/Rigid-QFN-2.SchDocPreview" afterPath="$PROJECT_DIR$/../PCB/Flex-PCB/Rigid-QFN-2/__Previews/Rigid-QFN-2.SchDocPreview" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/BUILD.log" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/BUILD.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Test_Board.hex" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/Test_Board.hex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cy_em_eeprom.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cy_em_eeprom.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/main.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/CortexM0/ARM_GCC_541/Debug/main.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Export/PSoCCreatorExportIDE.xml" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Export/PSoCCreatorExportIDE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfitter.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfitter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfittergnu.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfittergnu.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfitteriar.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfitteriar.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfitterrv.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cyfitterrv.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cymetadata.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Generated_Source/PSoC4/cymetadata.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.cyprj" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.cyprj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.cyprj.Intern" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.cyprj.Intern" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.rpt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board.rpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board_timing.html" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/Test_Board_timing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.ctl" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.ctl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.pci" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.pci" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.pco" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.pco" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.rpt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.rpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.sdc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.sdc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.sdf" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.sdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.v" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.v" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_p.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_p.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_r.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_r.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_t.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_t.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_timing.html" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_timing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_u.sdc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/Test_Board_u.sdc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfitter.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfitter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfittergnu.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfittergnu.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfitteriar.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfitteriar.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfitterrv.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cyfitterrv.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cymetadata.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/cymetadata.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/placer.log" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/placer.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/project_ids.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/Test_Board.cydsn/codegentemp/project_ids.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-Project.cywrk" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-Project.cywrk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-Project.cywrk.Intern" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-Project.cywrk.Intern" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/BUILD.log" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/BUILD.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_INT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_INT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_IRQ.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_IRQ.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_intClock.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ADC_intClock.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ALERT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ALERT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ALERT_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/ALERT_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_INT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_INT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_PVT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_HAL_PVT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_bless_isr.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_bless_isr.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_custom.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_custom.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_eventHandler.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_eventHandler.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_gatt.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/BLE_gatt.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/Cm0Start.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyBootAsmGnu.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyFlash.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLFClk.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/CyLib.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_BOOT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_BOOT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C_BOOT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C_BOOT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C_INT.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C_INT.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C_MASTER.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_I2C_MASTER.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_SCBCLK.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_SCBCLK.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_SCB_IRQ.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_SCB_IRQ.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_scl.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_scl.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_scl_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_scl_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_sda.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_sda.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_sda_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/I2C_sda_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/LED_RED_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/RTC.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/RTC.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SG.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.hex" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.hex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.map" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/UV-SG-TEMP.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY_PM.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/V_BATTERY_PM.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/WDT_ISR.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/WDT_ISR.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/adafruit_guva.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/adafruit_guva.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/battery.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/battery.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/bluetooth.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/bluetooth.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyPm.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cy_em_eeprom.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cy_em_eeprom.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyfitter_cfg.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cymetadata.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/cyutils.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/guvb_c31sm.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/guvb_c31sm.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/led.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/led.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/library.deps" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/library.deps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/lmt70.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/lmt70.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/main.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/system.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/tmp116.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/tmp116.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/uv.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/uv.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/watchdog.lst" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/CortexM0/ARM_GCC_541/Debug/watchdog.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Export/PSoCCreatorExportIDE.xml" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Export/PSoCCreatorExportIDE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfittergnu.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfittergnu.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitteriar.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitteriar.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitterrv.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/cyfitterrv.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/project.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/Generated_Source/PSoC4/project.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cycdx" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cycdx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyprj" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyprj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyprj.Intern" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.cyprj.Intern" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.rpt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.rpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.svd" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP.svd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP_timing.html" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/UV-SG-TEMP_timing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.ctl" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.ctl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.cycdx" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.cycdx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pci" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pci" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pco" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.pco" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.route" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.route" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.rpt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.rpt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.rt_log" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.rt_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdf" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.sdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.svd" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.svd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.tr" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.tr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.v" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.v" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.wde" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP.wde" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.lib" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.lib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.pco" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.pco" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_p.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_r.lib" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_r.lib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_r.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_r.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_t.lib" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_t.lib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_t.vh2" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_t.vh2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_timing.html" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_timing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_u.sdc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/UV-SG-TEMP_u.sdc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/bitstream.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/bitstream.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter_cfg.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter_cfg.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter_cfg.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitter_cfg.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfittergnu.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfittergnu.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitteriar.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitteriar.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitterrv.inc" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/cyfitterrv.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/elab_dependencies.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/elab_dependencies.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/generated_files.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/generated_files.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/placer.log" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/placer.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/project.h" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/project.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/project_ids.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/project_ids.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/warp_dependencies.txt" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/codegentemp/warp_dependencies.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/main.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/main.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/system.c" afterPath="$PROJECT_DIR$/../Psoc/UV-Project/UV-SG-TEMP.cydsn/system.c" />
-    </list>
+    <list default="true" id="b73617e0-888a-49e9-94be-1c64870b4e77" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -195,17 +14,17 @@
       <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="0">
               <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ex1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ex1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="425">
               <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -214,43 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="serial_2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="serial_2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/serial_2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serial_tools.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/serial_tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bglib_test_htm_collector.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bglib_test_htm_collector.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2873">
-              <caret line="169" column="44" lean-forward="false" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bled112_scanner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bled112_scanner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6681">
-              <caret line="393" column="83" lean-forward="false" selection-start-line="393" selection-start-column="83" selection-end-line="393" selection-end-column="83" />
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -259,21 +46,11 @@
       <file leaf-file-name="strain_guage_calc.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/strain_guage_calc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9877">
+            <state relative-caret-position="1550">
               <caret line="591" column="40" lean-forward="false" selection-start-line="591" selection-start-column="40" selection-end-line="591" selection-end-column="40" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strain_guage_calc.spec" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/strain_guage_calc.spec">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -284,18 +61,6 @@
             <state relative-caret-position="578">
               <caret line="36" column="41" lean-forward="false" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DAC_Voltage_Regulator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DAC_Voltage_Regulator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -619,7 +384,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5476411" sideWeight="0.2947761" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19796485" sideWeight="0.2947761" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839963" sideWeight="0.49520257" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5476411" sideWeight="0.70522386" order="2" side_tool="false" content_ui="tabs" />
@@ -932,17 +697,43 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui (2).py" />
+    <entry file="file://$PROJECT_DIR$/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ex1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bled112_scanner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6681">
+        <state relative-caret-position="785">
           <caret line="393" column="83" lean-forward="false" selection-start-line="393" selection-start-column="83" selection-end-line="393" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/strain_guage_calc.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DAC_Voltage_Regulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="119">
           <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -958,33 +749,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bglib_test_htm_collector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2873">
-          <caret line="169" column="44" lean-forward="false" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/strain_guage_calc.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="28" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/strain_guage_calc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9877">
+        <state relative-caret-position="1550">
           <caret line="591" column="40" lean-forward="false" selection-start-line="591" selection-start-column="40" selection-end-line="591" selection-end-column="40" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -992,10 +759,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bglib_test_htm_collector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="169" column="44" lean-forward="false" selection-start-line="169" selection-start-column="28" selection-end-line="169" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/serial_tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="98" column="28" lean-forward="true" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -1004,19 +779,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/serial_2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ex1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
