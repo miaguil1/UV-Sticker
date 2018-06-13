@@ -1,5 +1,5 @@
---------------- Build Started: 05/30/2018 18:31:31 Project: Test_Board, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-cydsfit.exe -.appdatapath "C:\Users\Intern\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Test_Board.cyprj -d CY8C4247LQI-BL483 -s C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+--------------- Build Started: 06/12/2018 20:38:32 Project: Test_Board, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\Intern\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Test_Board.cyprj -d CY8C4247FNI-BL493 -s C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Generated_Source\PSoC4 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation...
 Synthesis...
@@ -36,4 +36,4 @@ Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\CortexM0\ARM_GCC_541\Debug\Test_Board.elf
 Flash used: 1648 of 131072 bytes (1.3 %).
 SRAM used: 2576 of 16384 bytes (15.7 %). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 05/30/2018 18:31:48 ---------------
+--------------- Build Succeeded: 06/12/2018 20:38:42 ---------------

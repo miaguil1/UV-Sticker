@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="UV-Project\UV-SG-TEMP">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="UV-Project\Test_Board">
 <ExpandedNodeIds>
 <v>UV-Project</v>
 <v>UV-Project\Test_Board\TopDesign</v>
@@ -31,7 +31,6 @@
 <v>UV-Project\Test_Board\Source Files\main.c</v>
 <v>UV-Project\Test_Board\Generated_Source</v>
 <v>UV-Project\Test_Board\Generated_Source\PSoC4</v>
-<v>UV-Project\UV-SG-TEMP</v>
 <v>UV-Project\UV-SG-TEMP\TopDesign</v>
 <v>UV-Project\UV-SG-TEMP\UV-SG-TEMP.cydwr\Pins</v>
 <v>UV-Project\UV-SG-TEMP\UV-SG-TEMP.cydwr\Analog</v>
@@ -70,34 +69,6 @@
 <v>UV-Project</v>
 <v>UV-Project\Test_Board</v>
 <v>UV-Project\UV-SG-TEMP</v>
-<v>UV-Project\UV-SG-TEMP\TopDesign</v>
-<v>UV-Project\UV-SG-TEMP\UV-SG-TEMP.cydwr</v>
-<v>UV-Project\UV-SG-TEMP\Header Files</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\adafruit_guva.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\battery.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\bluetooth.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\guvb_c31sm.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\led.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\lmt70.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\sg.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\system.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\tmp116.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\uv.h</v>
-<v>UV-Project\UV-SG-TEMP\Header Files\watchdog.h</v>
-<v>UV-Project\UV-SG-TEMP\Source Files</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\adafruit_guva.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\battery.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\bluetooth.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\guvb_c31sm.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\led.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\lmt70.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\main.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\sg.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\system.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\tmp116.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\uv.c</v>
-<v>UV-Project\UV-SG-TEMP\Source Files\watchdog.c</v>
-<v>UV-Project\UV-SG-TEMP\Generated_Source</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -319,12 +290,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" />
-<name v=".\UV-SG-TEMP.cydsn\main.c" />
-<name v=".\UV-SG-TEMP.cydsn\watchdog.c" />
-<name v=".\UV-SG-TEMP.cydsn\bluetooth.c" />
-<name v=".\UV-SG-TEMP.cydsn\system.c" />
+<name v=".\Test_Board.cydsn\Test_Board.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -332,7 +298,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1532, 728" SelectedTabbedMdiWindow="f7cc2b98-1251-449e-9b55-04c208d9c68d"><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" Guid="69ff00ed-4a11-4b30-b0ed-44437bff5b01" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" Guid="f7cc2b98-1251-449e-9b55-04c208d9c68d" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\main.c" Guid="53972a8d-675a-442d-8b28-940d41b39485" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\watchdog.c" Guid="eb764e72-4000-48ef-84b2-4b2dea46e08d" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\bluetooth.c" Guid="73832fe3-9b81-447b-9898-2c86aee581c3" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\system.c" Guid="9b33b03a-0fb3-487e-910f-a00a3c489c4d" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="46301dfc-fdac-4998-8984-e99b83e1f8c9" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1532, 728" SelectedTabbedMdiWindow="ee1292b2-640a-4591-b4fb-fb16b9a56d03"><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Test_Board.cydwr" Guid="ee1292b2-640a-4591-b4fb-fb16b9a56d03" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
