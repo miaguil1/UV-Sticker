@@ -10832,7 +10832,7 @@ ARM GAS  Generated_Source\PSoC4\CyBootAsmGnu.s 			page 1
  811              	.set CYDEV_CHIP_FAMILY_PSOC6, 4
  812              	.set CYDEV_CHIP_FAMILY_UNKNOWN, 0
  813              	.set CYDEV_CHIP_FAMILY_USED, CYDEV_CHIP_FAMILY_PSOC4
- 814              	.set CYDEV_CHIP_JTAG_ID, 0x0E36119E
+ 814              	.set CYDEV_CHIP_JTAG_ID, 0x0E37119E
  815              	.set CYDEV_CHIP_MEMBER_3A, 1
  816              	.set CYDEV_CHIP_MEMBER_4A, 18
  817              	.set CYDEV_CHIP_MEMBER_4D, 13
