@@ -319,7 +319,8 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Test_Board.cydsn\Test_Board.cydwr" />
+<name v=".\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -327,7 +328,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1532, 728" SelectedTabbedMdiWindow="ee1292b2-640a-4591-b4fb-fb16b9a56d03"><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\Test_Board.cydsn\Test_Board.cydwr" Guid="ee1292b2-640a-4591-b4fb-fb16b9a56d03" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1532, 728" SelectedTabbedMdiWindow="ee4b4801-50b4-4497-a42d-9bf813003e93"><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\TopDesign\TopDesign.cysch" Guid="0e99dacf-0e2e-4d68-82b9-4156041a2b31" /><DocumentWindow Key="C:\Users\Intern\Documents\GitHub\UV-Sticker\Psoc\UV-Project\UV-SG-TEMP.cydsn\UV-SG-TEMP.cydwr" Guid="ee4b4801-50b4-4497-a42d-9bf813003e93" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
